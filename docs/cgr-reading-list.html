@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CGR Lab 리딩 리스트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f4f1e8; --surface:#ffffff; --surface-2:#fbf9f3;
+    --ink:#1c2430; --ink-muted:#5c6570; --ink-faint:#858b93;
+    --accent:#c1531f; --accent-2:#2c6e6b;
+    --border:#ddd5c1; --border-strong:#c7bea6;
+    --tag-a-bg:#f0ded1; --tag-a-ink:#8a3c14;
+    --tag-b-bg:#dde7e4; --tag-b-ink:#205653;
+    --tag-c-bg:#e9e5da; --tag-c-ink:#5c6570;
+    --shadow:0 1px 2px rgba(28,36,48,.04),0 8px 24px -12px rgba(28,36,48,.12);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12161d; --surface:#1a212b; --surface-2:#1f2733;
+      --ink:#e9e4d8; --ink-muted:#a3aab3; --ink-faint:#7a828d;
+      --accent:#e58a4f; --accent-2:#5fb0aa;
+      --border:#2b3340; --border-strong:#3a4453;
+      --tag-a-bg:#3a2718; --tag-a-ink:#f0b585;
+      --tag-b-bg:#1c2f2d; --tag-b-ink:#8fd0c9;
+      --tag-c-bg:#252c36; --tag-c-ink:#a3aab3;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12161d; --surface:#1a212b; --surface-2:#1f2733;
+    --ink:#e9e4d8; --ink-muted:#a3aab3; --ink-faint:#7a828d;
+    --accent:#e58a4f; --accent-2:#5fb0aa;
+    --border:#2b3340; --border-strong:#3a4453;
+    --tag-a-bg:#3a2718; --tag-a-ink:#f0b585;
+    --tag-b-bg:#1c2f2d; --tag-b-ink:#8fd0c9;
+    --tag-c-bg:#252c36; --tag-c-ink:#a3aab3;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 28px -14px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  .wrap{max-width:880px;margin:0 auto;padding:56px 24px 96px}
+  a{color:var(--accent-2)}
+  a:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px;border-radius:2px}
+
+  header{border-bottom:1px solid var(--border);padding-bottom:26px;margin-bottom:36px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
+  h1{font-size:clamp(28px,4.5vw,38px);font-weight:700;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+  .subtitle{color:var(--ink-muted);margin:0;max-width:64ch}
+
+  h2{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint);
+    margin:0 0 16px;display:flex;align-items:center;gap:10px}
+  h2::after{content:"";flex:1;height:1px;background:var(--border)}
+  section{margin-bottom:48px}
+
+  .pill{display:inline-flex;align-items:center;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+    padding:2px 8px;border-radius:999px;white-space:nowrap;letter-spacing:.02em}
+  .p-a{background:var(--tag-a-bg);color:var(--tag-a-ink)}
+  .p-b{background:var(--tag-b-bg);color:var(--tag-b-ink)}
+  .p-c{background:var(--tag-c-bg);color:var(--tag-c-ink)}
+
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface)}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  th{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+  td.n{font-family:'IBM Plex Mono',monospace;color:var(--accent);font-weight:600;width:36px}
+  td a{text-decoration:none;font-weight:600}
+  td a:hover{text-decoration:underline}
+  td .why{color:var(--ink-muted);font-size:13.5px}
+
+  .map{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px 12px;overflow-x:auto}
+  .map svg{display:block;min-width:700px;width:100%;height:auto}
+  .map svg .box{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:1.2}
+  .map svg .box.lab{fill:var(--tag-a-bg);stroke:var(--accent)}
+  .map svg .box.me{fill:var(--tag-b-bg);stroke:var(--accent-2)}
+  .map svg text{fill:var(--ink);font-family:'IBM Plex Sans KR',sans-serif;font-size:13px}
+  .map svg text.sub{fill:var(--ink-faint);font-family:'IBM Plex Mono',monospace;font-size:11px}
+  .map svg .edge{stroke:var(--ink-faint);stroke-width:1.3;fill:none}
+  .map svg .edge.hot{stroke:var(--accent)}
+  .map svg .arrow{fill:var(--ink-faint)}
+  .map svg .arrow.hot{fill:var(--accent)}
+  .map-note{color:var(--ink-muted);font-size:13.5px;margin:10px 4px 0}
+
+  .paper{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;
+    box-shadow:var(--shadow);margin-bottom:16px;scroll-margin-top:16px}
+  .paper.lab{border-color:var(--accent)}
+  .p-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:4px}
+  .p-title{font-size:18px;font-weight:700;margin:0;line-height:1.4;text-wrap:balance}
+  .p-title a{color:var(--ink);text-decoration:none}
+  .p-title a:hover{color:var(--accent-2);text-decoration:underline}
+  .p-meta{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-faint);margin:2px 0 12px}
+  .p-meta a{color:var(--accent-2)}
+  .oneline{font-size:15.5px;font-weight:500;margin:0 0 14px;padding:10px 14px;background:var(--surface-2);
+    border-left:3px solid var(--accent);border-radius:0 8px 8px 0}
+  .rows{display:flex;flex-direction:column}
+  .row{display:grid;grid-template-columns:118px 1fr;gap:4px 16px;padding:9px 0;border-top:1px solid var(--border)}
+  .row:first-child{border-top:none}
+  .label{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);padding-top:3px}
+  .val p{margin:0 0 6px}
+  .val p:last-child{margin-bottom:0}
+  .val ul{margin:0;padding-left:18px}
+  .val li{margin-bottom:3px}
+  .val b{font-weight:600}
+  .row.me .label{color:var(--accent-2);font-weight:600}
+  code{font-family:'IBM Plex Mono',monospace;font-size:13px;background:var(--surface-2);border:1px solid var(--border);
+    padding:1px 5px;border-radius:4px}
+  @media (max-width:600px){ .row{grid-template-columns:1fr} .p-head{flex-direction:column} }
+
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--ink-faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Weekend Reading &middot; 2026-10-31 ~ 11-01</p>
+  <h1>CGR Lab 리딩 리스트</h1>
+  <p class="subtitle">이윤상 교수님 랩 논문 2편과, 그걸 읽는 데 필요한 배경 논문 7편. 각 논문이 뭘 푸는지, 핵심 아이디어, 이번 Ant 프로젝트와 어떻게 이어지는지 정리했어.</p>
+</header>
+
+<section>
+  <h2>읽는 순서</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>논문</th><th>언제</th><th>왜 읽나</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td><a href="#physicsfc">PhysicsFC</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2025</span></td><td><span class="pill p-a">이번 주말</span></td><td class="why">랩 논문. 사용자 조작 + 기술 전환</td></tr>
+        <tr><td class="n">2</td><td><a href="#freemusco">FreeMusco</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2025</span></td><td><span class="pill p-a">이번 주말</span></td><td class="why">랩 논문. 모션 데이터 없이, 에너지 수준 랜덤화 — 내 프로젝트와 가장 가까움</td></tr>
+        <tr><td class="n">3</td><td><a href="#rudin">Learning to Walk in Minutes</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2021</span></td><td><span class="pill p-a">이번 주말</span></td><td class="why">속도 명령 추종 보상의 원조 — 내 보상 설계 출처</td></tr>
+        <tr><td class="n">4</td><td><a href="#ppo">PPO</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2017</span></td><td><span class="pill p-a">이번 주말</span></td><td class="why">내가 쓴 알고리즘. 아래 전부의 기반</td></tr>
+        <tr><td class="n">5</td><td><a href="#yu">Symmetric &amp; Low-Energy Locomotion</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2018</span></td><td><span class="pill p-b">인턴 전</span></td><td class="why">모션 데이터 없는 보행의 선행 연구 → FreeMusco 배경</td></tr>
+        <tr><td class="n">6</td><td><a href="#deepmimic">DeepMimic</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2018</span></td><td><span class="pill p-b">인턴 전</span></td><td class="why">물리 기반 캐릭터 제어의 출발점</td></tr>
+        <tr><td class="n">7</td><td><a href="#amp">AMP</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2021</span></td><td><span class="pill p-b">인턴 전</span></td><td class="why">모션 "스타일"을 판별기로 보상</td></tr>
+        <tr><td class="n">8</td><td><a href="#ase">ASE</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2022</span></td><td><span class="pill p-b">인턴 전</span></td><td class="why">기술을 잠재 공간에 담고 상위 정책이 골라 씀 → PhysicsFC 구조 이해에 필수</td></tr>
+        <tr><td class="n">9</td><td><a href="#maskedmimic">MaskedMimic</a> <span class="mono" style="color:var(--ink-faint);font-size:12px">2024</span></td><td><span class="pill p-b">인턴 전</span></td><td class="why">랩의 SIGGRAPH 2026 서핑 포스터가 저수준 정책으로 사용</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>논문끼리 연결</h2>
+  <div class="map">
+    <svg viewBox="0 0 760 300" role="img" aria-label="논문 계보도: PPO 위에 두 흐름이 있다. 모션 데이터를 쓰는 흐름 DeepMimic, AMP, ASE, MaskedMimic이 PhysicsFC와 서핑 포스터로 이어지고, 모션 데이터 없는 흐름 Yu 2018과 Rudin 2021이 FreeMusco와 내 Ant 프로젝트로 이어진다.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker>
+        <marker id="arh" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow hot" d="M0,0 L10,5 L0,10 z"/></marker>
+      </defs>
+
+      <!-- PPO base -->
+      <rect class="box" x="16" y="128" width="96" height="44" rx="8"/>
+      <text x="64" y="148" text-anchor="middle">PPO</text>
+      <text class="sub" x="64" y="164" text-anchor="middle">2017</text>
+
+      <!-- upper lane: motion data -->
+      <text class="sub" x="150" y="24">모션 데이터 사용</text>
+      <rect class="box" x="150" y="34" width="104" height="44" rx="8"/>
+      <text x="202" y="54" text-anchor="middle">DeepMimic</text><text class="sub" x="202" y="70" text-anchor="middle">2018</text>
+      <rect class="box" x="276" y="34" width="84" height="44" rx="8"/>
+      <text x="318" y="54" text-anchor="middle">AMP</text><text class="sub" x="318" y="70" text-anchor="middle">2021</text>
+      <rect class="box" x="382" y="34" width="84" height="44" rx="8"/>
+      <text x="424" y="54" text-anchor="middle">ASE</text><text class="sub" x="424" y="70" text-anchor="middle">2022</text>
+      <rect class="box" x="488" y="34" width="116" height="44" rx="8"/>
+      <text x="546" y="54" text-anchor="middle">MaskedMimic</text><text class="sub" x="546" y="70" text-anchor="middle">2024</text>
+
+      <rect class="box lab" x="488" y="108" width="116" height="44" rx="8"/>
+      <text x="546" y="128" text-anchor="middle">PhysicsFC</text><text class="sub" x="546" y="144" text-anchor="middle">CGR · 2025</text>
+      <rect class="box lab" x="630" y="34" width="116" height="44" rx="8"/>
+      <text x="688" y="54" text-anchor="middle">서핑 포스터</text><text class="sub" x="688" y="70" text-anchor="middle">CGR · 2026</text>
+
+      <!-- lower lane: motion-free -->
+      <text class="sub" x="150" y="206">모션 데이터 없음</text>
+      <rect class="box" x="150" y="216" width="104" height="44" rx="8"/>
+      <text x="202" y="236" text-anchor="middle">Yu et al.</text><text class="sub" x="202" y="252" text-anchor="middle">2018</text>
+      <rect class="box" x="276" y="216" width="104" height="44" rx="8"/>
+      <text x="328" y="236" text-anchor="middle">Rudin et al.</text><text class="sub" x="328" y="252" text-anchor="middle">2021</text>
+      <rect class="box lab" x="488" y="190" width="116" height="44" rx="8"/>
+      <text x="546" y="210" text-anchor="middle">FreeMusco</text><text class="sub" x="546" y="226" text-anchor="middle">CGR · 2025</text>
+      <rect class="box me" x="630" y="216" width="116" height="44" rx="8"/>
+      <text x="688" y="236" text-anchor="middle">내 Ant 프로젝트</text><text class="sub" x="688" y="252" text-anchor="middle">2026.11</text>
+
+      <!-- edges -->
+      <path class="edge" d="M112,140 C130,120 135,70 150,60" marker-end="url(#ar)"/>
+      <path class="edge" d="M112,160 C130,180 135,230 150,238" marker-end="url(#ar)"/>
+      <path class="edge" d="M254,56 L276,56" marker-end="url(#ar)"/>
+      <path class="edge" d="M360,56 L382,56" marker-end="url(#ar)"/>
+      <path class="edge" d="M466,56 L488,56" marker-end="url(#ar)"/>
+      <path class="edge hot" d="M604,56 L630,56" marker-end="url(#arh)"/>
+      <path class="edge hot" d="M424,78 C424,110 450,130 488,130" marker-end="url(#arh)"/>
+      <path class="edge" d="M254,238 L276,238" marker-end="url(#ar)"/>
+      <path class="edge hot" d="M220,216 C240,180 420,190 488,206" marker-end="url(#arh)"/>
+      <path class="edge hot" d="M380,238 C500,262 580,250 630,240" marker-end="url(#arh)"/>
+      <path class="edge hot" d="M604,218 C618,224 622,232 630,234" marker-end="url(#arh)"/>
+    </svg>
+  </div>
+  <p class="map-note">주황색 칸이 랩 논문, 청록색이 내 프로젝트. 위쪽은 모션 데이터를 흉내 내는 흐름, 아래쪽은 보상만으로 걷는 흐름이야. ASE → PhysicsFC는 "미리 학습한 동작 임베딩 위에 기술별 정책을 올린다"는 구조적 연결이고, 원 논문이 정확히 어떤 임베딩 모델을 썼는지는 본문에서 확인해.</p>
+</section>
+
+<section>
+  <h2>랩 논문</h2>
+
+  <article class="paper lab" id="physicsfc">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2504.21216" target="_blank" rel="noopener">PhysicsFC: Learning User-Controlled Skills for a Physics-Based Football Player Controller</a></h3>
+      <span class="pill p-a">이번 주말</span>
+    </div>
+    <p class="p-meta">Minsu Kim, Eunho Jung, Yoonsang Lee &middot; SIGGRAPH 2025 &middot; <a href="https://arxiv.org/abs/2504.21216" target="_blank" rel="noopener">arXiv 2504.21216</a> &middot; <a href="https://cgrhyu.github.io/publications/2025-physicsfc.html" target="_blank" rel="noopener">프로젝트 페이지</a></p>
+    <p class="oneline">사용자가 키 입력으로 조종하는, 물리 시뮬레이션 속 축구선수 캐릭터. 드리블·트래핑·이동 같은 기술을 따로 학습하고 매끄럽게 이어 붙인다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>물리 기반 캐릭터는 자연스럽지만 조종하기 어렵다. 게임처럼 사용자가 실시간으로 명령을 바꿔도 공을 다루는 기술들이 끊김 없이 이어져야 한다.</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>미리 학습된 <b>물리 기반 동작 임베딩 모델</b> 위에, 기술별 정책(Dribble, Trap, Move)이 <b>잠재 변수</b>를 출력한다. 관절을 직접 움직이는 게 아니라 "어떤 동작을 할지"를 고른다.</li>
+        <li>기술마다 보상을 따로 설계: Dribble은 맞춤 보상, Trap은 2단계 보상 + 공의 포물선 운동을 이용한 초기화, Move는 <b>DEGCL</b>(Data-Embedded Goal-Conditioned Latent Guidance) — 모션 데이터에 담긴 목표치를 보상에 함께 반영.</li>
+        <li><b>STI</b>(Skill Transition-Based Initialization): 학습할 때 다른 기술에서 넘어오는 상태로 시작시켜서, 기술 전환이 부드러워지게 한다.</li>
+        <li>유한 상태 기계(FSM)가 사용자 입력을 보고 어떤 기술을 쓸지 고른다.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>키보드 조종 데모가 "사용자 조작"의 축소판이야. 내 Ant는 명령이 250스텝마다 바뀌면서 전환을 배우는데, PhysicsFC는 전환을 STI로 <b>명시적으로</b> 다뤄. 메일에서 "다음엔 전환 품질을 측정해보고 싶다"고 이어 쓰기 좋은 지점.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>전체 구조 그림(어떤 정책이 무엇을 출력하는지), STI가 왜 필요한지, Move 정책의 DEGCL 보상 식. 시뮬레이터·알고리즘·코드 공개 여부는 초록에 없으니 본문에서 확인.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper lab" id="freemusco">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2511.14205" target="_blank" rel="noopener">FreeMusco: Motion-Free Learning of Latent Control for Morphology-Adaptive Locomotion in Musculoskeletal Characters</a></h3>
+      <span class="pill p-a">이번 주말</span>
+    </div>
+    <p class="p-meta">Kim, Yoonsang Lee &middot; SIGGRAPH Asia 2025 &middot; <a href="https://arxiv.org/abs/2511.14205" target="_blank" rel="noopener">arXiv 2511.14205</a> &middot; <a href="https://cgrhyu.github.io/publications/2025-freemusco.html" target="_blank" rel="noopener">프로젝트 페이지</a></p>
+    <p class="oneline">모션캡처 없이, 근육으로 움직이는 캐릭터가 걷는 법을 스스로 배운다. 몸 형태가 달라도 적응한다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>근골격 캐릭터는 근육이 많아 제어가 어렵고, 보통은 모션캡처 데이터에 기대서 학습한다. 데이터가 없는 몸(새로운 생물, 바뀐 체형)에는 쓸 수가 없다.</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li><b>모델 기반 RL</b>로 잠재 표현과 제어 정책을 함께 학습한다.</li>
+        <li>보행 목표 = 제어 + 균형 + 생체역학 항. 한 시점이 아니라 <b>시간 창 전체에서 평균 낸 손실</b>로 시뮬레이션 상태와 목표 상태를 비교한다.</li>
+        <li>목표 자세와 <b>에너지 수준을 랜덤화</b>해서 다양한 걸음걸이를 얻는다.</li>
+        <li>다운스트림 태스크: <b>목표 지점 이동, 경로 추종</b>. 사족형 "Chimanoid"와 인간형 캐릭터에서 실험.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>가장 가까운 논문이야. 모션 데이터 없이 보상만, 에너지 수준을 입력으로 받아 동작이 달라지게, 경로 추종으로 확인 — 세 가지 다 내 Ant 프로젝트에 들어 있어. 차이는 내 쪽이 모델 없는 PPO + 토크 제어 + 단순한 사족 로봇이라는 점. 이 차이를 README "한계" 칸에 정직하게 써두면 좋아.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>"에너지 수준"을 어떻게 정의하고 정책에 넣었는지(내 방식과 비교), 시간 평균 손실을 왜 썼는지, 왜 모델 기반 RL을 골랐는지.</p></div></div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <h2>이번 주말 배경 논문</h2>
+
+  <article class="paper" id="rudin">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2109.11978" target="_blank" rel="noopener">Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning</a></h3>
+      <span class="pill p-a">이번 주말</span>
+    </div>
+    <p class="p-meta">Nikita Rudin, David Hoeller, Philipp Reist, Marco Hutter &middot; CoRL 2021 &middot; <a href="https://arxiv.org/abs/2109.11978" target="_blank" rel="noopener">arXiv 2109.11978</a></p>
+    <p class="oneline">GPU 한 장에서 수천 개 환경을 동시에 돌려, 사족 로봇이 평지는 몇 분, 울퉁불퉁한 지형은 20분 만에 걷게 만들고 실제 로봇에도 옮겼다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>로봇 보행 RL은 학습이 며칠씩 걸렸다. 시뮬레이션을 GPU에서 대량 병렬로 돌리면 학습 시간을 얼마나 줄일 수 있나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>Isaac Gym으로 수천 개 로봇을 한 GPU에서 동시에 시뮬레이션, PPO 하이퍼파라미터를 대규모 병렬에 맞게 조정.</li>
+        <li>로봇은 <b>목표 속도 명령</b>(앞뒤·좌우 속도, 회전 속도)을 따르도록 학습. 추종 보상은 <code>exp(−오차²/σ)</code> 형태.</li>
+        <li>게임처럼 잘하면 더 어려운 지형으로 보내는 <b>지형 커리큘럼</b>.</li>
+        <li>ANYmal 실제 로봇에 그대로 배포(sim-to-real). 코드 공개(legged_gym).</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>내 보상의 속도 추종 항 <code>exp(−‖v − v_cmd‖² / 0.25)</code>이 이 논문 형태를 따랐어. 차이: 이 논문은 회전 속도도 명령하고 보상 항이 훨씬 많아(관절 가속도, 발 공중 시간 등). 그 표를 보면서 "내 걸음이 부자연스러운 이유"를 찾아볼 수 있어.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>보상 항 목록 표, 명령 샘플링 방식, 지형 커리큘럼. 실제 로봇과 군용 무인 지상로봇 쪽 관심과도 바로 이어지는 논문.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper" id="ppo">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">Proximal Policy Optimization Algorithms</a></h3>
+      <span class="pill p-a">이번 주말</span>
+    </div>
+    <p class="p-meta">John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov &middot; 2017 &middot; <a href="https://arxiv.org/abs/1707.06347" target="_blank" rel="noopener">arXiv 1707.06347</a></p>
+    <p class="oneline">정책을 한 번에 너무 많이 바꾸지 않도록 "잘라내기(clipping)"를 해서, 간단하면서도 안정적으로 학습하는 정책경사 알고리즘.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>정책경사는 업데이트 한 번이 너무 크면 정책이 망가진다. TRPO는 이걸 막지만 구현이 복잡하다. 더 단순하게 같은 효과를 낼 수 없나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>새 정책/옛 정책의 확률 비율 r을 <b>[1−ε, 1+ε]로 잘라서</b>(보통 ε = 0.2) 목적함수를 만든다. 비율이 범위를 벗어나면 더 밀어붙여도 이득이 없다.</li>
+        <li>그래서 같은 데이터로 미니배치 학습을 <b>여러 에폭</b> 반복해도 안전하다 → 데이터 효율이 좋아진다.</li>
+        <li>이점(advantage)은 GAE로 추정하고, 가치 함수와 함께 학습(actor-critic).</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p><code>train.py</code>의 <code>clip_range=0.2</code>, <code>n_epochs=10</code>, <code>gae_lambda=0.95</code>가 전부 이 논문에서 나온 설정이야. 학습 로그의 <code>clip_fraction</code>(잘린 비율)과 <code>approx_kl</code>(정책이 얼마나 바뀌었나)도 이걸 알면 읽혀.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>clipped surrogate objective 식과 그림, Algorithm 1. 수식을 다 따라가기보다 "왜 자르는지"만 확실히 이해하면 충분해.</p></div></div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <h2>인턴 시작 전까지</h2>
+
+  <article class="paper" id="yu">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/1801.08093" target="_blank" rel="noopener">Learning Symmetric and Low-Energy Locomotion</a></h3>
+      <span class="pill p-b">인턴 전</span>
+    </div>
+    <p class="p-meta">Wenhao Yu, Greg Turk, C. Karen Liu &middot; SIGGRAPH 2018 &middot; <a href="https://arxiv.org/abs/1801.08093" target="_blank" rel="noopener">arXiv 1801.08093</a></p>
+    <p class="oneline">모션캡처 없이도 RL로 좌우 대칭이고 에너지를 아끼는, 자연스러운 걸음을 만들 수 있다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>보상만으로 학습한 보행은 다리를 질질 끌거나 비대칭인 이상한 걸음이 되기 쉽다. 모션 데이터 없이 이걸 고칠 수 있나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>정책 손실에 <b>좌우 대칭 손실</b>을 추가: 거울상 상태에서는 거울상 행동을 하도록.</li>
+        <li><b>커리큘럼 학습</b>: 처음엔 가상의 보조 힘으로 넘어지지 않게 도와주고, 점점 줄여간다.</li>
+        <li>저에너지 보상과 함께 이족·사족 등 여러 몸에 적용.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>내 Ant의 걸음이 이상해 보이면 그 이유와 해법이 여기 있어. 다음 단계로 "대칭 손실을 넣어봤다"를 해보면 좋은 확장 실험이 돼.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>대칭 손실 정의, 보조 힘 커리큘럼, 결과 영상.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper" id="deepmimic">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/1804.02717" target="_blank" rel="noopener">DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills</a></h3>
+      <span class="pill p-b">인턴 전</span>
+    </div>
+    <p class="p-meta">Xue Bin Peng, Pieter Abbeel, Sergey Levine, Michiel van de Panne &middot; SIGGRAPH 2018 &middot; <a href="https://arxiv.org/abs/1804.02717" target="_blank" rel="noopener">arXiv 1804.02717</a></p>
+    <p class="oneline">모션캡처 클립 하나를 물리 시뮬레이션 캐릭터가 RL로 따라 하게 해서, 백덤블링 같은 고난도 동작까지 재현했다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>애니메이션은 자연스럽지만 물리를 무시하고, 물리 기반 제어는 정확하지만 동작이 어색하다. 둘을 합칠 수 있나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>보상 = 참조 동작과의 <b>모방 보상</b>(관절 자세·속도, 손발 위치, 무게중심) + 과제 보상(목표 방향 걷기, 공 던지기 등).</li>
+        <li><b>Reference State Initialization</b>: 클립의 아무 시점에서나 에피소드를 시작 → 어려운 구간도 고르게 배운다.</li>
+        <li><b>Early Termination</b>: 넘어지면 바로 종료 → 쓸데없는 데이터를 줄인다.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>내 Ant도 넘어지면 에피소드가 끝나는데(Early Termination), 그게 왜 학습에 중요한지 이 논문 실험이 보여줘. PhysicsFC의 STI는 RSI의 "기술 전환 버전"이라고 보면 이해가 쉬워.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>모방 보상 식, RSI·ET를 뺐을 때 결과 비교.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper" id="amp">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2104.02180" target="_blank" rel="noopener">AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control</a></h3>
+      <span class="pill p-b">인턴 전</span>
+    </div>
+    <p class="p-meta">Xue Bin Peng, Ze Ma, Pieter Abbeel, Sergey Levine, Angjoo Kanazawa &middot; SIGGRAPH 2021 &middot; <a href="https://arxiv.org/abs/2104.02180" target="_blank" rel="noopener">arXiv 2104.02180</a></p>
+    <p class="oneline">어떤 클립을 따라 할지 정해주지 않아도, 판별기가 "모션 데이터처럼 보이는지"를 점수로 줘서 스타일을 배운다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>DeepMimic은 상황마다 따라 할 클립을 골라줘야 해서, 여러 동작을 섞어 쓰기 번거롭다.</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>GAN처럼 <b>판별기</b>가 캐릭터의 상태 전이가 모션 데이터셋에서 나온 것 같은지 판단 → 그 점수를 <b>스타일 보상</b>으로 사용.</li>
+        <li>스타일 보상 + 과제 보상을 더해서, "과제는 해내면서 데이터처럼 자연스럽게" 움직이게 한다.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>내 Ant는 스타일 보상이 없어서 걸음이 어색할 수 있어. "모션 데이터가 있다면 AMP식 스타일 보상을 붙일 수 있다"가 자연스러운 다음 단계.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>판별기 보상을 어떻게 만드는지, 과제 보상과 섞는 비율.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper" id="ase">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2205.01906" target="_blank" rel="noopener">ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters</a></h3>
+      <span class="pill p-b">인턴 전</span>
+    </div>
+    <p class="p-meta">Xue Bin Peng, Yunrong Guo, Lina Halper, Sergey Levine, Sanja Fidler &middot; SIGGRAPH 2022 &middot; <a href="https://arxiv.org/abs/2205.01906" target="_blank" rel="noopener">arXiv 2205.01906</a></p>
+    <p class="oneline">여러 기술을 하나의 잠재 공간에 미리 학습해두고, 새 과제에서는 상위 정책이 "어떤 잠재 벡터를 줄지"만 배운다.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>새 과제마다 처음부터 학습하는 건 비효율적이다. 기술을 한 번 배워두고 재사용할 수 없나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li><b>저수준 정책</b>: 잠재 벡터 z를 받아 동작을 만든다. 대량의 모션 데이터로 적대적 모방(AMP식) + 비지도 기술 발견으로 미리 학습.</li>
+        <li><b>상위 정책</b>: 과제(목표 지점 가기, 타격 등)를 위해 z만 출력. 저수준 정책은 고정.</li>
+        <li>대규모 병렬 시뮬레이션으로 학습.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>내 경로 추종도 "상위 로직이 명령을 주고 하위 정책이 걷는" 2단 구조야. 차이는 내 명령은 사람이 정한 속도 값이고, ASE는 학습된 잠재 벡터라는 것. PhysicsFC가 "동작 임베딩 위에 기술별 정책"을 올리는 구조를 이해하려면 이 논문이 열쇠야.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>저수준/상위 정책 구조 그림, 잠재 공간을 왜 구(sphere) 위에 두는지.</p></div></div>
+    </div>
+  </article>
+
+  <article class="paper" id="maskedmimic">
+    <div class="p-head">
+      <h3 class="p-title"><a href="https://arxiv.org/abs/2409.14393" target="_blank" rel="noopener">MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting</a></h3>
+      <span class="pill p-b">인턴 전</span>
+    </div>
+    <p class="p-meta">Chen Tessler, Yunrong Guo, Ofir Nabati, Gal Chechik, Xue Bin Peng &middot; SIGGRAPH Asia 2024 &middot; <a href="https://arxiv.org/abs/2409.14393" target="_blank" rel="noopener">arXiv 2409.14393</a></p>
+    <p class="oneline">일부 조건만 주면(머리 위치만, 키프레임 몇 개만, 텍스트만) 나머지 전신 동작을 채워 넣는 하나의 범용 컨트롤러.</p>
+    <div class="rows">
+      <div class="row"><div class="label">푸는 문제</div><div class="val"><p>과제마다 컨트롤러를 따로 만드는 대신, 다양한 입력 형태를 하나의 정책으로 처리할 수 없나?</p></div></div>
+      <div class="row"><div class="label">핵심 아이디어</div><div class="val"><ul>
+        <li>제어를 <b>모션 인페인팅</b>으로 본다: 조건 중 일부를 가리고(mask) 나머지를 채우는 문제.</li>
+        <li>먼저 전신 동작 추적 정책을 학습하고, 이를 가려진 입력을 받는 정책으로 <b>증류(distillation)</b>한다.</li>
+        <li>VR 추적, 키프레임, 텍스트, 물체 상호작용을 하나의 정책으로.</li>
+      </ul></div></div>
+      <div class="row me"><div class="label">내 프로젝트와</div><div class="val"><p>직접적인 연결은 약하지만, 랩의 최신 작업(SIGGRAPH 2026 서핑 포스터)이 이걸 미리 학습된 저수준 정책으로 써. 인턴 들어가면 실제로 만질 가능성이 있는 도구야.</p></div></div>
+      <div class="row"><div class="label">읽을 때 볼 것</div><div class="val"><p>전체 파이프라인 그림, 마스킹 방식, 어떤 과제들을 한 정책으로 했는지.</p></div></div>
+    </div>
+  </article>
+</section>
+
+<footer>
+  랩 논문 두 편은 arXiv 초록과 랩 홈페이지·인터뷰 기사 기준으로 정리했고, 배경 논문은 널리 알려진 내용 위주로 정리했어. 세부 수식과 실험 설정은 원문으로 꼭 확인해. 2026-10-30 작성.
+</footer>
+
+</div>
+</body>
+</html>

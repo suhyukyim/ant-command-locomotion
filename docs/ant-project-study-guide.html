@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ant 프로젝트 공부 노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f4f1e8; --surface:#ffffff; --surface-2:#fbf9f3; --code-bg:#f7f4ec;
+    --ink:#1c2430; --ink-muted:#5c6570; --ink-faint:#80868e;
+    --accent:#c1531f; --accent-2:#2c6e6b;
+    --border:#ddd5c1; --border-strong:#c7bea6;
+    --tag-a-bg:#f0ded1; --tag-a-ink:#8a3c14;
+    --tag-b-bg:#dde7e4; --tag-b-ink:#205653;
+    --warn-bg:#fbf0dc; --warn-ink:#7a5410; --warn-border:#e6c98f;
+    --kw:#8a3c14; --cm:#7d858f; --st:#2c6e6b;
+    --shadow:0 1px 2px rgba(28,36,48,.04),0 8px 24px -12px rgba(28,36,48,.12);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#12161d; --surface:#1a212b; --surface-2:#1f2733; --code-bg:#161c25;
+      --ink:#e9e4d8; --ink-muted:#a3aab3; --ink-faint:#7d858f;
+      --accent:#e58a4f; --accent-2:#5fb0aa;
+      --border:#2b3340; --border-strong:#3a4453;
+      --tag-a-bg:#3a2718; --tag-a-ink:#f0b585;
+      --tag-b-bg:#1c2f2d; --tag-b-ink:#8fd0c9;
+      --warn-bg:#2f2615; --warn-ink:#e8c27a; --warn-border:#5a4520;
+      --kw:#f0b585; --cm:#7d858f; --st:#8fd0c9;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#12161d; --surface:#1a212b; --surface-2:#1f2733; --code-bg:#161c25;
+    --ink:#e9e4d8; --ink-muted:#a3aab3; --ink-faint:#7d858f;
+    --accent:#e58a4f; --accent-2:#5fb0aa;
+    --border:#2b3340; --border-strong:#3a4453;
+    --tag-a-bg:#3a2718; --tag-a-ink:#f0b585;
+    --tag-b-bg:#1c2f2d; --tag-b-ink:#8fd0c9;
+    --warn-bg:#2f2615; --warn-ink:#e8c27a; --warn-border:#5a4520;
+    --kw:#f0b585; --cm:#7d858f; --st:#8fd0c9;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 28px -14px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    font-size:15.5px;line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent-2)}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px;border-radius:3px}
+  .wrap{max-width:840px;margin:0 auto;padding:52px 24px 96px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 10px}
+  h1{font-size:clamp(28px,4.4vw,38px);font-weight:700;line-height:1.3;margin:0 0 10px;letter-spacing:-.01em;text-wrap:balance}
+  .subtitle{color:var(--ink-muted);margin:0 0 22px;max-width:64ch}
+  .part{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);
+    margin:64px 0 4px;display:flex;align-items:center;gap:10px}
+  .part::after{content:"";flex:1;height:1px;background:var(--border-strong)}
+  h2{font-size:24px;font-weight:700;margin:0 0 14px;text-wrap:balance}
+  h3{font-size:18px;font-weight:700;margin:40px 0 10px;display:flex;gap:10px;align-items:baseline;text-wrap:balance}
+  h3 .sn{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--accent);font-weight:600}
+  h4{font-size:15.5px;font-weight:600;margin:20px 0 6px}
+  p{margin:0 0 12px;max-width:68ch}
+  ul,ol{margin:0 0 12px;padding-left:22px;max-width:68ch}
+  li{margin-bottom:5px}
+  b{font-weight:600}
+  .muted{color:var(--ink-muted)}
+  code{font-family:'IBM Plex Mono',monospace;font-size:13px;background:var(--code-bg);border:1px solid var(--border);padding:1px 5px;border-radius:4px}
+
+  .toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 20px;box-shadow:var(--shadow)}
+  .toc .t{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+  .toc ol{margin:0;padding-left:20px}
+  .toc li{margin:2px 0}
+  .toc a{text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+
+  .fig{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 14px 10px;overflow-x:auto;margin:12px 0 6px}
+  .fig svg{display:block;width:100%;height:auto;min-width:640px}
+  .fig svg .box{fill:var(--surface-2);stroke:var(--border-strong);stroke-width:1.3}
+  .fig svg .box.hot{fill:var(--tag-a-bg);stroke:var(--accent)}
+  .fig svg .box.me{fill:var(--tag-b-bg);stroke:var(--accent-2)}
+  .fig svg text{fill:var(--ink);font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px}
+  .fig svg text.b{font-weight:600}
+  .fig svg text.sub{fill:var(--ink-muted);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .fig svg text.lbl{fill:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .fig svg text.lbl2{fill:var(--accent-2);font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+  .fig svg .edge{stroke:var(--ink-faint);stroke-width:1.4;fill:none}
+  .fig svg .edge.hot{stroke:var(--accent)}
+  .fig svg .edge.me{stroke:var(--accent-2);stroke-dasharray:5 4}
+  .fig svg .arrow{fill:var(--ink-faint)}
+  .fig svg .arrow.hot{fill:var(--accent)}
+  .fig svg .arrow.me{fill:var(--accent-2)}
+  .figcap{font-size:13.5px;color:var(--ink-muted);margin:4px 2px 16px}
+
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px;background:var(--surface);margin:10px 0 16px}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  th{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ink-faint);font-weight:600;white-space:nowrap}
+  td.num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  .formula{font-family:'IBM Plex Mono',monospace;font-size:14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 16px;margin:10px 0 14px;overflow-x:auto;white-space:pre;line-height:1.7}
+
+  pre.code{background:var(--code-bg);border:1px solid var(--border);border-radius:10px;margin:12px 0 14px;padding:12px 0;overflow-x:auto;font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.65;counter-reset:ln var(--start,0)}
+  pre.code .l{display:block;padding:0 16px 0 0;white-space:pre}
+  pre.code .l::before{counter-increment:ln;content:counter(ln);display:inline-block;width:42px;padding-right:14px;text-align:right;color:var(--ink-faint);user-select:none}
+  pre.code .k{color:var(--kw);font-weight:500}
+  pre.code .c{color:var(--cm);font-style:italic}
+  pre.code .s{color:var(--st)}
+  .file{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);margin:18px 0 -6px}
+
+  .callout{border-radius:10px;padding:14px 18px;margin:14px 0 18px;font-size:14.5px}
+  .callout p:last-child,.callout ul:last-child,.callout ol:last-child{margin-bottom:0}
+  .callout .ct{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .callout.me{background:var(--tag-b-bg)}
+  .callout.me .ct{color:var(--tag-b-ink)}
+  .callout.warn{background:var(--warn-bg);border:1px solid var(--warn-border)}
+  .callout.warn .ct{color:var(--warn-ink)}
+  .callout.ex{background:var(--surface);border:1px solid var(--border)}
+  .callout.ex .ct{color:var(--accent)}
+
+  .check{margin:16px 0 8px;border:1px dashed var(--border-strong);border-radius:10px;background:var(--surface);padding:12px 16px}
+  .check .ct{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:6px}
+  details{border-top:1px solid var(--border);padding:8px 0}
+  details:first-of-type{border-top:none}
+  summary{cursor:pointer;font-weight:500;list-style-position:outside;margin-left:16px}
+  details[open] summary{margin-bottom:6px}
+  details .ans{color:var(--ink-muted);font-size:14.5px;padding-left:16px;border-left:2px solid var(--accent-2);margin-left:4px}
+
+  .prompt{font-family:'IBM Plex Mono',monospace;font-size:13.5px;background:var(--code-bg);border:1px solid var(--border);border-left:3px solid var(--accent-2);border-radius:0 8px 8px 0;padding:10px 14px;margin:8px 0 14px;white-space:pre-wrap}
+  footer{margin-top:56px;padding-top:18px;border-top:1px solid var(--border);font-size:12.5px;color:var(--ink-faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="eyebrow">Study Guide · 2026-10-31</p>
+<h1>Ant 프로젝트 공부 노트</h1>
+<p class="subtitle">1단계는 프로젝트 전체가 어떻게 돌아가는지, 2단계는 핵심 파일 <code>envs/command_ant.py</code>를 블록 단위로 한 줄씩. 블록마다 끝에 확인 질문이 있으니 답을 먼저 생각해보고 펼쳐봐.</p>
+
+<div class="toc">
+  <div class="t">목차</div>
+  <ol>
+    <li><a href="#p1">1단계 · 큰 그림</a>
+      <ol>
+        <li><a href="#s-what">이 프로젝트가 하는 일</a></li>
+        <li><a href="#s-loop">강화학습 한 바퀴</a></li>
+        <li><a href="#s-obs">정책이 보는 것, 내는 것</a></li>
+        <li><a href="#s-reward">점수 매기는 법 (보상)</a></li>
+        <li><a href="#s-train">학습은 어떻게 진행되나</a></li>
+        <li><a href="#s-files">파일 지도</a></li>
+        <li><a href="#s-status">지금 상태</a></li>
+      </ol>
+    </li>
+    <li><a href="#p2">2단계 · command_ant.py 한 줄씩</a></li>
+    <li><a href="#p3">3단계는 VS Code Claude에서</a></li>
+  </ol>
+</div>
+
+<!-- ============================ PART 1 ============================ -->
+<div class="part" id="p1">1단계 · 큰 그림</div>
+<h2>이 프로젝트는 뭘 하나</h2>
+
+<h3 id="s-what"><span class="sn">1.1</span>한 문장으로</h3>
+<p><b>다리 4개짜리 가상 로봇(Ant)이 "이 방향으로, 이 속도로, 이 정도 힘을 써서 걸어"라는 명령을 따르도록, 신경망 하나를 시행착오로 학습시키는 프로젝트</b>야.</p>
+<ul>
+  <li><b>Ant</b>: MuJoCo 물리 시뮬레이터 안의 로봇. 몸통 하나에 다리 4개, 다리마다 관절 2개(엉덩이·발목) → <b>모터 8개</b>.</li>
+  <li><b>처음엔 아무것도 몰라.</b> 신경망 가중치가 랜덤이라 모터에 아무렇게나 힘을 주고, 버둥거리다 뒤집어져.</li>
+  <li><b>점수(보상)</b>를 매겨주면, 점수를 높이는 쪽으로 신경망이 조금씩 바뀌어. 이걸 수백만 번 반복하는 게 강화학습이야.</li>
+  <li>미리 녹화한 동작(모션캡처)을 흉내 내는 게 아니라, <b>점수만 보고 걷는 법을 스스로 찾아</b>. 그래서 걸음이 생물처럼 자연스럽지 않고 좀 징그러울 수 있어.</li>
+</ul>
+
+<h3 id="s-loop"><span class="sn">1.2</span>강화학습 한 바퀴</h3>
+<div class="fig">
+  <svg viewBox="0 0 760 330" role="img" aria-label="강화학습 루프. 정책이 관측 108개를 받아 행동 8개를 내고, MuJoCo가 0.05초 시뮬레이션해 원래 관측 105개와 몸통 위치를 주면, CommandAnt 래퍼가 속도와 보상을 계산하고 명령 3개를 붙여 다시 정책에 준다. 아래에서 PPO가 12,288개 경험을 모아 정책을 업데이트한다.">
+    <defs>
+      <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker>
+      <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow hot" d="M0,0 L10,5 L0,10 z"/></marker>
+      <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow me" d="M0,0 L10,5 L0,10 z"/></marker>
+    </defs>
+    <!-- policy -->
+    <rect class="box hot" x="20" y="60" width="170" height="74" rx="10"/>
+    <text class="b" x="105" y="90" text-anchor="middle">정책 (신경망)</text>
+    <text class="sub" x="105" y="110" text-anchor="middle">256 × 256 MLP</text>
+    <!-- mujoco -->
+    <rect class="box" x="300" y="60" width="170" height="74" rx="10"/>
+    <text class="b" x="385" y="90" text-anchor="middle">MuJoCo · Ant-v5</text>
+    <text class="sub" x="385" y="110" text-anchor="middle">0.05초 물리 계산</text>
+    <!-- wrapper -->
+    <rect class="box me" x="570" y="60" width="170" height="74" rx="10"/>
+    <text class="b" x="655" y="90" text-anchor="middle">CommandAnt 래퍼</text>
+    <text class="sub" x="655" y="110" text-anchor="middle">command_ant.py</text>
+    <!-- edges -->
+    <path class="edge hot" d="M190,97 L300,97" marker-end="url(#a2)"/>
+    <text class="lbl" x="245" y="86" text-anchor="middle">행동 8개</text>
+    <text class="sub" x="245" y="118" text-anchor="middle">관절 토크</text>
+    <path class="edge" d="M470,97 L570,97" marker-end="url(#a1)"/>
+    <text class="sub" x="520" y="86" text-anchor="middle">관측 105개</text>
+    <text class="sub" x="520" y="118" text-anchor="middle">+ 몸통 위치</text>
+    <path class="edge me" d="M655,60 C655,30 105,30 105,58" marker-end="url(#a3)"/>
+    <text class="lbl2" x="380" y="22" text-anchor="middle">관측 108개 (= 105 + 명령 3개) · 보상 1개</text>
+    <!-- ppo -->
+    <rect class="box" x="240" y="232" width="290" height="74" rx="10"/>
+    <text class="b" x="385" y="262" text-anchor="middle">PPO (학습 알고리즘)</text>
+    <text class="sub" x="385" y="282" text-anchor="middle">경험 12,288개 모일 때마다 정책 수정</text>
+    <path class="edge" d="M655,134 C655,200 600,268 530,268" marker-end="url(#a1)"/>
+    <text class="sub" x="612" y="196" text-anchor="end">(관측, 행동, 보상) 기록</text>
+    <path class="edge hot" d="M240,268 C160,268 105,200 105,136" marker-end="url(#a2)"/>
+    <text class="lbl" x="160" y="200" text-anchor="start">가중치 업데이트</text>
+  </svg>
+</div>
+<p class="figcap">위쪽 루프가 "한 스텝"(0.05초)이야. 이걸 12개 환경에서 동시에 1,024번씩 돌리면 경험 12,288개가 모이고, 그때마다 아래 PPO가 정책을 한 번 고쳐.</p>
+<ol>
+  <li><b>정책</b>이 지금 상황(관측 108개 숫자)을 보고 모터 8개에 줄 힘을 정해.</li>
+  <li><b>MuJoCo</b>가 그 힘으로 0.05초 동안 물리를 계산해 (내부적으로 0.01초 × 5번).</li>
+  <li><b>CommandAnt 래퍼</b>(내가 만든 부분)가 몸통이 얼마나 움직였는지로 <b>속도</b>를 재고, 명령과 비교해 <b>보상</b>을 매기고, 다음 관측에 <b>명령</b>을 붙여서 정책에 돌려줘.</li>
+  <li>이걸 반복하다 넘어지거나(몸통 높이가 0.2–1.0 m 밖) 1,000스텝(50초)이 되면 에피소드 끝, 처음부터 다시.</li>
+</ol>
+
+<h3 id="s-obs"><span class="sn">1.3</span>정책이 보는 것, 내는 것</h3>
+<h4>보는 것: 관측 108개</h4>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>구간</th><th>개수</th><th>내용</th><th>누가 만드나</th></tr></thead>
+    <tbody>
+      <tr><td>몸통 높이 + 기울기</td><td class="num">5</td><td>높이 z 1개 + 몸통 방향 쿼터니언 4개</td><td rowspan="4">Ant-v5 기본</td></tr>
+      <tr><td>관절 각도</td><td class="num">8</td><td>엉덩이 4 + 발목 4</td></tr>
+      <tr><td>속도</td><td class="num">14</td><td>몸통 선속도 3 + 각속도 3 + 관절 속도 8</td></tr>
+      <tr><td>접촉력</td><td class="num">78</td><td>몸 부위 13개 × 힘·토크 6개 (대부분 0)</td></tr>
+      <tr><td><b>속도 명령</b></td><td class="num">2</td><td>목표 속도 (vx, vy)를 <b>몸통 기준</b>으로 돌린 것</td><td rowspan="2"><b>내 래퍼</b></td></tr>
+      <tr><td><b>에너지 수준</b></td><td class="num">1</td><td>0 = 힘 아껴, 1 = 힘 써도 돼</td></tr>
+    </tbody>
+    <caption style="caption-side:bottom;text-align:left;font-size:12.5px;color:var(--ink-faint);padding:8px 13px">몸통의 x, y 위치(어디에 있는지)는 기본 관측에서 빠져 있어. "어디 있나"가 아니라 "어떻게 움직이나"만 보고 걷게 하려고.</caption>
+  </table>
+</div>
+<h4>내는 것: 행동 8개</h4>
+<p>각 모터에 줄 값, 범위는 −1 ~ 1. MuJoCo에서 150배(기어비)가 곱해져 실제 토크가 돼. 정책은 정확히는 "평균과 표준편차"를 내고 거기서 랜덤하게 뽑아. 학습 초기엔 표준편차가 커서 이것저것 시도해보고(탐험), 학습이 될수록 줄어들어.</p>
+
+<h3 id="s-reward"><span class="sn">1.4</span>점수 매기는 법 (보상)</h3>
+<p>매 스텝(0.05초)마다 이 점수를 줘:</p>
+<div class="formula">보상 = 2.0 × 속도추종점수  +  1.0 × 살아있음  −  w(e) × 힘쓴양
+
+  속도추종점수 = exp( −(속도오차²) / 0.25 )      ← 0~1, 명령대로 가면 1
+  살아있음     = 넘어지지 않았으면 1, 넘어졌으면 0
+  힘쓴양       = 행동 8개 각각 제곱해서 더한 것   ← 0~8
+  w(e)        = 0.02 + (1 − e) × 0.23           ← e=1이면 0.02, e=0이면 0.25</div>
+<div class="callout ex">
+  <div class="ct">숫자로 한 번 계산해보기</div>
+  <p>명령: 앞으로 1 m/s (1, 0), 에너지 e = 0.5. 실제로 (0.8, 0.1) m/s로 움직였고 힘쓴양 = 2.0이라면:</p>
+  <ul>
+    <li>속도오차² = (0.8−1)² + (0.1−0)² = 0.04 + 0.01 = 0.05 → 속도추종점수 = exp(−0.05/0.25) = exp(−0.2) ≈ <b>0.82</b> → × 2.0 = <b>1.64</b></li>
+    <li>살아있음 = <b>1.0</b></li>
+    <li>w(0.5) = 0.02 + 0.5 × 0.23 = 0.135 → 0.135 × 2.0 = <b>0.27</b></li>
+    <li>합계 = 1.64 + 1.0 − 0.27 = <b>2.37</b></li>
+  </ul>
+  <p>한 스텝 최고점은 약 3.0(완벽 추종 + 생존 + 힘 0). 1,000스텝 버티면 에피소드 점수가 최대 약 3,000.</p>
+</div>
+<p><b>왜 이렇게 생겼나:</b></p>
+<ul>
+  <li><b>exp(−오차²/0.25)</b>: 오차가 0이면 1, 커지면 0으로 부드럽게 떨어져. 오차 0.5 m/s면 0.37, 1 m/s면 0.02. Rudin et al.(2021)과 같은 형태야.</li>
+  <li><b>살아있음 1.0</b>: 넘어지면 남은 스텝의 점수를 다 잃으니까, "안 넘어지기"가 자동으로 중요해져.</li>
+  <li><b>w(e)</b>: 에너지 수준이 낮을수록 힘쓴 걸 더 크게 깎아. 같은 정책이 e 값에 따라 다르게 걸어야 점수가 높아지니까, e를 보고 걸음을 바꾸는 법을 배우게 돼.</li>
+</ul>
+
+<h3 id="s-train"><span class="sn">1.5</span>학습은 어떻게 진행되나</h3>
+<ol>
+  <li><code>train.py</code>가 Ant 환경 12개를 동시에 띄워 (CPU 코어마다 하나씩).</li>
+  <li>각 환경에서 1,024스텝씩 → 경험 12,288개 수집.</li>
+  <li>PPO가 이 경험으로 "점수 높았던 행동은 더 자주, 낮았던 행동은 덜" 하도록 정책을 수정. 이때 <b>한 번에 너무 많이 바꾸지 않게</b> 제한하는 게 PPO의 핵심이야.</li>
+  <li>2–3을 반복. 500만 스텝이면 약 407번 반복, 노트북에서 약 80분.</li>
+  <li>끝나면 <code>runs/main/</code>에 정책(<code>final_model.zip</code>)과 관측 정규화 통계(<code>vecnormalize.pkl</code>) 저장.</li>
+</ol>
+<p><b>정규화(VecNormalize)는 왜?</b> 관측 108개는 크기가 제각각이야 (각도는 ±3, 속도는 ±10, 접촉력은 거의 0). 신경망은 입력 크기가 비슷해야 잘 배워서, 평균 0·표준편차 1이 되도록 맞춰줘. 학습 때 쓴 평균·표준편차를 데모 때도 똑같이 써야 해서 따로 저장하는 거야.</p>
+
+<h3 id="s-files"><span class="sn">1.6</span>파일 지도</h3>
+<div class="fig">
+  <svg viewBox="0 0 760 250" role="img" aria-label="파일 지도. envs/command_ant.py가 환경을 정의하고 train.py가 이를 사용해 runs/main 폴더에 모델과 정규화 통계를 저장한다. policy_utils.py가 이를 불러오고 evaluate.py, path_follow.py, keyboard_demo.py가 사용한다.">
+    <defs>
+      <marker id="b1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrow" d="M0,0 L10,5 L0,10 z"/></marker>
+    </defs>
+    <rect class="box me" x="20" y="20" width="200" height="56" rx="10"/>
+    <text class="b" x="120" y="44" text-anchor="middle">envs/command_ant.py</text>
+    <text class="sub" x="120" y="63" text-anchor="middle">환경 + 보상 (2단계)</text>
+    <rect class="box hot" x="20" y="150" width="200" height="56" rx="10"/>
+    <text class="b" x="120" y="174" text-anchor="middle">train.py</text>
+    <text class="sub" x="120" y="193" text-anchor="middle">PPO 학습</text>
+    <rect class="box" x="280" y="150" width="190" height="56" rx="10"/>
+    <text class="b" x="375" y="174" text-anchor="middle">runs/main/</text>
+    <text class="sub" x="375" y="193" text-anchor="middle">모델 + 정규화 통계</text>
+    <rect class="box" x="280" y="20" width="190" height="56" rx="10"/>
+    <text class="b" x="375" y="44" text-anchor="middle">policy_utils.py</text>
+    <text class="sub" x="375" y="63" text-anchor="middle">모델 불러와 행동 뽑기</text>
+    <rect class="box" x="540" y="8" width="200" height="50" rx="10"/>
+    <text class="b" x="640" y="30" text-anchor="middle">evaluate.py</text>
+    <text class="sub" x="640" y="47" text-anchor="middle">그래프</text>
+    <rect class="box" x="540" y="98" width="200" height="50" rx="10"/>
+    <text class="b" x="640" y="120" text-anchor="middle">path_follow.py</text>
+    <text class="sub" x="640" y="137" text-anchor="middle">경로 추종 + GIF</text>
+    <rect class="box" x="540" y="188" width="200" height="50" rx="10"/>
+    <text class="b" x="640" y="210" text-anchor="middle">keyboard_demo.py</text>
+    <text class="sub" x="640" y="227" text-anchor="middle">키보드 조종 창</text>
+    <path class="edge" d="M120,76 L120,150" marker-end="url(#b1)"/>
+    <path class="edge" d="M220,178 L280,178" marker-end="url(#b1)"/>
+    <path class="edge" d="M375,150 L375,76" marker-end="url(#b1)"/>
+    <path class="edge" d="M470,48 C505,48 505,33 540,33" marker-end="url(#b1)"/>
+    <path class="edge" d="M470,48 C505,48 505,123 540,123" marker-end="url(#b1)"/>
+    <path class="edge" d="M470,48 C505,48 505,213 540,213" marker-end="url(#b1)"/>
+    <path class="edge" d="M220,48 C250,48 250,40 280,40" marker-end="url(#b1)"/>
+  </svg>
+</div>
+<p class="figcap">공부 순서도 이 화살표를 따라가면 돼: command_ant.py → train.py → policy_utils.py → 나머지 세 개. 세 데모 파일도 전부 command_ant.py의 환경을 써.</p>
+
+<h3 id="s-status"><span class="sn">1.7</span>지금 상태</h3>
+<div class="callout warn">
+  <div class="ct">v1 학습은 실패, v2 대기 중</div>
+  <ul>
+    <li>v1(80분)은 학습 도중 무너졌어. 로그의 <code>approx_kl 4.11</code>이 정상(약 0.02)의 200배. 정책이 한 번에 너무 크게 바뀐 거야.</li>
+    <li>새로 보낸 <code>train.py</code>로 바꾸고 다시 학습하면 돼. 원인 분석은 논문 노트의 PPO 페이지 7번 참고.</li>
+    <li>망가진 모델이 징그럽게 움직이는 건 지금 키보드 데모로 이미 확인했지.</li>
+  </ul>
+</div>
+
+<div class="check">
+  <div class="ct">1단계 확인 질문</div>
+  <details><summary>정책은 몇 개의 숫자를 받아서 몇 개의 숫자를 내나? 각각 뭔가?</summary><div class="ans">108개를 받아서(Ant 기본 관측 105 + 속도 명령 2 + 에너지 수준 1) 8개를 냄(모터 8개에 줄 토크, −1~1).</div></details>
+  <details><summary>Ant가 명령 방향과 정반대로 1 m/s로 걸으면 속도추종점수는 대략 얼마?</summary><div class="ans">명령 (1,0), 실제 (−1,0)이면 오차² = 4 → exp(−4/0.25) = exp(−16) ≈ 0. 사실상 0점이야. 가만히 서 있으면 오차² = 1 → exp(−4) ≈ 0.02. 둘 다 거의 0이라 "방향이 틀린 것"과 "안 움직이는 것"을 거의 구분 못 해. 학습 초반이 어려운 이유 중 하나야.</div></details>
+  <details><summary>에너지 수준 e를 0에서 1로 바꾸면 보상의 어느 부분이 달라지나?</summary><div class="ans">제어 비용 가중치 w(e)만 바뀌어. 0.25 → 0.02로 줄어서, 힘을 많이 써도 덜 깎여.</div></details>
+  <details><summary>vecnormalize.pkl을 안 불러오고 모델만 쓰면 어떻게 될까?</summary><div class="ans">정책은 정규화된 입력(평균 0, 표준편차 1 근처)에 맞춰 학습됐는데 원래 크기의 숫자가 들어가니까, 엉뚱한 행동을 내. 학습이 잘 됐어도 데모에선 넘어질 거야.</div></details>
+</div>
+
+<!-- ============================ PART 2 ============================ -->
+<div class="part" id="p2">2단계 · command_ant.py 한 줄씩</div>
+<h2>환경과 보상을 만드는 파일</h2>
+<p>전체 177줄. 왼쪽 숫자는 실제 파일의 줄 번호야. VS Code에서 같이 열어놓고 보면 좋아. 이 파일이 하는 일은 딱 세 가지: <b>① 명령 정하기 ② 관측에 명령 붙이기 ③ 보상 계산하기</b>.</p>
+
+<h3><span class="sn">A</span>파일 설명과 import (1–19줄)</h3>
+<pre class="code" style="--start:11"><span class="l"></span><span class="l"><span class="k">from</span> __future__ <span class="k">import</span> annotations</span><span class="l"></span><span class="l"><span class="k">import</span> math</span><span class="l"></span><span class="l"><span class="k">import</span> gymnasium <span class="k">as</span> gym</span><span class="l"><span class="k">import</span> numpy <span class="k">as</span> np</span><span class="l"><span class="k">from</span> gymnasium <span class="k">import</span> spaces</span></pre>
+<ul>
+  <li>1–11줄은 파일 설명(독스트링). 이 파일이 뭘 하는지 요약이 들어 있어.</li>
+  <li><code>from __future__ import annotations</code>: <code>int | None</code> 같은 타입 표기를 구버전 파이썬에서도 쓸 수 있게 해주는 줄. 동작과는 상관없어.</li>
+  <li><b>gymnasium</b>: 강화학습 환경의 표준 인터페이스. <code>reset()</code>으로 시작하고 <code>step(행동)</code>으로 한 스텝 진행하는 규칙을 정해둔 라이브러리. Ant-v5도 여기 들어 있어.</li>
+  <li><b>spaces</b>: "관측/행동이 몇 개의 숫자고 범위가 얼마인지"를 표현하는 도구.</li>
+</ul>
+
+<h3><span class="sn">B</span>몸통이 어느 쪽을 보는지 계산 (22–25줄)</h3>
+<pre class="code" style="--start:21"><span class="l"><span class="k">def</span> yaw_from_quat(q: np.ndarray) -&gt; float:</span><span class="l">    <span class="s">"""MuJoCo 쿼터니언 (w, x, y, z)에서 yaw 각도를 구한다."""</span></span><span class="l">    w, x, y, z = q</span><span class="l">    <span class="k">return</span> math.atan2(2.0 * (w * z + x * y), 1.0 - 2.0 * (y * y + z * z))</span></pre>
+<ul>
+  <li><b>쿼터니언</b>: 3D 회전을 숫자 4개로 표현하는 방법. MuJoCo는 몸통 방향을 이걸로 저장해.</li>
+  <li><b>yaw</b>: 위에서 내려다봤을 때 몸통이 바라보는 방향 각도 (+x축 기준, 라디안). 고개를 좌우로 돌리는 각도라고 생각하면 돼.</li>
+  <li>이 식은 쿼터니언 → yaw 변환의 표준 공식이야. 외울 필요 없고 "쿼터니언에서 바라보는 방향만 뽑는다"만 알면 돼.</li>
+</ul>
+
+<h3><span class="sn">C</span>래퍼 클래스와 설정값 (28–61줄)</h3>
+<pre class="code" style="--start:27"><span class="l"><span class="k">class</span> CommandAnt(gym.Wrapper):</span><span class="l">    <span class="s">"""속도 명령과 에너지 수준을 관측에 붙이고, 보상을 직접 계산하는 래퍼."""</span></span><span class="l"></span><span class="l">    <span class="k">def</span> __init__(self, env, max_speed=1.5, stand_prob=0.1,</span><span class="l">                 resample_interval=250, tracking_weight=2.0,</span><span class="l">                 tracking_sigma=0.25, alive_weight=1.0,</span><span class="l">                 ctrl_weight_min=0.02, ctrl_weight_max=0.25):</span></pre>
+<p class="muted" style="font-size:14px">(31–42줄의 인자 목록을 보기 좋게 줄였어. 실제 파일엔 한 줄에 하나씩, 타입 표기와 함께 있어.)</p>
+<p><b>Wrapper(래퍼)</b>는 이미 있는 환경(Ant-v5)을 감싸서 일부만 바꾸는 방식이야. Ant의 물리·몸·관측은 그대로 쓰고, <b>관측에 명령을 붙이는 것</b>과 <b>보상 계산</b>만 내 방식으로 바꿔. 처음부터 환경을 만들 필요가 없어.</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>설정</th><th>값</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td><code>max_speed</code></td><td class="num">1.5</td><td>학습 때 뽑는 목표 속도의 최댓값 [m/s]</td></tr>
+      <tr><td><code>stand_prob</code></td><td class="num">0.1</td><td>10% 확률로 "가만히 서 있어" 명령 (속도 0)</td></tr>
+      <tr><td><code>resample_interval</code></td><td class="num">250</td><td>250스텝(12.5초)마다 명령을 새로 뽑음</td></tr>
+      <tr><td><code>tracking_weight</code></td><td class="num">2.0</td><td>속도추종점수에 곱하는 값</td></tr>
+      <tr><td><code>tracking_sigma</code></td><td class="num">0.25</td><td>오차에 얼마나 엄격한지. 작을수록 엄격</td></tr>
+      <tr><td><code>alive_weight</code></td><td class="num">1.0</td><td>안 넘어진 스텝마다 주는 점수</td></tr>
+      <tr><td><code>ctrl_weight_min / max</code></td><td class="num">0.02 / 0.25</td><td>힘쓴 양에 대한 벌점 가중치 범위</td></tr>
+    </tbody>
+  </table>
+</div>
+<pre class="code" style="--start:52"><span class="l">        base = env.observation_space</span><span class="l">        low = np.concatenate([base.low, [-np.inf, -np.inf, 0.0]]).astype(np.float32)</span><span class="l">        high = np.concatenate([base.high, [np.inf, np.inf, 1.0]]).astype(np.float32)</span><span class="l">        self.observation_space = spaces.Box(low=low, high=high, dtype=np.float32)</span><span class="l"></span><span class="l">        self.command = np.zeros(2)  <span class="c"># 월드 좌표계 목표 속도</span></span><span class="l">        self.energy = 0.5</span><span class="l">        self.fixed = False  <span class="c"># True면 명령을 랜덤으로 바꾸지 않는다 (평가·데모용)</span></span><span class="l">        self._steps = 0</span></pre>
+<ul>
+  <li><b>53–56줄</b>: 관측이 105개에서 108개로 늘었다고 알려주는 부분. 추가된 3개의 범위는 속도 명령 2개(제한 없음), 에너지 1개(0~1). 이걸 안 하면 PPO가 입력이 105개인 줄 알고 신경망을 잘못 만들어.</li>
+  <li><b>58–61줄</b>: 현재 명령, 에너지, 고정 여부, 스텝 카운터. <code>fixed</code>가 핵심이야. 학습 땐 False(명령을 랜덤으로 계속 바꿈), 키보드 데모·평가 땐 True(사람이 준 명령 유지).</li>
+</ul>
+<div class="check">
+  <div class="ct">확인 질문</div>
+  <details><summary>래퍼를 안 쓰고 Ant-v5를 그대로 쓰면 뭐가 문제일까?</summary><div class="ans">Ant-v5 기본 보상은 "+x 방향으로 빨리 가기"뿐이라, 방향·속도·에너지 명령을 따르는 걸 못 배워. 관측에 명령도 없으니까 정책은 무슨 명령을 받았는지조차 몰라.</div></details>
+  <details><summary>tracking_sigma를 0.25에서 1.0으로 키우면 학습이 어떻게 달라질까?</summary><div class="ans">덜 엄격해져. 오차 1 m/s에서도 exp(−1) ≈ 0.37점을 줘서, 초반에 "조금이라도 맞는 방향"으로 가는 걸 더 잘 칭찬해줘(학습 신호가 풍부). 대신 정확하게 맞추려는 압력이 약해져서 최종 정확도가 떨어질 수 있어.</div></details>
+</div>
+
+<h3><span class="sn">D</span>명령 정하기 (66–81줄)</h3>
+<pre class="code" style="--start:65"><span class="l">    <span class="k">def</span> set_command(self, vx, vy, energy=None) -&gt; None:</span><span class="l">        <span class="s">"""외부에서 명령을 고정한다. 이후 랜덤 재샘플링을 하지 않는다."""</span></span><span class="l">        self.command = np.array([vx, vy], dtype=np.float64)</span><span class="l">        <span class="k">if</span> energy <span class="k">is not</span> None:</span><span class="l">            self.energy = float(np.clip(energy, 0.0, 1.0))</span><span class="l">        self.fixed = True</span><span class="l"></span><span class="l">    <span class="k">def</span> _sample_command(self) -&gt; None:</span><span class="l">        rng = self.np_random</span><span class="l">        <span class="k">if</span> rng.random() &lt; self.stand_prob:</span><span class="l">            self.command = np.zeros(2)</span><span class="l">        <span class="k">else</span>:</span><span class="l">            speed = rng.uniform(0.2, self.max_speed)</span><span class="l">            angle = rng.uniform(-math.pi, math.pi)</span><span class="l">            self.command = speed * np.array([math.cos(angle), math.sin(angle)])</span><span class="l">        self.energy = float(rng.uniform(0.0, 1.0))</span></pre>
+<ul>
+  <li><b><code>set_command</code></b>: 데모·평가용. 사람이 "이 속도로 가"라고 직접 정해. <code>np.clip</code>은 에너지가 0~1을 벗어나지 않게 잘라주는 함수. 마지막 줄에서 <code>fixed = True</code>로 바꿔서, 이후로는 랜덤 명령이 덮어쓰지 않아.</li>
+  <li><b><code>_sample_command</code></b>: 학습용. 랜덤 명령을 만들어.
+    <ul>
+      <li>10% 확률: 속도 0 (서 있기)</li>
+      <li>90% 확률: 속력 0.2~1.5 m/s, 방향 −180°~180° 중 랜덤 → <code>(cos, sin)</code>으로 x, y 성분으로 바꿈</li>
+      <li>에너지도 0~1 사이 랜덤</li>
+    </ul>
+  </li>
+  <li><b><code>self.np_random</code></b>: gymnasium이 제공하는 난수 생성기. <code>reset(seed=...)</code>로 시드를 정하면 같은 랜덤 명령이 재현돼서 실험을 다시 돌려볼 수 있어.</li>
+</ul>
+<div class="callout me">
+  <div class="ct">왜 이렇게 다양하게 뽑나</div>
+  <p>학습 때 본 명령만 잘 따를 수 있어. 앞으로만 가는 명령으로 학습하면 옆이나 뒤로는 못 가. 모든 방향·속도·에너지 조합을 골고루 보여줘야 하나의 정책이 다 처리해. FreeMusco가 목표 속도·자세·에너지를 랜덤화한 것과 같은 발상이야.</p>
+</div>
+<div class="check">
+  <div class="ct">확인 질문</div>
+  <details><summary>angle = π/2 (90°), speed = 1이면 command는?</summary><div class="ans">(cos 90°, sin 90°) × 1 = (0, 1). +y 방향(위에서 봤을 때 왼쪽)으로 1 m/s.</div></details>
+  <details><summary>stand_prob을 0으로 만들면 무슨 일이 생길까?</summary><div class="ans">"가만히 서 있기" 명령을 한 번도 안 보게 돼서, 키보드 데모에서 x(정지)를 눌러도 제자리에 못 서고 계속 꼼지락거리거나 넘어질 수 있어.</div></details>
+</div>
+
+<h3><span class="sn">E</span>관측 만들기 (86–105줄)</h3>
+<pre class="code" style="--start:85"><span class="l">    @property</span><span class="l">    <span class="k">def</span> _data(self):</span><span class="l">        <span class="k">return</span> self.env.unwrapped.data</span><span class="l"></span><span class="l">    <span class="k">def</span> torso_xy(self) -&gt; np.ndarray:</span><span class="l">        <span class="k">return</span> self._data.qpos[:2].copy()</span><span class="l"></span><span class="l">    <span class="k">def</span> torso_yaw(self) -&gt; float:</span><span class="l">        <span class="k">return</span> yaw_from_quat(self._data.qpos[3:7])</span></pre>
+<ul>
+  <li><b><code>env.unwrapped.data</code></b>: MuJoCo의 시뮬레이션 상태를 직접 들여다보는 통로. 래퍼가 여러 겹이어도 <code>unwrapped</code>로 맨 안쪽 진짜 환경에 접근해.</li>
+  <li><b><code>qpos</code></b>: 모든 위치 값을 담은 배열. Ant는 15개: [0:3] 몸통 x, y, z / [3:7] 몸통 쿼터니언 / [7:15] 관절 각도 8개.
+    <ul><li><code>qpos[:2]</code> = 몸통 x, y 위치</li><li><code>qpos[3:7]</code> = 몸통 쿼터니언 → yaw 계산</li></ul>
+  </li>
+  <li><code>.copy()</code>: MuJoCo가 같은 메모리를 계속 덮어쓰기 때문에, 복사해두지 않으면 "이전 위치"가 저절로 "현재 위치"로 바뀌어버려. G 블록의 속도 계산에서 중요해.</li>
+</ul>
+<pre class="code" style="--start:95"><span class="l">    <span class="k">def</span> _command_in_body_frame(self) -&gt; np.ndarray:</span><span class="l">        <span class="s">"""월드 좌표계 명령을 몸통 yaw 기준으로 회전시킨다. 정책이 배우기 쉬워진다."""</span></span><span class="l">        yaw = self.torso_yaw()</span><span class="l">        c, s = math.cos(-yaw), math.sin(-yaw)</span><span class="l">        vx, vy = self.command</span><span class="l">        <span class="k">return</span> np.array([c * vx - s * vy, s * vx + c * vy])</span><span class="l"></span><span class="l">    <span class="k">def</span> _augment(self, obs: np.ndarray) -&gt; np.ndarray:</span><span class="l">        cmd_body = self._command_in_body_frame()</span><span class="l">        <span class="k">return</span> np.concatenate([obs, cmd_body, [self.energy]]).astype(np.float32)</span></pre>
+<p><b>이 파일에서 제일 중요한 아이디어 중 하나야.</b> 명령은 "세상 기준"(+x = 동쪽)으로 주어지는데, 정책한테는 "<b>내 몸 기준</b>"(앞 = 내가 보는 쪽)으로 바꿔서 줘.</p>
+<ul>
+  <li>사람한테 길 알려줄 때도 "동쪽으로 가"보다 "앞으로 가", "오른쪽으로 가"가 쉽잖아. 정책도 같아. 세상 기준이면 "지금 내가 어느 쪽을 보고 있는지"까지 계산해서 다리를 움직여야 하는데, 몸 기준이면 그 계산이 이미 끝나 있어.</li>
+  <li>수학적으로는 <b>2D 회전 행렬</b>로 −yaw만큼 돌리는 거야. 몸이 돌아간 만큼 명령을 반대로 돌려서 몸 기준으로 맞추는 것.</li>
+  <li><code>_augment</code>: 원래 관측 105개 뒤에 [몸 기준 명령 2개, 에너지 1개]를 붙여서 108개로 만들어. <code>float32</code>는 신경망이 쓰는 숫자 형식.</li>
+</ul>
+<div class="callout ex">
+  <div class="ct">예시로 확인</div>
+  <p>Ant가 +y 방향(yaw = 90°)을 보고 있고, 명령은 세상 기준 +x(동쪽)로 1 m/s.</p>
+  <p>c = cos(−90°) = 0, s = sin(−90°) = −1 → 몸 기준 명령 = [0×1 − (−1)×0, (−1)×1 + 0×0] = <b>(0, −1)</b></p>
+  <p>몸 기준에서 x는 앞, y는 왼쪽이니까 (0, −1)은 "<b>오른쪽으로 가</b>". 북쪽을 보고 서 있으면 동쪽은 오른쪽이니까 맞아.</p>
+</div>
+<div class="check">
+  <div class="ct">확인 질문</div>
+  <details><summary>Ant가 명령 방향과 같은 쪽을 보고 있으면 몸 기준 명령은 어떤 모양일까?</summary><div class="ans">(속력, 0). 전부 "앞으로"가 되고 옆 성분이 0이야.</div></details>
+  <details><summary>torso_xy()에서 .copy()를 빼면 속도가 어떻게 계산될까?</summary><div class="ans">xy_before와 xy_after가 같은 메모리를 가리켜서 step 후에 둘 다 새 위치가 돼. 그러면 속도가 항상 0으로 계산되고, 정책은 아무리 걸어도 속도추종점수를 못 받아.</div></details>
+</div>
+
+<h3><span class="sn">F</span>에피소드 시작 (110–115줄)</h3>
+<pre class="code" style="--start:109"><span class="l">    <span class="k">def</span> reset(self, **kwargs):</span><span class="l">        obs, info = self.env.reset(**kwargs)</span><span class="l">        self._steps = 0</span><span class="l">        <span class="k">if not</span> self.fixed:</span><span class="l">            self._sample_command()</span><span class="l">        <span class="k">return</span> self._augment(obs), info</span></pre>
+<ol>
+  <li>Ant-v5를 리셋해서 처음 자세로 (살짝 랜덤한 노이즈 포함)</li>
+  <li>스텝 카운터 0으로</li>
+  <li>학습 중이면(<code>fixed</code>가 False) 새 랜덤 명령. 데모 중이면 사람이 준 명령 유지</li>
+  <li>명령 붙인 관측 108개 반환</li>
+</ol>
+<p><code>**kwargs</code>는 "받은 인자를 그대로 전달"하는 파이썬 문법이야. <code>reset(seed=0)</code>처럼 부르면 seed가 Ant-v5까지 전달돼.</p>
+
+<h3><span class="sn">G</span>한 스텝 진행 + 보상 계산 (117–159줄) — 핵심</h3>
+<h4>① 속도 재기</h4>
+<pre class="code" style="--start:116"><span class="l">    <span class="k">def</span> step(self, action):</span><span class="l">        xy_before = self.torso_xy()</span><span class="l">        obs, _, terminated, truncated, info = self.env.step(action)</span><span class="l">        xy_after = self.torso_xy()</span><span class="l">        dt = self.env.unwrapped.dt</span><span class="l">        velocity = (xy_after - xy_before) / dt</span></pre>
+<ul>
+  <li>행동 전 위치 기록 → Ant-v5에 행동 전달(물리 0.05초 진행) → 행동 후 위치 기록</li>
+  <li><b>속도 = 이동 거리 ÷ 시간</b>. dt = 0.05초. 0.05초 동안 4 cm 갔으면 0.8 m/s.</li>
+  <li><code>obs, _, terminated, truncated, info</code>: Ant-v5가 돌려주는 5가지. 두 번째(Ant 원래 보상)는 <code>_</code>로 <b>버려</b>. 보상은 내가 직접 계산하니까.
+    <ul>
+      <li><code>terminated</code>: 넘어졌나 (몸통 높이가 0.2–1.0 m 밖)</li>
+      <li><code>truncated</code>: 시간이 다 됐나 (1,000스텝)</li>
+    </ul>
+  </li>
+</ul>
+<div class="callout me">
+  <div class="ct">개선 포인트</div>
+  <p>0.05초짜리 순간 속도라서 한 걸음 안에서도 크게 출렁여. FreeMusco와 Yu et al. 2018은 둘 다 일정 시간 동안의 <b>평균 속도</b>로 추종 점수를 매겼어. 여기를 최근 20스텝(1초) 평균 속도로 바꾸는 게 제일 쉬운 다음 실험이야.</p>
+</div>
+<h4>② 점수 계산</h4>
+<pre class="code" style="--start:123"><span class="l">        <span class="c"># 1) 속도 추종: 오차가 작을수록 1에 가까움</span></span><span class="l">        err = float(np.sum((velocity - self.command) ** 2))</span><span class="l">        tracking = math.exp(-err / self.tracking_sigma)</span><span class="l"></span><span class="l">        <span class="c"># 2) 에너지: 에너지 수준이 낮을수록 페널티 가중치가 커짐</span></span><span class="l">        ctrl_w = self.ctrl_weight_min + (1.0 - self.energy) * (</span><span class="l">            self.ctrl_weight_max - self.ctrl_weight_min</span><span class="l">        )</span><span class="l">        effort = float(np.sum(np.square(action)))</span><span class="l"></span><span class="l">        alive = 0.0 <span class="k">if</span> terminated <span class="k">else</span> 1.0</span><span class="l">        reward = (</span><span class="l">            self.tracking_weight * tracking</span><span class="l">            + self.alive_weight * alive</span><span class="l">            - ctrl_w * effort</span><span class="l">        )</span></pre>
+<p>1단계 1.4의 식이 코드로 그대로 들어간 부분이야.</p>
+<ul>
+  <li><b>125줄 err</b>: 속도 오차의 제곱합 = (vx오차)² + (vy오차)²</li>
+  <li><b>126줄 tracking</b>: exp(−err/0.25) → 0~1</li>
+  <li><b>129–131줄 ctrl_w</b>: 에너지 e에 따라 0.02~0.25 사이에서 정해지는 벌점 가중치. e=1 → 0.02, e=0 → 0.25. 일차함수야.</li>
+  <li><b>132줄 effort</b>: 행동 8개 제곱의 합 (모터를 얼마나 세게 썼나)</li>
+  <li><b>134줄 alive</b>: 이번 스텝에 넘어졌으면 0</li>
+  <li><b>135–139줄</b>: 2.0 × tracking + 1.0 × alive − ctrl_w × effort</li>
+</ul>
+<div class="callout warn">
+  <div class="ct">처음 버전에서 실제로 찾은 버그</div>
+  <p>처음엔 <code>alive_weight=0.5</code>, <code>ctrl_weight_max=0.5</code>였어. 랜덤 행동의 effort는 평균 약 2.7이라, 에너지가 낮을 때 한 스텝 점수 = 0.5 − 0.5 × 2.7 ≈ <b>−0.85</b>. 매 스텝 마이너스면 오래 버틸수록 손해라서, 정책은 <b>빨리 넘어지는 게 이득</b>이라고 배워. 그래서 생존 1.0, 벌점 상한 0.25로 바꿔서 "살아 있으면 무조건 플러스"가 되게 고쳤어. README "시도한 것 / 실패한 것"에 넣을 수 있는 실제 사례야.</p>
+</div>
+<h4>③ 기록 남기고 명령 바꾸기</h4>
+<pre class="code" style="--start:140"><span class="l">        info.update(</span><span class="l">            velocity=velocity,</span><span class="l">            command=self.command.copy(),</span><span class="l">            energy=self.energy,</span><span class="l">            tracking_error=math.sqrt(err),</span><span class="l">            effort=effort,</span><span class="l">            r_tracking=tracking,</span><span class="l">        )</span><span class="l"></span><span class="l">        self._steps += 1</span><span class="l">        <span class="k">if</span> (</span><span class="l">            <span class="k">not</span> self.fixed</span><span class="l">            <span class="k">and</span> self.resample_interval</span><span class="l">            <span class="k">and</span> self._steps % self.resample_interval == 0</span><span class="l">        ):</span><span class="l">            <span class="c"># 에피소드 중간에 명령을 바꿔서 전환도 배우게 한다</span></span><span class="l">            self._sample_command()</span><span class="l"></span><span class="l">        <span class="k">return</span> self._augment(obs), reward, terminated, truncated, info</span></pre>
+<ul>
+  <li><b><code>info</code></b>: 학습엔 안 쓰지만 사람이 보려고 남기는 기록. <code>train.py</code>는 여기서 <code>tracking_error</code>와 <code>effort</code>를 꺼내 텐서보드에 그려(로그의 <code>command/tracking_error_mps</code>가 이거야). <code>evaluate.py</code>도 이걸로 그래프를 만들어.</li>
+  <li><b>150–157줄</b>: 학습 중이면 250스텝마다 명령을 바꿔. 걷다가 갑자기 "왼쪽으로!"를 받는 상황을 연습시켜서 <b>전환</b>도 배우게 하는 거야. PhysicsFC의 STI가 이 문제를 훨씬 정교하게 다뤄.</li>
+  <li><b>159줄</b>: gymnasium 규칙대로 5가지를 돌려줘. 관측은 새 명령까지 붙인 108개.</li>
+</ul>
+<div class="check">
+  <div class="ct">확인 질문</div>
+  <details><summary>Ant-v5가 원래 계산한 보상은 어디로 가나?</summary><div class="ans">119줄의 <code>_</code>로 받아서 버려. 학습엔 135–139줄에서 내가 계산한 reward만 쓰여.</div></details>
+  <details><summary>에너지 e = 0이고 Ant가 모든 모터를 최대(±1)로 쓰면 제어 벌점은 얼마?</summary><div class="ans">effort = 8 × 1² = 8, ctrl_w = 0.25 → 벌점 2.0. 속도추종을 완벽히 해도(2.0) 생존(1.0)과 합쳐 3.0 − 2.0 = 1.0. 힘을 아끼면 훨씬 이득이니까 정책이 살살 걷게 돼.</div></details>
+  <details><summary>넘어지는 스텝(terminated=True)의 보상은? 그 다음은?</summary><div class="ans">alive = 0이라 생존 점수 없이 tracking과 벌점만 계산돼. 그리고 에피소드가 끝나서 남은 스텝의 점수(최대 약 3점 × 남은 스텝)를 전부 못 받아. 이 "미래 손실"이 넘어지지 않게 만드는 진짜 압력이야. DeepMimic의 Early Termination과 같은 원리.</div></details>
+  <details><summary>resample_interval을 None으로 바꾸면?</summary><div class="ans">에피소드 동안 명령이 안 바뀌어 (Rudin et al.처럼). 한 명령을 꾸준히 따르는 건 더 잘 배울 수 있지만, 명령이 바뀌는 순간 대처하는 연습은 못 해서 키보드 데모에서 방향을 바꿀 때 휘청일 수 있어.</div></details>
+</div>
+
+<h3><span class="sn">H</span>환경 만드는 함수 (162–176줄)</h3>
+<pre class="code" style="--start:161"><span class="l"><span class="k">def</span> make_command_ant(seed=None, render_mode=None,</span><span class="l">                     max_episode_steps=1000, **wrapper_kwargs) -&gt; CommandAnt:</span><span class="l">    env = gym.make(<span class="s">"Ant-v5"</span>, render_mode=render_mode,</span><span class="l">                   max_episode_steps=max_episode_steps)</span><span class="l">    env = CommandAnt(env, **wrapper_kwargs)</span><span class="l">    <span class="k">if</span> seed <span class="k">is not</span> None:</span><span class="l">        env.reset(seed=seed)</span><span class="l">    <span class="k">return</span> env</span></pre>
+<p class="muted" style="font-size:14px">(162–176줄을 보기 좋게 줄였어.)</p>
+<ul>
+  <li>Ant-v5를 만들고 → CommandAnt로 감싸서 → 돌려주는 공장 함수. 다른 파일들은 전부 이 함수 하나로 환경을 만들어.</li>
+  <li><code>render_mode</code>: None이면 화면 없음(학습용, 빠름), <code>"rgb_array"</code>면 이미지 생성(GIF용).</li>
+  <li><code>max_episode_steps</code>: 학습은 1,000스텝, 키보드 데모는 사실상 무한.</li>
+  <li><code>**wrapper_kwargs</code>: 보상 가중치 같은 설정을 바꿔서 실험할 때 여기로 넘기면 돼. 예: <code>make_command_ant(tracking_sigma=0.5)</code>.</li>
+</ul>
+
+<div class="check">
+  <div class="ct">2단계 마무리 질문 — 이걸 말로 설명할 수 있으면 통과</div>
+  <details><summary>이 파일이 Ant-v5에 비해 바꾼 것 두 가지와 그대로 둔 것은?</summary><div class="ans">바꾼 것: ① 관측에 몸 기준 속도 명령 + 에너지 수준 3개를 붙임 ② 보상을 속도추종 + 생존 − 에너지 의존 제어 비용으로 새로 계산. 그대로 둔 것: 물리, 로봇 몸, 원래 관측 105개, 넘어짐 판정, 시간 제한.</div></details>
+  <details><summary>"하나의 정책이 에너지 수준에 따라 다르게 걷는다"가 어떻게 가능한가?</summary><div class="ans">에너지 e가 관측에 들어가 있고(정책이 볼 수 있음), 보상의 제어 벌점이 e에 따라 달라져(같은 행동이라도 e에 따라 점수가 다름). 그래서 점수를 최대화하려면 e를 보고 힘 쓰는 양을 조절해야 해.</div></details>
+  <details><summary>교수님이 "왜 명령을 몸 기준으로 바꿔서 줬어요?"라고 물으면?</summary><div class="ans">세상 기준 명령이면 정책이 자기 방향(쿼터니언)과 명령을 조합해서 "어느 다리를 어떻게"를 직접 알아내야 해서 학습이 어려워집니다. 몸 기준으로 미리 회전시켜주면 "앞으로", "오른쪽으로" 같은 형태가 돼서, 정책은 다리 움직임만 배우면 됩니다. Rudin et al.도 명령을 로봇 몸 기준으로 정의했습니다. (이 정도면 충분)</div></details>
+</div>
+
+<!-- ============================ PART 3 ============================ -->
+<div class="part" id="p3">3단계 · 다음</div>
+<h2>3단계는 VS Code Claude에서 해도 좋아</h2>
+<p>오히려 더 좋아. VS Code의 Claude는 <b>네 컴퓨터의 프로젝트 파일을 직접 읽을 수 있어서</b> 파일을 첨부할 필요가 없고, 궁금한 줄을 바로 실행해보거나 고쳐볼 수도 있어. 다만 이 대화의 맥락(학습이 왜 실패했는지, 어떤 논문과 연결되는지)은 모르니까, 처음에 이걸 붙여넣어줘:</p>
+<div class="prompt">이 폴더는 MuJoCo Ant가 속도·방향·에너지 명령을 따르도록 PPO로 학습하는 내 포트폴리오 프로젝트야. README.md를 먼저 읽고 시작해줘.
+지금 나는 코드를 공부하는 중이고, envs/command_ant.py까지는 이해했어.
+v1 학습(runs/main)은 approx_kl 4.11, clip_fraction 0.87로 무너졌고, train.py를 미니배치 4개·5에폭·target_kl 0.02로 고친 상태야.
+코드는 고치지 말고 설명만 해줘. 내가 질문할게.</div>
+<p>그다음부터 이렇게 물어보면 돼:</p>
+<div class="prompt">train.py를 블록 단위로 설명해줘. 한 블록 끝날 때마다 확인 질문 하나 내줘.</div>
+<div class="prompt">(코드 줄 선택하고) 이 줄이 왜 필요해? 없으면 어떻게 돼?</div>
+<div class="prompt">이 노트(ant-project-study-guide.html)의 확인 질문을 나한테 내고 채점해줘.</div>
+<div class="callout me">
+  <div class="ct">팁</div>
+  <p>이 HTML 파일을 프로젝트 폴더 안에 넣어두면 VS Code Claude도 읽을 수 있어. <code>docs/</code> 폴더를 하나 만들어서 이 파일과 논문 노트(<code>cgr-paper-notes.html</code>)를 같이 넣어두면 좋아.</p>
+</div>
+
+<footer>2026-10-31 작성 · 코드 기준: envs/command_ant.py (생존 보상 1.0, 제어 비용 0.02–0.25 수정 반영 버전) · Ant-v5 관측 구성은 Gymnasium 1.x 기준</footer>
+</div>
+</body>
+</html>

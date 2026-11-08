@@ -1,0 +1,7 @@
+{
+  "timesteps": 5000000,
+  "n_envs": 8,
+  "run_name": "main",
+  "seed": 0,
+  "resume": null
+}
