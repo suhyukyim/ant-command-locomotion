@@ -4,3 +4,4 @@ runs/*/checkpoints/
 runs/*/PPO_*/
 runs/smoke/
 runs/validate/
+runs/*_train.log

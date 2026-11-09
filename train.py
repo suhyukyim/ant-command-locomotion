@@ -63,6 +63,11 @@ def main():
     p.add_argument("--run-name", type=str, default=None)
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--resume", type=str, default=None, help="이어 학습할 run 폴더")
+    p.add_argument("--tracking-sigma", type=float, default=0.25,
+                   help="속도 추종 보상 exp(-오차²/sigma)의 sigma (v2: 0.25, v3: 1.0)")
+    p.add_argument("--tracking-weight", type=float, default=2.0,
+                   help="속도 추종 보상 가중치 (v2·v3: 2.0, v4: 5.0)")
+    p.add_argument("--alive-weight", type=float, default=1.0, help="생존 보상 가중치")
     args = p.parse_args()
 
     run_name = args.run_name or time.strftime("%Y%m%d-%H%M%S")
@@ -72,7 +77,10 @@ def main():
 
     def make(rank: int):
         def _init():
-            return make_command_ant(seed=args.seed + rank)
+            return make_command_ant(seed=args.seed + rank,
+                                    tracking_sigma=args.tracking_sigma,
+                                    tracking_weight=args.tracking_weight,
+                                    alive_weight=args.alive_weight)
         return _init
 
     vec_cls = SubprocVecEnv if args.n_envs > 1 else DummyVecEnv
