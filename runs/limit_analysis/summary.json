@@ -2,402 +2,402 @@
  "main_v5b": {
   "deterministic": {
    "hip_1": {
-    "at_limit": 0.942220744680851,
-    "at_lower": 0.11309840425531915,
-    "at_upper": 0.8291223404255319,
-    "push_ratio_when_at_limit": 0.41157998729800294,
-    "mean_abs_action_at_limit": 0.6915872097015381,
-    "mean_abs_action_free": 0.7540040016174316
+    "at_limit": 0.9294215425531915,
+    "at_lower": 0.13031914893617022,
+    "at_upper": 0.7991023936170213,
+    "push_ratio_when_at_limit": 0.9418392531387488,
+    "mean_abs_action_at_limit": 0.6866364479064941,
+    "mean_abs_action_free": 0.581430971622467
    },
    "ankle_1": {
-    "at_limit": 0.5826462765957446,
-    "at_lower": 0.022839095744680852,
-    "at_upper": 0.5598071808510638,
-    "push_ratio_when_at_limit": 0.9180645897523679,
-    "mean_abs_action_at_limit": 0.5264243483543396,
-    "mean_abs_action_free": 0.6040036082267761
+    "at_limit": 0.5975066489361702,
+    "at_lower": 0.015259308510638298,
+    "at_upper": 0.582247340425532,
+    "push_ratio_when_at_limit": 0.8229566572080342,
+    "mean_abs_action_at_limit": 0.5162177681922913,
+    "mean_abs_action_free": 0.5637360215187073
    },
    "hip_2": {
-    "at_limit": 0.9310172872340425,
-    "at_lower": 0.49491356382978724,
-    "at_upper": 0.4361037234042553,
-    "push_ratio_when_at_limit": 0.5578646670237457,
-    "mean_abs_action_at_limit": 0.7207465767860413,
-    "mean_abs_action_free": 0.5412474274635315
+    "at_limit": 0.9303523936170213,
+    "at_lower": 0.6101728723404255,
+    "at_upper": 0.32017952127659577,
+    "push_ratio_when_at_limit": 0.9444702519206718,
+    "mean_abs_action_at_limit": 0.6954273581504822,
+    "mean_abs_action_free": 0.6316702961921692
    },
    "ankle_2": {
-    "at_limit": 0.9995678191489362,
-    "at_lower": 0.9995678191489362,
+    "at_limit": 0.9998670212765958,
+    "at_lower": 0.9998670212765958,
     "at_upper": 0.0,
-    "push_ratio_when_at_limit": 0.24734759038148135,
-    "mean_abs_action_at_limit": 0.5315343141555786,
-    "mean_abs_action_free": 0.6195133924484253
+    "push_ratio_when_at_limit": 0.9984372921931108,
+    "mean_abs_action_at_limit": 0.8006803393363953,
+    "mean_abs_action_free": 0.9341021180152893
    },
    "hip_3": {
-    "at_limit": 0.984906914893617,
-    "at_lower": 0.558377659574468,
-    "at_upper": 0.4265292553191489,
-    "push_ratio_when_at_limit": 0.13930331465604537,
-    "mean_abs_action_at_limit": 0.6623139977455139,
-    "mean_abs_action_free": 0.6615251302719116
+    "at_limit": 0.9859707446808511,
+    "at_lower": 0.46266622340425534,
+    "at_upper": 0.5233045212765958,
+    "push_ratio_when_at_limit": 0.9820284577517028,
+    "mean_abs_action_at_limit": 0.665652871131897,
+    "mean_abs_action_free": 0.5659952759742737
    },
    "ankle_3": {
-    "at_limit": 0.834375,
-    "at_lower": 0.823936170212766,
-    "at_upper": 0.010438829787234042,
-    "push_ratio_when_at_limit": 0.986214040959439,
-    "mean_abs_action_at_limit": 0.7908812165260315,
-    "mean_abs_action_free": 0.7967610955238342
+    "at_limit": 0.7708776595744681,
+    "at_lower": 0.7595744680851064,
+    "at_upper": 0.011303191489361703,
+    "push_ratio_when_at_limit": 0.9254786958771779,
+    "mean_abs_action_at_limit": 0.7952966690063477,
+    "mean_abs_action_free": 0.6040930151939392
    },
    "hip_4": {
-    "at_limit": 0.9740359042553192,
-    "at_lower": 0.4821808510638298,
-    "at_upper": 0.49185505319148937,
-    "push_ratio_when_at_limit": 0.9161063517526196,
-    "mean_abs_action_at_limit": 0.6639346480369568,
-    "mean_abs_action_free": 0.591553807258606
+    "at_limit": 0.9619348404255319,
+    "at_lower": 0.39248670212765957,
+    "at_upper": 0.5694481382978723,
+    "push_ratio_when_at_limit": 0.9669258683255573,
+    "mean_abs_action_at_limit": 0.7110029458999634,
+    "mean_abs_action_free": 0.7419659495353699
    },
    "ankle_4": {
-    "at_limit": 0.941156914893617,
-    "at_lower": 0.005019946808510639,
-    "at_upper": 0.9361369680851064,
-    "push_ratio_when_at_limit": 0.08682444365948429,
-    "mean_abs_action_at_limit": 0.8234723210334778,
-    "mean_abs_action_free": 0.6394601464271545
+    "at_limit": 0.9276928191489362,
+    "at_lower": 0.0025598404255319147,
+    "at_upper": 0.9251329787234043,
+    "push_ratio_when_at_limit": 0.9302992295287583,
+    "mean_abs_action_at_limit": 0.5720202922821045,
+    "mean_abs_action_free": 0.4858522415161133
    }
   },
   "stochastic": {
    "hip_1": {
-    "at_limit": 0.760405585106383,
-    "at_lower": 0.06678856382978723,
-    "at_upper": 0.6936170212765957,
-    "push_ratio_when_at_limit": 0.42499890700826304,
-    "mean_abs_action_at_limit": 0.7393481135368347,
-    "mean_abs_action_free": 0.7530040740966797
+    "at_limit": 0.7569148936170212,
+    "at_lower": 0.11366356382978723,
+    "at_upper": 0.6432513297872341,
+    "push_ratio_when_at_limit": 0.8727160927617709,
+    "mean_abs_action_at_limit": 0.718212366104126,
+    "mean_abs_action_free": 0.6609519720077515
    },
    "ankle_1": {
-    "at_limit": 0.4084441489361702,
-    "at_lower": 0.04248670212765957,
-    "at_upper": 0.3659574468085106,
-    "push_ratio_when_at_limit": 0.7740517662379944,
-    "mean_abs_action_at_limit": 0.6641292572021484,
-    "mean_abs_action_free": 0.7025569677352905
+    "at_limit": 0.43763297872340423,
+    "at_lower": 0.04694148936170213,
+    "at_upper": 0.3906914893617021,
+    "push_ratio_when_at_limit": 0.6611212397447584,
+    "mean_abs_action_at_limit": 0.603812038898468,
+    "mean_abs_action_free": 0.6513775587081909
    },
    "hip_2": {
-    "at_limit": 0.7696476063829787,
-    "at_lower": 0.40033244680851066,
-    "at_upper": 0.3693151595744681,
-    "push_ratio_when_at_limit": 0.5918534836508142,
-    "mean_abs_action_at_limit": 0.6978874802589417,
-    "mean_abs_action_free": 0.7092913389205933
+    "at_limit": 0.7701130319148937,
+    "at_lower": 0.49205452127659577,
+    "at_upper": 0.2780585106382979,
+    "push_ratio_when_at_limit": 0.8757608461040363,
+    "mean_abs_action_at_limit": 0.7329007983207703,
+    "mean_abs_action_free": 0.685075044631958
    },
    "ankle_2": {
-    "at_limit": 0.9431183510638298,
-    "at_lower": 0.9409242021276596,
-    "at_upper": 0.002194148936170213,
-    "push_ratio_when_at_limit": 0.3591948958370052,
-    "mean_abs_action_at_limit": 0.6361308097839355,
-    "mean_abs_action_free": 0.6395970582962036
+    "at_limit": 0.9302526595744681,
+    "at_lower": 0.9191489361702128,
+    "at_upper": 0.01110372340425532,
+    "push_ratio_when_at_limit": 0.9455364162676007,
+    "mean_abs_action_at_limit": 0.7659355998039246,
+    "mean_abs_action_free": 0.7130460739135742
    },
    "hip_3": {
-    "at_limit": 0.8462101063829788,
-    "at_lower": 0.463031914893617,
-    "at_upper": 0.3831781914893617,
-    "push_ratio_when_at_limit": 0.17443230926376993,
-    "mean_abs_action_at_limit": 0.7273304462432861,
-    "mean_abs_action_free": 0.7000181078910828
+    "at_limit": 0.8581117021276595,
+    "at_lower": 0.3858710106382979,
+    "at_upper": 0.4722406914893617,
+    "push_ratio_when_at_limit": 0.9113203161320316,
+    "mean_abs_action_at_limit": 0.722280740737915,
+    "mean_abs_action_free": 0.658697783946991
    },
    "ankle_3": {
-    "at_limit": 0.5488696808510638,
-    "at_lower": 0.521376329787234,
-    "at_upper": 0.027493351063829788,
-    "push_ratio_when_at_limit": 0.8938219261053907,
-    "mean_abs_action_at_limit": 0.7501763701438904,
-    "mean_abs_action_free": 0.7828338146209717
+    "at_limit": 0.4900265957446808,
+    "at_lower": 0.444248670212766,
+    "at_upper": 0.04577792553191489,
+    "push_ratio_when_at_limit": 0.7199457259158751,
+    "mean_abs_action_at_limit": 0.6747796535491943,
+    "mean_abs_action_free": 0.6713715195655823
    },
    "hip_4": {
-    "at_limit": 0.7942154255319149,
-    "at_lower": 0.3750664893617021,
-    "at_upper": 0.41914893617021276,
-    "push_ratio_when_at_limit": 0.8696944328170783,
-    "mean_abs_action_at_limit": 0.7169347405433655,
-    "mean_abs_action_free": 0.6622818112373352
+    "at_limit": 0.8138297872340425,
+    "at_lower": 0.31668882978723406,
+    "at_upper": 0.49714095744680853,
+    "push_ratio_when_at_limit": 0.8978349673202615,
+    "mean_abs_action_at_limit": 0.7535452842712402,
+    "mean_abs_action_free": 0.7226365208625793
    },
    "ankle_4": {
-    "at_limit": 0.8063829787234043,
-    "at_lower": 0.009441489361702127,
-    "at_upper": 0.7969414893617022,
-    "push_ratio_when_at_limit": 0.26673812664907653,
-    "mean_abs_action_at_limit": 0.6859395503997803,
-    "mean_abs_action_free": 0.6538020372390747
+    "at_limit": 0.7894281914893617,
+    "at_lower": 0.031183510638297874,
+    "at_upper": 0.7582446808510638,
+    "push_ratio_when_at_limit": 0.874926303377411,
+    "mean_abs_action_at_limit": 0.6950953602790833,
+    "mean_abs_action_free": 0.6245208382606506
    }
   }
  },
  "main_v5b_s1": {
   "deterministic": {
    "hip_1": {
-    "at_limit": 0.9893284574468085,
-    "at_lower": 0.3290558510638298,
-    "at_upper": 0.6602726063829787,
-    "push_ratio_when_at_limit": 0.10225478006653449,
-    "mean_abs_action_at_limit": 0.7315629124641418,
-    "mean_abs_action_free": 0.6523140668869019
+    "at_limit": 0.989029255319149,
+    "at_lower": 0.32101063829787235,
+    "at_upper": 0.6680186170212766,
+    "push_ratio_when_at_limit": 0.9890756302521009,
+    "mean_abs_action_at_limit": 0.7840474247932434,
+    "mean_abs_action_free": 0.6323906183242798
    },
    "ankle_1": {
-    "at_limit": 0.9681848404255319,
+    "at_limit": 0.9322473404255319,
     "at_lower": 0.0,
-    "at_upper": 0.9681848404255319,
-    "push_ratio_when_at_limit": 0.9312570820313841,
-    "mean_abs_action_at_limit": 0.8430736660957336,
-    "mean_abs_action_free": 0.7579904198646545
+    "at_upper": 0.9322473404255319,
+    "push_ratio_when_at_limit": 0.9791027744098139,
+    "mean_abs_action_at_limit": 0.8297250270843506,
+    "mean_abs_action_free": 0.4667125344276428
    },
    "hip_2": {
-    "at_limit": 0.9829454787234042,
-    "at_lower": 0.3905252659574468,
-    "at_upper": 0.5924202127659575,
-    "push_ratio_when_at_limit": 0.8817600703486995,
-    "mean_abs_action_at_limit": 0.7948490381240845,
-    "mean_abs_action_free": 0.8760436177253723
+    "at_limit": 0.9853390957446808,
+    "at_lower": 0.42446808510638295,
+    "at_upper": 0.5608710106382979,
+    "push_ratio_when_at_limit": 0.9851884341576976,
+    "mean_abs_action_at_limit": 0.7405810356140137,
+    "mean_abs_action_free": 0.6586441993713379
    },
    "ankle_2": {
-    "at_limit": 0.980252659574468,
-    "at_lower": 0.6925531914893617,
-    "at_upper": 0.2876994680851064,
-    "push_ratio_when_at_limit": 0.31808315810893306,
-    "mean_abs_action_at_limit": 0.7975847125053406,
-    "mean_abs_action_free": 0.7750049829483032
+    "at_limit": 0.985405585106383,
+    "at_lower": 0.7310837765957446,
+    "at_upper": 0.2543218085106383,
+    "push_ratio_when_at_limit": 0.9872473938126244,
+    "mean_abs_action_at_limit": 0.7203004360198975,
+    "mean_abs_action_free": 0.513118326663971
    },
    "hip_3": {
-    "at_limit": 0.9984042553191489,
-    "at_lower": 0.9984042553191489,
+    "at_limit": 0.9987034574468086,
+    "at_lower": 0.9987034574468086,
     "at_upper": 0.0,
-    "push_ratio_when_at_limit": 0.41082844965370274,
-    "mean_abs_action_at_limit": 0.7044216394424438,
-    "mean_abs_action_free": 0.726330578327179
+    "push_ratio_when_at_limit": 0.9965047768050331,
+    "mean_abs_action_at_limit": 0.7471986413002014,
+    "mean_abs_action_free": 0.4204338788986206
    },
    "ankle_3": {
-    "at_limit": 0.9118351063829787,
-    "at_lower": 0.9036901595744681,
-    "at_upper": 0.008144946808510639,
-    "push_ratio_when_at_limit": 0.770818142044626,
-    "mean_abs_action_at_limit": 0.7268998026847839,
-    "mean_abs_action_free": 0.4977997839450836
+    "at_limit": 0.9564494680851063,
+    "at_lower": 0.9545212765957447,
+    "at_upper": 0.001928191489361702,
+    "push_ratio_when_at_limit": 0.9840458811261731,
+    "mean_abs_action_at_limit": 0.870235800743103,
+    "mean_abs_action_free": 0.610161542892456
    },
    "hip_4": {
-    "at_limit": 0.9857380319148936,
-    "at_lower": 0.613563829787234,
-    "at_upper": 0.37217420212765956,
-    "push_ratio_when_at_limit": 0.61795554955988,
-    "mean_abs_action_at_limit": 0.734319806098938,
-    "mean_abs_action_free": 0.8329737186431885
+    "at_limit": 0.9811835106382979,
+    "at_lower": 0.6335106382978724,
+    "at_upper": 0.34767287234042554,
+    "push_ratio_when_at_limit": 0.9850918208307922,
+    "mean_abs_action_at_limit": 0.6944174766540527,
+    "mean_abs_action_free": 0.6219376921653748
    },
    "ankle_4": {
-    "at_limit": 0.8831781914893617,
-    "at_lower": 0.006183510638297873,
-    "at_upper": 0.8769946808510638,
-    "push_ratio_when_at_limit": 0.060754347662425656,
-    "mean_abs_action_at_limit": 0.8636506795883179,
-    "mean_abs_action_free": 0.8012386560440063
+    "at_limit": 0.8753324468085106,
+    "at_lower": 0.007047872340425532,
+    "at_upper": 0.8682845744680852,
+    "push_ratio_when_at_limit": 0.9764906950246867,
+    "mean_abs_action_at_limit": 0.8697732090950012,
+    "mean_abs_action_free": 0.6155608296394348
    }
   },
   "stochastic": {
    "hip_1": {
-    "at_limit": 0.8851728723404255,
-    "at_lower": 0.1462433510638298,
-    "at_upper": 0.7389295212765957,
-    "push_ratio_when_at_limit": 0.13787275595282805,
-    "mean_abs_action_at_limit": 0.757976233959198,
-    "mean_abs_action_free": 0.6911051273345947
+    "at_limit": 0.8956764295676429,
+    "at_lower": 0.12489539748953975,
+    "at_upper": 0.7707810320781032,
+    "push_ratio_when_at_limit": 0.9412566178760511,
+    "mean_abs_action_at_limit": 0.8033666610717773,
+    "mean_abs_action_free": 0.6862655878067017
    },
    "ankle_1": {
-    "at_limit": 0.7170212765957447,
-    "at_lower": 0.04381648936170213,
-    "at_upper": 0.6732047872340425,
-    "push_ratio_when_at_limit": 0.6871754451038575,
-    "mean_abs_action_at_limit": 0.6873047351837158,
-    "mean_abs_action_free": 0.6828991770744324
+    "at_limit": 0.6947698744769875,
+    "at_lower": 0.025557880055788004,
+    "at_upper": 0.6692119944211995,
+    "push_ratio_when_at_limit": 0.8400080297099267,
+    "mean_abs_action_at_limit": 0.6733703017234802,
+    "mean_abs_action_free": 0.6281508207321167
    },
    "hip_2": {
-    "at_limit": 0.7669880319148936,
-    "at_lower": 0.27057845744680853,
-    "at_upper": 0.4964095744680851,
-    "push_ratio_when_at_limit": 0.8268388886480863,
-    "mean_abs_action_at_limit": 0.7942178845405579,
-    "mean_abs_action_free": 0.7842589616775513
+    "at_limit": 0.753068340306834,
+    "at_lower": 0.22932357043235704,
+    "at_upper": 0.5237447698744769,
+    "push_ratio_when_at_limit": 0.8648485970923233,
+    "mean_abs_action_at_limit": 0.726123571395874,
+    "mean_abs_action_free": 0.6886674761772156
    },
    "ankle_2": {
-    "at_limit": 0.765625,
-    "at_lower": 0.6158244680851064,
-    "at_upper": 0.14980053191489362,
-    "push_ratio_when_at_limit": 0.3609205384281372,
-    "mean_abs_action_at_limit": 0.6541599035263062,
-    "mean_abs_action_free": 0.7053161263465881
+    "at_limit": 0.7726987447698744,
+    "at_lower": 0.6572873082287308,
+    "at_upper": 0.11541143654114365,
+    "push_ratio_when_at_limit": 0.8681016199629981,
+    "mean_abs_action_at_limit": 0.6750568151473999,
+    "mean_abs_action_free": 0.6111701130867004
    },
    "hip_3": {
-    "at_limit": 0.7903922872340425,
-    "at_lower": 0.7585106382978724,
-    "at_upper": 0.03188164893617021,
-    "push_ratio_when_at_limit": 0.40731861198738173,
-    "mean_abs_action_at_limit": 0.7252429723739624,
-    "mean_abs_action_free": 0.7290615439414978
+    "at_limit": 0.7862970711297071,
+    "at_lower": 0.7705020920502093,
+    "at_upper": 0.01579497907949791,
+    "push_ratio_when_at_limit": 0.8718903818012504,
+    "mean_abs_action_at_limit": 0.6664652824401855,
+    "mean_abs_action_free": 0.5982024073600769
    },
    "ankle_3": {
-    "at_limit": 0.7560505319148936,
-    "at_lower": 0.7078125,
-    "at_upper": 0.04823803191489362,
-    "push_ratio_when_at_limit": 0.8162430744877319,
-    "mean_abs_action_at_limit": 0.6651747822761536,
-    "mean_abs_action_free": 0.6156139373779297
+    "at_limit": 0.7646443514644351,
+    "at_lower": 0.7343444909344491,
+    "at_upper": 0.030299860529986053,
+    "push_ratio_when_at_limit": 0.8755129958960328,
+    "mean_abs_action_at_limit": 0.7395064830780029,
+    "mean_abs_action_free": 0.6890981793403625
    },
    "hip_4": {
-    "at_limit": 0.8467752659574468,
-    "at_lower": 0.6396276595744681,
-    "at_upper": 0.20714760638297872,
-    "push_ratio_when_at_limit": 0.6639315299752659,
-    "mean_abs_action_at_limit": 0.6533471941947937,
-    "mean_abs_action_free": 0.7138346433639526
+    "at_limit": 0.8293584379358437,
+    "at_lower": 0.6735006973500698,
+    "at_upper": 0.15585774058577406,
+    "push_ratio_when_at_limit": 0.9075506600521315,
+    "mean_abs_action_at_limit": 0.7591509222984314,
+    "mean_abs_action_free": 0.6810458898544312
    },
    "ankle_4": {
-    "at_limit": 0.5413563829787233,
-    "at_lower": 0.06186835106382979,
-    "at_upper": 0.47948803191489364,
-    "push_ratio_when_at_limit": 0.2318840579710145,
-    "mean_abs_action_at_limit": 0.7152704000473022,
-    "mean_abs_action_free": 0.7227658033370972
+    "at_limit": 0.571931659693166,
+    "at_lower": 0.05414923291492329,
+    "at_upper": 0.5177824267782427,
+    "push_ratio_when_at_limit": 0.7868072913491434,
+    "mean_abs_action_at_limit": 0.7150423526763916,
+    "mean_abs_action_free": 0.674446165561676
    }
   }
  },
  "main_v5b_s2": {
   "deterministic": {
    "hip_1": {
-    "at_limit": 0.9972074468085106,
-    "at_lower": 0.726030585106383,
-    "at_upper": 0.2711768617021277,
-    "push_ratio_when_at_limit": 0.3932857714361915,
-    "mean_abs_action_at_limit": 0.7604276537895203,
-    "mean_abs_action_free": 0.7442717552185059
+    "at_limit": 0.9978390957446809,
+    "at_lower": 0.7344747340425531,
+    "at_upper": 0.2633643617021277,
+    "push_ratio_when_at_limit": 0.9979343661502582,
+    "mean_abs_action_at_limit": 0.8322718739509583,
+    "mean_abs_action_free": 0.5914116501808167
    },
    "ankle_1": {
-    "at_limit": 0.7768617021276596,
-    "at_lower": 0.07719414893617021,
-    "at_upper": 0.6996675531914893,
-    "push_ratio_when_at_limit": 0.9034577199589182,
-    "mean_abs_action_at_limit": 0.8792071342468262,
-    "mean_abs_action_free": 0.6199007034301758
+    "at_limit": 0.7797207446808511,
+    "at_lower": 0.08972739361702127,
+    "at_upper": 0.6899933510638298,
+    "push_ratio_when_at_limit": 0.9334441886245417,
+    "mean_abs_action_at_limit": 0.8019739389419556,
+    "mean_abs_action_free": 0.6148625612258911
    },
    "hip_2": {
-    "at_limit": 0.9814827127659574,
-    "at_lower": 0.7639295212765957,
-    "at_upper": 0.2175531914893617,
-    "push_ratio_when_at_limit": 0.9536632456051214,
-    "mean_abs_action_at_limit": 0.8169934749603271,
-    "mean_abs_action_free": 0.8195016384124756
+    "at_limit": 0.9853058510638298,
+    "at_lower": 0.7326795212765957,
+    "at_upper": 0.25262632978723404,
+    "push_ratio_when_at_limit": 0.9844119036372225,
+    "mean_abs_action_at_limit": 0.7827355861663818,
+    "mean_abs_action_free": 0.4947068691253662
    },
    "ankle_2": {
-    "at_limit": 0.9404920212765957,
-    "at_lower": 0.9257313829787234,
-    "at_upper": 0.014760638297872341,
-    "push_ratio_when_at_limit": 0.20314598798161895,
-    "mean_abs_action_at_limit": 0.7625966668128967,
-    "mean_abs_action_free": 0.8460902571678162
+    "at_limit": 0.9393617021276596,
+    "at_lower": 0.9248337765957447,
+    "at_upper": 0.014527925531914893,
+    "push_ratio_when_at_limit": 0.9767129105322764,
+    "mean_abs_action_at_limit": 0.5513797998428345,
+    "mean_abs_action_free": 0.4431748688220978
    },
    "hip_3": {
-    "at_limit": 0.9852726063829788,
-    "at_lower": 0.22865691489361703,
-    "at_upper": 0.7566156914893617,
-    "push_ratio_when_at_limit": 0.024968789013732832,
-    "mean_abs_action_at_limit": 0.789454460144043,
-    "mean_abs_action_free": 0.4841788113117218
+    "at_limit": 0.9820478723404256,
+    "at_lower": 0.2362034574468085,
+    "at_upper": 0.745844414893617,
+    "push_ratio_when_at_limit": 0.9727149627623561,
+    "mean_abs_action_at_limit": 0.8324378132820129,
+    "mean_abs_action_free": 0.6440849304199219
    },
    "ankle_3": {
-    "at_limit": 0.9309175531914894,
-    "at_lower": 0.9233377659574468,
-    "at_upper": 0.007579787234042553,
-    "push_ratio_when_at_limit": 0.9403256910220699,
-    "mean_abs_action_at_limit": 0.5457436442375183,
-    "mean_abs_action_free": 0.822686493396759
+    "at_limit": 0.940093085106383,
+    "at_lower": 0.932280585106383,
+    "at_upper": 0.0078125,
+    "push_ratio_when_at_limit": 0.9799844402008628,
+    "mean_abs_action_at_limit": 0.8652729392051697,
+    "mean_abs_action_free": 0.55211341381073
    },
    "hip_4": {
-    "at_limit": 0.9895279255319149,
-    "at_lower": 0.6320478723404256,
-    "at_upper": 0.35748005319148934,
-    "push_ratio_when_at_limit": 0.5716109524609441,
-    "mean_abs_action_at_limit": 0.8250137567520142,
-    "mean_abs_action_free": 0.6842976808547974
+    "at_limit": 0.9943484042553191,
+    "at_lower": 0.6199800531914894,
+    "at_upper": 0.37436835106382976,
+    "push_ratio_when_at_limit": 0.9910397860247409,
+    "mean_abs_action_at_limit": 0.7642180919647217,
+    "mean_abs_action_free": 0.7204421162605286
    },
    "ankle_4": {
-    "at_limit": 0.9929853723404255,
+    "at_limit": 0.9940492021276596,
     "at_lower": 0.0,
-    "at_upper": 0.9929853723404255,
-    "push_ratio_when_at_limit": 0.043757742140680976,
-    "mean_abs_action_at_limit": 0.8471391201019287,
-    "mean_abs_action_free": 0.6083628535270691
+    "at_upper": 0.9940492021276596,
+    "push_ratio_when_at_limit": 0.989933447041905,
+    "mean_abs_action_at_limit": 0.8259609341621399,
+    "mean_abs_action_free": 0.6093037128448486
    }
   },
   "stochastic": {
    "hip_1": {
-    "at_limit": 0.913328453553367,
-    "at_lower": 0.7233497471386745,
-    "at_upper": 0.18997870641469258,
-    "push_ratio_when_at_limit": 0.34916760773742306,
-    "mean_abs_action_at_limit": 0.8203936219215393,
-    "mean_abs_action_free": 0.8193532824516296
+    "at_limit": 0.9065824468085106,
+    "at_lower": 0.7007313829787234,
+    "at_upper": 0.20585106382978724,
+    "push_ratio_when_at_limit": 0.9423909057572424,
+    "mean_abs_action_at_limit": 0.7875368595123291,
+    "mean_abs_action_free": 0.6863705515861511
    },
    "ankle_1": {
-    "at_limit": 0.608430928932659,
-    "at_lower": 0.18542054830982166,
-    "at_upper": 0.42301038062283736,
-    "push_ratio_when_at_limit": 0.6878110132881282,
-    "mean_abs_action_at_limit": 0.724543035030365,
-    "mean_abs_action_free": 0.6794010996818542
+    "at_limit": 0.5885970744680851,
+    "at_lower": 0.22101063829787235,
+    "at_upper": 0.36758643617021275,
+    "push_ratio_when_at_limit": 0.7765038124823496,
+    "mean_abs_action_at_limit": 0.7033674716949463,
+    "mean_abs_action_free": 0.6728724837303162
    },
    "hip_2": {
-    "at_limit": 0.7552568538727709,
-    "at_lower": 0.6657239819004525,
-    "at_upper": 0.08953287197231834,
-    "push_ratio_when_at_limit": 0.9159030837004405,
-    "mean_abs_action_at_limit": 0.7836863994598389,
-    "mean_abs_action_free": 0.7541568875312805
+    "at_limit": 0.7532912234042554,
+    "at_lower": 0.6245678191489362,
+    "at_upper": 0.12872340425531914,
+    "push_ratio_when_at_limit": 0.8597025464495344,
+    "mean_abs_action_at_limit": 0.6527357697486877,
+    "mean_abs_action_free": 0.6004343628883362
    },
    "ankle_2": {
-    "at_limit": 0.753160766569071,
-    "at_lower": 0.7233497471386745,
-    "at_upper": 0.029811019430396594,
-    "push_ratio_when_at_limit": 0.4546097097671953,
-    "mean_abs_action_at_limit": 0.6900014281272888,
-    "mean_abs_action_free": 0.7397763133049011
+    "at_limit": 0.7644946808510639,
+    "at_lower": 0.7381981382978723,
+    "at_upper": 0.02629654255319149,
+    "push_ratio_when_at_limit": 0.8781527222125587,
+    "mean_abs_action_at_limit": 0.7204639315605164,
+    "mean_abs_action_free": 0.633126974105835
    },
    "hip_3": {
-    "at_limit": 0.8184056428001064,
-    "at_lower": 0.11468591961671547,
-    "at_upper": 0.703719723183391,
-    "push_ratio_when_at_limit": 0.15997235547605496,
-    "mean_abs_action_at_limit": 0.6565136313438416,
-    "mean_abs_action_free": 0.5782308578491211
+    "at_limit": 0.8167885638297873,
+    "at_lower": 0.14055851063829788,
+    "at_upper": 0.6762300531914893,
+    "push_ratio_when_at_limit": 0.901623997720705,
+    "mean_abs_action_at_limit": 0.7434654831886292,
+    "mean_abs_action_free": 0.6611229777336121
    },
    "ankle_3": {
-    "at_limit": 0.6077987756188449,
-    "at_lower": 0.5574926803300506,
-    "at_upper": 0.05030609528879425,
-    "push_ratio_when_at_limit": 0.6892380118239545,
-    "mean_abs_action_at_limit": 0.6629613041877747,
-    "mean_abs_action_free": 0.736914336681366
+    "at_limit": 0.5989029255319149,
+    "at_lower": 0.5215093085106383,
+    "at_upper": 0.07739361702127659,
+    "push_ratio_when_at_limit": 0.8116569525395504,
+    "mean_abs_action_at_limit": 0.7213240265846252,
+    "mean_abs_action_free": 0.64024418592453
    },
    "hip_4": {
-    "at_limit": 0.9102342294383817,
-    "at_lower": 0.49683923343092895,
-    "at_upper": 0.4133949960074528,
-    "push_ratio_when_at_limit": 0.6262519189999269,
-    "mean_abs_action_at_limit": 0.72614985704422,
-    "mean_abs_action_free": 0.6867334842681885
+    "at_limit": 0.9124002659574468,
+    "at_lower": 0.45169547872340426,
+    "at_upper": 0.46070478723404257,
+    "push_ratio_when_at_limit": 0.9470577518673711,
+    "mean_abs_action_at_limit": 0.8282828330993652,
+    "mean_abs_action_free": 0.7027894854545593
    },
    "ankle_4": {
-    "at_limit": 0.8903713068937983,
-    "at_lower": 0.023855469789725844,
-    "at_upper": 0.8665158371040724,
-    "push_ratio_when_at_limit": 0.2579126340570233,
-    "mean_abs_action_at_limit": 0.7017828226089478,
-    "mean_abs_action_free": 0.6675609350204468
+    "at_limit": 0.8800864361702128,
+    "at_lower": 0.040625,
+    "at_upper": 0.8394614361702127,
+    "push_ratio_when_at_limit": 0.905526385373777,
+    "mean_abs_action_at_limit": 0.7007135152816772,
+    "mean_abs_action_free": 0.6783658862113953
    }
   }
  }

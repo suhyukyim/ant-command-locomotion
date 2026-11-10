@@ -10,3 +10,4 @@ runs/*/*.log
 runs/gait/*.gif
 !runs/gait/v5b_s0_1.0_270.gif
 !runs/gait/v5b_s0_0.5_90.gif
+runs/propulsion_v7/raw.npz

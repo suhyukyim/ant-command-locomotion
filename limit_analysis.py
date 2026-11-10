@@ -1,6 +1,8 @@
 """관절이 한계에 붙어 있을 때, 정책이 그 한계 쪽으로 토크를 계속 거는가?
 
 Ant의 행동은 목표 각도가 아니라 토크(모터 gear 150, 행동 ±1, 양수 = 관절 각도 증가 방향)다.
+주의: 행동 순서는 관절(qpos) 순서와 다르다. 행동 i는 hip_4, ankle_4, hip_1, ankle_1, … 순서라
+`model.actuator_trnid`로 관절 순서로 다시 맞춘 뒤 비교한다 (2026-11-10 수정, 그 전 결과는 두 칸 어긋나 있었음).
 관절이 한계 근처(±2°)에 있는 스텝에서
   - 한계 쪽으로 미는 토크 비율 (아래 한계면 a < 0, 위 한계면 a > 0)
   - 그때의 평균 |a|
@@ -47,6 +49,7 @@ def job(args):
             obs, _ = env.reset(seed=s)
             m, d = env.unwrapped.model, env.unwrapped.data
             lo, hi = np.degrees(m.jnt_range[1:9, 0]), np.degrees(m.jnt_range[1:9, 1])
+            act_to_joint = m.actuator_trnid[:, 0] - 1   # 행동 i가 움직이는 관절(qpos 순서) 번호
             for t in range(STEPS):
                 a = np.clip(policy.act(obs, deterministic=det), -1, 1)
                 q = np.degrees(d.qpos[7:15])          # 행동을 고르는 시점의 관절 각도
@@ -54,7 +57,9 @@ def job(args):
                 if t >= WARMUP:
                     near_lo.append(np.abs(q - lo) < MARGIN)
                     near_hi.append(np.abs(q - hi) < MARGIN)
-                    acts.append(a)
+                    tau = np.empty_like(a)
+                    tau[act_to_joint] = a                 # 관절 순서로 재배열한 토크
+                    acts.append(tau)
                 if term or trunc:
                     break
             env.close()

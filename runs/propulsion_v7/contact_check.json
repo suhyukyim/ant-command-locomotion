@@ -1,0 +1,426 @@
+{
+ "main_v5b/off": {
+  "n_contacts": 122416,
+  "torso_vel_check_max": 2.498001805406602e-16,
+  "frac_contacts_not_touching": 0.9981701738334858,
+  "fz_not_touching_median_mg": 0.3028628244307831,
+  "frac_not_touching_with_fz_ge_0_25": 0.9974647819951687,
+  "fd_vs_analytic_median_abs": 0.0001362203404679969,
+  "fd_vs_analytic_rel": 0.08576748437687177,
+  "slip_contact_point": 0.0009606259667259242,
+  "slip_fd": 0.0007035162990024756,
+  "speed_foot_center": 0.0006166725851598578,
+  "body_point_speed": 0.0008779908675263282,
+  "body_trans_speed": 0.0005907215859254688,
+  "body_rot_speed": 0.0003474299903053332,
+  "leg_rel_speed": 0.0004488813763056102,
+  "cancel_ratio": 0.6799308351787768,
+  "leg_rel_along_cmd": -0.057322440392741626,
+  "body_point_along_cmd": 0.0676993233156971,
+  "slip_along_cmd": 0.010376882922955475,
+  "frac_leg_sweeps_back": 0.05371792112123604,
+  "cos_force_vs_slip_median": -0.9195432387396782,
+  "frac_cos_lt_minus_0_9": 0.5404965618602698,
+  "friction_ratio_median": 0.059098082924351425,
+  "friction_ratio_p90": 0.8173399076480283,
+  "frac_ratio_ge_0_9": 0.07063930544593527,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.6053909258329148,
+    "slip_median": 1.7160023808375234e-09
+   },
+   "0.25-0.5": {
+    "frac": 0.11318791705532037,
+    "slip_median": 0.006501053392377856
+   },
+   "0.5-0.75": {
+    "frac": 0.13984358183253212,
+    "slip_median": 0.08474325075809516
+   },
+   "0.75-0.9": {
+    "frac": 0.07093826983329746,
+    "slip_median": 0.1505983039622935
+   },
+   "0.9-1.01": {
+    "frac": 0.07063930544593527,
+    "slip_median": 0.527505178379524
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 4.158572603304583e-09
+ },
+ "main_v5b/on": {
+  "n_contacts": 48478,
+  "torso_vel_check_max": 4.484050470211362e-16,
+  "frac_contacts_not_touching": 0.9945336028714056,
+  "fz_not_touching_median_mg": 0.6434516035159126,
+  "frac_not_touching_with_fz_ge_0_25": 0.9938972667295005,
+  "fd_vs_analytic_median_abs": 0.07720231462464808,
+  "fd_vs_analytic_rel": 0.32472995425684087,
+  "slip_contact_point": 0.21283146420181698,
+  "slip_fd": 0.23068803343907687,
+  "speed_foot_center": 0.2992884876632743,
+  "body_point_speed": 0.24866167849342768,
+  "body_trans_speed": 0.3782427595122192,
+  "body_rot_speed": 0.4424913023186844,
+  "leg_rel_speed": 0.04516945731316041,
+  "cancel_ratio": 0.9911182849504295,
+  "leg_rel_along_cmd": -0.1476706094066775,
+  "body_point_along_cmd": 0.17599179603489934,
+  "slip_along_cmd": 0.028321186628221813,
+  "frac_leg_sweeps_back": 0.24441564561734214,
+  "cos_force_vs_slip_median": -0.8837931122531506,
+  "frac_cos_lt_minus_0_9": 0.47078634327205315,
+  "friction_ratio_median": 0.7614246173481347,
+  "friction_ratio_p90": 0.9999701892747886,
+  "frac_ratio_ge_0_9": 0.2905513666352498,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.04163524976437323,
+    "slip_median": 0.009835124994523266
+   },
+   "0.25-0.5": {
+    "frac": 0.09220075400565504,
+    "slip_median": 0.02426030380044641
+   },
+   "0.5-0.75": {
+    "frac": 0.3388077285579642,
+    "slip_median": 0.15901111186966146
+   },
+   "0.75-0.9": {
+    "frac": 0.23680490103675778,
+    "slip_median": 0.23061440369221375
+   },
+   "0.9-1.01": {
+    "frac": 0.2905513666352498,
+    "slip_median": 0.481155504361202
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.018567755986073426
+ },
+ "main_v6Bb/off": {
+  "n_contacts": 45393,
+  "torso_vel_check_max": 2.3055512673781017e-16,
+  "frac_contacts_not_touching": 0.9976868680192982,
+  "fz_not_touching_median_mg": 0.8465743146582898,
+  "frac_not_touching_with_fz_ge_0_25": 0.9974158280531743,
+  "fd_vs_analytic_median_abs": 0.13907796487055202,
+  "fd_vs_analytic_rel": 0.37273234148180273,
+  "slip_contact_point": 0.3574621943216364,
+  "slip_fd": 0.3711660794285339,
+  "speed_foot_center": 0.3348303512464502,
+  "body_point_speed": 0.5772649520794036,
+  "body_trans_speed": 0.35903457977060665,
+  "body_rot_speed": 0.5370222152333909,
+  "leg_rel_speed": 0.6635202603914736,
+  "cancel_ratio": 0.8160904650444744,
+  "leg_rel_along_cmd": -0.19713439172864133,
+  "body_point_along_cmd": 0.21629769035221186,
+  "slip_along_cmd": 0.019163298623570513,
+  "frac_leg_sweeps_back": 0.456503913529631,
+  "cos_force_vs_slip_median": -0.8392564000413238,
+  "frac_cos_lt_minus_0_9": 0.4036112301757394,
+  "friction_ratio_median": 0.8130100577819213,
+  "friction_ratio_p90": 0.9999701892747886,
+  "frac_ratio_ge_0_9": 0.3758479314200522,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.013914772021369114,
+    "slip_median": 0.209271212409333
+   },
+   "0.25-0.5": {
+    "frac": 0.03913529631010063,
+    "slip_median": 0.2137419154414481
+   },
+   "0.5-0.75": {
+    "frac": 0.3106472853770655,
+    "slip_median": 0.29841398921995055
+   },
+   "0.75-0.9": {
+    "frac": 0.2604547148714126,
+    "slip_median": 0.3377277775372183
+   },
+   "0.9-1.01": {
+    "frac": 0.3758479314200522,
+    "slip_median": 0.4614325587565365
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.21079614523350199
+ },
+ "main_v6Bb/on": {
+  "n_contacts": 33299,
+  "torso_vel_check_max": 4.443059973708341e-16,
+  "frac_contacts_not_touching": 0.9875972251418962,
+  "fz_not_touching_median_mg": 1.1493915355917683,
+  "frac_not_touching_with_fz_ge_0_25": 0.98637411081054,
+  "fd_vs_analytic_median_abs": 0.18618077428345184,
+  "fd_vs_analytic_rel": 0.3408783648844985,
+  "slip_contact_point": 0.5532280406923672,
+  "slip_fd": 0.5615858046181017,
+  "speed_foot_center": 0.46227592870632817,
+  "body_point_speed": 0.8467283114003882,
+  "body_trans_speed": 0.45512954453054205,
+  "body_rot_speed": 0.777199697689393,
+  "leg_rel_speed": 1.0507564048101041,
+  "cancel_ratio": 0.7917736299196382,
+  "leg_rel_along_cmd": -0.21151601621991337,
+  "body_point_along_cmd": 0.22488884174046084,
+  "slip_along_cmd": 0.013372825520547462,
+  "frac_leg_sweeps_back": 0.4927028019904485,
+  "cos_force_vs_slip_median": -0.8473533415578988,
+  "frac_cos_lt_minus_0_9": 0.41347053320860616,
+  "friction_ratio_median": 0.8373124880988083,
+  "friction_ratio_p90": 0.9999701892747888,
+  "frac_ratio_ge_0_9": 0.41191597368333166,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.010620178338843803,
+    "slip_median": 0.39514739681126015
+   },
+   "0.25-0.5": {
+    "frac": 0.028955014527602446,
+    "slip_median": 0.3343878325496711
+   },
+   "0.5-0.75": {
+    "frac": 0.2819356777877968,
+    "slip_median": 0.48000004322038026
+   },
+   "0.75-0.9": {
+    "frac": 0.2665731556624253,
+    "slip_median": 0.5111320555711334
+   },
+   "0.9-1.01": {
+    "frac": 0.41191597368333166,
+    "slip_median": 0.6714634360444295
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.34491366579111155
+ },
+ "main_v7Ab/off": {
+  "n_contacts": 51901,
+  "torso_vel_check_max": 2.237726045655905e-16,
+  "frac_contacts_not_touching": 0.9994219764551743,
+  "fz_not_touching_median_mg": 0.8099467373582424,
+  "frac_not_touching_with_fz_ge_0_25": 0.9993491843110032,
+  "fd_vs_analytic_median_abs": 0.14138577879938502,
+  "fd_vs_analytic_rel": 0.387936241437434,
+  "slip_contact_point": 0.3314430818472969,
+  "slip_fd": 0.34781189403041074,
+  "speed_foot_center": 0.300683841530268,
+  "body_point_speed": 0.5246793947378958,
+  "body_trans_speed": 0.29050859279814445,
+  "body_rot_speed": 0.47464259663634567,
+  "leg_rel_speed": 0.6489206213996277,
+  "cancel_ratio": 0.7828903078176699,
+  "leg_rel_along_cmd": -0.13997085344343743,
+  "body_point_along_cmd": 0.14493783538249108,
+  "slip_along_cmd": 0.0049669819390536175,
+  "frac_leg_sweeps_back": 0.4663094411662617,
+  "cos_force_vs_slip_median": -0.832071226606446,
+  "frac_cos_lt_minus_0_9": 0.39972440852932245,
+  "friction_ratio_median": 0.821329869151445,
+  "friction_ratio_p90": 0.9999701892747888,
+  "frac_ratio_ge_0_9": 0.39103175980562305,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.011671294689343978,
+    "slip_median": 0.19624833835273536
+   },
+   "0.25-0.5": {
+    "frac": 0.035469455050329744,
+    "slip_median": 0.18998112463697597
+   },
+   "0.5-0.75": {
+    "frac": 0.3040827837556404,
+    "slip_median": 0.2712245541627267
+   },
+   "0.75-0.9": {
+    "frac": 0.2577447066990628,
+    "slip_median": 0.30897516257675045
+   },
+   "0.9-1.01": {
+    "frac": 0.39103175980562305,
+    "slip_median": 0.41579221909385394
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.1918477672977251
+ },
+ "main_v7Ab/on": {
+  "n_contacts": 37485,
+  "torso_vel_check_max": 3.1401849173675503e-16,
+  "frac_contacts_not_touching": 0.996265172735761,
+  "fz_not_touching_median_mg": 1.0782978795069218,
+  "frac_not_touching_with_fz_ge_0_25": 0.995984291493194,
+  "fd_vs_analytic_median_abs": 0.1823356373428166,
+  "fd_vs_analytic_rel": 0.35034763311252587,
+  "slip_contact_point": 0.5226949164375624,
+  "slip_fd": 0.53261786594314,
+  "speed_foot_center": 0.4380586431261799,
+  "body_point_speed": 0.7646934599803409,
+  "body_trans_speed": 0.4086687237884333,
+  "body_rot_speed": 0.697623888952653,
+  "leg_rel_speed": 0.9811115202442338,
+  "cancel_ratio": 0.8024981461347193,
+  "leg_rel_along_cmd": -0.19161742810164273,
+  "body_point_along_cmd": 0.1909775525262845,
+  "slip_along_cmd": -0.0006398755753582146,
+  "frac_leg_sweeps_back": 0.4976821094280568,
+  "cos_force_vs_slip_median": -0.8348750765508066,
+  "frac_cos_lt_minus_0_9": 0.3999877435960289,
+  "friction_ratio_median": 0.8468699550284824,
+  "friction_ratio_p90": 0.9999701892747888,
+  "frac_ratio_ge_0_9": 0.42855877402781467,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.009507780435231936,
+    "slip_median": 0.3546012707833811
+   },
+   "0.25-0.5": {
+    "frac": 0.028139486816074644,
+    "slip_median": 0.32707747618224137
+   },
+   "0.5-0.75": {
+    "frac": 0.27359966929459356,
+    "slip_median": 0.4416022719035803
+   },
+   "0.75-0.9": {
+    "frac": 0.2601942894262852,
+    "slip_median": 0.48610079152123176
+   },
+   "0.9-1.01": {
+    "frac": 0.42855877402781467,
+    "slip_median": 0.6258826634536352
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.33346237166991205
+ },
+ "main_v7Bb/off": {
+  "n_contacts": 58374,
+  "torso_vel_check_max": 2.220446049250313e-16,
+  "frac_contacts_not_touching": 0.9999143454277589,
+  "fz_not_touching_median_mg": 0.7420900852199179,
+  "frac_not_touching_with_fz_ge_0_25": 0.9999020165004213,
+  "fd_vs_analytic_median_abs": 0.11857849232449554,
+  "fd_vs_analytic_rel": 0.3917758975647702,
+  "slip_contact_point": 0.2736752594954736,
+  "slip_fd": 0.2887475772029835,
+  "speed_foot_center": 0.2570059383344707,
+  "body_point_speed": 0.44011472817260455,
+  "body_trans_speed": 0.2480364572105488,
+  "body_rot_speed": 0.39481789711100457,
+  "leg_rel_speed": 0.5401896227376612,
+  "cancel_ratio": 0.7960669546191524,
+  "leg_rel_along_cmd": -0.10332429850865264,
+  "body_point_along_cmd": 0.12180156420881035,
+  "slip_along_cmd": 0.018477265700157675,
+  "frac_leg_sweeps_back": 0.4405338141057046,
+  "cos_force_vs_slip_median": -0.842185619306686,
+  "frac_cos_lt_minus_0_9": 0.4109517939401804,
+  "friction_ratio_median": 0.8099835853273486,
+  "friction_ratio_p90": 0.9999701892747888,
+  "frac_ratio_ge_0_9": 0.3731799564953262,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.014481961237727567,
+    "slip_median": 0.1292480016253274
+   },
+   "0.25-0.5": {
+    "frac": 0.03882106253306943,
+    "slip_median": 0.14087293260026196
+   },
+   "0.5-0.75": {
+    "frac": 0.31360598875149426,
+    "slip_median": 0.2142336940200251
+   },
+   "0.75-0.9": {
+    "frac": 0.25991103098238255,
+    "slip_median": 0.2575679772086497
+   },
+   "0.9-1.01": {
+    "frac": 0.3731799564953262,
+    "slip_median": 0.3691985676355187
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.13853486501480666
+ },
+ "main_v7Bb/on": {
+  "n_contacts": 43144,
+  "torso_vel_check_max": 2.2887833992611187e-16,
+  "frac_contacts_not_touching": 0.9991192286297051,
+  "fz_not_touching_median_mg": 0.9425829897760564,
+  "frac_not_touching_with_fz_ge_0_25": 0.9990246907242954,
+  "fd_vs_analytic_median_abs": 0.15328681131993,
+  "fd_vs_analytic_rel": 0.3565003889138584,
+  "slip_contact_point": 0.421697896474486,
+  "slip_fd": 0.4336582035420964,
+  "speed_foot_center": 0.37316835809765736,
+  "body_point_speed": 0.6403685074367547,
+  "body_trans_speed": 0.3602134843077786,
+  "body_rot_speed": 0.5844278186525347,
+  "leg_rel_speed": 0.8065463163148466,
+  "cancel_ratio": 0.8009467607902794,
+  "leg_rel_along_cmd": -0.14179676472611946,
+  "body_point_along_cmd": 0.1414310378705916,
+  "slip_along_cmd": -0.0003657268555279149,
+  "frac_leg_sweeps_back": 0.4637082285303629,
+  "cos_force_vs_slip_median": -0.846294823549256,
+  "frac_cos_lt_minus_0_9": 0.41396130291041133,
+  "friction_ratio_median": 0.8375957783796202,
+  "friction_ratio_p90": 0.9999701892747888,
+  "frac_ratio_ge_0_9": 0.41509676094656334,
+  "slip_by_friction_ratio": {
+   "0-0.25": {
+    "frac": 0.009727426723474155,
+    "slip_median": 0.2573206208793566
+   },
+   "0.25-0.5": {
+    "frac": 0.03154355525897028,
+    "slip_median": 0.2162500777088612
+   },
+   "0.5-0.75": {
+    "frac": 0.2875622401314101,
+    "slip_median": 0.34202018891341673
+   },
+   "0.75-0.9": {
+    "frac": 0.25607001693958215,
+    "slip_median": 0.3817009317607058
+   },
+   "0.9-1.01": {
+    "frac": 0.41509676094656334,
+    "slip_median": 0.542815382321529
+   },
+   "1.01-10": {
+    "frac": 0.0,
+    "slip_median": NaN
+   }
+  },
+  "slip_when_ratio_lt_0_5": 0.22165725001430708
+ }
+}
