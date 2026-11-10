@@ -47,7 +47,7 @@ def main():
     args = p.parse_args()
 
     policy = Policy(args.run)
-    env = make_command_ant(max_episode_steps=10**9)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": 10**9})
     direction, speed, energy = np.zeros(2), 0.8, 0.5
     env.set_command(0.0, 0.0, energy)
     obs, _ = env.reset(seed=0)

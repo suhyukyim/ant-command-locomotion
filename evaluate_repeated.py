@@ -134,7 +134,7 @@ def episode(run, cmd, reset_seed, deterministic, steps):
         torch.manual_seed(noise_seed)
     policy = _policy(run)
 
-    env = make_command_ant(max_episode_steps=steps)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": steps})
     env.set_command(cmd[0], cmd[1], ENERGY)
     obs, _ = env.reset(seed=reset_seed)
     m, d = env.unwrapped.model, env.unwrapped.data
@@ -150,6 +150,7 @@ def episode(run, cmd, reset_seed, deterministic, steps):
 
     vel, xy, q, qd, z, foot, act = [], [], [], [], [], [], []
     vz2, torso_c, upper_c = [], [], []
+    tabs, tlim, pw = [], [], []          # v8: 실제 적용 토크 (관절 평균 |τ|), 토크 제한 비율, 일률
     fell = False
     for t in range(steps):
         a = policy.act(obs, deterministic=deterministic)
@@ -171,6 +172,9 @@ def episode(run, cmd, reset_seed, deterministic, steps):
         torso_c.append(torso_geom in touching)
         upper_c.append(bool(touching & upper))
         act.append(np.clip(a, -1, 1))
+        tabs.append(float(np.mean(np.abs(info["torque"]))))
+        tlim.append(info["torque_limit_frac"])
+        pw.append(info["power"])
         if term:
             fell = True
             break
@@ -252,6 +256,9 @@ def episode(run, cmd, reset_seed, deterministic, steps):
         torso_and_upper_contact_ratio=float((torso_c[w] & upper_c[w]).mean()) if ok else None,
         touchdowns_per_s=((np.diff(fw, axis=0) == 1).sum(axis=0) / dur).round(3).tolist() if T > WARMUP else None,
         action_saturation=float((np.abs(act[w]) > 0.99).mean()) if T > WARMUP else None,
+        mean_abs_torque=float(np.mean(np.asarray(tabs)[w])) if T > WARMUP else None,
+        torque_limit_frac=float(np.mean(np.asarray(tlim)[w])) if T > WARMUP else None,
+        power=float(np.mean(np.asarray(pw)[w])) if T > WARMUP else None,
     )
 
 
@@ -310,7 +317,8 @@ def aggregate(eps, dt, steps):
     out["permanent_freeze_onset_s_median"] = float(np.median(onsets)) if onsets else None
     for k in ("joint_velocity", "trunk_height_std", "all_feet_air_ratio", "action_saturation",
               "diag_in_phase", "pair_alternation", "torso_vz2", "trunk_height_mean",
-              "torso_contact_ratio", "upper_leg_contact_ratio", "torso_and_upper_contact_ratio"):
+              "torso_contact_ratio", "upper_leg_contact_ratio", "torso_and_upper_contact_ratio",
+              "mean_abs_torque", "torque_limit_frac", "power"):
         out[k] = _mean([e[k] for e in eps])
     for k in ("joint_limit_occupancy", "joint_range_deg", "foot_air_ratio", "touchdowns_per_s",
               "joint_zone20_occupancy", "joint_rom_p5_p95_deg", "feet_down_hist"):

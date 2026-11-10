@@ -18,6 +18,7 @@ from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback
 from stable_baselines3.common.vec_env import SubprocVecEnv, DummyVecEnv, VecMonitor, VecNormalize
 
 from envs import make_command_ant
+from envs.run_config import check_resume_compatible, env_kwargs_from_config, load_env_kwargs
 from squashed_policy import SquashedGaussianPolicy
 
 
@@ -27,6 +28,7 @@ class TrackingLogger(BaseCallback):
     def __init__(self):
         super().__init__()
         self._err, self._effort, self._limit, self._vz2 = [], [], [], []
+        self._power, self._tlim, self._tabs = [], [], []
 
     def _on_step(self) -> bool:
         for info in self.locals["infos"]:
@@ -35,6 +37,9 @@ class TrackingLogger(BaseCallback):
                 self._effort.append(info["effort"])
                 self._limit.append(info.get("limit_penalty", 0.0))
                 self._vz2.append(info.get("vz2", 0.0))
+                self._power.append(info["power"])
+                self._tlim.append(info["torque_limit_frac"])
+                self._tabs.append(float(np.mean(np.abs(info["torque"]))))
         return True
 
     def _on_rollout_end(self) -> None:
@@ -45,10 +50,16 @@ class TrackingLogger(BaseCallback):
             self.logger.record("command/limit_penalty", float(np.mean(self._limit)))
             # 몸통 수직 속도 제곱 v_z² (가중치 곱하기 전). 보상에서 빠지는 양은 vz_weight × v_z²
             self.logger.record("command/vz2", float(np.mean(self._vz2)))
+            # v8: 실제 적용 토크 기준 (모든 갈래 공통)
+            self.logger.record("command/power", float(np.mean(self._power)))
+            self.logger.record("command/torque_limit_frac", float(np.mean(self._tlim)))
+            self.logger.record("command/mean_abs_torque", float(np.mean(self._tabs)))
         self._err.clear()
         self._effort.clear()
         self._limit.clear()
         self._vz2.clear()
+        for x in (self._power, self._tlim, self._tabs):
+            x.clear()
 
 
 class SaveNormCallback(BaseCallback):
@@ -87,7 +98,21 @@ def main():
                    help="행동을 tanh로 (-1, 1)에 묶는 정책 사용 (squashed_policy.py, v5)")
     p.add_argument("--constant-lr", type=float, default=None,
                    help="학습률을 이 값으로 고정 (기본: 3e-4 → 0 선형 감소). --resume과 함께 쓰면 이어 학습에도 적용")
+    p.add_argument("--action-mode", choices=["torque", "pd"], default="torque",
+                   help="행동 방식 (v8): torque = 행동 × 150 N·m, pd = 관절 목표 각도 + 물리 스텝마다 PD")
+    p.add_argument("--pd-kp", type=float, default=0.0, help="PD 비례 이득 [N·m/rad] (--action-mode pd)")
+    p.add_argument("--pd-kd", type=float, default=0.0, help="PD 미분 이득 [N·m·s/rad] (--action-mode pd)")
+    p.add_argument("--tracking-kernel", choices=["single", "two_term"], default="single",
+                   help="추종 커널 (v8): single = exp(-e²/σ), two_term = 넓은 항 + 좁은 항(σ 0.25) 반씩")
+    p.add_argument("--log-std-init", type=float, default=None,
+                   help="정책 탐색 노이즈 초기 log σ (기본: SB3 기본 0 = σ 1.0, v8C: ln 0.1)")
+    p.add_argument("--save-init", action="store_true",
+                   help="학습 전 정책을 runs/<run-name>_init/ 에 저장 (학습 전 측정용)")
     args = p.parse_args()
+
+    env_kwargs = env_kwargs_from_config(vars(args))
+    if args.resume:   # 이어 학습이 행동 방식·이득·커널을 바꾸면 정책이 배운 것의 뜻이 달라진다 → 멈춘다
+        check_resume_compatible(load_env_kwargs(args.resume), env_kwargs)
 
     run_name = args.run_name or time.strftime("%Y%m%d-%H%M%S")
     run_dir = Path("runs") / run_name
@@ -96,13 +121,7 @@ def main():
 
     def make(rank: int):
         def _init():
-            return make_command_ant(seed=args.seed + rank,
-                                    tracking_sigma=args.tracking_sigma,
-                                    tracking_weight=args.tracking_weight,
-                                    alive_weight=args.alive_weight,
-                                    limit_weight=args.limit_weight,
-                                    limit_soft=args.limit_soft,
-                                    vz_weight=args.vz_weight)
+            return make_command_ant(seed=args.seed + rank, **env_kwargs)
         return _init
 
     vec_cls = SubprocVecEnv if args.n_envs > 1 else DummyVecEnv
@@ -135,12 +154,20 @@ def main():
             gae_lambda=0.95,
             clip_range=0.2,
             ent_coef=0.0,
-            policy_kwargs=dict(net_arch=dict(pi=[256, 256], vf=[256, 256])),
+            policy_kwargs=dict(net_arch=dict(pi=[256, 256], vf=[256, 256]),
+                               **({} if args.log_std_init is None else dict(log_std_init=args.log_std_init))),
             tensorboard_log=str(run_dir),
             seed=args.seed,
             device="cpu",
             verbose=1,
         )
+
+    if args.save_init and not args.resume:   # 학습 전 정책: 평범한 run 폴더로 저장해 기존 평가 도구를 그대로 쓴다
+        init_dir = Path("runs") / f"{run_name}_init"
+        init_dir.mkdir(parents=True, exist_ok=True)
+        model.save(init_dir / "final_model")
+        venv.save(str(init_dir / "vecnormalize.pkl"))
+        (init_dir / "config.json").write_text(json.dumps(dict(vars(args), run_name=f"{run_name}_init"), indent=2))
 
     save_every = max(200_000 // args.n_envs, 1)
     callbacks = [

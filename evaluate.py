@@ -35,7 +35,7 @@ SAT_THRESHOLD = 0.99
 
 def rollout(policy, vx, vy, energy, steps=300, warmup=60, seed=0, deterministic=True):
     """명령을 고정해 한 번 굴려보고, 워밍업 이후 통계를 돌려준다."""
-    env = make_command_ant(max_episode_steps=steps + 10)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": steps + 10})
     env.set_command(vx, vy, energy)
     obs, _ = env.reset(seed=seed)
     data = env.unwrapped.data

@@ -40,10 +40,9 @@ def main():
 
     policy = Policy(args.run)
     waypoints = np.array(PATHS[args.path], dtype=float)
-    env = make_command_ant(
-        render_mode="rgb_array" if args.video else None,
-        max_episode_steps=args.max_steps + 10,
-    )
+    env = make_command_ant(**{**policy.env_kwargs,
+                              "render_mode": "rgb_array" if args.video else None,
+                              "max_episode_steps": args.max_steps + 10})
     env.set_command(0.0, 0.0, args.energy)
     obs, _ = env.reset(seed=0)
 

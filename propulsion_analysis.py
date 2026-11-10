@@ -94,7 +94,7 @@ class Recorder:
 
 
 def run_one(policy, cmd, deterministic):
-    env = make_command_ant(max_episode_steps=STEPS + 10)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": STEPS + 10})
     env.set_command(cmd[0], cmd[1], 0.5)
     u = np.asarray(cmd) / np.linalg.norm(cmd)
     rec = Recorder(env, u)

@@ -8,7 +8,7 @@ import numpy as np
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
-from envs import make_command_ant
+from envs import load_env_kwargs, make_command_ant
 
 
 class Policy:
@@ -17,7 +17,9 @@ class Policy:
     def __init__(self, run_dir: str | Path, checkpoint: str = "final_model"):
         run_dir = Path(run_dir)
         self.model = PPO.load(run_dir / f"{checkpoint}.zip", device="cpu")
-        dummy = DummyVecEnv([lambda: make_command_ant()])
+        # 이 run을 학습한 환경 설정 (행동 방식·PD 이득·커널·보상). 정책을 굴리는 환경은 반드시 이것으로 만든다
+        self.env_kwargs = load_env_kwargs(run_dir)
+        dummy = DummyVecEnv([lambda: make_command_ant(**self.env_kwargs)])
         self.norm = VecNormalize.load(str(run_dir / "vecnormalize.pkl"), dummy)
         self.norm.training = False
         self.norm.norm_reward = False

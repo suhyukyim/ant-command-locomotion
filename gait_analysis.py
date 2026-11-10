@@ -59,8 +59,8 @@ def command_grid():
 
 
 def record(policy, cmd, energy=0.5, seed=0, video=False):
-    env = make_command_ant(max_episode_steps=STEPS + 10,
-                           render_mode="rgb_array" if video else None)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": STEPS + 10,
+                              "render_mode": "rgb_array" if video else None})
     env.set_command(cmd[0], cmd[1], energy)
     obs, _ = env.reset(seed=seed)
     m, d = env.unwrapped.model, env.unwrapped.data

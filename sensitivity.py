@@ -34,7 +34,7 @@ def rollout(policy, cmd, kind="base", eps=0.0, pert_seed=0, eval_seed=0):
     import mujoco
     from envs import make_command_ant
 
-    env = make_command_ant(max_episode_steps=STEPS + 10)
+    env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": STEPS + 10})
     env.set_command(cmd[0], cmd[1], 0.5)
     obs, _ = env.reset(seed=eval_seed)
     u = env.unwrapped

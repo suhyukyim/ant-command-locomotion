@@ -44,7 +44,7 @@ def job(args):
         for s in RESET_SEEDS:
             if not det:
                 torch.manual_seed(10_000 + s)
-            env = make_command_ant(max_episode_steps=STEPS)
+            env = make_command_ant(**{**policy.env_kwargs, "max_episode_steps": STEPS})
             env.set_command(cmd[0], cmd[1], 0.5)
             obs, _ = env.reset(seed=s)
             m, d = env.unwrapped.model, env.unwrapped.data
