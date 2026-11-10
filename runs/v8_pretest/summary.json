@@ -1,0 +1,209 @@
+{
+ "criteria": {
+  "t1_torque": 2.0,
+  "t2_fell": 0.05,
+  "torque_limit": 0.05,
+  "t3_speed": 0.3,
+  "t3_load_dur": 0.1,
+  "t3_slip": 0.5
+ },
+ "load_thr_mg": 0.25,
+ "candidates": [
+  {
+   "kp": 30.0,
+   "kd": 10.0,
+   "T1": {
+    "fell": 0.0,
+    "limit_occ": 0.0,
+    "mean_abs_torque": 0.43072003726090735,
+    "passed": true
+   },
+   "T2": {
+    "fell": 0.0,
+    "mean_abs_torque": 6.562954451320318,
+    "torque_limit_frac": 0.0,
+    "limit_occ": 0.0,
+    "passed": true
+   },
+   "T3": {
+    "n_patterns": 1152,
+    "n_fell": 0,
+    "n_passed": 0,
+    "passed": false,
+    "best_passing_speed": 0.0,
+    "best_passing": null,
+    "fastest_any": {
+     "period": 0.6,
+     "hip_amp": 0.9,
+     "ankle_amp": 0.9,
+     "ankle_phase": 1.5707963267948966,
+     "hip_signs": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "fell": false,
+     "speed_x": 0.0776854996093774,
+     "speed_any": 0.08012186420325153,
+     "load_dur_mean": 0.02650586701434159,
+     "load_slip_gt_0_1": 0.8694472918071353,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    },
+    "longest_load": {
+     "period": 1.0,
+     "hip_amp": 0.3,
+     "ankle_amp": 0.6,
+     "ankle_phase": -1.5707963267948966,
+     "hip_signs": [
+      1,
+      -1,
+      -1,
+      1
+     ],
+     "fell": false,
+     "speed_x": -1.3953050529331296e-05,
+     "speed_any": 0.0010691844011126844,
+     "load_dur_mean": 0.06789617486338798,
+     "load_slip_gt_0_1": 0.6203535895964876,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    }
+   }
+  },
+  {
+   "kp": 60.0,
+   "kd": 15.0,
+   "T1": {
+    "fell": 0.0,
+    "limit_occ": 0.0,
+    "mean_abs_torque": 0.43538821918421533,
+    "passed": true
+   },
+   "T2": {
+    "fell": 0.0,
+    "mean_abs_torque": 12.330078350588508,
+    "torque_limit_frac": 0.0,
+    "limit_occ": 0.0,
+    "passed": true
+   },
+   "T3": {
+    "n_patterns": 1152,
+    "n_fell": 0,
+    "n_passed": 0,
+    "passed": false,
+    "best_passing_speed": 0.0,
+    "best_passing": null,
+    "fastest_any": {
+     "period": 0.4,
+     "hip_amp": 0.9,
+     "ankle_amp": 0.9,
+     "ankle_phase": -1.5707963267948966,
+     "hip_signs": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "fell": false,
+     "speed_x": 0.08365032858174663,
+     "speed_any": 0.08401632410000281,
+     "load_dur_mean": 0.019106699751861043,
+     "load_slip_gt_0_1": 0.8349534873728421,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    },
+    "longest_load": {
+     "period": 1.0,
+     "hip_amp": 0.3,
+     "ankle_amp": 0.3,
+     "ankle_phase": -1.5707963267948966,
+     "hip_signs": [
+      -1,
+      1,
+      1,
+      -1
+     ],
+     "fell": false,
+     "speed_x": -0.0006832653016044486,
+     "speed_any": 0.002589006138886327,
+     "load_dur_mean": 0.06241379310344827,
+     "load_slip_gt_0_1": 0.6666877740392853,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    }
+   }
+  },
+  {
+   "kp": 120.0,
+   "kd": 21.0,
+   "T1": {
+    "fell": 0.0,
+    "limit_occ": 0.0,
+    "mean_abs_torque": 0.43765895370864316,
+    "passed": true
+   },
+   "T2": {
+    "fell": 0.0,
+    "mean_abs_torque": 23.031260769321413,
+    "torque_limit_frac": 1.5000000000000002e-05,
+    "limit_occ": 1.25e-05,
+    "passed": true
+   },
+   "T3": {
+    "n_patterns": 1152,
+    "n_fell": 0,
+    "n_passed": 0,
+    "passed": false,
+    "best_passing_speed": 0.0,
+    "best_passing": null,
+    "fastest_any": {
+     "period": 0.6,
+     "hip_amp": 0.9,
+     "ankle_amp": 0.3,
+     "ankle_phase": 1.5707963267948966,
+     "hip_signs": [
+      1,
+      1,
+      1,
+      -1
+     ],
+     "fell": false,
+     "speed_x": 0.13017395657695213,
+     "speed_any": 0.17213037938902728,
+     "load_dur_mean": 0.018991477272727274,
+     "load_slip_gt_0_1": 0.9311197916666667,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    },
+    "longest_load": {
+     "period": 1.0,
+     "hip_amp": 0.3,
+     "ankle_amp": 0.3,
+     "ankle_phase": 1.5707963267948966,
+     "hip_signs": [
+      1,
+      -1,
+      -1,
+      1
+     ],
+     "fell": false,
+     "speed_x": 0.0013251214272682879,
+     "speed_any": 0.0015757940398020223,
+     "load_dur_mean": 0.04681632653061224,
+     "load_slip_gt_0_1": 0.6427200826840367,
+     "torque_limit_frac": 0.0,
+     "limit_occ": 0.0,
+     "passed": false
+    }
+   }
+  }
+ ],
+ "chosen": null
+}
