@@ -15,8 +15,12 @@ from __future__ import annotations
 import math
 
 import gymnasium as gym
+import mujoco
 import numpy as np
 from gymnasium import spaces
+
+# 토크 기준값 [N·m]. 모터 gear와 같다. 노력 E = Σ(τ / TAU_REF)² 의 분모이고 모든 갈래가 같은 값을 쓴다.
+TAU_REF = 150.0
 
 
 def yaw_from_quat(q: np.ndarray) -> float:
@@ -42,6 +46,10 @@ class CommandAnt(gym.Wrapper):
         limit_weight: float = 0.0,
         limit_soft: float = 0.8,
         vz_weight: float = 0.0,
+        action_mode: str = "torque",
+        pd_kp: float = 0.0,
+        pd_kd: float = 0.0,
+        tracking_kernel: str = "single",
     ):
         super().__init__(env)
         self.max_speed = max_speed
@@ -63,6 +71,28 @@ class CommandAnt(gym.Wrapper):
         # 몸통 수직 속도 페널티 (v7): vz_weight × v_z². v_z = qvel[2] = 몸통 free joint의 월드 좌표계
         # 선속도 z 성분 (기울어져도 월드 기준 위아래). vz_weight 0이면 기존 보상과 같다.
         self.vz_weight = vz_weight
+
+        # v8 자리표시자: PD 행동 공간(Task 2)과 두 항 커널(Task 3)은 뒤에서 채운다.
+        if action_mode != "torque":
+            raise ValueError(f"action_mode={action_mode!r}: 'pd'는 이후 작업에서 추가된다")
+        if tracking_kernel != "single":
+            raise ValueError(f"tracking_kernel={tracking_kernel!r}: 두 항 커널은 이후 작업에서 추가된다")
+        self.action_mode = action_mode
+        self.pd_kp = pd_kp
+        self.pd_kd = pd_kd
+        self.tracking_kernel = tracking_kernel
+
+        # 물리 스텝 루프 (v8): Gymnasium의 _step_mujoco_simulation을 이 클래스의 루프로 바꿔 끼운다.
+        # 물리 스텝마다 ctrl을 정한 뒤 mj_step 직전에 substep_callbacks를 순서대로 부른다
+        # (기록기 등은 여기에 콜백을 등록한다).
+        model = env.unwrapped.model
+        # 행동 순서와 관절 순서는 다르다: 행동 i는 관절 actuator_trnid[i, 0] - 1을 움직인다.
+        self._act_to_joint = model.actuator_trnid[:, 0].astype(int) - 1
+        self._gear = model.actuator_gear[:, 0].copy()
+        assert np.allclose(self._gear, TAU_REF), "모터 gear가 TAU_REF와 다르다"
+        self.substep_callbacks: list = []
+        self._step_info: dict = {}
+        env.unwrapped._step_mujoco_simulation = self._step_mujoco_simulation
 
         base = env.observation_space
         low = np.concatenate([base.low, [-np.inf, -np.inf, 0.0]]).astype(np.float32)
@@ -119,6 +149,57 @@ class CommandAnt(gym.Wrapper):
         return np.concatenate([obs, cmd_body, [self.energy]]).astype(np.float32)
 
     # ------------------------------------------------------------------
+    # 물리 스텝 루프
+    # ------------------------------------------------------------------
+    def _compute_ctrl(self, action: np.ndarray) -> np.ndarray:
+        """물리 스텝마다 부르는 ctrl 계산 (행동 순서). 토크 갈래는 행동 그대로."""
+        return action
+
+    def _step_mujoco_simulation(self, ctrl, n_frames):
+        """Gymnasium MujocoEnv와 같은 결과를 내되, 물리 스텝마다 적용 토크·일률을 모은다."""
+        u = self.env.unwrapped
+        model, data = u.model, u.data
+        action = np.asarray(ctrl, dtype=np.float64)
+        n = len(self._act_to_joint)
+        torque_sum = np.zeros(n)        # 관절 순서
+        effort_sum = power_sum = 0.0
+        n_limit = 0
+        for _ in range(n_frames):
+            data.ctrl[:] = self._compute_ctrl(action)
+            for cb in self.substep_callbacks:
+                cb()
+            mujoco.mj_step(model, data)
+            tau = np.empty(n)
+            # actuator_force는 gear 곱하기 전 값(모터 게인 1)이라 관절에 걸리는 토크는 gear를 곱한 값이다
+            tau[self._act_to_joint] = data.actuator_force * self._gear   # 행동 순서 -> 관절 순서
+            torque_sum += tau
+            effort_sum += float(np.sum((tau / TAU_REF) ** 2))
+            power_sum += float(np.sum(np.abs(tau * data.qvel[6:6 + n])))
+            n_limit += int(np.sum(np.abs(tau) >= 0.99 * TAU_REF))
+        # Gymnasium과 같다: 접촉력 등 센서 값을 위해 마지막에 한 번
+        mujoco.mj_rnePostConstraint(model, data)
+        self._step_info = dict(
+            torque=torque_sum / n_frames,
+            effort=effort_sum / n_frames,
+            power=power_sum / n_frames,
+            torque_limit_frac=n_limit / (n * n_frames),
+        )
+
+    def _fallback_step_info(self) -> dict:
+        """다른 코드가 _step_mujoco_simulation을 다시 바꿔 끼운 경우(예: 옛 Recorder)의 대비책.
+        마지막 물리 스텝의 값 하나로 채운다 (토크 갈래에서는 제어 스텝 동안 일정하므로 같은 값)."""
+        data = self._data
+        n = len(self._act_to_joint)
+        tau = np.empty(n)
+        tau[self._act_to_joint] = data.actuator_force * self._gear
+        return dict(
+            torque=tau,
+            effort=float(np.sum((tau / TAU_REF) ** 2)),
+            power=float(np.sum(np.abs(tau * data.qvel[6:6 + n]))),
+            torque_limit_frac=float(np.mean(np.abs(tau) >= 0.99 * TAU_REF)),
+        )
+
+    # ------------------------------------------------------------------
     # gym API
     # ------------------------------------------------------------------
     def reset(self, **kwargs):
@@ -130,6 +211,7 @@ class CommandAnt(gym.Wrapper):
 
     def step(self, action):
         xy_before = self.torso_xy()
+        self._step_info = {}
         obs, _, terminated, truncated, info = self.env.step(action)
         xy_after = self.torso_xy()
         dt = self.env.unwrapped.dt
@@ -143,7 +225,8 @@ class CommandAnt(gym.Wrapper):
         ctrl_w = self.ctrl_weight_min + (1.0 - self.energy) * (
             self.ctrl_weight_max - self.ctrl_weight_min
         )
-        effort = float(np.sum(np.square(action)))
+        si = self._step_info or self._fallback_step_info()
+        effort = si["effort"]   # 적용 토크 기준 Σ(τ/150)² (물리 스텝 평균)
 
         # 3) 관절 한계: 범위 끝 구간에 들어간 깊이(rad)의 합
         q = self._data.qpos[7:15]
@@ -171,6 +254,9 @@ class CommandAnt(gym.Wrapper):
             r_tracking=tracking,
             limit_penalty=limit_penalty,
             vz2=vz2,
+            torque=si["torque"],
+            power=si["power"],
+            torque_limit_frac=si["torque_limit_frac"],
         )
 
         self._steps += 1
