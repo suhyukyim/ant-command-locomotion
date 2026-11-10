@@ -72,9 +72,11 @@ class CommandAnt(gym.Wrapper):
         # 선속도 z 성분 (기울어져도 월드 기준 위아래). vz_weight 0이면 기존 보상과 같다.
         self.vz_weight = vz_weight
 
-        # v8 자리표시자: PD 행동 공간(Task 2)과 두 항 커널(Task 3)은 뒤에서 채운다.
-        if action_mode != "torque":
-            raise ValueError(f"action_mode={action_mode!r}: 'pd'는 이후 작업에서 추가된다")
+        # 행동 방식 (v8): "torque" = 행동 × 150 N·m (기존), "pd" = 행동 = 관절 목표 각도, 물리 스텝마다 PD로 토크 계산
+        if action_mode not in ("torque", "pd"):
+            raise ValueError(f"action_mode={action_mode!r}: 'torque' 또는 'pd'")
+        if action_mode == "pd" and pd_kp <= 0:
+            raise ValueError(f"PD 행동 방식에는 pd_kp > 0이 필요하다 (pd_kp={pd_kp})")
         if tracking_kernel != "single":
             raise ValueError(f"tracking_kernel={tracking_kernel!r}: 두 항 커널은 이후 작업에서 추가된다")
         self.action_mode = action_mode
@@ -90,6 +92,11 @@ class CommandAnt(gym.Wrapper):
         self._act_to_joint = model.actuator_trnid[:, 0].astype(int) - 1
         self._gear = model.actuator_gear[:, 0].copy()
         assert np.allclose(self._gear, TAU_REF), "모터 gear가 TAU_REF와 다르다"
+        # PD: 행동 i의 목표 = 그 관절 범위 중심 + a_i × 반범위 (a = ±1 이면 관절 한계). 행동 순서로 저장
+        jr = model.jnt_range[1:9]
+        self._pd_center = jr.mean(axis=1)[self._act_to_joint]
+        self._pd_half = ((jr[:, 1] - jr[:, 0]) / 2)[self._act_to_joint]
+        self._pd_target = None
         self.substep_callbacks: list = []
         self._step_info: dict = {}
         env.unwrapped._step_mujoco_simulation = self._step_mujoco_simulation
@@ -151,9 +158,17 @@ class CommandAnt(gym.Wrapper):
     # ------------------------------------------------------------------
     # 물리 스텝 루프
     # ------------------------------------------------------------------
-    def _compute_ctrl(self, action: np.ndarray) -> np.ndarray:
-        """물리 스텝마다 부르는 ctrl 계산 (행동 순서). 토크 갈래는 행동 그대로."""
-        return action
+    def _compute_ctrl(self, action: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+        """물리 스텝마다 부른다. (ctrl, 잘리기 전 요청 토크 [N·m]), 둘 다 행동 순서.
+        토크 갈래는 행동 그대로 (기존과 비트 단위로 같게). PD 갈래는 제어 스텝 동안 고정된 목표로
+        그 순간의 q, q̇에서 토크를 다시 계산하고 ±gear에서 자른다."""
+        if self.action_mode == "torque":
+            return action, action * self._gear
+        d = self._data
+        q = d.qpos[7:15][self._act_to_joint]
+        qd = d.qvel[6:14][self._act_to_joint]
+        req = self.pd_kp * (self._pd_target - q) - self.pd_kd * qd
+        return np.clip(req, -self._gear, self._gear) / self._gear, req
 
     def _step_mujoco_simulation(self, ctrl, n_frames):
         """Gymnasium MujocoEnv와 같은 결과를 내되, 물리 스텝마다 적용 토크·일률을 모은다."""
@@ -162,10 +177,15 @@ class CommandAnt(gym.Wrapper):
         action = np.asarray(ctrl, dtype=np.float64)
         n = len(self._act_to_joint)
         torque_sum = np.zeros(n)        # 관절 순서
+        req_sum = np.zeros(n)
         effort_sum = power_sum = 0.0
         n_limit = 0
+        if self.action_mode == "pd":   # 목표 각도는 제어 스텝 시작 때 한 번 정하고 물리 스텝 5개 동안 유지
+            self._pd_target = self._pd_center + np.clip(action, -1.0, 1.0) * self._pd_half
         for _ in range(n_frames):
-            data.ctrl[:] = self._compute_ctrl(action)
+            ctrl_now, req = self._compute_ctrl(action)
+            data.ctrl[:] = ctrl_now
+            req_sum[self._act_to_joint] += req
             for cb in self.substep_callbacks:
                 cb()
             mujoco.mj_step(model, data)
@@ -180,6 +200,7 @@ class CommandAnt(gym.Wrapper):
         mujoco.mj_rnePostConstraint(model, data)
         self._step_info = dict(
             torque=torque_sum / n_frames,
+            torque_requested=req_sum / n_frames,
             effort=effort_sum / n_frames,
             power=power_sum / n_frames,
             torque_limit_frac=n_limit / (n * n_frames),
@@ -194,6 +215,7 @@ class CommandAnt(gym.Wrapper):
         tau[self._act_to_joint] = data.actuator_force * self._gear
         return dict(
             torque=tau,
+            torque_requested=tau,
             effort=float(np.sum((tau / TAU_REF) ** 2)),
             power=float(np.sum(np.abs(tau * data.qvel[6:6 + n]))),
             torque_limit_frac=float(np.mean(np.abs(tau) >= 0.99 * TAU_REF)),
@@ -255,6 +277,7 @@ class CommandAnt(gym.Wrapper):
             limit_penalty=limit_penalty,
             vz2=vz2,
             torque=si["torque"],
+            torque_requested=si["torque_requested"],
             power=si["power"],
             torque_limit_frac=si["torque_limit_frac"],
         )
