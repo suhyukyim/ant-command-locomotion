@@ -59,15 +59,14 @@ class Recorder:
         self.rows = []   # (con[4], fz[4], fa[4], slip[4], fh[4], total_f[3])
         self._f6, self._v6 = np.zeros(6), np.zeros(6)
 
-        def step_sim(ctrl, n_frames):          # MujocoEnv._step_mujoco_simulation과 같은 동작, 1스텝씩
-            uw.data.ctrl[:] = ctrl
-            for _ in range(n_frames):
-                if self.on:   # Ant는 RK4: mj_step 뒤의 접촉력은 마지막 RK 단계 값이라, 스텝 시작 상태에서 다시 계산해 기록
-                    mujoco.mj_forward(uw.model, uw.data)   # 궤적은 바뀌지 않음 (확인: qpos 차이 0)
-                    self.sample()
-                mujoco.mj_step(uw.model, uw.data)
-            mujoco.mj_rnePostConstraint(uw.model, uw.data)
-        uw._step_mujoco_simulation = step_sim
+        # 물리 스텝마다 CommandAnt가 ctrl을 정한 뒤, mj_step 직전에 부른다 (토크·PD 갈래 공통).
+        env.substep_callbacks.append(self.on_substep)
+
+    def on_substep(self):
+        # Ant는 RK4: mj_step 뒤의 접촉력은 마지막 RK 단계 값이라, 스텝 시작 상태에서 다시 계산해 기록
+        if self.on:
+            mujoco.mj_forward(self.m, self.d)   # 상태는 바꾸지 않음 (궤적 같음: tests/test_recorder.py)
+            self.sample()
 
     def sample(self):
         m, d = self.m, self.d
@@ -183,7 +182,13 @@ def summarize_stances(st):
 
 
 def main():
-    names = sys.argv[1:] or ["runs/main_v5b", "runs/main_v6Bb", "runs/main_v7Ab", "runs/main_v7Bb"]
+    global OUT
+    import argparse
+    p = argparse.ArgumentParser()
+    p.add_argument("runs", nargs="*", default=["runs/main_v5b", "runs/main_v6Bb", "runs/main_v7Ab", "runs/main_v7Bb"])
+    p.add_argument("--out", default=str(OUT), help="결과 폴더 (기본 runs/propulsion_v7)")
+    a = p.parse_args()
+    names, OUT = a.runs, Path(a.out)
     OUT.mkdir(parents=True, exist_ok=True)
     result, profiles = {}, {}
     for base in names:

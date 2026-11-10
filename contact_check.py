@@ -90,6 +90,10 @@ def rollout(policy, cmd, deterministic):
             mujoco.mj_step(m, d)
             finish(pend)
         mujoco.mj_rnePostConstraint(m, d)
+    # 이 검증은 물리 스텝 직후 값(유한 차분)이 필요해 루프를 직접 바꿔 끼운다. 토크 행동만 맞게 재현한다
+    # (PD는 CommandAnt 루프에서 토크를 계산하므로 여기서는 지원하지 않음).
+    if env.action_mode != "torque":
+        raise NotImplementedError("contact_check.py는 토크 행동 run만 지원한다")
     uw._step_mujoco_simulation = step_sim
 
     obs, _ = env.reset(seed=0)

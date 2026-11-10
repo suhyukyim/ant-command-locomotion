@@ -167,6 +167,7 @@ def analyze(thr):
                 std={k: float(np.nanstd([s[k] for s in seeds], ddof=1)) for k in ks},
                 fz_quantiles_mg=dict(zip(["p10", "p25", "p50", "p75", "p90", "p99"], q.round(3).tolist())),
                 fz_frac_below_thr=float((fz_all < thr).mean()))
+            colors.setdefault(cfg, f"C{len(colors) % 10}")
             h, _ = np.histogram(np.clip(fz_all, 0, 4), bins=bins, density=True)
             axes[col].step(bins[:-1], h, where="post", color=colors[cfg], lw=1.6,
                            label=f"{cfg.replace('main_', '')} (median {q[2]:.2f} mg)")
@@ -186,7 +187,12 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--record", action="store_true")
     p.add_argument("--load-thr", type=float, default=0.25, help="하중 디딤 기준: 발 하나의 F_z ≥ thr × mg")
+    p.add_argument("--runs", nargs="+", default=CONFIGS, help="설정 이름 (seed 접미사 _s1 _s2 자동 포함)")
+    p.add_argument("--out", default=str(OUT), help="결과 폴더 (기본 runs/propulsion_v7)")
     a = p.parse_args()
+    CONFIGS[:] = a.runs
+    OUT = Path(a.out)
+    RAW = OUT / "raw.npz"
     if a.record or not RAW.exists():
         record()
     r = analyze(a.load_thr)
