@@ -1,0 +1,14 @@
+{
+  "timesteps": 5000000,
+  "n_envs": 8,
+  "run_name": "main_v6C_s2",
+  "seed": 2,
+  "resume": null,
+  "tracking_sigma": 1.0,
+  "tracking_weight": 5.0,
+  "alive_weight": 1.0,
+  "limit_weight": 3.0,
+  "limit_soft": 0.8,
+  "squash": true,
+  "constant_lr": null
+}
