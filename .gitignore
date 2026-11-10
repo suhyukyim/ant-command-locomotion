@@ -6,3 +6,7 @@ runs/smoke/
 runs/validate/
 runs/*.log
 runs/*/*.log
+# 보행 분석 GIF는 대표 2개만 저장소에 올림
+runs/gait/*.gif
+!runs/gait/v5b_s0_1.0_270.gif
+!runs/gait/v5b_s0_0.5_90.gif
