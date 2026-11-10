@@ -1,0 +1,88 @@
+{
+ "reward": "v6B_two_term",
+ "condition": "\uba85\ub839 16\uac1c \u00d7 reset seed 0~9 \u00d7 1000\uc2a4\ud15d, \uc5d0\ub108\uc9c0 0.5",
+ "pd_kp": 0.0,
+ "pd_kd": 0.0,
+ "results": {
+  "zero": {
+   "ep_rew_mean": 2460.4273367290866,
+   "ep_rew_0_5": 3407.3649289258756,
+   "ep_rew_1_0": 1513.4897445322972,
+   "ep_len_mean": 1000.0,
+   "fell": 0.0,
+   "mean_abs_torque_nm": 0.0,
+   "frac_below_pd_stand": 1.0
+  },
+  "pd_stand": {
+   "ep_rew_mean": 2913.8536548110756,
+   "ep_rew_0_5": 3863.339375641523,
+   "ep_rew_1_0": 1964.367933980628,
+   "ep_len_mean": 1000.0,
+   "fell": 0.0,
+   "mean_abs_torque_nm": 0.47910791424868276,
+   "frac_below_pd_stand": 0.0
+  },
+  "noise_off|main_v6Bb": {
+   "ep_rew_mean": 2839.8451591428616,
+   "ep_rew_0_5": 3595.445254153964,
+   "ep_rew_1_0": 2084.2450641317587,
+   "ep_len_mean": 1000.0,
+   "fell": 0.0,
+   "mean_abs_torque_nm": 98.11439462587612,
+   "frac_below_pd_stand": 0.6
+  },
+  "noise_on|main_v6Bb": {
+   "ep_rew_mean": 2296.468115433301,
+   "ep_rew_0_5": 2900.860627291034,
+   "ep_rew_1_0": 1692.075603575569,
+   "ep_len_mean": 957.65,
+   "fell": 0.09375,
+   "mean_abs_torque_nm": 100.74183922168086,
+   "frac_below_pd_stand": 0.9
+  },
+  "noise_off|main_v6Bb_s1": {
+   "ep_rew_mean": 2672.4029683566864,
+   "ep_rew_0_5": 3360.581324697587,
+   "ep_rew_1_0": 1984.2246120157856,
+   "ep_len_mean": 1000.0,
+   "fell": 0.0,
+   "mean_abs_torque_nm": 97.97425677322596,
+   "frac_below_pd_stand": 0.73125
+  },
+  "noise_on|main_v6Bb_s1": {
+   "ep_rew_mean": 2273.693780657022,
+   "ep_rew_0_5": 2877.6962757990973,
+   "ep_rew_1_0": 1669.6912855149471,
+   "ep_len_mean": 979.89375,
+   "fell": 0.05,
+   "mean_abs_torque_nm": 100.91117470055899,
+   "frac_below_pd_stand": 0.90625
+  },
+  "noise_off|main_v6Bb_s2": {
+   "ep_rew_mean": 2203.240555091021,
+   "ep_rew_0_5": 2866.3913294953477,
+   "ep_rew_1_0": 1540.0897806866947,
+   "ep_len_mean": 1000.0,
+   "fell": 0.0,
+   "mean_abs_torque_nm": 92.63905060700799,
+   "frac_below_pd_stand": 1.0
+  },
+  "noise_on|main_v6Bb_s2": {
+   "ep_rew_mean": 2024.6637403813922,
+   "ep_rew_0_5": 2647.8528150101934,
+   "ep_rew_1_0": 1401.474665752591,
+   "ep_len_mean": 957.35625,
+   "fell": 0.06875,
+   "mean_abs_torque_nm": 96.78532150791595,
+   "frac_below_pd_stand": 0.99375
+  },
+  "noise_off|v6Bb_seed_mean": {
+   "ep_rew_mean": 2571.829560863523,
+   "ep_rew_std": 330.0039593642621
+  },
+  "noise_on|v6Bb_seed_mean": {
+   "ep_rew_mean": 2198.2752121572385,
+   "ep_rew_std": 150.78254186163963
+  }
+ }
+}
