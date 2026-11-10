@@ -52,6 +52,11 @@
   "action_saturation": 0.01749584441489362,
   "diag_in_phase": 0.04860558047477067,
   "pair_alternation": 0.06489602496708709,
+  "torso_vz2": 0.12605946464306522,
+  "trunk_height_mean": 0.6340553136366294,
+  "torso_contact_ratio": 0.0,
+  "upper_leg_contact_ratio": 0.0,
+  "torso_and_upper_contact_ratio": 0.0,
   "joint_limit_occupancy": [
    0.063,
    0.208,
@@ -445,6 +450,11 @@
   "action_saturation": 0.06132323659050887,
   "diag_in_phase": 0.04250121058738094,
   "pair_alternation": 0.025340574540687506,
+  "torso_vz2": 0.20778860375784633,
+  "trunk_height_mean": 0.6129709014897701,
+  "torso_contact_ratio": 0.06149601063829787,
+  "upper_leg_contact_ratio": 0.011894946808510637,
+  "torso_and_upper_contact_ratio": 0.002107712765957447,
   "joint_limit_occupancy": [
    0.117,
    0.251,
@@ -900,6 +910,11 @@
     0.671
    ],
    "all_feet_air_ratio": 0.4223404255319149,
+   "torso_vz2": 0.086625785639507,
+   "trunk_height_mean": 0.6384748568768708,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     4.277,
@@ -992,6 +1007,11 @@
     0.724
    ],
    "all_feet_air_ratio": 0.44893617021276594,
+   "torso_vz2": 0.09510260012929224,
+   "trunk_height_mean": 0.6409451239226422,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     4.447,
@@ -1084,6 +1104,11 @@
     0.68
    ],
    "all_feet_air_ratio": 0.42659574468085104,
+   "torso_vz2": 0.07628281992754753,
+   "trunk_height_mean": 0.6366412033657414,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     4.511,
@@ -1176,6 +1201,11 @@
     0.697
    ],
    "all_feet_air_ratio": 0.42127659574468085,
+   "torso_vz2": 0.08957705289967563,
+   "trunk_height_mean": 0.6399481885461726,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     4.766,
@@ -1268,6 +1298,11 @@
     0.699
    ],
    "all_feet_air_ratio": 0.40106382978723404,
+   "torso_vz2": 0.07568665070304477,
+   "trunk_height_mean": 0.6360151424553347,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.404,
     4.702,
@@ -1360,6 +1395,11 @@
     0.684
    ],
    "all_feet_air_ratio": 0.4276595744680851,
+   "torso_vz2": 0.07702139653011789,
+   "trunk_height_mean": 0.6371243971789142,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     4.787,
@@ -1452,6 +1492,11 @@
     0.697
    ],
    "all_feet_air_ratio": 0.41914893617021276,
+   "torso_vz2": 0.0821049669290336,
+   "trunk_height_mean": 0.6374866855503859,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     4.468,
@@ -1544,6 +1589,11 @@
     0.701
    ],
    "all_feet_air_ratio": 0.4276595744680851,
+   "torso_vz2": 0.07938008693240434,
+   "trunk_height_mean": 0.6365417974850883,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     4.532,
@@ -1636,6 +1686,11 @@
     0.714
    ],
    "all_feet_air_ratio": 0.451063829787234,
+   "torso_vz2": 0.08145703260453988,
+   "trunk_height_mean": 0.6374830217287334,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.979,
     4.489,
@@ -1728,6 +1783,11 @@
     0.721
    ],
    "all_feet_air_ratio": 0.42446808510638295,
+   "torso_vz2": 0.08253246390263566,
+   "trunk_height_mean": 0.6387414910046638,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.532,
     4.426,
@@ -1820,6 +1880,11 @@
     0.957
    ],
    "all_feet_air_ratio": 0.8287234042553191,
+   "torso_vz2": 0.08902147916514513,
+   "trunk_height_mean": 0.3188819049770964,
+   "torso_contact_ratio": 0.5819148936170213,
+   "upper_leg_contact_ratio": 0.12446808510638298,
+   "torso_and_upper_contact_ratio": 0.01702127659574468,
    "touchdowns_per_s": [
     0.681,
     1.106,
@@ -1912,6 +1977,11 @@
     0.755
    ],
    "all_feet_air_ratio": 0.5053191489361702,
+   "torso_vz2": 0.15668898939095932,
+   "trunk_height_mean": 0.648418090990935,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.511,
     3.383,
@@ -2004,6 +2074,11 @@
     0.903
    ],
    "all_feet_air_ratio": 0.7489361702127659,
+   "torso_vz2": 0.10635877739895078,
+   "trunk_height_mean": 0.4091982232379602,
+   "torso_contact_ratio": 0.425531914893617,
+   "upper_leg_contact_ratio": 0.09148936170212765,
+   "torso_and_upper_contact_ratio": 0.009574468085106383,
    "touchdowns_per_s": [
     0.702,
     1.34,
@@ -2096,6 +2171,11 @@
     0.776
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.18741403851387825,
+   "trunk_height_mean": 0.6479480887454874,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.34,
     3.489,
@@ -2188,6 +2268,11 @@
     0.779
    ],
    "all_feet_air_ratio": 0.5414893617021277,
+   "torso_vz2": 0.15317972083883738,
+   "trunk_height_mean": 0.6463564481047259,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     3.872,
@@ -2280,6 +2365,11 @@
     0.795
    ],
    "all_feet_air_ratio": 0.5723404255319149,
+   "torso_vz2": 0.20676952527387416,
+   "trunk_height_mean": 0.6522621545514943,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     3.213,
@@ -2372,6 +2462,11 @@
     0.75
    ],
    "all_feet_air_ratio": 0.5361842105263158,
+   "torso_vz2": 0.20851509290615125,
+   "trunk_height_mean": 0.6496933021975397,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.053,
     3.553,
@@ -2464,6 +2559,11 @@
     0.754
    ],
    "all_feet_air_ratio": 0.5053191489361702,
+   "torso_vz2": 0.15433648608143527,
+   "trunk_height_mean": 0.6474987947121214,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.617,
@@ -2556,6 +2656,11 @@
     0.778
    ],
    "all_feet_air_ratio": 0.5287234042553192,
+   "torso_vz2": 0.18929488956993656,
+   "trunk_height_mean": 0.648000058735116,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.809,
@@ -2648,6 +2753,11 @@
     0.804
    ],
    "all_feet_air_ratio": 0.5680851063829787,
+   "torso_vz2": 0.19920907470781726,
+   "trunk_height_mean": 0.6516261987555728,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.149,
     3.596,
@@ -2740,6 +2850,11 @@
     0.746
    ],
    "all_feet_air_ratio": 0.4574468085106383,
+   "torso_vz2": 0.10055176357862144,
+   "trunk_height_mean": 0.638492054747812,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.872,
     4.532,
@@ -2832,6 +2947,11 @@
     0.721
    ],
    "all_feet_air_ratio": 0.4340425531914894,
+   "torso_vz2": 0.09052468943889011,
+   "trunk_height_mean": 0.6394304474919975,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     4.681,
@@ -2924,6 +3044,11 @@
     0.719
    ],
    "all_feet_air_ratio": 0.44680851063829785,
+   "torso_vz2": 0.09166683294477669,
+   "trunk_height_mean": 0.6374762750502637,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     4.553,
@@ -3016,6 +3141,11 @@
     0.734
    ],
    "all_feet_air_ratio": 0.4425531914893617,
+   "torso_vz2": 0.0871159499009999,
+   "trunk_height_mean": 0.6375673529782725,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.149,
     4.447,
@@ -3108,6 +3238,11 @@
     0.703
    ],
    "all_feet_air_ratio": 0.4095744680851064,
+   "torso_vz2": 0.08505364907038322,
+   "trunk_height_mean": 0.6379732904948064,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.362,
     4.511,
@@ -3200,6 +3335,11 @@
     0.715
    ],
    "all_feet_air_ratio": 0.46063829787234045,
+   "torso_vz2": 0.09346660446401973,
+   "trunk_height_mean": 0.6375425567911411,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     4.83,
@@ -3292,6 +3432,11 @@
     0.739
    ],
    "all_feet_air_ratio": 0.44468085106382976,
+   "torso_vz2": 0.08990882469519432,
+   "trunk_height_mean": 0.6377971830931146,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.085,
     4.787,
@@ -3384,6 +3529,11 @@
     0.764
    ],
    "all_feet_air_ratio": 0.4734042553191489,
+   "torso_vz2": 0.09203413401601032,
+   "trunk_height_mean": 0.6384365190098986,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     4.979,
@@ -3476,6 +3626,11 @@
     0.71
    ],
    "all_feet_air_ratio": 0.41914893617021276,
+   "torso_vz2": 0.07578554909841766,
+   "trunk_height_mean": 0.6372482516795671,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.085,
     4.936,
@@ -3568,6 +3723,11 @@
     0.736
    ],
    "all_feet_air_ratio": 0.4521276595744681,
+   "torso_vz2": 0.08028059632687246,
+   "trunk_height_mean": 0.6368700396316566,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.957,
     4.872,
@@ -3660,6 +3820,11 @@
     0.823
    ],
    "all_feet_air_ratio": 0.574468085106383,
+   "torso_vz2": 0.18523962822980503,
+   "trunk_height_mean": 0.6483732801289674,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     3.702,
@@ -3752,6 +3917,11 @@
     0.774
    ],
    "all_feet_air_ratio": 0.548936170212766,
+   "torso_vz2": 0.1749663947044988,
+   "trunk_height_mean": 0.648670487756331,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.34,
     3.532,
@@ -3844,6 +4014,11 @@
     0.801
    ],
    "all_feet_air_ratio": 0.5638297872340425,
+   "torso_vz2": 0.18423084117496105,
+   "trunk_height_mean": 0.6504880860195574,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     3.383,
@@ -3936,6 +4111,11 @@
     0.788
    ],
    "all_feet_air_ratio": 0.551063829787234,
+   "torso_vz2": 0.1749233918700617,
+   "trunk_height_mean": 0.647731173761477,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.702,
@@ -4028,6 +4208,11 @@
     0.788
    ],
    "all_feet_air_ratio": 0.5478723404255319,
+   "torso_vz2": 0.17841493859979293,
+   "trunk_height_mean": 0.6472504537504593,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     3.872,
@@ -4120,6 +4305,11 @@
     0.807
    ],
    "all_feet_air_ratio": 0.5351063829787234,
+   "torso_vz2": 0.20960132916172275,
+   "trunk_height_mean": 0.6518934055891575,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     3.936,
@@ -4212,6 +4402,11 @@
     0.787
    ],
    "all_feet_air_ratio": 0.5425531914893617,
+   "torso_vz2": 0.18053512308376976,
+   "trunk_height_mean": 0.6513100870577282,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.426,
@@ -4304,6 +4499,11 @@
     0.785
    ],
    "all_feet_air_ratio": 0.5340425531914894,
+   "torso_vz2": 0.16586393577527794,
+   "trunk_height_mean": 0.6490678056597633,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.234,
     3.83,
@@ -4396,6 +4596,11 @@
     0.814
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.16432960923539172,
+   "trunk_height_mean": 0.6497672615713618,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.426,
     3.894,
@@ -4488,6 +4693,11 @@
     0.794
    ],
    "all_feet_air_ratio": 0.5393617021276595,
+   "torso_vz2": 0.15700574422168623,
+   "trunk_height_mean": 0.6462677231098826,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     3.809,
@@ -4580,6 +4790,11 @@
     0.73
    ],
    "all_feet_air_ratio": 0.46914893617021275,
+   "torso_vz2": 0.09836904238243091,
+   "trunk_height_mean": 0.63664799771263,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     4.681,
@@ -4672,6 +4887,11 @@
     0.712
    ],
    "all_feet_air_ratio": 0.4563829787234043,
+   "torso_vz2": 0.0832291880908238,
+   "trunk_height_mean": 0.6380257084043037,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     4.702,
@@ -4764,6 +4984,11 @@
     0.746
    ],
    "all_feet_air_ratio": 0.4595744680851064,
+   "torso_vz2": 0.09122415872723649,
+   "trunk_height_mean": 0.6366151379016066,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.617,
     4.681,
@@ -4856,6 +5081,11 @@
     0.736
    ],
    "all_feet_air_ratio": 0.43936170212765957,
+   "torso_vz2": 0.09166824553340337,
+   "trunk_height_mean": 0.6383117776344225,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     4.553,
@@ -4948,6 +5178,11 @@
     0.741
    ],
    "all_feet_air_ratio": 0.4819148936170213,
+   "torso_vz2": 0.09855445924659956,
+   "trunk_height_mean": 0.6379625184367351,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     4.745,
@@ -5040,6 +5275,11 @@
     0.728
    ],
    "all_feet_air_ratio": 0.45851063829787236,
+   "torso_vz2": 0.09152668185798192,
+   "trunk_height_mean": 0.6379504667958491,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     4.83,
@@ -5132,6 +5372,11 @@
     0.744
    ],
    "all_feet_air_ratio": 0.5031914893617021,
+   "torso_vz2": 0.0955691951001292,
+   "trunk_height_mean": 0.6393400284446731,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     4.426,
@@ -5224,6 +5469,11 @@
     0.766
    ],
    "all_feet_air_ratio": 0.4829787234042553,
+   "torso_vz2": 0.10256287957403673,
+   "trunk_height_mean": 0.6399775601813736,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     4.638,
@@ -5316,6 +5566,11 @@
     0.751
    ],
    "all_feet_air_ratio": 0.46170212765957447,
+   "torso_vz2": 0.09267027960252744,
+   "trunk_height_mean": 0.6376418038632221,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     5.0,
@@ -5408,6 +5663,11 @@
     0.747
    ],
    "all_feet_air_ratio": 0.475531914893617,
+   "torso_vz2": 0.10368865981909912,
+   "trunk_height_mean": 0.640754520563004,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     4.83,
@@ -5500,6 +5760,11 @@
     0.813
    ],
    "all_feet_air_ratio": 0.5606382978723404,
+   "torso_vz2": 0.2067786252686566,
+   "trunk_height_mean": 0.6524326502230713,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.149,
     3.936,
@@ -5592,6 +5857,11 @@
     0.92
    ],
    "all_feet_air_ratio": 0.7574468085106383,
+   "torso_vz2": 0.10125823654558483,
+   "trunk_height_mean": 0.401217612183082,
+   "torso_contact_ratio": 0.45,
+   "upper_leg_contact_ratio": 0.08085106382978724,
+   "torso_and_upper_contact_ratio": 0.007446808510638298,
    "touchdowns_per_s": [
     0.936,
     1.489,
@@ -5684,6 +5954,11 @@
     0.829
    ],
    "all_feet_air_ratio": 0.5648936170212766,
+   "torso_vz2": 0.2109403405346147,
+   "trunk_height_mean": 0.6523802091317854,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.447,
     3.723,
@@ -5776,6 +6051,11 @@
     0.829
    ],
    "all_feet_air_ratio": 0.5627659574468085,
+   "torso_vz2": 0.18848582153760077,
+   "trunk_height_mean": 0.6509941771909339,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     3.936,
@@ -5868,6 +6148,11 @@
     0.822
    ],
    "all_feet_air_ratio": 0.574468085106383,
+   "torso_vz2": 0.20350274432674587,
+   "trunk_height_mean": 0.6518348245364286,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     3.851,
@@ -5960,6 +6245,11 @@
     0.822
    ],
    "all_feet_air_ratio": 0.55,
+   "torso_vz2": 0.19974001266713942,
+   "trunk_height_mean": 0.6503191174971589,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.957,
@@ -6052,6 +6342,11 @@
     0.806
    ],
    "all_feet_air_ratio": 0.5414893617021277,
+   "torso_vz2": 0.25149634970259965,
+   "trunk_height_mean": 0.6594052331830713,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.596,
     3.66,
@@ -6144,6 +6439,11 @@
     0.821
    ],
    "all_feet_air_ratio": 0.5585106382978723,
+   "torso_vz2": 0.1992090327089475,
+   "trunk_height_mean": 0.6517466722207703,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     4.064,
@@ -6236,6 +6536,11 @@
     0.806
    ],
    "all_feet_air_ratio": 0.5404255319148936,
+   "torso_vz2": 0.19928587897895025,
+   "trunk_height_mean": 0.6485953419334491,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.298,
     3.809,
@@ -6328,6 +6633,11 @@
     0.832
    ],
    "all_feet_air_ratio": 0.5606382978723404,
+   "torso_vz2": 0.19334093909820801,
+   "trunk_height_mean": 0.6490466655655278,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     4.17,
@@ -6420,6 +6730,11 @@
     0.748
    ],
    "all_feet_air_ratio": 0.46702127659574466,
+   "torso_vz2": 0.0916549931926518,
+   "trunk_height_mean": 0.6383605709534574,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.66,
     4.681,
@@ -6512,6 +6827,11 @@
     0.763
    ],
    "all_feet_air_ratio": 0.475531914893617,
+   "torso_vz2": 0.11960875210890029,
+   "trunk_height_mean": 0.6383671575380417,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.702,
     4.447,
@@ -6604,6 +6924,11 @@
     0.715
    ],
    "all_feet_air_ratio": 0.45851063829787236,
+   "torso_vz2": 0.09012472638491302,
+   "trunk_height_mean": 0.6351691835995085,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     4.638,
@@ -6696,6 +7021,11 @@
     0.757
    ],
    "all_feet_air_ratio": 0.4819148936170213,
+   "torso_vz2": 0.10551326227832104,
+   "trunk_height_mean": 0.6397698647352247,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.511,
     4.809,
@@ -6788,6 +7118,11 @@
     0.73
    ],
    "all_feet_air_ratio": 0.474468085106383,
+   "torso_vz2": 0.1044666631295258,
+   "trunk_height_mean": 0.6397934511188795,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     4.702,
@@ -6880,6 +7215,11 @@
     0.767
    ],
    "all_feet_air_ratio": 0.4946808510638298,
+   "torso_vz2": 0.11345639643850042,
+   "trunk_height_mean": 0.6392549608130799,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     4.83,
@@ -6972,6 +7312,11 @@
     0.764
    ],
    "all_feet_air_ratio": 0.48936170212765956,
+   "torso_vz2": 0.10165984564487812,
+   "trunk_height_mean": 0.6350810473354062,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.787,
     4.532,
@@ -7064,6 +7409,11 @@
     0.751
    ],
    "all_feet_air_ratio": 0.4648936170212766,
+   "torso_vz2": 0.10084037009791341,
+   "trunk_height_mean": 0.6390827900604172,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.596,
     4.809,
@@ -7156,6 +7506,11 @@
     0.747
    ],
    "all_feet_air_ratio": 0.4765957446808511,
+   "torso_vz2": 0.08977044537760177,
+   "trunk_height_mean": 0.6359649326753924,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.638,
     4.681,
@@ -7248,6 +7603,11 @@
     0.778
    ],
    "all_feet_air_ratio": 0.4829787234042553,
+   "torso_vz2": 0.10518397498598626,
+   "trunk_height_mean": 0.6344486980525785,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.043,
     4.574,
@@ -7340,6 +7700,11 @@
     0.815
    ],
    "all_feet_air_ratio": 0.5297872340425532,
+   "torso_vz2": 0.17709351669984433,
+   "trunk_height_mean": 0.6474953434310928,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     4.234,
@@ -7432,6 +7797,11 @@
     0.822
    ],
    "all_feet_air_ratio": 0.5351063829787234,
+   "torso_vz2": 0.18320435804782134,
+   "trunk_height_mean": 0.6492781845246567,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.447,
     3.851,
@@ -7524,6 +7894,11 @@
     0.828
    ],
    "all_feet_air_ratio": 0.5776595744680851,
+   "torso_vz2": 0.254070880281023,
+   "trunk_height_mean": 0.6528508376773926,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     3.766,
@@ -7616,6 +7991,11 @@
     0.824
    ],
    "all_feet_air_ratio": 0.5617021276595745,
+   "torso_vz2": 0.22074809581605526,
+   "trunk_height_mean": 0.6526242594722488,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.745,
     3.596,
@@ -7708,6 +8088,11 @@
     0.836
    ],
    "all_feet_air_ratio": 0.5656108597285068,
+   "torso_vz2": 0.2259871246590886,
+   "trunk_height_mean": 0.651578176352738,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.448,
     3.71,
@@ -7800,6 +8185,11 @@
     0.807
    ],
    "all_feet_air_ratio": 0.5425531914893617,
+   "torso_vz2": 0.1834822423440863,
+   "trunk_height_mean": 0.6454515700439915,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.426,
     4.106,
@@ -7892,6 +8282,11 @@
     0.844
    ],
    "all_feet_air_ratio": 0.5819148936170213,
+   "torso_vz2": 0.21746146867057137,
+   "trunk_height_mean": 0.6497224242377789,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.085,
     3.809,
@@ -7984,6 +8379,11 @@
     0.796
    ],
    "all_feet_air_ratio": 0.5255319148936171,
+   "torso_vz2": 0.1676672992007887,
+   "trunk_height_mean": 0.6455220724851507,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.362,
     3.957,
@@ -8076,6 +8476,11 @@
     0.844
    ],
    "all_feet_air_ratio": 0.5893617021276596,
+   "torso_vz2": 0.23875503038108511,
+   "trunk_height_mean": 0.6597148566866623,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     3.745,
@@ -8168,6 +8573,11 @@
     0.813
    ],
    "all_feet_air_ratio": 0.5542553191489362,
+   "torso_vz2": 0.17987723630463937,
+   "trunk_height_mean": 0.6462295936132376,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.574,
     3.723,
@@ -8260,6 +8670,11 @@
     0.746
    ],
    "all_feet_air_ratio": 0.4276595744680851,
+   "torso_vz2": 0.09022810689915564,
+   "trunk_height_mean": 0.6289770594224802,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.383,
     4.66,
@@ -8352,6 +8767,11 @@
     0.739
    ],
    "all_feet_air_ratio": 0.42021276595744683,
+   "torso_vz2": 0.08545172784137,
+   "trunk_height_mean": 0.6264419229180463,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.34,
     4.723,
@@ -8444,6 +8864,11 @@
     0.771
    ],
    "all_feet_air_ratio": 0.4776595744680851,
+   "torso_vz2": 0.0926769308088531,
+   "trunk_height_mean": 0.6327270105331401,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.191,
     4.277,
@@ -8536,6 +8961,11 @@
     0.73
    ],
    "all_feet_air_ratio": 0.48936170212765956,
+   "torso_vz2": 0.08492634228614407,
+   "trunk_height_mean": 0.6345170710710504,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.66,
     4.511,
@@ -8628,6 +9058,11 @@
     0.733
    ],
    "all_feet_air_ratio": 0.46382978723404256,
+   "torso_vz2": 0.09116536635940005,
+   "trunk_height_mean": 0.6304455782225611,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.468,
@@ -8720,6 +9155,11 @@
     0.761
    ],
    "all_feet_air_ratio": 0.44893617021276594,
+   "torso_vz2": 0.09021806663169092,
+   "trunk_height_mean": 0.6306424121218397,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.34,
     4.809,
@@ -8812,6 +9252,11 @@
     0.761
    ],
    "all_feet_air_ratio": 0.44574468085106383,
+   "torso_vz2": 0.08925690034945151,
+   "trunk_height_mean": 0.6292312909319179,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.574,
     4.362,
@@ -8904,6 +9349,11 @@
     0.734
    ],
    "all_feet_air_ratio": 0.40106382978723404,
+   "torso_vz2": 0.08037667261047221,
+   "trunk_height_mean": 0.6269114302179505,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.17,
     4.787,
@@ -8996,6 +9446,11 @@
     0.752
    ],
    "all_feet_air_ratio": 0.4829787234042553,
+   "torso_vz2": 0.09999564138088303,
+   "trunk_height_mean": 0.6368799003610136,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.723,
     4.532,
@@ -9088,6 +9543,11 @@
     0.736
    ],
    "all_feet_air_ratio": 0.4478723404255319,
+   "torso_vz2": 0.09544075285551279,
+   "trunk_height_mean": 0.6329246695754434,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.149,
     4.617,
@@ -9180,6 +9640,11 @@
     0.822
    ],
    "all_feet_air_ratio": 0.5851063829787234,
+   "torso_vz2": 0.1981888071088447,
+   "trunk_height_mean": 0.6461542750929241,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.532,
     3.596,
@@ -9272,6 +9737,11 @@
     0.928
    ],
    "all_feet_air_ratio": 0.7776595744680851,
+   "torso_vz2": 0.10924881054120243,
+   "trunk_height_mean": 0.39474701859356265,
+   "torso_contact_ratio": 0.4627659574468085,
+   "upper_leg_contact_ratio": 0.09042553191489362,
+   "torso_and_upper_contact_ratio": 0.014893617021276596,
    "touchdowns_per_s": [
     0.681,
     1.574,
@@ -9364,6 +9834,11 @@
     0.83
    ],
    "all_feet_air_ratio": 0.5765957446808511,
+   "torso_vz2": 0.17624812346735996,
+   "trunk_height_mean": 0.6459718803159221,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.319,
     3.872,
@@ -9456,6 +9931,11 @@
     0.812
    ],
    "all_feet_air_ratio": 0.5553191489361702,
+   "torso_vz2": 0.18176753933329995,
+   "trunk_height_mean": 0.6432315699534681,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.617,
     3.957,
@@ -9548,6 +10028,11 @@
     0.827
    ],
    "all_feet_air_ratio": 0.5478723404255319,
+   "torso_vz2": 0.17679393432147045,
+   "trunk_height_mean": 0.6447857108323728,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     3.809,
@@ -9640,6 +10125,11 @@
     0.819
    ],
    "all_feet_air_ratio": 0.5659574468085107,
+   "torso_vz2": 0.18653472661566242,
+   "trunk_height_mean": 0.6414880730809109,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.809,
     3.851,
@@ -9732,6 +10222,11 @@
     0.826
    ],
    "all_feet_air_ratio": 0.5670212765957446,
+   "torso_vz2": 0.19746801664743105,
+   "trunk_height_mean": 0.6482833526513666,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.66,
     3.83,
@@ -9824,6 +10319,11 @@
     0.811
    ],
    "all_feet_air_ratio": 0.5617021276595745,
+   "torso_vz2": 0.1861521417222844,
+   "trunk_height_mean": 0.6443155275623184,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.574,
     4.0,
@@ -9916,6 +10416,11 @@
     0.909
    ],
    "all_feet_air_ratio": 0.7063829787234043,
+   "torso_vz2": 0.13231914434976108,
+   "trunk_height_mean": 0.4556657772024766,
+   "torso_contact_ratio": 0.32659574468085106,
+   "upper_leg_contact_ratio": 0.0797872340425532,
+   "torso_and_upper_contact_ratio": 0.007446808510638298,
    "touchdowns_per_s": [
     1.255,
     2.362,
@@ -10008,6 +10513,11 @@
     0.823
    ],
    "all_feet_air_ratio": 0.5589285714285714,
+   "torso_vz2": 0.21824589249211174,
+   "trunk_height_mean": 0.6495028665806938,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.821,
     3.571,
@@ -10100,6 +10610,11 @@
     0.704
    ],
    "all_feet_air_ratio": 0.4297872340425532,
+   "torso_vz2": 0.09478944012330635,
+   "trunk_height_mean": 0.6296437521733205,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.277,
     4.404,
@@ -10192,6 +10707,11 @@
     0.723
    ],
    "all_feet_air_ratio": 0.4297872340425532,
+   "torso_vz2": 0.08377740447159476,
+   "trunk_height_mean": 0.6284342550297536,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.404,
     4.511,
@@ -10284,6 +10804,11 @@
     0.735
    ],
    "all_feet_air_ratio": 0.44361702127659575,
+   "torso_vz2": 0.08729632291727998,
+   "trunk_height_mean": 0.6299637172969013,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.489,
     4.277,
@@ -10376,6 +10901,11 @@
     0.727
    ],
    "all_feet_air_ratio": 0.44148936170212766,
+   "torso_vz2": 0.07974318142623538,
+   "trunk_height_mean": 0.6274021936254469,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.787,
@@ -10468,6 +10998,11 @@
     0.712
    ],
    "all_feet_air_ratio": 0.39361702127659576,
+   "torso_vz2": 0.08636548349161192,
+   "trunk_height_mean": 0.6289285648789806,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.511,
     4.66,
@@ -10560,6 +11095,11 @@
     0.729
    ],
    "all_feet_air_ratio": 0.4372340425531915,
+   "torso_vz2": 0.08448604098446269,
+   "trunk_height_mean": 0.6284403160360681,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.298,
@@ -10652,6 +11192,11 @@
     0.695
    ],
    "all_feet_air_ratio": 0.41382978723404257,
+   "torso_vz2": 0.08015959163035664,
+   "trunk_height_mean": 0.6284826544788128,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.383,
     4.83,
@@ -10744,6 +11289,11 @@
     0.722
    ],
    "all_feet_air_ratio": 0.4372340425531915,
+   "torso_vz2": 0.08613398056858963,
+   "trunk_height_mean": 0.6282308236071199,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.234,
     4.745,
@@ -10836,6 +11386,11 @@
     0.719
    ],
    "all_feet_air_ratio": 0.4372340425531915,
+   "torso_vz2": 0.08817894656076569,
+   "trunk_height_mean": 0.6306152388919553,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.468,
     4.617,
@@ -10928,6 +11483,11 @@
     0.711
    ],
    "all_feet_air_ratio": 0.4351063829787234,
+   "torso_vz2": 0.08133914068059594,
+   "trunk_height_mean": 0.6281995300994174,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.745,
     4.17,
@@ -11020,6 +11580,11 @@
     0.897
    ],
    "all_feet_air_ratio": 0.75,
+   "torso_vz2": 0.1115679827527173,
+   "trunk_height_mean": 0.42500497284803973,
+   "torso_contact_ratio": 0.4095744680851064,
+   "upper_leg_contact_ratio": 0.08191489361702127,
+   "torso_and_upper_contact_ratio": 0.011702127659574468,
    "touchdowns_per_s": [
     1.17,
     1.574,
@@ -11112,6 +11677,11 @@
     0.815
    ],
    "all_feet_air_ratio": 0.5648936170212766,
+   "torso_vz2": 0.1970421301989124,
+   "trunk_height_mean": 0.6446488939963335,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.766,
     3.596,
@@ -11204,6 +11774,11 @@
     0.83
    ],
    "all_feet_air_ratio": 0.5617021276595745,
+   "torso_vz2": 0.18828655567639532,
+   "trunk_height_mean": 0.6459753591271922,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.596,
     3.681,
@@ -11296,6 +11871,11 @@
     0.76
    ],
    "all_feet_air_ratio": 0.5148936170212766,
+   "torso_vz2": 0.1575983221807032,
+   "trunk_height_mean": 0.6375199880440268,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     3.894,
@@ -11388,6 +11968,11 @@
     0.794
    ],
    "all_feet_air_ratio": 0.5255319148936171,
+   "torso_vz2": 0.14988563885975156,
+   "trunk_height_mean": 0.637355395579153,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.979,
     3.809,
@@ -11480,6 +12065,11 @@
     0.788
    ],
    "all_feet_air_ratio": 0.551063829787234,
+   "torso_vz2": 0.16614558099353988,
+   "trunk_height_mean": 0.6376834100960611,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     3.447,
@@ -11572,6 +12162,11 @@
     0.81
    ],
    "all_feet_air_ratio": 0.5574468085106383,
+   "torso_vz2": 0.17792550316413283,
+   "trunk_height_mean": 0.6400190848980629,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.936,
     3.83,
@@ -11664,6 +12259,11 @@
     0.782
    ],
    "all_feet_air_ratio": 0.526595744680851,
+   "torso_vz2": 0.15596795264311705,
+   "trunk_height_mean": 0.6382725465620728,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.915,
     3.851,
@@ -11756,6 +12356,11 @@
     0.8
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.17261476398421347,
+   "trunk_height_mean": 0.6430877707611706,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.851,
     3.745,
@@ -11848,6 +12453,11 @@
     0.787
    ],
    "all_feet_air_ratio": 0.5393617021276595,
+   "torso_vz2": 0.18408000657992243,
+   "trunk_height_mean": 0.6468573601156468,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.766,
     3.617,
@@ -11940,6 +12550,11 @@
     0.714
    ],
    "all_feet_air_ratio": 0.4521276595744681,
+   "torso_vz2": 0.10413945194926807,
+   "trunk_height_mean": 0.6291563054349936,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.383,
     4.085,
@@ -12032,6 +12647,11 @@
     0.673
    ],
    "all_feet_air_ratio": 0.4319148936170213,
+   "torso_vz2": 0.07815292121327676,
+   "trunk_height_mean": 0.6325239029959336,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     4.319,
@@ -12124,6 +12744,11 @@
     0.689
    ],
    "all_feet_air_ratio": 0.4542553191489362,
+   "torso_vz2": 0.09503699507980265,
+   "trunk_height_mean": 0.6306676037636406,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.064,
@@ -12216,6 +12841,11 @@
     0.673
    ],
    "all_feet_air_ratio": 0.42872340425531913,
+   "torso_vz2": 0.09083717511315514,
+   "trunk_height_mean": 0.6287284258921281,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.447,
     4.191,
@@ -12308,6 +12938,11 @@
     0.686
    ],
    "all_feet_air_ratio": 0.4595744680851064,
+   "torso_vz2": 0.10336662578502699,
+   "trunk_height_mean": 0.6297082591297232,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.255,
     3.979,
@@ -12400,6 +13035,11 @@
     0.676
    ],
    "all_feet_air_ratio": 0.4521276595744681,
+   "torso_vz2": 0.08396321425261495,
+   "trunk_height_mean": 0.6331141786439478,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.043,
     3.979,
@@ -12492,6 +13132,11 @@
     0.648
    ],
    "all_feet_air_ratio": 0.44574468085106383,
+   "torso_vz2": 0.07321033487294092,
+   "trunk_height_mean": 0.6323047782436345,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.979,
     4.149,
@@ -12584,6 +13229,11 @@
     0.635
    ],
    "all_feet_air_ratio": 0.4074468085106383,
+   "torso_vz2": 0.06554989856823858,
+   "trunk_height_mean": 0.6331766061609696,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.17,
     4.638,
@@ -12676,6 +13326,11 @@
     0.686
    ],
    "all_feet_air_ratio": 0.46063829787234045,
+   "torso_vz2": 0.08440018348228695,
+   "trunk_height_mean": 0.6327061535056102,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.128,
     4.191,
@@ -12768,6 +13423,11 @@
     0.68
    ],
    "all_feet_air_ratio": 0.4319148936170213,
+   "torso_vz2": 0.08652119276103055,
+   "trunk_height_mean": 0.6319381726225712,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.106,
     4.234,
@@ -12860,6 +13520,11 @@
     0.786
    ],
    "all_feet_air_ratio": 0.5340425531914894,
+   "torso_vz2": 0.17542818195534435,
+   "trunk_height_mean": 0.6417411096991368,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     3.489,
@@ -12952,6 +13617,11 @@
     0.781
    ],
    "all_feet_air_ratio": 0.5085106382978724,
+   "torso_vz2": 0.14749223355350533,
+   "trunk_height_mean": 0.6389594135708668,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     3.511,
@@ -13044,6 +13714,11 @@
     0.759
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.15143340533776914,
+   "trunk_height_mean": 0.6400204321532967,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     3.532,
@@ -13136,6 +13811,11 @@
     0.755
    ],
    "all_feet_air_ratio": 0.5212765957446809,
+   "torso_vz2": 0.17969439666042197,
+   "trunk_height_mean": 0.642814399313155,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.979,
     3.404,
@@ -13228,6 +13908,11 @@
     0.771
    ],
    "all_feet_air_ratio": 0.5202127659574468,
+   "torso_vz2": 0.169369108383017,
+   "trunk_height_mean": 0.6415124817558634,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.979,
     3.426,
@@ -13320,6 +14005,11 @@
     0.74
    ],
    "all_feet_air_ratio": 0.5319148936170213,
+   "torso_vz2": 0.15266730927365682,
+   "trunk_height_mean": 0.6402176069713096,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.043,
     3.191,
@@ -13412,6 +14102,11 @@
     0.766
    ],
    "all_feet_air_ratio": 0.5457446808510639,
+   "torso_vz2": 0.16019663020267846,
+   "trunk_height_mean": 0.6394346577676145,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.894,
     3.085,
@@ -13504,6 +14199,11 @@
     0.767
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.17931259907896302,
+   "trunk_height_mean": 0.6406827941538761,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.0,
     3.638,
@@ -13596,6 +14296,11 @@
     0.839
    ],
    "all_feet_air_ratio": 0.6574468085106383,
+   "torso_vz2": 0.17337164648292303,
+   "trunk_height_mean": 0.5347261874608438,
+   "torso_contact_ratio": 0.22659574468085106,
+   "upper_leg_contact_ratio": 0.029787234042553193,
+   "torso_and_upper_contact_ratio": 0.005319148936170213,
    "touchdowns_per_s": [
     1.723,
     2.213,
@@ -13688,6 +14393,11 @@
     0.769
    ],
    "all_feet_air_ratio": 0.5223404255319148,
+   "torso_vz2": 0.1663695615798283,
+   "trunk_height_mean": 0.6418538121878815,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.149,
     3.468,
@@ -13780,6 +14490,11 @@
     0.659
    ],
    "all_feet_air_ratio": 0.4297872340425532,
+   "torso_vz2": 0.13659225452400284,
+   "trunk_height_mean": 0.6332137400745748,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     4.234,
@@ -13872,6 +14587,11 @@
     0.661
    ],
    "all_feet_air_ratio": 0.4329787234042553,
+   "torso_vz2": 0.08644952868855729,
+   "trunk_height_mean": 0.6333999461266441,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.468,
     4.362,
@@ -13964,6 +14684,11 @@
     0.652
    ],
    "all_feet_air_ratio": 0.42127659574468085,
+   "torso_vz2": 0.06865507575809633,
+   "trunk_height_mean": 0.6371902950203975,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.617,
     4.383,
@@ -14056,6 +14781,11 @@
     0.636
    ],
    "all_feet_air_ratio": 0.4053191489361702,
+   "torso_vz2": 0.06242954222715528,
+   "trunk_height_mean": 0.6360480320477473,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.809,
     4.723,
@@ -14148,6 +14878,11 @@
     0.696
    ],
    "all_feet_air_ratio": 0.4478723404255319,
+   "torso_vz2": 0.09384787858468713,
+   "trunk_height_mean": 0.6380907834095587,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     4.553,
@@ -14240,6 +14975,11 @@
     0.629
    ],
    "all_feet_air_ratio": 0.40425531914893614,
+   "torso_vz2": 0.0676705013764743,
+   "trunk_height_mean": 0.6371330916283772,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.532,
     4.83,
@@ -14332,6 +15072,11 @@
     0.607
    ],
    "all_feet_air_ratio": 0.3702127659574468,
+   "torso_vz2": 0.06197301910303704,
+   "trunk_height_mean": 0.6364002926387883,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.511,
     4.617,
@@ -14424,6 +15169,11 @@
     0.621
    ],
    "all_feet_air_ratio": 0.41808510638297874,
+   "torso_vz2": 0.052511136392943164,
+   "trunk_height_mean": 0.6357019443684461,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.596,
     4.872,
@@ -14516,6 +15266,11 @@
     0.659
    ],
    "all_feet_air_ratio": 0.40638297872340423,
+   "torso_vz2": 0.11138448803539204,
+   "trunk_height_mean": 0.6289649032398638,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.553,
     4.383,
@@ -14608,6 +15363,11 @@
     0.64
    ],
    "all_feet_air_ratio": 0.4308510638297872,
+   "torso_vz2": 0.06546245809359438,
+   "trunk_height_mean": 0.6372508785287693,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     4.553,
@@ -14700,6 +15460,11 @@
     0.766
    ],
    "all_feet_air_ratio": 0.5255319148936171,
+   "torso_vz2": 0.18098544010260054,
+   "trunk_height_mean": 0.6417859523582333,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.34,
     3.234,
@@ -14792,6 +15557,11 @@
     0.705
    ],
    "all_feet_air_ratio": 0.498936170212766,
+   "torso_vz2": 0.1358157639003857,
+   "trunk_height_mean": 0.6403611149501515,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.809,
     3.298,
@@ -14884,6 +15654,11 @@
     0.749
    ],
    "all_feet_air_ratio": 0.5255319148936171,
+   "torso_vz2": 0.1636115958377642,
+   "trunk_height_mean": 0.64576221531869,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.574,
     3.255,
@@ -14976,6 +15751,11 @@
     0.722
    ],
    "all_feet_air_ratio": 0.5159574468085106,
+   "torso_vz2": 0.14956950477573752,
+   "trunk_height_mean": 0.6407182580747165,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.489,
     3.638,
@@ -15068,6 +15848,11 @@
     0.744
    ],
    "all_feet_air_ratio": 0.5351063829787234,
+   "torso_vz2": 0.16219590493112163,
+   "trunk_height_mean": 0.6398966510955247,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     3.34,
@@ -15160,6 +15945,11 @@
     0.769
    ],
    "all_feet_air_ratio": 0.5234042553191489,
+   "torso_vz2": 0.1808848980134562,
+   "trunk_height_mean": 0.6435421911577841,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.234,
     3.383,
@@ -15252,6 +16042,11 @@
     0.752
    ],
    "all_feet_air_ratio": 0.5436170212765957,
+   "torso_vz2": 0.1416120294937414,
+   "trunk_height_mean": 0.6421260440754697,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.489,
     3.468,
@@ -15344,6 +16139,11 @@
     0.732
    ],
    "all_feet_air_ratio": 0.5191489361702127,
+   "torso_vz2": 0.14927735524474997,
+   "trunk_height_mean": 0.6398078848841597,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.936,
     3.255,
@@ -15436,6 +16236,11 @@
     0.807
    ],
    "all_feet_air_ratio": 0.5904255319148937,
+   "torso_vz2": 0.26689016681268535,
+   "trunk_height_mean": 0.6565987565353528,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.936,
     2.936,
@@ -15528,6 +16333,11 @@
     0.766
    ],
    "all_feet_air_ratio": 0.5454545454545454,
+   "torso_vz2": 0.15490076534918298,
+   "trunk_height_mean": 0.6470542166772404,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.508,
     3.326,
@@ -15620,6 +16430,11 @@
     0.79
    ],
    "all_feet_air_ratio": 0.5382978723404256,
+   "torso_vz2": 0.1773957063437475,
+   "trunk_height_mean": 0.6389822297707158,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.851,
     3.851,
@@ -15712,6 +16527,11 @@
     0.755
    ],
    "all_feet_air_ratio": 0.4765957446808511,
+   "torso_vz2": 0.14933028864434653,
+   "trunk_height_mean": 0.6388195861629538,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.426,
     4.213,
@@ -15804,6 +16624,11 @@
     0.746
    ],
    "all_feet_air_ratio": 0.4765957446808511,
+   "torso_vz2": 0.1434989695263383,
+   "trunk_height_mean": 0.6408958166830936,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.404,
     3.936,
@@ -15896,6 +16721,11 @@
     0.747
    ],
    "all_feet_air_ratio": 0.4776595744680851,
+   "torso_vz2": 0.13518357346549498,
+   "trunk_height_mean": 0.6376890729783657,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     4.0,
@@ -15988,6 +16818,11 @@
     0.782
    ],
    "all_feet_air_ratio": 0.5106382978723404,
+   "torso_vz2": 0.17323910830819012,
+   "trunk_height_mean": 0.6399820543347232,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.149,
     3.915,
@@ -16080,6 +16915,11 @@
     0.791
    ],
    "all_feet_air_ratio": 0.5117021276595745,
+   "torso_vz2": 0.1437279430654346,
+   "trunk_height_mean": 0.6360205879457275,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.043,
     3.872,
@@ -16172,6 +17012,11 @@
     0.749
    ],
    "all_feet_air_ratio": 0.4829787234042553,
+   "torso_vz2": 0.1422087629923758,
+   "trunk_height_mean": 0.6382708275214477,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     3.872,
@@ -16264,6 +17109,11 @@
     0.765
    ],
    "all_feet_air_ratio": 0.4765957446808511,
+   "torso_vz2": 0.143908936346076,
+   "trunk_height_mean": 0.6378242598185749,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     3.936,
@@ -16356,6 +17206,11 @@
     0.796
    ],
    "all_feet_air_ratio": 0.5127659574468085,
+   "torso_vz2": 0.1731722852729626,
+   "trunk_height_mean": 0.6377933923566057,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.085,
     4.255,
@@ -16448,6 +17303,11 @@
     0.744
    ],
    "all_feet_air_ratio": 0.475531914893617,
+   "torso_vz2": 0.14680413857671856,
+   "trunk_height_mean": 0.6382978715906309,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     4.34,
@@ -16540,6 +17400,11 @@
     0.809
    ],
    "all_feet_air_ratio": 0.551063829787234,
+   "torso_vz2": 0.22711844136677112,
+   "trunk_height_mean": 0.6449168995717345,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.234,
     3.617,
@@ -16632,6 +17497,11 @@
     0.802
    ],
    "all_feet_air_ratio": 0.5436170212765957,
+   "torso_vz2": 0.2513402065290563,
+   "trunk_height_mean": 0.6517869736282844,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     3.404,
@@ -16724,6 +17594,11 @@
     0.845
    ],
    "all_feet_air_ratio": 0.5659574468085107,
+   "torso_vz2": 0.2595582940672582,
+   "trunk_height_mean": 0.6446506052457499,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     3.511,
@@ -16816,6 +17691,11 @@
     0.785
    ],
    "all_feet_air_ratio": 0.526595744680851,
+   "torso_vz2": 0.2286780759068999,
+   "trunk_height_mean": 0.6431519925514955,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.702,
     3.468,
@@ -16908,6 +17788,11 @@
     0.791
    ],
    "all_feet_air_ratio": 0.526595744680851,
+   "torso_vz2": 0.1894006710765279,
+   "trunk_height_mean": 0.6384419269896991,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     3.638,
@@ -17000,6 +17885,11 @@
     0.805
    ],
    "all_feet_air_ratio": 0.5680851063829787,
+   "torso_vz2": 0.22647267164956913,
+   "trunk_height_mean": 0.6445101307481103,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.872,
     3.766,
@@ -17092,6 +17982,11 @@
     0.847
    ],
    "all_feet_air_ratio": 0.575531914893617,
+   "torso_vz2": 0.2644596732959425,
+   "trunk_height_mean": 0.6533682310807992,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     3.319,
@@ -17184,6 +18079,11 @@
     0.806
    ],
    "all_feet_air_ratio": 0.5414893617021277,
+   "torso_vz2": 0.2165448039419027,
+   "trunk_height_mean": 0.6448924432174469,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     3.532,
@@ -17276,6 +18176,11 @@
     0.805
    ],
    "all_feet_air_ratio": 0.5617021276595745,
+   "torso_vz2": 0.23648628384801634,
+   "trunk_height_mean": 0.6494050447383993,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     2.851,
@@ -17368,6 +18273,11 @@
     0.853
    ],
    "all_feet_air_ratio": 0.6138297872340426,
+   "torso_vz2": 0.2503881906705995,
+   "trunk_height_mean": 0.6472195693272413,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.872,
     3.319,
@@ -17460,6 +18370,11 @@
     0.786
    ],
    "all_feet_air_ratio": 0.4946808510638298,
+   "torso_vz2": 0.1477939751280372,
+   "trunk_height_mean": 0.6361188165988534,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     4.043,
@@ -17552,6 +18467,11 @@
     0.796
    ],
    "all_feet_air_ratio": 0.4946808510638298,
+   "torso_vz2": 0.16772376902178165,
+   "trunk_height_mean": 0.6374683395153837,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     3.809,
@@ -17644,6 +18564,11 @@
     0.791
    ],
    "all_feet_air_ratio": 0.4808510638297872,
+   "torso_vz2": 0.15349978286354374,
+   "trunk_height_mean": 0.6342498296153684,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     3.936,
@@ -17736,6 +18661,11 @@
     0.803
    ],
    "all_feet_air_ratio": 0.5053191489361702,
+   "torso_vz2": 0.17231241553635926,
+   "trunk_height_mean": 0.6399619109023501,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     4.0,
@@ -17828,6 +18758,11 @@
     0.798
    ],
    "all_feet_air_ratio": 0.5085106382978724,
+   "torso_vz2": 0.1781011497909143,
+   "trunk_height_mean": 0.6377634465098364,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     3.872,
@@ -17920,6 +18855,11 @@
     0.81
    ],
    "all_feet_air_ratio": 0.5159574468085106,
+   "torso_vz2": 0.17376429738073035,
+   "trunk_height_mean": 0.6392755355579152,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.936,
     4.085,
@@ -18012,6 +18952,11 @@
     0.818
    ],
    "all_feet_air_ratio": 0.5308510638297872,
+   "torso_vz2": 0.18606406897678066,
+   "trunk_height_mean": 0.6400480635668538,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     4.085,
@@ -18104,6 +19049,11 @@
     0.8
    ],
    "all_feet_air_ratio": 0.4978723404255319,
+   "torso_vz2": 0.15755466214137664,
+   "trunk_height_mean": 0.6360703772735464,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     4.106,
@@ -18196,6 +19146,11 @@
     0.807
    ],
    "all_feet_air_ratio": 0.5148936170212766,
+   "torso_vz2": 0.1704541697000272,
+   "trunk_height_mean": 0.6382591469727993,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     4.128,
@@ -18288,6 +19243,11 @@
     0.813
    ],
    "all_feet_air_ratio": 0.5127659574468085,
+   "torso_vz2": 0.19593327845056335,
+   "trunk_height_mean": 0.6412843426029079,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.957,
     4.106,
@@ -18380,6 +19340,11 @@
     0.861
    ],
    "all_feet_air_ratio": 0.5787234042553191,
+   "torso_vz2": 0.268792349898878,
+   "trunk_height_mean": 0.6491982668536789,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.915,
     3.766,
@@ -18472,6 +19437,11 @@
     0.953
    ],
    "all_feet_air_ratio": 0.874468085106383,
+   "torso_vz2": 0.06521136545018097,
+   "trunk_height_mean": 0.29563490704375317,
+   "torso_contact_ratio": 0.6893617021276596,
+   "upper_leg_contact_ratio": 0.10319148936170212,
+   "torso_and_upper_contact_ratio": 0.019148936170212766,
    "touchdowns_per_s": [
     0.553,
     0.298,
@@ -18564,6 +19534,11 @@
     0.832
    ],
    "all_feet_air_ratio": 0.5648936170212766,
+   "torso_vz2": 0.23105262182769745,
+   "trunk_height_mean": 0.646000880131782,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.319,
     3.681,
@@ -18656,6 +19631,11 @@
     0.861
    ],
    "all_feet_air_ratio": 0.5989361702127659,
+   "torso_vz2": 0.2684155099499055,
+   "trunk_height_mean": 0.6437309857217653,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.064,
     3.66,
@@ -18748,6 +19728,11 @@
     0.83
    ],
    "all_feet_air_ratio": 0.5638297872340425,
+   "torso_vz2": 0.235072988032024,
+   "trunk_height_mean": 0.6421121217604511,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.617,
@@ -18840,6 +19825,11 @@
     0.839
    ],
    "all_feet_air_ratio": 0.5585106382978723,
+   "torso_vz2": 0.23688627382045774,
+   "trunk_height_mean": 0.6480044972011978,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.298,
     3.468,
@@ -18932,6 +19922,11 @@
     0.819
    ],
    "all_feet_air_ratio": 0.5404255319148936,
+   "torso_vz2": 0.22841562079054437,
+   "trunk_height_mean": 0.6430327899032896,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.936,
     3.787,
@@ -19024,6 +20019,11 @@
     0.852
    ],
    "all_feet_air_ratio": 0.6191489361702127,
+   "torso_vz2": 0.18011746384561977,
+   "trunk_height_mean": 0.5608606061686079,
+   "torso_contact_ratio": 0.15,
+   "upper_leg_contact_ratio": 0.03297872340425532,
+   "torso_and_upper_contact_ratio": 0.00851063829787234,
    "touchdowns_per_s": [
     1.0,
     2.915,
@@ -19116,6 +20116,11 @@
     0.816
    ],
    "all_feet_air_ratio": 0.5574468085106383,
+   "torso_vz2": 0.2641840264155291,
+   "trunk_height_mean": 0.6528820360230768,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.234,
     3.362,
@@ -19208,6 +20213,11 @@
     0.909
    ],
    "all_feet_air_ratio": 0.7170212765957447,
+   "torso_vz2": 0.17487004513258048,
+   "trunk_height_mean": 0.46194745915527985,
+   "torso_contact_ratio": 0.35319148936170214,
+   "upper_leg_contact_ratio": 0.07127659574468086,
+   "torso_and_upper_contact_ratio": 0.014893617021276596,
    "touchdowns_per_s": [
     0.787,
     2.106,
@@ -19300,6 +20310,11 @@
     0.841
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.2452277236253479,
+   "trunk_height_mean": 0.6490633528315619,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.447,
     3.638,
@@ -19392,6 +20407,11 @@
     0.834
    ],
    "all_feet_air_ratio": 0.5404255319148936,
+   "torso_vz2": 0.20431867235485268,
+   "trunk_height_mean": 0.6370852663710797,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.0,
     4.255,
@@ -19484,6 +20504,11 @@
     0.855
    ],
    "all_feet_air_ratio": 0.5563829787234043,
+   "torso_vz2": 0.22869900707484653,
+   "trunk_height_mean": 0.640303246678596,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.936,
     3.894,
@@ -19576,6 +20601,11 @@
     0.836
    ],
    "all_feet_air_ratio": 0.5585106382978723,
+   "torso_vz2": 0.2039218711267155,
+   "trunk_height_mean": 0.6397919794723017,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.872,
     4.106,
@@ -19668,6 +20698,11 @@
     0.834
    ],
    "all_feet_air_ratio": 0.5180851063829788,
+   "torso_vz2": 0.21192207047666142,
+   "trunk_height_mean": 0.6417080928418107,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.234,
     3.957,
@@ -19760,6 +20795,11 @@
     0.823
    ],
    "all_feet_air_ratio": 0.5393617021276595,
+   "torso_vz2": 0.2227324571196342,
+   "trunk_height_mean": 0.6457214206686727,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.298,
     3.617,
@@ -19852,6 +20892,11 @@
     0.85
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.21193624436705666,
+   "trunk_height_mean": 0.6414425915157959,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     3.957,
@@ -19944,6 +20989,11 @@
     0.83
    ],
    "all_feet_air_ratio": 0.5106382978723404,
+   "torso_vz2": 0.208307870919415,
+   "trunk_height_mean": 0.6409520747645141,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.106,
     4.149,
@@ -20036,6 +21086,11 @@
     0.814
    ],
    "all_feet_air_ratio": 0.5170212765957447,
+   "torso_vz2": 0.19785224627654627,
+   "trunk_height_mean": 0.6413279871872479,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     4.021,
@@ -20128,6 +21183,11 @@
     0.849
    ],
    "all_feet_air_ratio": 0.5361702127659574,
+   "torso_vz2": 0.20209222371584007,
+   "trunk_height_mean": 0.6412954942292608,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.128,
     3.936,
@@ -20220,6 +21280,11 @@
     0.834
    ],
    "all_feet_air_ratio": 0.5617021276595745,
+   "torso_vz2": 0.25435446496020603,
+   "trunk_height_mean": 0.6421225834385943,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.745,
     3.383,
@@ -20312,6 +21377,11 @@
     0.849
    ],
    "all_feet_air_ratio": 0.5683760683760684,
+   "torso_vz2": 0.2920497731952656,
+   "trunk_height_mean": 0.6538124411097751,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.368,
     3.704,
@@ -20404,6 +21474,11 @@
     0.959
    ],
    "all_feet_air_ratio": 0.8553191489361702,
+   "torso_vz2": 0.11558264321999584,
+   "trunk_height_mean": 0.3405785768542059,
+   "torso_contact_ratio": 0.5797872340425532,
+   "upper_leg_contact_ratio": 0.08936170212765958,
+   "torso_and_upper_contact_ratio": 0.02127659574468085,
    "touchdowns_per_s": [
     0.766,
     0.638,
@@ -20496,6 +21571,11 @@
     0.823
    ],
    "all_feet_air_ratio": 0.5446808510638298,
+   "torso_vz2": 0.2434731078749628,
+   "trunk_height_mean": 0.6448872969449696,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.213,
     3.681,
@@ -20588,6 +21668,11 @@
     0.838
    ],
    "all_feet_air_ratio": 0.5446808510638298,
+   "torso_vz2": 0.2353337419929955,
+   "trunk_height_mean": 0.6518901409634619,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.489,
@@ -20680,6 +21765,11 @@
     0.866
    ],
    "all_feet_air_ratio": 0.5808510638297872,
+   "torso_vz2": 0.2894983462802672,
+   "trunk_height_mean": 0.6463083230549302,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     3.489,
@@ -20772,6 +21862,11 @@
     0.918
    ],
    "all_feet_air_ratio": 0.7382978723404255,
+   "torso_vz2": 0.18079491367419268,
+   "trunk_height_mean": 0.4636775957161298,
+   "torso_contact_ratio": 0.35851063829787233,
+   "upper_leg_contact_ratio": 0.06170212765957447,
+   "torso_and_upper_contact_ratio": 0.013829787234042552,
    "touchdowns_per_s": [
     0.723,
     1.787,
@@ -20864,6 +21959,11 @@
     0.867
    ],
    "all_feet_air_ratio": 0.5840425531914893,
+   "torso_vz2": 0.3024300282075461,
+   "trunk_height_mean": 0.6526926604921778,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.191,
     3.766,
@@ -20956,6 +22056,11 @@
     0.865
    ],
    "all_feet_air_ratio": 0.5914893617021276,
+   "torso_vz2": 0.3177951362822046,
+   "trunk_height_mean": 0.6502400801142331,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.234,
     3.574,
@@ -21048,6 +22153,11 @@
     0.867
    ],
    "all_feet_air_ratio": 0.5968085106382979,
+   "torso_vz2": 0.32205047619173294,
+   "trunk_height_mean": 0.6539643041713489,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.532,
@@ -21140,6 +22250,11 @@
     0.872
    ],
    "all_feet_air_ratio": 0.5478723404255319,
+   "torso_vz2": 0.24303567157989286,
+   "trunk_height_mean": 0.6427621563369306,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     3.957,
@@ -21232,6 +22347,11 @@
     0.839
    ],
    "all_feet_air_ratio": 0.5595744680851064,
+   "torso_vz2": 0.24548120371338464,
+   "trunk_height_mean": 0.6416550544852784,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.426,
     3.66,
@@ -21324,6 +22444,11 @@
     0.854
    ],
    "all_feet_air_ratio": 0.5329787234042553,
+   "torso_vz2": 0.2243064901923812,
+   "trunk_height_mean": 0.636549782835766,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.702,
     4.106,
@@ -21416,6 +22541,11 @@
     0.856
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.25386971322942764,
+   "trunk_height_mean": 0.6393369880779165,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     3.809,
@@ -21508,6 +22638,11 @@
     0.837
    ],
    "all_feet_air_ratio": 0.5255319148936171,
+   "torso_vz2": 0.2611599533168564,
+   "trunk_height_mean": 0.6484339604056122,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.851,
@@ -21600,6 +22735,11 @@
     0.856
    ],
    "all_feet_air_ratio": 0.5638297872340425,
+   "torso_vz2": 0.23988525249274337,
+   "trunk_height_mean": 0.6401369055868268,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.17,
     3.936,
@@ -21692,6 +22832,11 @@
     0.85
    ],
    "all_feet_air_ratio": 0.5234042553191489,
+   "torso_vz2": 0.20553690906774313,
+   "trunk_height_mean": 0.6372503664506037,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.851,
@@ -21784,6 +22929,11 @@
     0.867
    ],
    "all_feet_air_ratio": 0.5808510638297872,
+   "torso_vz2": 0.2517789483492246,
+   "trunk_height_mean": 0.6439187178191681,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.319,
     3.574,
@@ -21876,6 +23026,11 @@
     0.851
    ],
    "all_feet_air_ratio": 0.5648936170212766,
+   "torso_vz2": 0.24397101713268748,
+   "trunk_height_mean": 0.6402234539944416,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.574,
     3.915,
@@ -21968,6 +23123,11 @@
     0.833
    ],
    "all_feet_air_ratio": 0.5574468085106383,
+   "torso_vz2": 0.2158539821727368,
+   "trunk_height_mean": 0.6306536928326311,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.255,
     4.34,
@@ -22060,6 +23220,11 @@
     0.86
    ],
    "all_feet_air_ratio": 0.5851063829787234,
+   "torso_vz2": 0.31684616904166046,
+   "trunk_height_mean": 0.6508102184254866,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.574,
     3.596,
@@ -22152,6 +23317,11 @@
     0.872
    ],
    "all_feet_air_ratio": 0.6021276595744681,
+   "torso_vz2": 0.314405119747474,
+   "trunk_height_mean": 0.6538149216363113,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.404,
     3.234,
@@ -22244,6 +23414,11 @@
     0.869
    ],
    "all_feet_air_ratio": 0.6063829787234043,
+   "torso_vz2": 0.3403164010357789,
+   "trunk_height_mean": 0.6467869344524748,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.489,
     3.489,
@@ -22336,6 +23511,11 @@
     0.878
    ],
    "all_feet_air_ratio": 0.5861702127659575,
+   "torso_vz2": 0.3246512154555669,
+   "trunk_height_mean": 0.6482230817903653,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     3.681,
@@ -22428,6 +23608,11 @@
     0.871
    ],
    "all_feet_air_ratio": 0.5829787234042553,
+   "torso_vz2": 0.34975835168095815,
+   "trunk_height_mean": 0.6475260249716027,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.426,
     3.787,
@@ -22520,6 +23705,11 @@
     0.857
    ],
    "all_feet_air_ratio": 0.6021276595744681,
+   "torso_vz2": 0.29514622842219074,
+   "trunk_height_mean": 0.6503945714605304,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.404,
     3.532,
@@ -22612,6 +23802,11 @@
     0.889
    ],
    "all_feet_air_ratio": 0.6042553191489362,
+   "torso_vz2": 0.3472773635435697,
+   "trunk_height_mean": 0.6683972123985312,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.489,
     3.404,
@@ -22704,6 +23899,11 @@
     0.862
    ],
    "all_feet_air_ratio": 0.5765957446808511,
+   "torso_vz2": 0.3115409524190331,
+   "trunk_height_mean": 0.6469645936458636,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.277,
     3.809,
@@ -22796,6 +23996,11 @@
     0.959
    ],
    "all_feet_air_ratio": 0.8340425531914893,
+   "torso_vz2": 0.1215890549843208,
+   "trunk_height_mean": 0.3363244193075341,
+   "torso_contact_ratio": 0.5638297872340425,
+   "upper_leg_contact_ratio": 0.11702127659574468,
+   "torso_and_upper_contact_ratio": 0.018085106382978722,
    "touchdowns_per_s": [
     0.511,
     0.936,
@@ -22888,6 +24093,11 @@
     0.966
    ],
    "all_feet_air_ratio": 0.8702127659574468,
+   "torso_vz2": 0.04150596907252902,
+   "trunk_height_mean": 0.2753081875874129,
+   "torso_contact_ratio": 0.6840425531914893,
+   "upper_leg_contact_ratio": 0.12872340425531914,
+   "torso_and_upper_contact_ratio": 0.01702127659574468,
    "touchdowns_per_s": [
     0.66,
     0.34,
@@ -22980,6 +24190,11 @@
     0.759
    ],
    "all_feet_air_ratio": 0.39787234042553193,
+   "torso_vz2": 0.13091715097229303,
+   "trunk_height_mean": 0.621971576524819,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.489,
     4.489,
@@ -23072,6 +24287,11 @@
     0.8
    ],
    "all_feet_air_ratio": 0.4627659574468085,
+   "torso_vz2": 0.16108915419981956,
+   "trunk_height_mean": 0.6269206197736872,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.319,
     4.213,
@@ -23164,6 +24384,11 @@
     0.809
    ],
    "all_feet_air_ratio": 0.48617021276595745,
+   "torso_vz2": 0.19306549061745393,
+   "trunk_height_mean": 0.6299992892406944,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     4.0,
@@ -23256,6 +24481,11 @@
     0.837
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.21294854049936673,
+   "trunk_height_mean": 0.623885879836656,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     4.213,
@@ -23348,6 +24578,11 @@
     0.824
    ],
    "all_feet_air_ratio": 0.5319148936170213,
+   "torso_vz2": 0.21249279878605742,
+   "trunk_height_mean": 0.6365160890330525,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.191,
     3.723,
@@ -23440,6 +24675,11 @@
     0.839
    ],
    "all_feet_air_ratio": 0.5053191489361702,
+   "torso_vz2": 0.1820669670571666,
+   "trunk_height_mean": 0.627659390645122,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.511,
     4.191,
@@ -23532,6 +24772,11 @@
     0.789
    ],
    "all_feet_air_ratio": 0.425531914893617,
+   "torso_vz2": 0.1426459186582721,
+   "trunk_height_mean": 0.6221589546758838,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.383,
     4.511,
@@ -23624,6 +24869,11 @@
     0.787
    ],
    "all_feet_air_ratio": 0.4297872340425532,
+   "torso_vz2": 0.15001303596042523,
+   "trunk_height_mean": 0.621329013349148,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.383,
@@ -23716,6 +24966,11 @@
     0.845
    ],
    "all_feet_air_ratio": 0.5340425531914894,
+   "torso_vz2": 0.22655541778053304,
+   "trunk_height_mean": 0.6319073572721258,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.043,
     3.936,
@@ -23808,6 +25063,11 @@
     0.837
    ],
    "all_feet_air_ratio": 0.5180851063829788,
+   "torso_vz2": 0.22341766512461142,
+   "trunk_height_mean": 0.6305968287845523,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.809,
     4.191,
@@ -23900,6 +25160,11 @@
     0.862
    ],
    "all_feet_air_ratio": 0.5712765957446808,
+   "torso_vz2": 0.27474340645645956,
+   "trunk_height_mean": 0.6409888921433922,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.83,
     3.638,
@@ -23992,6 +25257,11 @@
     0.85
    ],
    "all_feet_air_ratio": 0.5627659574468085,
+   "torso_vz2": 0.2772686794104209,
+   "trunk_height_mean": 0.6452085741105922,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.894,
     3.489,
@@ -24084,6 +25354,11 @@
     0.98
    ],
    "all_feet_air_ratio": 0.8659574468085106,
+   "torso_vz2": 0.03927831241119325,
+   "trunk_height_mean": 0.27465221750575813,
+   "torso_contact_ratio": 0.7053191489361702,
+   "upper_leg_contact_ratio": 0.13404255319148936,
+   "torso_and_upper_contact_ratio": 0.035106382978723406,
    "touchdowns_per_s": [
     0.596,
     0.66,
@@ -24176,6 +25451,11 @@
     0.856
    ],
    "all_feet_air_ratio": 0.6053191489361702,
+   "torso_vz2": 0.3136147190809749,
+   "trunk_height_mean": 0.650341688424385,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.447,
     3.277,
@@ -24268,6 +25548,11 @@
     0.871
    ],
    "all_feet_air_ratio": 0.5925531914893617,
+   "torso_vz2": 0.32716048853749247,
+   "trunk_height_mean": 0.6381584611298557,
+   "torso_contact_ratio": 0.00851063829787234,
+   "upper_leg_contact_ratio": 0.00851063829787234,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.766,
     3.532,
@@ -24360,6 +25645,11 @@
     0.864
    ],
    "all_feet_air_ratio": 0.5776595744680851,
+   "torso_vz2": 0.3410865534804291,
+   "trunk_height_mean": 0.657152427389066,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     3.426,
@@ -24452,6 +25742,11 @@
     0.952
    ],
    "all_feet_air_ratio": 0.8414893617021276,
+   "torso_vz2": 0.10098161429624264,
+   "trunk_height_mean": 0.3318530526630772,
+   "torso_contact_ratio": 0.597872340425532,
+   "upper_leg_contact_ratio": 0.09574468085106383,
+   "torso_and_upper_contact_ratio": 0.019148936170212766,
    "touchdowns_per_s": [
     0.681,
     0.979,
@@ -24544,6 +25839,11 @@
     0.861
    ],
    "all_feet_air_ratio": 0.5946808510638298,
+   "torso_vz2": 0.30637140115840544,
+   "trunk_height_mean": 0.6510781708720063,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.383,
     3.574,
@@ -24636,6 +25936,11 @@
     0.895
    ],
    "all_feet_air_ratio": 0.569620253164557,
+   "torso_vz2": 0.4001548705200214,
+   "trunk_height_mean": 0.6663159712221679,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.013,
     3.629,
@@ -24728,6 +26033,11 @@
     0.902
    ],
    "all_feet_air_ratio": 0.6957446808510638,
+   "torso_vz2": 0.19734442273357058,
+   "trunk_height_mean": 0.4899472956629748,
+   "torso_contact_ratio": 0.28297872340425534,
+   "upper_leg_contact_ratio": 0.0574468085106383,
+   "torso_and_upper_contact_ratio": 0.01276595744680851,
    "touchdowns_per_s": [
     1.234,
     2.149,
@@ -24820,6 +26130,11 @@
     0.785
    ],
    "all_feet_air_ratio": 0.4531914893617021,
+   "torso_vz2": 0.12899555999949705,
+   "trunk_height_mean": 0.618941009212997,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.702,
     4.383,
@@ -24912,6 +26227,11 @@
     0.828
    ],
    "all_feet_air_ratio": 0.4819148936170213,
+   "torso_vz2": 0.12061090936781162,
+   "trunk_height_mean": 0.6188246278463003,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.553,
     4.191,
@@ -25004,6 +26324,11 @@
     0.712
    ],
    "all_feet_air_ratio": 0.41595744680851066,
+   "torso_vz2": 0.10675744598998885,
+   "trunk_height_mean": 0.6245319848425575,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.532,
     4.468,
@@ -25096,6 +26421,11 @@
     0.81
    ],
    "all_feet_air_ratio": 0.4765957446808511,
+   "torso_vz2": 0.11971823531441461,
+   "trunk_height_mean": 0.6235998009512093,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.426,
     4.234,
@@ -25188,6 +26518,11 @@
     0.78
    ],
    "all_feet_air_ratio": 0.42872340425531913,
+   "torso_vz2": 0.10995335826856129,
+   "trunk_height_mean": 0.6242560414285249,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.596,
     4.17,
@@ -25280,6 +26615,11 @@
     0.77
    ],
    "all_feet_air_ratio": 0.3925531914893617,
+   "torso_vz2": 0.10578689690318323,
+   "trunk_height_mean": 0.6231265818405194,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.574,
     4.319,
@@ -25372,6 +26712,11 @@
     0.726
    ],
    "all_feet_air_ratio": 0.39148936170212767,
+   "torso_vz2": 0.09671332659141425,
+   "trunk_height_mean": 0.6235151729563295,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.468,
     4.362,
@@ -25464,6 +26809,11 @@
     0.701
    ],
    "all_feet_air_ratio": 0.42127659574468085,
+   "torso_vz2": 0.1056561078897255,
+   "trunk_height_mean": 0.6238468530625756,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.383,
     4.191,
@@ -25556,6 +26906,11 @@
     0.728
    ],
    "all_feet_air_ratio": 0.3829787234042553,
+   "torso_vz2": 0.1041869347502779,
+   "trunk_height_mean": 0.6252376829122398,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.553,
     4.213,
@@ -25648,6 +27003,11 @@
     0.771
    ],
    "all_feet_air_ratio": 0.4531914893617021,
+   "torso_vz2": 0.11725612543676753,
+   "trunk_height_mean": 0.623063774455744,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.511,
     3.936,
@@ -25740,6 +27100,11 @@
     0.854
    ],
    "all_feet_air_ratio": 0.5829787234042553,
+   "torso_vz2": 0.3110012484845063,
+   "trunk_height_mean": 0.6436835188567628,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.681,
     3.596,
@@ -25832,6 +27197,11 @@
     0.828
    ],
    "all_feet_air_ratio": 0.5712765957446808,
+   "torso_vz2": 0.16640219846413257,
+   "trunk_height_mean": 0.5673010796214399,
+   "torso_contact_ratio": 0.10851063829787234,
+   "upper_leg_contact_ratio": 0.035106382978723406,
+   "torso_and_upper_contact_ratio": 0.002127659574468085,
    "touchdowns_per_s": [
     1.851,
     3.234,
@@ -25924,6 +27294,11 @@
     0.815
    ],
    "all_feet_air_ratio": 0.5351063829787234,
+   "torso_vz2": 0.17993565781763826,
+   "trunk_height_mean": 0.6330656121505633,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.106,
     3.702,
@@ -26016,6 +27391,11 @@
     0.95
    ],
    "all_feet_air_ratio": 0.7936170212765957,
+   "torso_vz2": 0.08103746638245701,
+   "trunk_height_mean": 0.3644723818203584,
+   "torso_contact_ratio": 0.5361702127659574,
+   "upper_leg_contact_ratio": 0.1,
+   "torso_and_upper_contact_ratio": 0.02446808510638298,
    "touchdowns_per_s": [
     0.936,
     1.447,
@@ -26108,6 +27488,11 @@
     0.826
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.19511552975269125,
+   "trunk_height_mean": 0.6288936644754227,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.128,
     3.723,
@@ -26200,6 +27585,11 @@
     0.841
    ],
    "all_feet_air_ratio": 0.5627659574468085,
+   "torso_vz2": 0.24140351889527925,
+   "trunk_height_mean": 0.631907288487038,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.043,
     3.553,
@@ -26292,6 +27682,11 @@
     0.868
    ],
    "all_feet_air_ratio": 0.5829787234042553,
+   "torso_vz2": 0.29473757923247307,
+   "trunk_height_mean": 0.6392509556030818,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     3.681,
@@ -26384,6 +27779,11 @@
     0.863
    ],
    "all_feet_air_ratio": 0.5840425531914893,
+   "torso_vz2": 0.32488972727005194,
+   "trunk_height_mean": 0.6380516133339712,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.553,
     3.383,
@@ -26476,6 +27876,11 @@
     0.832
    ],
    "all_feet_air_ratio": 0.5372340425531915,
+   "torso_vz2": 0.2545418216380851,
+   "trunk_height_mean": 0.6403932711173377,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.213,
     3.617,
@@ -26568,6 +27973,11 @@
     0.833
    ],
    "all_feet_air_ratio": 0.5361702127659574,
+   "torso_vz2": 0.24333221678140043,
+   "trunk_height_mean": 0.63785000920918,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.319,
     3.766,
@@ -26660,6 +28070,11 @@
     0.673
    ],
    "all_feet_air_ratio": 0.3946808510638298,
+   "torso_vz2": 0.115533385936901,
+   "trunk_height_mean": 0.6271239116264244,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.447,
     4.532,
@@ -26752,6 +28167,11 @@
     0.676
    ],
    "all_feet_air_ratio": 0.3659574468085106,
+   "torso_vz2": 0.11159270051228697,
+   "trunk_height_mean": 0.6250854217841317,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.787,
     4.468,
@@ -26844,6 +28264,11 @@
     0.683
    ],
    "all_feet_air_ratio": 0.4372340425531915,
+   "torso_vz2": 0.12478704436054594,
+   "trunk_height_mean": 0.6282554898741816,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.66,
     3.702,
@@ -26936,6 +28361,11 @@
     0.651
    ],
    "all_feet_air_ratio": 0.3606382978723404,
+   "torso_vz2": 0.10414138602913538,
+   "trunk_height_mean": 0.6260700376126477,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.34,
     4.447,
@@ -27028,6 +28458,11 @@
     0.656
    ],
    "all_feet_air_ratio": 0.39787234042553193,
+   "torso_vz2": 0.10306711442289702,
+   "trunk_height_mean": 0.627771375810699,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.298,
     4.106,
@@ -27120,6 +28555,11 @@
     0.688
    ],
    "all_feet_air_ratio": 0.41808510638297874,
+   "torso_vz2": 0.11738377021249852,
+   "trunk_height_mean": 0.627963036809084,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.511,
     4.191,
@@ -27212,6 +28652,11 @@
     0.716
    ],
    "all_feet_air_ratio": 0.4340425531914894,
+   "torso_vz2": 0.12663281968015577,
+   "trunk_height_mean": 0.6231564881669658,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.511,
     4.234,
@@ -27304,6 +28749,11 @@
     0.674
    ],
    "all_feet_air_ratio": 0.3819148936170213,
+   "torso_vz2": 0.11553163840418981,
+   "trunk_height_mean": 0.6224886118532557,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.532,
     4.553,
@@ -27396,6 +28846,11 @@
     0.702
    ],
    "all_feet_air_ratio": 0.39893617021276595,
+   "torso_vz2": 0.11382816251144753,
+   "trunk_height_mean": 0.6232991871172866,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.532,
     4.553,
@@ -27488,6 +28943,11 @@
     0.676
    ],
    "all_feet_air_ratio": 0.4648936170212766,
+   "torso_vz2": 0.11075324621064153,
+   "trunk_height_mean": 0.6327219333279303,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     3.596,
@@ -27580,6 +29040,11 @@
     0.756
    ],
    "all_feet_air_ratio": 0.5223404255319148,
+   "torso_vz2": 0.21081627636106876,
+   "trunk_height_mean": 0.6381385903392183,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.851,
     3.319,
@@ -27672,6 +29137,11 @@
     0.771
    ],
    "all_feet_air_ratio": 0.5308510638297872,
+   "torso_vz2": 0.20830896501085863,
+   "trunk_height_mean": 0.6376100303669219,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.128,
     3.298,
@@ -27764,6 +29234,11 @@
     0.964
    ],
    "all_feet_air_ratio": 0.8638297872340426,
+   "torso_vz2": 0.03736387137675255,
+   "trunk_height_mean": 0.276189553003642,
+   "torso_contact_ratio": 0.7170212765957447,
+   "upper_leg_contact_ratio": 0.13617021276595745,
+   "torso_and_upper_contact_ratio": 0.027659574468085105,
    "touchdowns_per_s": [
     0.574,
     0.447,
@@ -27856,6 +29331,11 @@
     0.773
    ],
    "all_feet_air_ratio": 0.5117021276595745,
+   "torso_vz2": 0.203453049410516,
+   "trunk_height_mean": 0.6349250642437531,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.319,
     3.426,
@@ -27948,6 +29428,11 @@
     0.784
    ],
    "all_feet_air_ratio": 0.5351063829787234,
+   "torso_vz2": 0.1930164928673608,
+   "trunk_height_mean": 0.6310216590923053,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.277,
     3.298,
@@ -28040,6 +29525,11 @@
     0.772
    ],
    "all_feet_air_ratio": 0.5446808510638298,
+   "torso_vz2": 0.20276503227978168,
+   "trunk_height_mean": 0.6377183448449877,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     3.085,
@@ -28132,6 +29622,11 @@
     0.835
    ],
    "all_feet_air_ratio": 0.5595744680851064,
+   "torso_vz2": 0.24362530688652287,
+   "trunk_height_mean": 0.6288768663949078,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.128,
     3.596,
@@ -28224,6 +29719,11 @@
     0.89
    ],
    "all_feet_air_ratio": 0.7244680851063829,
+   "torso_vz2": 0.13450171456313165,
+   "trunk_height_mean": 0.41717155447310944,
+   "torso_contact_ratio": 0.4095744680851064,
+   "upper_leg_contact_ratio": 0.10106382978723404,
+   "torso_and_upper_contact_ratio": 0.018085106382978722,
    "touchdowns_per_s": [
     1.255,
     1.681,
@@ -28316,6 +29816,11 @@
     0.831
    ],
    "all_feet_air_ratio": 0.5361702127659574,
+   "torso_vz2": 0.25826275357942835,
+   "trunk_height_mean": 0.6366204752846738,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.298,
     3.766,
@@ -28408,6 +29913,11 @@
     0.774
    ],
    "all_feet_air_ratio": 0.5163043478260869,
+   "torso_vz2": 0.20867536094014422,
+   "trunk_height_mean": 0.6418671701526165,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.418,
     3.179,
@@ -28500,6 +30010,11 @@
     0.64
    ],
    "all_feet_air_ratio": 0.41702127659574467,
+   "torso_vz2": 0.12656092516454603,
+   "trunk_height_mean": 0.631683632510754,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.34,
     3.553,
@@ -28592,6 +30107,11 @@
     0.655
    ],
    "all_feet_air_ratio": 0.41808510638297874,
+   "torso_vz2": 0.11889912795563073,
+   "trunk_height_mean": 0.6324884555326998,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     3.957,
@@ -28684,6 +30204,11 @@
     0.684
    ],
    "all_feet_air_ratio": 0.4574468085106383,
+   "torso_vz2": 0.15559428632592318,
+   "trunk_height_mean": 0.6379837145256544,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.66,
     3.936,
@@ -28776,6 +30301,11 @@
     0.634
    ],
    "all_feet_air_ratio": 0.40425531914893614,
+   "torso_vz2": 0.1216955721653987,
+   "trunk_height_mean": 0.6304556280518646,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.213,
     4.021,
@@ -28868,6 +30398,11 @@
     0.643
    ],
    "all_feet_air_ratio": 0.4148936170212766,
+   "torso_vz2": 0.127264239526533,
+   "trunk_height_mean": 0.6293192686339172,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.298,
     3.787,
@@ -28960,6 +30495,11 @@
     0.643
    ],
    "all_feet_air_ratio": 0.42127659574468085,
+   "torso_vz2": 0.11379043733515078,
+   "trunk_height_mean": 0.6317047604485415,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.128,
     4.128,
@@ -29052,6 +30592,11 @@
     0.624
    ],
    "all_feet_air_ratio": 0.3925531914893617,
+   "torso_vz2": 0.12434594055751694,
+   "trunk_height_mean": 0.62686991431557,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.404,
     4.532,
@@ -29144,6 +30689,11 @@
     0.653
    ],
    "all_feet_air_ratio": 0.44468085106382976,
+   "torso_vz2": 0.09318943612622957,
+   "trunk_height_mean": 0.632749516584137,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.064,
     3.766,
@@ -29236,6 +30786,11 @@
     0.673
    ],
    "all_feet_air_ratio": 0.4648936170212766,
+   "torso_vz2": 0.09279391763865774,
+   "trunk_height_mean": 0.6342780302298366,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.915,
     3.596,
@@ -29328,6 +30883,11 @@
     0.618
    ],
    "all_feet_air_ratio": 0.3702127659574468,
+   "torso_vz2": 0.14005975576595675,
+   "trunk_height_mean": 0.6285914038632815,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.553,
     4.085,
@@ -29420,6 +30980,11 @@
     0.824
    ],
    "all_feet_air_ratio": 0.5778894472361809,
+   "torso_vz2": 0.43207748474417024,
+   "trunk_height_mean": 0.6922172941820363,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.307,
     2.312,
@@ -29512,6 +31077,11 @@
     0.823
    ],
    "all_feet_air_ratio": 0.5787234042553191,
+   "torso_vz2": 0.23540395096871794,
+   "trunk_height_mean": 0.6406935211193168,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.298,
     3.277,
@@ -29604,6 +31174,11 @@
     0.766
    ],
    "all_feet_air_ratio": 0.5297872340425532,
+   "torso_vz2": 0.23079274039883027,
+   "trunk_height_mean": 0.6406759512898619,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.979,
     3.106,
@@ -29696,6 +31271,11 @@
     0.822
    ],
    "all_feet_air_ratio": 0.5840425531914893,
+   "torso_vz2": 0.2990287030500961,
+   "trunk_height_mean": 0.650375816928764,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.915,
     3.213,
@@ -29788,6 +31368,11 @@
     0.811
    ],
    "all_feet_air_ratio": 0.5904255319148937,
+   "torso_vz2": 0.25357800384129625,
+   "trunk_height_mean": 0.6470443919721365,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     0.936,
     3.043,
@@ -29880,6 +31465,11 @@
     0.776
    ],
    "all_feet_air_ratio": 0.5659574468085107,
+   "torso_vz2": 0.21039877135960025,
+   "trunk_height_mean": 0.6434379077263667,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.468,
     3.064,
@@ -29972,6 +31562,11 @@
     0.83
    ],
    "all_feet_air_ratio": 0.6446808510638298,
+   "torso_vz2": 0.17043158655991134,
+   "trunk_height_mean": 0.5277917087283951,
+   "torso_contact_ratio": 0.21170212765957447,
+   "upper_leg_contact_ratio": 0.052127659574468084,
+   "torso_and_upper_contact_ratio": 0.011702127659574468,
    "touchdowns_per_s": [
     1.319,
     2.17,
@@ -30064,6 +31659,11 @@
     0.739
    ],
    "all_feet_air_ratio": 0.5521276595744681,
+   "torso_vz2": 0.22190418674991794,
+   "trunk_height_mean": 0.6430762304799135,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.021,
     2.596,
@@ -30156,6 +31756,11 @@
     0.761
    ],
    "all_feet_air_ratio": 0.5031914893617021,
+   "torso_vz2": 0.20296702356370278,
+   "trunk_height_mean": 0.6364790615121235,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     2.468,
     3.085,
@@ -30248,6 +31853,11 @@
     0.768
    ],
    "all_feet_air_ratio": 0.5382978723404256,
+   "torso_vz2": 0.20509454486089618,
+   "trunk_height_mean": 0.643044499174051,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
    "touchdowns_per_s": [
     1.957,
     3.021,
