@@ -328,6 +328,23 @@ def summarize_run(run, eps, dt, steps, n_seeds):
 
 
 # ---------------------------------------------------------------- 출력
+# 설정별 색 (고정 순서, 8개 넘으면 점선으로 반복)
+PALETTE = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"]
+
+
+def group_name(name):
+    """run 이름에서 학습 seed 꼬리(_s1, _s2)를 떼어 설정 이름을 만든다."""
+    import re
+    return re.sub(r"_s\d+$", "", name)
+
+
+def _avg(vals, start=None):
+    """관절별 값 8개의 평균. start=0이면 엉덩이 4개, 1이면 발목 4개."""
+    if not vals:
+        return None
+    return float(np.mean(vals if start is None else vals[start::2]))
+
+
 def hip_ank(vals, fmt):
     """관절별 값 8개 → '엉덩이 평균 / 발목 평균'."""
     if not vals:
@@ -360,20 +377,53 @@ def write_comparison(results, out: Path, steps, dt):
                 f"{hip_ank(a['joint_zone20_occupancy'], '{:.2f}')} | {hip_ank(a['joint_rom_p5_p95_deg'], '{:.0f}°')} | "
                 f"{f(a['diag_in_phase'])} | {f(a['pair_alternation'])} |")
         lines.append("")
+    # 설정별(학습 seed를 묶은) 평균 ± 표준편차
+    groups = {}
+    for r in results:
+        groups.setdefault(group_name(names[r]), []).append(r)
+    group_metrics = [
+        ("이동 성공률", lambda a: a["move_rate"]),
+        ("추종 성공률", lambda a: a["track_rate"]),
+        ("속도 3~50s", lambda a: a["speed_3_50"]),
+        ("영구 굳음", lambda a: a["outcomes"]["permanent_freeze"] + a["outcomes"]["initial_freeze"]),
+        ("넘어짐", lambda a: a["outcomes"]["fell"]),
+        ("네 발 공중", lambda a: a["all_feet_air_ratio"]),
+        ("한계 ±2° 비율", lambda a: _avg(a["joint_limit_occupancy"])),
+        ("끝 20% 엉덩이", lambda a: _avg(a["joint_zone20_occupancy"], 0)),
+        ("끝 20% 발목", lambda a: _avg(a["joint_zone20_occupancy"], 1)),
+        ("엉덩이 범위 p5–p95 (°)", lambda a: _avg(a["joint_rom_p5_p95_deg"], 0)),
+        ("발목 범위 p5–p95 (°)", lambda a: _avg(a["joint_rom_p5_p95_deg"], 1)),
+        ("대각선 동시 접촉", lambda a: a["diag_in_phase"]),
+        ("대각선 쌍 교대", lambda a: a["pair_alternation"]),
+    ]
+    head = ["", "## 설정별 (학습 seed 평균 ± 표준편차)", ""]
+    for mode, label in (("deterministic", "노이즈 끔"), ("stochastic", "노이즈 켬")):
+        head += [f"### {label}", "",
+                 "| 설정 (run 수) | " + " | ".join(m for m, _ in group_metrics) + " |",
+                 "| --- |" + " --- |" * len(group_metrics)]
+        for gname, rs in groups.items():
+            cells = []
+            for _, fn in group_metrics:
+                vals = [fn(results[r][mode]) for r in rs]
+                vals = [v for v in vals if v is not None]
+                cells.append("–" if not vals else
+                             f"{np.mean(vals):.2f}" + (f" ± {np.std(vals):.2f}" if len(vals) > 1 else ""))
+            head.append(f"| {gname} ({len(rs)}) | " + " | ".join(cells) + " |")
+        head.append("")
+    lines = head + ["## run별", ""] + lines
     (out / "comparison.md").write_text("\n".join(lines))
     (out / "summary.json").write_text(json.dumps(
         {names[r]: {m: {k: v for k, v in res[m].items() if k != "per_command"}
                     for m in ("deterministic", "stochastic")} for r, res in results.items()}, indent=1))
 
-    # 생존 곡선: 색 = 버전(v5 주황, v5b 파랑), 선 모양 = 학습 seed
-    color = lambda n: "#2a78d6" if "v5b" in n else "#eb6834"
-    dash = lambda n: "--" if n.endswith("_s1") else (":" if n.endswith("_s2") else "-")
-    fig, axes = plt.subplots(1, 2, figsize=(10, 4), sharey=True)
-    for ax, (mode, label) in zip(axes, (("deterministic", "noise off"), ("stochastic", "noise on"))):
-        for r, res in results.items():
-            g, s = res[mode]["survival_all"]
-            n = names[r]
-            ax.step(g, s, where="post", color=color(n), ls=dash(n), lw=1.6, label=n)
+    # 생존 곡선: 설정마다 한 줄 (학습 seed들의 에피소드를 합쳐 Kaplan–Meier), 색 = 설정 (고정 순서)
+    fig, axes = plt.subplots(1, 2, figsize=(10, 4.2), sharey=True)
+    for ax, (mode, label, det) in zip(axes, (("deterministic", "noise off", True), ("stochastic", "noise on", False))):
+        for k, (gname, rs) in enumerate(groups.items()):
+            eps = [e for r in rs for e in results[r]["episodes"] if e["deterministic"] == det]
+            g, sv = survival(eps, dt, steps)
+            ax.step(g, sv, where="post", color=PALETTE[k % len(PALETTE)], lw=1.8,
+                    ls="-" if k < len(PALETTE) else "--", label=f"{gname} (n={len(rs)})")
         ax.set_title(label, fontsize=10, color="#222222", loc="left")
         ax.set_xlabel("time [s]", fontsize=9)
         ax.set_xlim(0, steps * dt)
@@ -384,7 +434,7 @@ def write_comparison(results, out: Path, steps, dt):
         ax.tick_params(labelsize=8, colors="#6b6b66")
     axes[0].set_ylabel("fraction not permanently frozen", fontsize=9)
     axes[1].legend(fontsize=8, frameon=False, loc="lower left")
-    fig.suptitle("Survival until permanent freeze (all episodes; drop near t=0 = initial freeze)",
+    fig.suptitle("Survival until permanent freeze, per config (training seeds pooled; drop near t=0 = initial freeze)",
                  fontsize=10, x=0.01, ha="left")
     fig.tight_layout()
     fig.savefig(out / "survival.png", dpi=150)
