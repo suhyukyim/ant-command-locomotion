@@ -22,6 +22,8 @@ evaluate.py와 그 결과(summary.json)는 참고 기록으로 그대로 두고,
       temporary_freeze     굳음 구간이 있었지만 다시 움직임 (영구 굳음 없음)
       sustained_locomotion 굳음 구간 없음 + 이동 성공
       stalled              굳음 구간 없음 + 이동 실패 (제자리에서 떨기 등)
+  - 보행 지표: 관절별 한계(±2°) 근처 비율, 범위 끝 20% 비율, 움직임 범위(p5–p95), 네 발 모두 공중 비율,
+    발 접촉 교대(diag_in_phase: 같은 대각선 두 발 접촉 상관, pair_alternation: 두 대각선 쌍의 반대 위상 정도)
   - 생존 곡선: "아직 영구 굳음에 빠지지 않은 비율" (Kaplan–Meier). 사건 = 영구 굳음 시작,
     50초까지 안 굳었거나 넘어진 에피소드는 그 시점에서 우측 검열
 
@@ -56,6 +58,7 @@ CRITERIA = dict(
     move_speed=0.05,          # m/s
     track_ratio=0.5,          # 명령 속도 대비
     limit_margin_deg=2.0,
+    soft_zone=0.8,            # 범위 끝 20% 구간: 중심 ± 0.8 × 반범위 밖 (v6 페널티 구간과 같음)
     freeze_joint_vel=0.01,    # rad/s, 관절 8개 평균
     freeze_torso_speed=0.02,  # m/s
     freeze_min_steps=10,      # 0.5초
@@ -65,6 +68,30 @@ OUTCOMES = ["sustained_locomotion", "temporary_freeze", "permanent_freeze",
             "initial_freeze", "stalled", "fell"]
 FEET = ["left_ankle_geom", "right_ankle_geom", "third_ankle_geom", "fourth_ankle_geom"]
 JOINTS = ["hip_1", "ankle_1", "hip_2", "ankle_2", "hip_3", "ankle_3", "hip_4", "ankle_4"]
+# 대각선 다리 쌍: 다리 1(+x,+y)·3(−x,−y), 다리 2(−x,+y)·4(+x,−y). FEET 순서 기준 인덱스
+DIAG_A, DIAG_B = (0, 2), (1, 3)
+
+
+def _corr(a, b):
+    a, b = np.asarray(a, float), np.asarray(b, float)
+    if a.std() < 1e-9 or b.std() < 1e-9:
+        return None
+    return float(np.corrcoef(a, b)[0, 1])
+
+
+def contact_pattern(fw):
+    """발 접촉(스텝 × 4, 0/1)에서 교대 패턴 지표.
+    trot(대각선 교대)이면 diag_in_phase > 0 (같은 대각선 두 발이 함께 닿음), pair_alternation > 0
+    (두 대각선 쌍이 번갈아 닿음). 둘 다 None이면 접촉이 변하지 않음(계속 닿거나 계속 떠 있음)."""
+    ca = [_corr(fw[:, DIAG_A[0]], fw[:, DIAG_A[1]]), _corr(fw[:, DIAG_B[0]], fw[:, DIAG_B[1]])]
+    ca = [c for c in ca if c is not None]
+    pair = _corr(fw[:, list(DIAG_A)].sum(axis=1), fw[:, list(DIAG_B)].sum(axis=1))
+    n_down = fw.sum(axis=1)
+    return dict(
+        diag_in_phase=float(np.mean(ca)) if ca else None,
+        pair_alternation=None if pair is None else -pair,
+        feet_down_hist=[float(np.mean(n_down == k)) for k in range(5)],
+    )
 
 
 def commands():
@@ -111,6 +138,8 @@ def episode(run, cmd, reset_seed, deterministic, steps):
     gid = lambda n: mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, n)
     floor, feet = gid("floor"), [gid(n) for n in FEET]
     lo, hi = np.degrees(m.jnt_range[1:9, 0]), np.degrees(m.jnt_range[1:9, 1])
+    mid, half = (lo + hi) / 2, (hi - lo) / 2
+    soft_lo, soft_hi = mid - CRITERIA["soft_zone"] * half, mid + CRITERIA["soft_zone"] * half
     c_hat = np.asarray(cmd) / np.linalg.norm(cmd)
     xy0 = env.torso_xy()
 
@@ -178,6 +207,9 @@ def episode(run, cmd, reset_seed, deterministic, steps):
     w = slice(WARMUP, T)  # 지표는 워밍업 이후 구간
     fw = foot[w].astype(int)
     dur = max((T - WARMUP) * dt, dt)
+    ok = T > WARMUP
+    pattern = contact_pattern(fw) if ok else dict(diag_in_phase=None, pair_alternation=None, feet_down_hist=None)
+    in_zone = (q[w] < soft_lo) | (q[w] > soft_hi)
     return dict(
         cmd=list(cmd), reset_seed=reset_seed, deterministic=deterministic, noise_seed=noise_seed,
         steps=T, fell=fell,
@@ -192,6 +224,12 @@ def episode(run, cmd, reset_seed, deterministic, steps):
         first_freeze_s=spans[0][0] * dt if spans else None,
         joint_limit_occupancy=near[w].mean(axis=0).round(3).tolist() if T > WARMUP else None,
         joint_range_deg=np.ptp(q[w], axis=0).round(2).tolist() if T > WARMUP else None,
+        joint_zone20_occupancy=in_zone.mean(axis=0).round(3).tolist() if ok else None,
+        joint_rom_p5_p95_deg=(np.percentile(q[w], 95, axis=0)
+                              - np.percentile(q[w], 5, axis=0)).round(2).tolist() if ok else None,
+        diag_in_phase=pattern["diag_in_phase"],
+        pair_alternation=pattern["pair_alternation"],
+        feet_down_hist=pattern["feet_down_hist"],
         joint_velocity=float(qd[w].mean()) if T > WARMUP else None,
         trunk_height_std=float(z[w].std()) if T > WARMUP else None,
         trunk_height_range=float(np.ptp(z[w])) if T > WARMUP else None,
@@ -255,9 +293,11 @@ def aggregate(eps, dt, steps):
     out["freeze_rate"] = _mean([e["freeze"] for e in eps])
     onsets = [e["freeze_onset_s"] for e in eps if e["outcome"] == "permanent_freeze"]
     out["permanent_freeze_onset_s_median"] = float(np.median(onsets)) if onsets else None
-    for k in ("joint_velocity", "trunk_height_std", "all_feet_air_ratio", "action_saturation"):
+    for k in ("joint_velocity", "trunk_height_std", "all_feet_air_ratio", "action_saturation",
+              "diag_in_phase", "pair_alternation"):
         out[k] = _mean([e[k] for e in eps])
-    for k in ("joint_limit_occupancy", "joint_range_deg", "foot_air_ratio", "touchdowns_per_s"):
+    for k in ("joint_limit_occupancy", "joint_range_deg", "foot_air_ratio", "touchdowns_per_s",
+              "joint_zone20_occupancy", "joint_rom_p5_p95_deg", "feet_down_hist"):
         vals = [e[k] for e in eps if e[k] is not None]
         out[k] = np.mean(vals, axis=0).round(3).tolist() if vals else None
     g, s = survival(eps, dt, steps, started_only=True)
@@ -288,6 +328,13 @@ def summarize_run(run, eps, dt, steps, n_seeds):
 
 
 # ---------------------------------------------------------------- 출력
+def hip_ank(vals, fmt):
+    """관절별 값 8개 → '엉덩이 평균 / 발목 평균'."""
+    if not vals:
+        return "–"
+    return f"{fmt.format(np.mean(vals[0::2]))} / {fmt.format(np.mean(vals[1::2]))}"
+
+
 def write_comparison(results, out: Path, steps, dt):
     import matplotlib
     matplotlib.use("Agg")
@@ -298,8 +345,8 @@ def write_comparison(results, out: Path, steps, dt):
     lines = []
     for mode, label in (("deterministic", "노이즈 끔"), ("stochastic", "노이즈 켬")):
         lines += [f"### {label}", "",
-                  f"| run | 이동 성공률 | 추종 성공률 | 속도 3~15s | 속도 3~50s | 끝까지 이동 | 일시 굳음 | 걷다 영구 굳음 | 처음부터 굳음 | 제자리 | 넘어짐 | 걷기 시작 후 {steps * dt:.0f}초까지 유지 | 영구 굳음 시점 중간값 | 네 발 공중 | 관절 한계 비율 (관절별) |",
-                  "| --- |" + " --- |" * 14]
+                  f"| run | 이동 성공률 | 추종 성공률 | 속도 3~15s | 속도 3~50s | 끝까지 이동 | 일시 굳음 | 걷다 영구 굳음 | 처음부터 굳음 | 제자리 | 넘어짐 | 걷기 시작 후 {steps * dt:.0f}초까지 유지 | 영구 굳음 시점 중간값 | 네 발 공중 | 관절 한계 비율 (관절별) | 끝 20% 비율 (엉덩이 / 발목) | 움직임 범위 p5–p95 (엉덩이 / 발목) | 대각선 동시 접촉 | 대각선 쌍 교대 |",
+                  "| --- |" + " --- |" * 18]
         for r, res in results.items():
             a = res[mode]
             o = a["outcomes"]
@@ -309,7 +356,9 @@ def write_comparison(results, out: Path, steps, dt):
                 f"{f(o['sustained_locomotion'])} | {f(o['temporary_freeze'])} | {f(o['permanent_freeze'])} | "
                 f"{f(o['initial_freeze'])} | {f(o['stalled'])} | {f(o['fell'])} | {f(a['started_still_walking_at_end'])} | "
                 f"{f(a['permanent_freeze_onset_s_median'])}{'' if a['permanent_freeze_onset_s_median'] is None else 's'} | {f(a['all_feet_air_ratio'])} | "
-                f"{' '.join(f'{x:.2f}' for x in a['joint_limit_occupancy'] or [])} |")
+                f"{' '.join(f'{x:.2f}' for x in a['joint_limit_occupancy'] or [])} | "
+                f"{hip_ank(a['joint_zone20_occupancy'], '{:.2f}')} | {hip_ank(a['joint_rom_p5_p95_deg'], '{:.0f}°')} | "
+                f"{f(a['diag_in_phase'])} | {f(a['pair_alternation'])} |")
         lines.append("")
     (out / "comparison.md").write_text("\n".join(lines))
     (out / "summary.json").write_text(json.dumps(

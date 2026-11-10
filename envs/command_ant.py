@@ -39,6 +39,8 @@ class CommandAnt(gym.Wrapper):
         alive_weight: float = 1.0,
         ctrl_weight_min: float = 0.02,
         ctrl_weight_max: float = 0.25,
+        limit_weight: float = 0.0,
+        limit_soft: float = 0.8,
     ):
         super().__init__(env)
         self.max_speed = max_speed
@@ -49,6 +51,14 @@ class CommandAnt(gym.Wrapper):
         self.alive_weight = alive_weight
         self.ctrl_weight_min = ctrl_weight_min
         self.ctrl_weight_max = ctrl_weight_max
+        # 관절 한계 페널티 (v6). 관절마다 실제 하한·상한에서 중심과 반범위를 구하고,
+        # 중심 ± limit_soft × 반범위를 넘어선 만큼(rad)을 더한다. limit_soft 0.8 = 범위 끝 20% 구간
+        # (엉덩이 ±30° → ±24° 밖, 발목 30~70° → 34~66° 밖). limit_weight 0이면 기존 보상과 같다.
+        self.limit_weight = limit_weight
+        self.limit_soft = limit_soft
+        rng = env.unwrapped.model.jnt_range[1:9]          # 관절 8개 (0번은 몸통 free joint)
+        center, half = rng.mean(axis=1), (rng[:, 1] - rng[:, 0]) / 2
+        self.soft_lo, self.soft_hi = center - limit_soft * half, center + limit_soft * half
 
         base = env.observation_space
         low = np.concatenate([base.low, [-np.inf, -np.inf, 0.0]]).astype(np.float32)
@@ -131,11 +141,17 @@ class CommandAnt(gym.Wrapper):
         )
         effort = float(np.sum(np.square(action)))
 
+        # 3) 관절 한계: 범위 끝 구간에 들어간 깊이(rad)의 합
+        q = self._data.qpos[7:15]
+        limit_penalty = float(np.sum(np.clip(q - self.soft_hi, 0.0, None)
+                                     + np.clip(self.soft_lo - q, 0.0, None)))
+
         alive = 0.0 if terminated else 1.0
         reward = (
             self.tracking_weight * tracking
             + self.alive_weight * alive
             - ctrl_w * effort
+            - self.limit_weight * limit_penalty
         )
 
         info.update(
@@ -145,6 +161,7 @@ class CommandAnt(gym.Wrapper):
             tracking_error=math.sqrt(err),
             effort=effort,
             r_tracking=tracking,
+            limit_penalty=limit_penalty,
         )
 
         self._steps += 1
