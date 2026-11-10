@@ -1,0 +1,122 @@
+{
+  "main_v6Bb_12": {
+    "along_cmd_speed": 0.540315358652444,
+    "joint_range_deg": 31.586287655048082,
+    "period_s": 0.35000000000000003,
+    "periodicity": 0.2850202006295541,
+    "foot_contact_ratio": [
+      0.18,
+      0.05,
+      0.3,
+      0.12
+    ],
+    "touchdowns_per_s": [
+      3.33,
+      0.92,
+      3.92,
+      2.33
+    ],
+    "feet_on_ground_mean": 0.6458333333333334,
+    "upper_leg_contact": 0.0,
+    "torso_contact": 0.0,
+    "torso_height_mean": 0.6424096093423161,
+    "torso_height_min": 0.5907191026061542,
+    "run": "runs/main_v6Bb",
+    "cmd": [
+      1.0,
+      0.0
+    ],
+    "fell": false,
+    "eval_along_cmd_speed": NaN
+  },
+  "main_v5b_12": {
+    "along_cmd_speed": 0.4530998178189269,
+    "joint_range_deg": 25.30011758241989,
+    "period_s": 0.35000000000000003,
+    "periodicity": 0.7540772121642428,
+    "foot_contact_ratio": [
+      0.06,
+      0.21,
+      0.2,
+      0.26
+    ],
+    "touchdowns_per_s": [
+      1.25,
+      3.25,
+      3.25,
+      3.58
+    ],
+    "feet_on_ground_mean": 0.7333333333333333,
+    "upper_leg_contact": 0.0,
+    "torso_contact": 0.0,
+    "torso_height_mean": 0.6621133792353199,
+    "torso_height_min": 0.5831609335384883,
+    "run": "runs/main_v5b",
+    "cmd": [
+      1.0,
+      0.0
+    ],
+    "fell": false,
+    "eval_along_cmd_speed": 0.4530998178189269
+  },
+  "main_v6Bb_10": {
+    "along_cmd_speed": 0.282563756485474,
+    "joint_range_deg": 29.520353413301308,
+    "period_s": 0.35000000000000003,
+    "periodicity": 0.28008366906015664,
+    "foot_contact_ratio": [
+      0.25,
+      0.02,
+      0.3,
+      0.13
+    ],
+    "touchdowns_per_s": [
+      4.17,
+      0.42,
+      4.67,
+      2.33
+    ],
+    "feet_on_ground_mean": 0.7,
+    "upper_leg_contact": 0.0,
+    "torso_contact": 0.0,
+    "torso_height_mean": 0.6301892225100427,
+    "torso_height_min": 0.5900430151903421,
+    "run": "runs/main_v6Bb",
+    "cmd": [
+      6.123233995736766e-17,
+      -1.0
+    ],
+    "fell": false,
+    "eval_along_cmd_speed": NaN
+  },
+  "main_v6Bb_6": {
+    "along_cmd_speed": 0.13038649029148267,
+    "joint_range_deg": 34.414917286716495,
+    "period_s": 0.25,
+    "periodicity": 0.5191945337292074,
+    "foot_contact_ratio": [
+      0.26,
+      0.11,
+      0.3,
+      0.02
+    ],
+    "touchdowns_per_s": [
+      3.92,
+      2.17,
+      4.75,
+      0.42
+    ],
+    "feet_on_ground_mean": 0.6958333333333333,
+    "upper_leg_contact": 0.0,
+    "torso_contact": 0.0,
+    "torso_height_mean": 0.6320246671659887,
+    "torso_height_min": 0.6010799625312827,
+    "run": "runs/main_v6Bb",
+    "cmd": [
+      3.061616997868383e-17,
+      0.5
+    ],
+    "fell": false,
+    "eval_along_cmd_speed": NaN
+  }
+}

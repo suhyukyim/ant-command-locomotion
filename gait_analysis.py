@@ -52,6 +52,12 @@ DEFAULT_CASES = [
 ]
 
 
+def command_grid():
+    """evaluate.py와 같은 16개 명령 (0~7 = 0.5 m/s, 8~15 = 1.0 m/s, 방향 −180°부터 45°씩)."""
+    angles = np.linspace(-np.pi, np.pi, 8, endpoint=False)
+    return [[s * float(np.cos(a)), s * float(np.sin(a))] for s in (0.5, 1.0) for a in angles]
+
+
 def record(policy, cmd, energy=0.5, seed=0, video=False):
     env = make_command_ant(max_episode_steps=STEPS + 10,
                            render_mode="rgb_array" if video else None)
@@ -210,7 +216,12 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     summary = {}
     for name, run, idx, desc in cases:
-        ref = json.loads((Path(run) / "results" / "summary.json").read_text())["tracking"][idx]
+        summary_path = Path(run) / "results" / "summary.json"
+        if summary_path.exists():
+            ref = json.loads(summary_path.read_text())["tracking"][idx]
+        else:
+            # v6부터는 evaluate.py를 돌리지 않아 summary.json이 없다 → evaluate.py와 같은 명령 순서로 만든다
+            ref = dict(cmd=command_grid()[idx], along_cmd_speed=float("nan"))
         cmd = ref["cmd"]
         log, frames, fell, dt = record(Policy(run), cmd, video=not args.no_video)
         met = metrics(log, cmd, dt)
