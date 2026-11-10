@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>v7 gait videos</title>
+<style>body{font-family:sans-serif;background:#fafafa;margin:16px}h2{margin:24px 0 8px}
+.row{display:flex;flex-wrap:wrap;gap:16px}figure{margin:0;background:#fff;padding:8px;border:1px solid #ddd}
+figure img{width:360px;display:block}figcaption{font-size:14px;margin-top:6px;max-width:360px}
+.plot img{width:560px}</style>
+<h1>v7 보행 영상 (노이즈 끔, 3~15초)</h1>
+<h2>같은 명령 비교: 앞으로 1.0 m/s (명령 #12)</h2>
+<div class="row">
+<figure><img src="main_v6Bb_12.gif"><figcaption><b>v6Bb</b> 기준: 0.54 m/s, 몸통 출렁임 큼, 발목 사용</figcaption></figure>
+<figure><img src="main_v7Ab_12.gif"><figcaption><b>v7Ab</b> (w_z=1): 0.16 m/s, 발목 거의 고정</figcaption></figure>
+<figure><img src="main_v7Bb_12.gif"><figcaption><b>v7Bb</b> (w_z=3): 0.04 m/s, 발목 한계에 고정, 제자리 종종걸음</figcaption></figure>
+</div>
+<h2>v7Bb 다른 방향</h2>
+<div class="row">
+<figure><img src="main_v7Bb_10.gif"><figcaption>v7Bb 1.0 m/s @ 270° (명령 #10): 0.15 m/s</figcaption></figure>
+<figure><img src="main_v7Bb_6.gif"><figcaption>v7Bb 0.5 m/s @ 90° (명령 #6): 0.06 m/s</figcaption></figure>
+</div>
+<h2>관절 각도·발 접촉·몸통 높이</h2>
+<div class="row">
+<figure class="plot"><img src="gait_main_v6Bb_12.png"><figcaption>v6Bb #12</figcaption></figure>
+<figure class="plot"><img src="gait_main_v7Ab_12.png"><figcaption>v7Ab #12</figcaption></figure>
+<figure class="plot"><img src="gait_main_v7Bb_12.png"><figcaption>v7Bb #12</figcaption></figure>
+</div>
