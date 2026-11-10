@@ -23,6 +23,21 @@ from gymnasium import spaces
 TAU_REF = 150.0
 
 
+# 추종 커널 (v8). "single" = exp(−오차²/σ) (기존 K0), "two_term" = 넓은 항과 좁은 항(σ 0.25)을 반씩 (K1).
+# 둘 다 오차 0에서 1이라, 가중치를 곱한 최댓값이 같다.
+KERNELS = ("single", "two_term")
+NARROW_SIGMA = 0.25
+
+
+def tracking_reward(err2: float, weight: float, sigma: float, kernel: str) -> float:
+    """속도 추종 보상. err2 = ‖v − v_명령‖² [m²/s²]."""
+    if kernel == "single":
+        return weight * math.exp(-err2 / sigma)
+    if kernel == "two_term":
+        return weight * (0.5 * math.exp(-err2 / sigma) + 0.5 * math.exp(-err2 / NARROW_SIGMA))
+    raise ValueError(f"tracking_kernel={kernel!r}: {KERNELS} 중 하나")
+
+
 def yaw_from_quat(q: np.ndarray) -> float:
     """MuJoCo 쿼터니언 (w, x, y, z)에서 yaw 각도를 구한다."""
     w, x, y, z = q
@@ -77,8 +92,8 @@ class CommandAnt(gym.Wrapper):
             raise ValueError(f"action_mode={action_mode!r}: 'torque' 또는 'pd'")
         if action_mode == "pd" and pd_kp <= 0:
             raise ValueError(f"PD 행동 방식에는 pd_kp > 0이 필요하다 (pd_kp={pd_kp})")
-        if tracking_kernel != "single":
-            raise ValueError(f"tracking_kernel={tracking_kernel!r}: 두 항 커널은 이후 작업에서 추가된다")
+        if tracking_kernel not in KERNELS:
+            raise ValueError(f"tracking_kernel={tracking_kernel!r}: {KERNELS} 중 하나")
         self.action_mode = action_mode
         self.pd_kp = pd_kp
         self.pd_kd = pd_kd
@@ -241,7 +256,7 @@ class CommandAnt(gym.Wrapper):
 
         # 1) 속도 추종: 오차가 작을수록 1에 가까움
         err = float(np.sum((velocity - self.command) ** 2))
-        tracking = math.exp(-err / self.tracking_sigma)
+        tracking = tracking_reward(err, 1.0, self.tracking_sigma, self.tracking_kernel)   # 0~1
 
         # 2) 에너지: 에너지 수준이 낮을수록 페널티 가중치가 커짐
         ctrl_w = self.ctrl_weight_min + (1.0 - self.energy) * (

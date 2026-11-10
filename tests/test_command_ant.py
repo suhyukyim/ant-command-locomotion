@@ -83,13 +83,11 @@ def test_substep_callbacks_called_five_times():
     assert count[0] == 5
 
 
-def test_placeholder_options():
+def test_default_options():
     env = make_command_ant()
     assert (env.action_mode, env.pd_kp, env.pd_kd, env.tracking_kernel) == ("torque", 0.0, 0.0, "single")
     with pytest.raises(ValueError):
-        make_command_ant(action_mode="pd")
-    with pytest.raises(ValueError):
-        make_command_ant(tracking_kernel="two_term")
+        make_command_ant(action_mode="velocity")
 
 
 def test_step_survives_replaced_simulation_loop():
