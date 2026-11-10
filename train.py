@@ -26,7 +26,7 @@ class TrackingLogger(BaseCallback):
 
     def __init__(self):
         super().__init__()
-        self._err, self._effort, self._limit = [], [], []
+        self._err, self._effort, self._limit, self._vz2 = [], [], [], []
 
     def _on_step(self) -> bool:
         for info in self.locals["infos"]:
@@ -34,6 +34,7 @@ class TrackingLogger(BaseCallback):
                 self._err.append(info["tracking_error"])
                 self._effort.append(info["effort"])
                 self._limit.append(info.get("limit_penalty", 0.0))
+                self._vz2.append(info.get("vz2", 0.0))
         return True
 
     def _on_rollout_end(self) -> None:
@@ -42,9 +43,12 @@ class TrackingLogger(BaseCallback):
             self.logger.record("command/effort", float(np.mean(self._effort)))
             # 관절 한계 페널티 원값 P (rad, 가중치 곱하기 전). 보상에서 빠지는 양은 limit_weight × P
             self.logger.record("command/limit_penalty", float(np.mean(self._limit)))
+            # 몸통 수직 속도 제곱 v_z² (가중치 곱하기 전). 보상에서 빠지는 양은 vz_weight × v_z²
+            self.logger.record("command/vz2", float(np.mean(self._vz2)))
         self._err.clear()
         self._effort.clear()
         self._limit.clear()
+        self._vz2.clear()
 
 
 class SaveNormCallback(BaseCallback):
@@ -77,6 +81,8 @@ def main():
                    help="관절 한계 페널티 가중치 (기본 0 = 기존 보상, v6: 1.5)")
     p.add_argument("--limit-soft", type=float, default=0.8,
                    help="페널티 시작 위치: 중심 ± 이 값 × 반범위 (0.8 = 범위 끝 20%%)")
+    p.add_argument("--vz-weight", type=float, default=0.0,
+                   help="몸통 수직 속도 페널티 가중치 × v_z² (기본 0 = 기존 보상, v7A: 1.0, v7B: 3.0)")
     p.add_argument("--squash", action="store_true",
                    help="행동을 tanh로 (-1, 1)에 묶는 정책 사용 (squashed_policy.py, v5)")
     p.add_argument("--constant-lr", type=float, default=None,
@@ -95,7 +101,8 @@ def main():
                                     tracking_weight=args.tracking_weight,
                                     alive_weight=args.alive_weight,
                                     limit_weight=args.limit_weight,
-                                    limit_soft=args.limit_soft)
+                                    limit_soft=args.limit_soft,
+                                    vz_weight=args.vz_weight)
         return _init
 
     vec_cls = SubprocVecEnv if args.n_envs > 1 else DummyVecEnv

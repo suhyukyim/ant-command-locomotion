@@ -41,6 +41,7 @@ class CommandAnt(gym.Wrapper):
         ctrl_weight_max: float = 0.25,
         limit_weight: float = 0.0,
         limit_soft: float = 0.8,
+        vz_weight: float = 0.0,
     ):
         super().__init__(env)
         self.max_speed = max_speed
@@ -59,6 +60,9 @@ class CommandAnt(gym.Wrapper):
         rng = env.unwrapped.model.jnt_range[1:9]          # 관절 8개 (0번은 몸통 free joint)
         center, half = rng.mean(axis=1), (rng[:, 1] - rng[:, 0]) / 2
         self.soft_lo, self.soft_hi = center - limit_soft * half, center + limit_soft * half
+        # 몸통 수직 속도 페널티 (v7): vz_weight × v_z². v_z = qvel[2] = 몸통 free joint의 월드 좌표계
+        # 선속도 z 성분 (기울어져도 월드 기준 위아래). vz_weight 0이면 기존 보상과 같다.
+        self.vz_weight = vz_weight
 
         base = env.observation_space
         low = np.concatenate([base.low, [-np.inf, -np.inf, 0.0]]).astype(np.float32)
@@ -146,12 +150,16 @@ class CommandAnt(gym.Wrapper):
         limit_penalty = float(np.sum(np.clip(q - self.soft_hi, 0.0, None)
                                      + np.clip(self.soft_lo - q, 0.0, None)))
 
+        # 4) 몸통 수직 속도
+        vz2 = float(self._data.qvel[2] ** 2)
+
         alive = 0.0 if terminated else 1.0
         reward = (
             self.tracking_weight * tracking
             + self.alive_weight * alive
             - ctrl_w * effort
             - self.limit_weight * limit_penalty
+            - self.vz_weight * vz2
         )
 
         info.update(
@@ -162,6 +170,7 @@ class CommandAnt(gym.Wrapper):
             effort=effort,
             r_tracking=tracking,
             limit_penalty=limit_penalty,
+            vz2=vz2,
         )
 
         self._steps += 1
