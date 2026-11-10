@@ -3,3 +3,4 @@ stable-baselines3>=2.3
 matplotlib
 tensorboard
 imageio
+pytest
