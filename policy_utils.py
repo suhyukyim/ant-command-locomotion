@@ -22,7 +22,8 @@ class Policy:
         self.norm.training = False
         self.norm.norm_reward = False
 
-    def act(self, obs: np.ndarray) -> np.ndarray:
+    def act(self, obs: np.ndarray, deterministic: bool = True) -> np.ndarray:
+        """deterministic=True: 평균 행동만 (노이즈 끔). False: 학습 때처럼 노이즈를 섞어 뽑음."""
         obs_n = self.norm.normalize_obs(obs[None, :])
-        action, _ = self.model.predict(obs_n, deterministic=True)
+        action, _ = self.model.predict(obs_n, deterministic=deterministic)
         return action[0]

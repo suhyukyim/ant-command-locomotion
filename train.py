@@ -18,6 +18,7 @@ from stable_baselines3.common.callbacks import BaseCallback, CheckpointCallback
 from stable_baselines3.common.vec_env import SubprocVecEnv, DummyVecEnv, VecMonitor, VecNormalize
 
 from envs import make_command_ant
+from squashed_policy import SquashedGaussianPolicy
 
 
 class TrackingLogger(BaseCallback):
@@ -68,6 +69,10 @@ def main():
     p.add_argument("--tracking-weight", type=float, default=2.0,
                    help="속도 추종 보상 가중치 (v2·v3: 2.0, v4: 5.0)")
     p.add_argument("--alive-weight", type=float, default=1.0, help="생존 보상 가중치")
+    p.add_argument("--squash", action="store_true",
+                   help="행동을 tanh로 (-1, 1)에 묶는 정책 사용 (squashed_policy.py, v5)")
+    p.add_argument("--constant-lr", type=float, default=None,
+                   help="학습률을 이 값으로 고정 (기본: 3e-4 → 0 선형 감소). --resume과 함께 쓰면 이어 학습에도 적용")
     args = p.parse_args()
 
     run_name = args.run_name or time.strftime("%Y%m%d-%H%M%S")
@@ -91,11 +96,14 @@ def main():
         venv = VecNormalize.load(str(resume / "vecnormalize.pkl"), venv)
         model = PPO.load(resume / "final_model.zip", env=venv, device="cpu",
                          tensorboard_log=str(run_dir))
+        if args.constant_lr is not None:
+            model.learning_rate = args.constant_lr
+            model._setup_lr_schedule()
     else:
         venv = VecNormalize(venv, norm_obs=True, norm_reward=True, clip_obs=10.0)
         n_steps = 1024             # 환경당 수집 스텝 → 한 번에 1024 * n_envs
         model = PPO(
-            "MlpPolicy",
+            SquashedGaussianPolicy if args.squash else "MlpPolicy",
             venv,
             n_steps=n_steps,
             # v1에서는 batch 256이라 업데이트 한 번에 미니배치가 48개 × 10에폭 = 480번 갱신
@@ -104,7 +112,8 @@ def main():
             batch_size=n_steps * args.n_envs // 4,
             n_epochs=5,
             target_kl=0.02,        # KL이 커지면 그 업데이트의 남은 에폭을 건너뛴다
-            learning_rate=lambda progress: 3e-4 * progress,  # 3e-4 → 0 선형 감소
+            learning_rate=(args.constant_lr if args.constant_lr is not None
+                           else lambda progress: 3e-4 * progress),  # 기본: 3e-4 → 0 선형 감소
             gamma=0.99,
             gae_lambda=0.95,
             clip_range=0.2,
