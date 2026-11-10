@@ -5,3 +5,4 @@ runs/*/PPO_*/
 runs/smoke/
 runs/validate/
 runs/*.log
+runs/*/*.log
