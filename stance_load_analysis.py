@@ -63,6 +63,9 @@ def record():
     data = {}
     for cfg in CONFIGS:
         for sfx in SEEDS:
+            if not Path(f"runs/{cfg}{sfx}/final_model.zip").exists():   # 일부 seed만 학습한 경우
+                print("  skip (no run):", cfg + sfx)
+                continue
             pol = Policy(f"runs/{cfg}{sfx}")
             for mode, det in (("off", True), ("on", False)):
                 for i, c in enumerate(command_grid()):
