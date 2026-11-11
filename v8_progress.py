@@ -2,19 +2,25 @@
 
     python v8_progress.py                 # 한 번 보기
     watch -n 30 .venv/bin/python v8_progress.py   # 30초마다 새로 보기 (Ctrl+C로 끝)
+    watch -n 30 .venv/bin/python v8_progress.py v9   # v9 (run_v9.sh)
 """
 
 from __future__ import annotations
 
 import os
 import re
+import sys
 import time
 from pathlib import Path
 
 ARMS = "BDEC"
 SEEDS = ("", "_s1", "_s2")
 MAIN, CONT = 5_000_000, 1_600_000
-NAMES = {"B": "PD + 기존 커널", "D": "PD + 두 항 커널", "E": "토크 + 두 항 커널", "C": "토크 + 작은 노이즈"}
+NAMES = {"B": "PD + 기존 커널", "D": "PD + 두 항 커널", "E": "토크 + 두 항 커널", "C": "토크 + 작은 노이즈",
+         "F": "PD + 디딤 보상", "H": "PD + 디딤 + 작은 노이즈"}
+VER = sys.argv[1] if len(sys.argv) > 1 else "v8"
+if VER == "v9":
+    ARMS = "FH"
 
 
 def steps_of(log: Path) -> int:
@@ -30,7 +36,7 @@ def steps_of(log: Path) -> int:
 
 def main():
     runs = Path("runs")
-    order = [(f"main_v8{a}{s}", f"main_v8{a}b{s}", a, s) for s in SEEDS for a in ARMS]
+    order = [(f"main_{VER}{a}{s}", f"main_{VER}{a}b{s}", a, s) for s in SEEDS for a in ARMS]
     total, done_steps, rows = len(order) * (MAIN + CONT), 0, []
     for base, cont, arm, sfx in order:
         b_done = (runs / base / "final_model.zip").exists()
@@ -40,8 +46,8 @@ def main():
         done_steps += b + c
         state = "완료" if c_done else ("이어 학습 중" if b_done and c else ("이어 학습 대기" if b_done else ("학습 중" if b else "대기")))
         rows.append(f"  {arm}{sfx or '_s0':4s} {NAMES[arm]:14s} {state:8s} {100 * (b + c) / (MAIN + CONT):5.1f}%")
-    log = runs / "v8_all.log"
-    print(f"v8 학습 진행률: {100 * done_steps / total:5.1f}%  ({done_steps / 1e6:.1f}M / {total / 1e6:.1f}M 스텝)")
+    log = runs / f"{VER}_all.log"
+    print(f"{VER} 학습 진행률: {100 * done_steps / total:5.1f}%  ({done_steps / 1e6:.1f}M / {total / 1e6:.1f}M 스텝)")
     if log.exists():
         lines = log.read_text().splitlines()
         start = next((l for l in lines if "start (" in l), None)

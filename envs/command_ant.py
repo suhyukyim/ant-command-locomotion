@@ -19,8 +19,14 @@ import mujoco
 import numpy as np
 from gymnasium import spaces
 
+from .stance import StanceTracker
+
 # 토크 기준값 [N·m]. 모터 gear와 같다. 노력 E = Σ(τ / TAU_REF)² 의 분모이고 모든 갈래가 같은 값을 쓴다.
 TAU_REF = 150.0
+
+# v9 디딤 보상: 발 geom (gait_analysis.FEET와 같은 순서), 하중 디딤 기준 = 발 하나의 F_z ≥ 0.25 mg (v8 측정과 같음)
+FEET = ("left_ankle_geom", "right_ankle_geom", "third_ankle_geom", "fourth_ankle_geom")
+LOAD_THR_MG = 0.25
 
 
 # 추종 커널 (v8). "single" = exp(−오차²/σ) (기존 K0), "two_term" = 넓은 항과 좁은 항(σ 0.25)을 반씩 (K1).
@@ -65,6 +71,10 @@ class CommandAnt(gym.Wrapper):
         pd_kp: float = 0.0,
         pd_kd: float = 0.0,
         tracking_kernel: str = "single",
+        stance_weight: float = 0.0,
+        slip_weight: float = 0.0,
+        stance_min: float = 0.05,
+        stance_cap: float = 0.25,
     ):
         super().__init__(env)
         self.max_speed = max_speed
@@ -98,6 +108,17 @@ class CommandAnt(gym.Wrapper):
         self.pd_kp = pd_kp
         self.pd_kd = pd_kd
         self.tracking_kernel = tracking_kernel
+
+        # 디딤 보상 (v9, envs/stance.py): 둘 다 0이면 디딤 계산을 하지 않는다 (v8과 비트 단위로 같음).
+        self.stance_weight = stance_weight
+        self.slip_weight = slip_weight
+        self._stance_on = stance_weight > 0 or slip_weight > 0
+        m = env.unwrapped.model
+        self._floor = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, "floor")
+        self._feet = [mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_GEOM, n) for n in FEET]
+        self._load_thr = LOAD_THR_MG * float(m.body_mass.sum()) * 9.81
+        self._stance = StanceTracker(m.opt.timestep, stance_min, stance_cap)
+        self._f6, self._v6 = np.zeros(6), np.zeros(6)
 
         # 물리 스텝 루프 (v8): Gymnasium의 _step_mujoco_simulation을 이 클래스의 루프로 바꿔 끼운다.
         # 물리 스텝마다 ctrl을 정한 뒤 mj_step 직전에 substep_callbacks를 순서대로 부른다
@@ -195,6 +216,7 @@ class CommandAnt(gym.Wrapper):
         req_sum = np.zeros(n)
         effort_sum = power_sum = 0.0
         n_limit = 0
+        bonus_sum = slip_sum = 0.0
         if self.action_mode == "pd":   # 목표 각도는 제어 스텝 시작 때 한 번 정하고 물리 스텝 5개 동안 유지
             self._pd_target = self._pd_center + np.clip(action, -1.0, 1.0) * self._pd_half
         for _ in range(n_frames):
@@ -203,6 +225,10 @@ class CommandAnt(gym.Wrapper):
             req_sum[self._act_to_joint] += req
             for cb in self.substep_callbacks:
                 cb()
+            if self._stance_on:
+                b, sl = self._stance_substep(model, data)
+                bonus_sum += b
+                slip_sum += sl
             mujoco.mj_step(model, data)
             tau = np.empty(n)
             # actuator_force는 gear 곱하기 전 값(모터 게인 1)이라 관절에 걸리는 토크는 gear를 곱한 값이다
@@ -219,7 +245,33 @@ class CommandAnt(gym.Wrapper):
             effort=effort_sum / n_frames,
             power=power_sum / n_frames,
             torque_limit_frac=n_limit / (n * n_frames),
+            stance_bonus=bonus_sum,
+            slip_sq=slip_sum / n_frames,
         )
+
+    def _stance_substep(self, model, data) -> tuple[float, float]:
+        """물리 스텝 시작 상태의 발별 하중·접촉점 미끄러짐 속도 → StanceTracker.
+        Ant는 RK4라 mj_step 뒤 접촉력은 마지막 RK 단계 값이다. 그래서 mj_forward로 다시 계산한다
+        (상태는 바꾸지 않는다: tests/test_stance.py, propulsion_analysis.Recorder와 같은 방법)."""
+        mujoco.mj_forward(model, data)
+        fz, slip = np.zeros(4), np.full(4, np.nan)
+        for i in range(data.ncon):
+            c = data.contact[i]
+            if self._floor not in (c.geom1, c.geom2):
+                continue
+            other = c.geom2 if c.geom1 == self._floor else c.geom1
+            if other not in self._feet:
+                continue
+            k = self._feet.index(other)
+            mujoco.mj_contactForce(model, data, i, self._f6)
+            fw = c.frame.reshape(3, 3).T @ self._f6[:3]
+            fz[k] += -fw[2] if c.geom2 == self._floor else fw[2]
+            mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_GEOM, other, self._v6, 0)
+            vp = self._v6[3:6] + np.cross(self._v6[:3], c.pos - data.geom_xpos[other])
+            slip[k] = np.linalg.norm(vp[:2])
+        cn = float(np.linalg.norm(self.command))
+        along = float(data.qvel[:2] @ self.command / cn) if cn > 1e-6 else 0.0
+        return self._stance.update(fz >= self._load_thr, slip, along, cn)
 
     def _fallback_step_info(self) -> dict:
         """다른 코드가 _step_mujoco_simulation을 다시 바꿔 끼운 경우(예: 옛 Recorder)의 대비책.
@@ -234,6 +286,8 @@ class CommandAnt(gym.Wrapper):
             effort=float(np.sum((tau / TAU_REF) ** 2)),
             power=float(np.sum(np.abs(tau * data.qvel[6:6 + n]))),
             torque_limit_frac=float(np.mean(np.abs(tau) >= 0.99 * TAU_REF)),
+            stance_bonus=0.0,
+            slip_sq=0.0,
         )
 
     # ------------------------------------------------------------------
@@ -242,6 +296,7 @@ class CommandAnt(gym.Wrapper):
     def reset(self, **kwargs):
         obs, info = self.env.reset(**kwargs)
         self._steps = 0
+        self._stance.reset()
         if not self.fixed:
             self._sample_command()
         return self._augment(obs), info
@@ -281,6 +336,8 @@ class CommandAnt(gym.Wrapper):
             - self.limit_weight * limit_penalty
             - self.vz_weight * vz2
         )
+        if self._stance_on:
+            reward += self.stance_weight * si["stance_bonus"] - self.slip_weight * si["slip_sq"]
 
         info.update(
             velocity=velocity,
@@ -295,6 +352,8 @@ class CommandAnt(gym.Wrapper):
             torque_requested=si["torque_requested"],
             power=si["power"],
             torque_limit_frac=si["torque_limit_frac"],
+            stance_bonus=si["stance_bonus"],
+            slip_sq=si["slip_sq"],
         )
 
         self._steps += 1

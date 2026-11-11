@@ -25,6 +25,10 @@ V6B = dict(tracking_sigma=1.0, tracking_weight=5.0, limit_weight=1.5, limit_soft
 PD = dict(action_mode="pd", pd_kp=120.0, pd_kd=21.0)
 STEPS, SEEDS, CMDS, W_END = 1000, range(10), (4, 12), 200
 OUT = Path("runs/v8_pretest/reward_compare.json")
+# v9 사전 시험: 디딤 보상 가중치 (환경 변수로 넘김, 워커 프로세스에도 전달됨). 0이면 v6B 그대로
+EXTRA = dict(stance_weight=float(os.environ.get("STANCE_W", 0)), slip_weight=float(os.environ.get("SLIP_W", 0)))
+if any(EXTRA.values()):
+    OUT = Path(f"runs/v9_pretest/reward_compare_st{EXTRA['stance_weight']:g}_sl{EXTRA['slip_weight']:g}.json")
 
 
 def cma_params(kp=120.0, restart=2, key="best_score_params"):
@@ -62,13 +66,13 @@ def job(args):
     for s in SEEDS:
         if mode == "on":
             torch.manual_seed(NOISE_SEED_OFFSET + s)
-        env = make_command_ant(**{**V6B, **PD, "max_episode_steps": STEPS})
+        env = make_command_ant(**{**V6B, **PD, **EXTRA, "max_episode_steps": STEPS})
         env.set_command(cmd[0], cmd[1], 0.5)
         obs, _ = env.reset(seed=s)
         dt = env.unwrapped.dt
         tot = dict(ret=0.0, tracking=0.0, alive=0.0, ctrl=0.0, limit=0.0)
         vel, n = [], 0
-        win = dict(ret=[], tracking=[], ctrl=[], limit=[], vx=[])
+        win = dict(ret=[], tracking=[], ctrl=[], limit=[], vx=[], bonus=[], slip=[])
         for t in range(STEPS):
             if mode == "cma":
                 a = cma_action(t * dt, p)
@@ -89,6 +93,7 @@ def job(args):
             if 60 <= t < W_END:
                 win["ret"].append(r); win["tracking"].append(5.0 * info["r_tracking"])
                 win["ctrl"].append(-ctrl_w * info["effort"]); win["limit"].append(-1.5 * info["limit_penalty"])
+                win["bonus"].append(info["stance_bonus"]); win["slip"].append(info["slip_sq"])
                 win["vx"].append(float(info["velocity"] @ np.asarray(cmd) / np.linalg.norm(cmd)))
             n += 1
             if term or trunc:
@@ -108,7 +113,8 @@ def main():
     out = {}
     for name, sfx, ci, eps in res:
         out.setdefault(name, {}).setdefault(str(ci), []).extend(dict(e, run_sfx=sfx) for e in eps)
-    keys = ("ret", "tracking", "alive", "ctrl", "limit", "along", "w_ret", "w_tracking", "w_ctrl", "w_limit", "w_vx")
+    keys = ("ret", "tracking", "alive", "ctrl", "limit", "along", "w_ret", "w_tracking", "w_ctrl", "w_limit", "w_vx",
+            "w_bonus", "w_slip")
     table = {}
     print(f"{'case':16s} cmd  " + " ".join(f"{k:>9s}" for k in keys) + "   fell")
     for name in CASES:
@@ -121,7 +127,8 @@ def main():
             table[f"{name}/{ci}"] = m
             print(f"{name:16s} {ci:3d}  " + " ".join(f"{m[k]:9.3f}" if k.startswith("w_") else f"{m[k]:9.2f}" for k in keys) + f"   {m['fell']:.2f}"
                   + (f"   seeds {np.round(m['ret_per_seed'], 0).tolist()}" if "ret_per_seed" in m else ""))
-    OUT.write_text(json.dumps(dict(reward="v6B", pd=PD, steps=STEPS, seeds=list(SEEDS), commands=list(CMDS),
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(dict(reward="v6B", extra=EXTRA, pd=PD, steps=STEPS, seeds=list(SEEDS), commands=list(CMDS),
                                    cases={k: v[0] for k, v in CASES.items()}, table=table, episodes=out), indent=1))
     print("saved →", OUT)
 

@@ -18,7 +18,8 @@ import numpy as np
 SEEDS = ("", "_s1", "_s2")
 CONFIGS = ("main_v6Bb", "main_v8Bb", "main_v8Db", "main_v8Eb", "main_v8Cb")
 LABELS = {"main_v6Bb": "A (토크, K0) = v6Bb", "main_v8Bb": "B (PD, K0)", "main_v8Db": "D (PD, K1)",
-          "main_v8Eb": "E (토크, K1)", "main_v8Cb": "C (토크, K0, σ 0.1)"}
+          "main_v8Eb": "E (토크, K1)", "main_v8Cb": "C (토크, K0, σ 0.1)",
+          "main_v9Fb": "F (PD, K0, 디딤 보상)", "main_v9Hb": "H (PD, K0, 디딤 보상, σ 0.1)"}
 
 # (항목 이름, 지표, 비교, 합격선) — 노이즈 끔
 OFF_RULES = [
@@ -99,20 +100,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stance", default="runs/propulsion_v8/stance_load.json")
     ap.add_argument("--out", default="runs/repeated_v8/judgement.md")
+    ap.add_argument("--configs", nargs="+", default=list(CONFIGS), help="첫 번째는 기준 갈래 (학습 전 대비에서 뺀다)")
+    ap.add_argument("--title", default="v8 판정 (docs/V8_DESIGN.md 10절)")
     a = ap.parse_args()
+    configs = a.configs
     stance = json.loads(Path(a.stance).read_text())["result"] if Path(a.stance).exists() else {}
     fmt = lambda x: "–" if x is None or (isinstance(x, float) and np.isnan(x)) else f"{x:.3f}"
-    lines = ["# v8 판정 (docs/V8_DESIGN.md 10절)", "",
+    lines = [f"# {a.title}", "",
              "학습 seed 3개 평균, 이어 학습한 run. 판정은 노이즈 끔, 노이즈 켬은 보조 기준.", ""]
     rows = []
-    for cfg in CONFIGS:
+    for cfg in configs:
         sums = [s for s in (load(None, cfg + sfx) for sfx in SEEDS) if s]
         if not sums:
             continue
         off, on = _mode_metrics(sums, stance, "off", cfg), _mode_metrics(sums, stance, "on", cfg)
         label, checks = judge(off, on)
         rows.append((cfg, off, on, label, checks, _per_speed(sums, "off"), _per_speed(sums, "on"), len(sums)))
-    head = "| 항목 | 합격선 | " + " | ".join(f"{LABELS[r[0]]} (seed {r[7]})" for r in rows) + " |"
+    head = "| 항목 | 합격선 | " + " | ".join(f"{LABELS.get(r[0], r[0])} (seed {r[7]})" for r in rows) + " |"
     lines += ["## 노이즈 끔 (판정) — 칸: 끔 값 판정 (켬 값)", "", head, "|" + " --- |" * (len(rows) + 2)]
     for name, k, op, thr in OFF_RULES:
         lines.append(f"| {name} | {op} {thr:g} | " + " | ".join(
@@ -126,16 +130,16 @@ def main():
     lines += ["", "## 판정", ""]
     for r in rows:
         dep = noise_dependence(r[1], r[2])
-        lines.append(f"- **{LABELS[r[0]]}** (학습 seed {r[7]}개{'' if r[7] == 3 else ', ⚠️ 3개 미만'}): {r[3]}"
+        lines.append(f"- **{LABELS.get(r[0], r[0])}** (학습 seed {r[7]}개{'' if r[7] == 3 else ', ⚠️ 3개 미만'}): {r[3]}"
                      + (f" · 노이즈 의존: {', '.join(dep)}" if dep else ""))
     lines += ["", "## 명령 속도별 추종 성공률 / 명령 방향 속도 (끔 · 켬)", "",
               "| 갈래 | 0.5 m/s 끔 | 1.0 m/s 끔 | 0.5 m/s 켬 | 1.0 m/s 켬 |", "| --- | --- | --- | --- | --- |"]
     for r in rows:
         cell = lambda d, s: f"{d[s][0]:.2f} / {d[s][1]:.2f}"
-        lines.append(f"| {LABELS[r[0]]} | {cell(r[5], '0.5')} | {cell(r[5], '1.0')} | {cell(r[6], '0.5')} | {cell(r[6], '1.0')} |")
+        lines.append(f"| {LABELS.get(r[0], r[0])} | {cell(r[5], '0.5')} | {cell(r[5], '1.0')} | {cell(r[6], '0.5')} | {cell(r[6], '1.0')} |")
     lines += ["", "## 학습 전 대비 (노이즈 켬: 넘어짐 / 명령 방향 속도 / 평균 |토크| N·m)", "",
               "| 갈래 | 학습 전 | 학습 후 |", "| --- | --- | --- |"]
-    for cfg in CONFIGS[1:]:
+    for cfg in configs[1:]:
         base = cfg[:-1]   # main_v8Bb → main_v8B
         pre = [s for s in (load(None, f"{base}{sfx}_init") for sfx in SEEDS) if s]
         post = [s for s in (load(None, cfg + sfx) for sfx in SEEDS) if s]
@@ -144,7 +148,7 @@ def main():
         f = lambda ss: (np.mean([s["stochastic"]["outcomes"]["fell"] for s in ss]),
                         np.mean([s["stochastic"]["speed_3_50"] for s in ss]),
                         np.mean([s["stochastic"].get("mean_abs_torque") or np.nan for s in ss]))
-        lines.append(f"| {LABELS[cfg]} | {'%.2f / %.3f / %.1f' % f(pre)} | {'%.2f / %.3f / %.1f' % f(post)} |")
+        lines.append(f"| {LABELS.get(cfg, cfg)} | {'%.2f / %.3f / %.1f' % f(pre)} | {'%.2f / %.3f / %.1f' % f(post)} |")
     Path(a.out).parent.mkdir(parents=True, exist_ok=True)
     Path(a.out).write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

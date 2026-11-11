@@ -16,9 +16,10 @@ from pathlib import Path
 from .command_ant import CommandAnt
 
 ENV_KEYS = ("tracking_sigma", "tracking_weight", "alive_weight", "limit_weight", "limit_soft", "vz_weight",
-            "action_mode", "pd_kp", "pd_kd", "tracking_kernel")
+            "action_mode", "pd_kp", "pd_kd", "tracking_kernel",
+            "stance_weight", "slip_weight", "stance_min", "stance_cap")
 # 이어 학습 때 원래 run과 달라지면 안 되는 것 (정책이 배운 행동의 뜻이나 보상 모양이 바뀐다)
-RESUME_LOCKED = ("action_mode", "pd_kp", "pd_kd", "tracking_kernel")
+RESUME_LOCKED = ("action_mode", "pd_kp", "pd_kd", "tracking_kernel", "stance_weight", "slip_weight")
 
 _DEFAULTS = {k: p.default for k, p in inspect.signature(CommandAnt.__init__).parameters.items() if k in ENV_KEYS}
 

@@ -29,6 +29,7 @@ class TrackingLogger(BaseCallback):
         super().__init__()
         self._err, self._effort, self._limit, self._vz2 = [], [], [], []
         self._power, self._tlim, self._tabs = [], [], []
+        self._bonus, self._slip = [], []
 
     def _on_step(self) -> bool:
         for info in self.locals["infos"]:
@@ -40,6 +41,8 @@ class TrackingLogger(BaseCallback):
                 self._power.append(info["power"])
                 self._tlim.append(info["torque_limit_frac"])
                 self._tabs.append(float(np.mean(np.abs(info["torque"]))))
+                self._bonus.append(info.get("stance_bonus", 0.0))
+                self._slip.append(info.get("slip_sq", 0.0))
         return True
 
     def _on_rollout_end(self) -> None:
@@ -54,11 +57,14 @@ class TrackingLogger(BaseCallback):
             self.logger.record("command/power", float(np.mean(self._power)))
             self.logger.record("command/torque_limit_frac", float(np.mean(self._tlim)))
             self.logger.record("command/mean_abs_torque", float(np.mean(self._tabs)))
+            # v9: 디딤 보너스·미끄러짐 (가중치 곱하기 전, 제어 스텝당). 가중치 0인 run은 0
+            self.logger.record("command/stance_bonus", float(np.mean(self._bonus)))
+            self.logger.record("command/slip_sq", float(np.mean(self._slip)))
         self._err.clear()
         self._effort.clear()
         self._limit.clear()
         self._vz2.clear()
-        for x in (self._power, self._tlim, self._tabs):
+        for x in (self._power, self._tlim, self._tabs, self._bonus, self._slip):
             x.clear()
 
 
@@ -104,6 +110,10 @@ def main():
     p.add_argument("--pd-kd", type=float, default=0.0, help="PD 미분 이득 [N·m·s/rad] (--action-mode pd)")
     p.add_argument("--tracking-kernel", choices=["single", "two_term"], default="single",
                    help="추종 커널 (v8): single = exp(-e²/σ), two_term = 넓은 항 + 좁은 항(σ 0.25) 반씩")
+    p.add_argument("--stance-weight", type=float, default=0.0,
+                   help="디딤 보상 가중치 (v9, envs/stance.py). 0이면 기존 보상")
+    p.add_argument("--slip-weight", type=float, default=0.0,
+                   help="하중 발 미끄러짐 속도² 페널티 가중치 (v9). 0이면 기존 보상")
     p.add_argument("--log-std-init", type=float, default=None,
                    help="정책 탐색 노이즈 초기 log σ (기본: SB3 기본 0 = σ 1.0, v8C: ln 0.1)")
     p.add_argument("--save-init", action="store_true",
