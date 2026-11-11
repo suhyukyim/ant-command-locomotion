@@ -1,0 +1,21 @@
+{
+  "timesteps": 1600000,
+  "n_envs": 8,
+  "run_name": "main_v8Eb",
+  "seed": 0,
+  "resume": "runs/main_v8E",
+  "tracking_sigma": 1.0,
+  "tracking_weight": 5.0,
+  "alive_weight": 1.0,
+  "limit_weight": 1.5,
+  "limit_soft": 0.8,
+  "vz_weight": 0.0,
+  "squash": true,
+  "constant_lr": 0.0001,
+  "action_mode": "torque",
+  "pd_kp": 0.0,
+  "pd_kd": 0.0,
+  "tracking_kernel": "two_term",
+  "log_std_init": null,
+  "save_init": false
+}

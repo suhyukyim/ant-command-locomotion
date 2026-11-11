@@ -39,7 +39,7 @@ def rollout(policy, vx, vy, energy, steps=300, warmup=60, seed=0, deterministic=
     env.set_command(vx, vy, energy)
     obs, _ = env.reset(seed=seed)
     data = env.unwrapped.data
-    vels, efforts, actions, joint_vel = [], [], [], []
+    vels, efforts, powers, actions, joint_vel = [], [], [], [], []
     fell = False
     for t in range(steps):
         action = policy.act(obs, deterministic=deterministic)
@@ -47,6 +47,7 @@ def rollout(policy, vx, vy, energy, steps=300, warmup=60, seed=0, deterministic=
         if t >= warmup:
             vels.append(info["velocity"])
             efforts.append(info["effort"])
+            powers.append(info.get("power", np.nan))
             actions.append(np.clip(action, -1.0, 1.0))
             joint_vel.append(np.abs(data.qvel[6:14]))  # 관절 8개 각속도
         if term:
@@ -57,6 +58,7 @@ def rollout(policy, vx, vy, energy, steps=300, warmup=60, seed=0, deterministic=
     return dict(
         vel=v,
         effort=float(np.mean(efforts)) if efforts else float("nan"),
+        power=float(np.mean(powers)) if powers else float("nan"),
         fell=fell,
         actions=np.array(actions),
         joint_vel=float(np.mean(joint_vel)) if joint_vel else float("nan"),
@@ -99,15 +101,16 @@ def plot_tracking(policy, out: Path, energy=0.5, deterministic=True):
 
 def plot_energy(policy, out: Path, cmd=(1.0, 0.0)):
     levels = [0.0, 0.25, 0.5, 0.75, 1.0]
-    efforts, speeds = [], []
+    efforts, speeds, powers = [], [], []
     for e in levels:
         r = rollout(policy, *cmd, e)
         efforts.append(r["effort"])
+        powers.append(r["power"])
         speeds.append(float(np.linalg.norm(r["vel"])))
     fig, ax1 = plt.subplots(figsize=(6, 4))
-    ax1.plot(levels, efforts, "o-", color="tab:orange", label="control effort Σa²")
+    ax1.plot(levels, efforts, "o-", color="tab:orange", label="effort Σ(τ/150)²")
     ax1.set_xlabel("energy level (0 = save energy, 1 = free)")
-    ax1.set_ylabel("control effort Σa² per step", color="tab:orange")
+    ax1.set_ylabel("effort Σ(τ/150)² per step", color="tab:orange")
     ax2 = ax1.twinx()
     ax2.plot(levels, speeds, "s--", color="tab:blue", label="speed")
     ax2.axhline(np.linalg.norm(cmd), color="tab:blue", lw=0.8, alpha=0.4)
@@ -118,7 +121,7 @@ def plot_energy(policy, out: Path, cmd=(1.0, 0.0)):
     fig.tight_layout()
     fig.savefig(out / "energy.png", dpi=150)
     plt.close(fig)
-    return dict(levels=levels, effort=efforts, speed=speeds)
+    return dict(levels=levels, effort=efforts, speed=speeds, power=powers)
 
 
 def action_diagnostics(policy, cmd=(1.0, 0.0), energy=0.5):

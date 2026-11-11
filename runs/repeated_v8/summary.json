@@ -1,0 +1,6734 @@
+{
+ "main_v6Bb": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 1.0,
+   "track_rate": 0.20625,
+   "speed_3_15": 0.300689442736272,
+   "speed_3_50": 0.3008794278846894,
+   "outcomes": {
+    "sustained_locomotion": 1.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.0340763074147947,
+   "trunk_height_std": 0.02179563014505334,
+   "all_feet_air_ratio": 0.47846409574468085,
+   "action_saturation": 0.01943567154255319,
+   "diag_in_phase": 0.06960604004428564,
+   "pair_alternation": 0.043287877451773094,
+   "torso_vz2": 0.13390302843859353,
+   "trunk_height_mean": 0.6332052823083222,
+   "torso_contact_ratio": 0.0007779255319148936,
+   "upper_leg_contact_ratio": 0.00017952127659574469,
+   "torso_and_upper_contact_ratio": 2.6595744680851064e-05,
+   "mean_abs_torque": 98.14115300264639,
+   "torque_limit_frac": 0.01943567154255319,
+   "power": 1200.281148396067,
+   "joint_limit_occupancy": [
+    0.556,
+    0.78,
+    0.095,
+    0.151,
+    0.623,
+    0.814,
+    0.172,
+    0.156
+   ],
+   "joint_range_deg": [
+    46.339,
+    16.069,
+    42.576,
+    46.672,
+    43.41,
+    23.445,
+    44.677,
+    46.262
+   ],
+   "foot_air_ratio": [
+    0.725,
+    0.929,
+    0.725,
+    0.926
+   ],
+   "touchdowns_per_s": [
+    4.144,
+    1.324,
+    4.237,
+    1.416
+   ],
+   "joint_zone20_occupancy": [
+    0.714,
+    0.852,
+    0.182,
+    0.227,
+    0.775,
+    0.876,
+    0.291,
+    0.234
+   ],
+   "joint_rom_p5_p95_deg": [
+    26.268,
+    6.652,
+    25.751,
+    36.306,
+    26.109,
+    7.531,
+    26.834,
+    35.047
+   ],
+   "feet_down_hist": [
+    0.478,
+    0.359,
+    0.153,
+    0.01,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.88125,
+   "track_rate": 0.125,
+   "speed_3_15": 0.2850343767730885,
+   "speed_3_50": 0.25766480255895463,
+   "outcomes": {
+    "sustained_locomotion": 0.88125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.025,
+    "fell": 0.09375
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.478221539954104,
+   "trunk_height_std": 0.06404388312276262,
+   "all_feet_air_ratio": 0.6122021847265189,
+   "action_saturation": 0.061864926699983135,
+   "diag_in_phase": 0.057064682465503114,
+   "pair_alternation": 0.013616769737543825,
+   "torso_vz2": 0.24999431502235958,
+   "trunk_height_mean": 0.6109048533438881,
+   "torso_contact_ratio": 0.06687988149744142,
+   "upper_leg_contact_ratio": 0.011991650956100188,
+   "torso_and_upper_contact_ratio": 0.0022488553730137355,
+   "mean_abs_torque": 100.7064746500275,
+   "torque_limit_frac": 0.061864926699983135,
+   "power": 1646.5264316087248,
+   "joint_limit_occupancy": [
+    0.374,
+    0.589,
+    0.126,
+    0.224,
+    0.406,
+    0.628,
+    0.216,
+    0.233
+   ],
+   "joint_range_deg": [
+    65.735,
+    37.154,
+    61.895,
+    49.16,
+    65.099,
+    40.831,
+    59.845,
+    49.208
+   ],
+   "foot_air_ratio": [
+    0.824,
+    0.937,
+    0.821,
+    0.934
+   ],
+   "touchdowns_per_s": [
+    2.913,
+    1.183,
+    2.995,
+    1.236
+   ],
+   "joint_zone20_occupancy": [
+    0.512,
+    0.676,
+    0.224,
+    0.334,
+    0.545,
+    0.707,
+    0.337,
+    0.342
+   ],
+   "joint_rom_p5_p95_deg": [
+    52.49,
+    19.935,
+    44.927,
+    41.504,
+    54.126,
+    21.536,
+    41.673,
+    41.638
+   ],
+   "feet_down_hist": [
+    0.612,
+    0.297,
+    0.086,
+    0.005,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v6Bb_s1": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.99375,
+   "track_rate": 0.1,
+   "speed_3_15": 0.2653583226377565,
+   "speed_3_50": 0.2701497704193535,
+   "outcomes": {
+    "sustained_locomotion": 0.99375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.00625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.9482091445770606,
+   "trunk_height_std": 0.021053761688636444,
+   "all_feet_air_ratio": 0.46144946808510634,
+   "action_saturation": 0.01749584441489362,
+   "diag_in_phase": 0.04860558047477067,
+   "pair_alternation": 0.06489602496708709,
+   "torso_vz2": 0.12605946464306522,
+   "trunk_height_mean": 0.6340553136366294,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 97.94381137733778,
+   "torque_limit_frac": 0.01749584441489362,
+   "power": 1125.4302862642248,
+   "joint_limit_occupancy": [
+    0.063,
+    0.208,
+    0.439,
+    0.928,
+    0.609,
+    0.251,
+    0.208,
+    0.744
+   ],
+   "joint_range_deg": [
+    52.278,
+    44.812,
+    50.13,
+    15.492,
+    44.349,
+    45.813,
+    50.71,
+    24.533
+   ],
+   "foot_air_ratio": [
+    0.909,
+    0.711,
+    0.93,
+    0.741
+   ],
+   "touchdowns_per_s": [
+    1.759,
+    4.31,
+    1.325,
+    3.955
+   ],
+   "joint_zone20_occupancy": [
+    0.155,
+    0.294,
+    0.564,
+    0.954,
+    0.756,
+    0.347,
+    0.339,
+    0.807
+   ],
+   "joint_rom_p5_p95_deg": [
+    32.37,
+    31.114,
+    32.632,
+    3.618,
+    27.907,
+    33.408,
+    31.394,
+    9.952
+   ],
+   "feet_down_hist": [
+    0.461,
+    0.378,
+    0.151,
+    0.01,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.89375,
+   "track_rate": 0.025,
+   "speed_3_15": 0.23632741216029096,
+   "speed_3_50": 0.23029514012329927,
+   "outcomes": {
+    "sustained_locomotion": 0.89375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.05625,
+    "fell": 0.05
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.366379976190091,
+   "trunk_height_std": 0.053942037205649676,
+   "all_feet_air_ratio": 0.5828528338132738,
+   "action_saturation": 0.06132323659050887,
+   "diag_in_phase": 0.04250121058738094,
+   "pair_alternation": 0.025340574540687506,
+   "torso_vz2": 0.20778860375784633,
+   "trunk_height_mean": 0.6129709014897701,
+   "torso_contact_ratio": 0.06149601063829787,
+   "upper_leg_contact_ratio": 0.011894946808510637,
+   "torso_and_upper_contact_ratio": 0.002107712765957447,
+   "mean_abs_torque": 100.871548081329,
+   "torque_limit_frac": 0.06132406770753015,
+   "power": 1552.9817328076758,
+   "joint_limit_occupancy": [
+    0.117,
+    0.251,
+    0.38,
+    0.811,
+    0.352,
+    0.26,
+    0.187,
+    0.6
+   ],
+   "joint_range_deg": [
+    63.515,
+    48.452,
+    64.211,
+    31.143,
+    65.531,
+    49.386,
+    63.865,
+    40.975
+   ],
+   "foot_air_ratio": [
+    0.922,
+    0.797,
+    0.934,
+    0.825
+   ],
+   "touchdowns_per_s": [
+    1.478,
+    3.279,
+    1.241,
+    2.924
+   ],
+   "joint_zone20_occupancy": [
+    0.22,
+    0.356,
+    0.513,
+    0.86,
+    0.491,
+    0.376,
+    0.31,
+    0.681
+   ],
+   "joint_rom_p5_p95_deg": [
+    47.795,
+    40.066,
+    49.972,
+    12.665,
+    52.051,
+    41.374,
+    48.822,
+    21.808
+   ],
+   "feet_down_hist": [
+    0.583,
+    0.319,
+    0.093,
+    0.006,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v6Bb_s2": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.7125,
+   "track_rate": 0.0,
+   "speed_3_15": 0.12670640199654962,
+   "speed_3_50": 0.11590365861033018,
+   "outcomes": {
+    "sustained_locomotion": 0.7125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.2875,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.580667931456712,
+   "trunk_height_std": 0.014533296928097761,
+   "all_feet_air_ratio": 0.4140425531914893,
+   "action_saturation": 0.005277593085106383,
+   "diag_in_phase": 0.014430988340090734,
+   "pair_alternation": 0.01805045736819538,
+   "torso_vz2": 0.08084732034679964,
+   "trunk_height_mean": 0.6360843600726259,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 92.52952593033785,
+   "torque_limit_frac": 0.005277593085106383,
+   "power": 821.8088696497082,
+   "joint_limit_occupancy": [
+    0.134,
+    0.847,
+    0.013,
+    0.858,
+    0.254,
+    0.5,
+    0.476,
+    0.766
+   ],
+   "joint_range_deg": [
+    52.951,
+    15.0,
+    52.425,
+    19.831,
+    49.053,
+    32.405,
+    33.909,
+    23.345
+   ],
+   "foot_air_ratio": [
+    0.793,
+    0.775,
+    0.886,
+    0.749
+   ],
+   "touchdowns_per_s": [
+    3.58,
+    3.728,
+    2.079,
+    3.955
+   ],
+   "joint_zone20_occupancy": [
+    0.225,
+    0.887,
+    0.049,
+    0.908,
+    0.4,
+    0.601,
+    0.693,
+    0.81
+   ],
+   "joint_rom_p5_p95_deg": [
+    32.843,
+    6.531,
+    31.013,
+    6.127,
+    30.283,
+    18.114,
+    16.892,
+    13.127
+   ],
+   "feet_down_hist": [
+    0.414,
+    0.395,
+    0.172,
+    0.018,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.8375,
+   "track_rate": 0.0,
+   "speed_3_15": 0.15387553886130229,
+   "speed_3_50": 0.14695173789010182,
+   "outcomes": {
+    "sustained_locomotion": 0.8375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.09375,
+    "fell": 0.06875
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.203418803621863,
+   "trunk_height_std": 0.0640563149695634,
+   "all_feet_air_ratio": 0.5903096188920425,
+   "action_saturation": 0.04192003730543677,
+   "diag_in_phase": 0.04811496209200251,
+   "pair_alternation": 0.017348929881870558,
+   "torso_vz2": 0.18394879923671584,
+   "trunk_height_mean": 0.5994522795077156,
+   "torso_contact_ratio": 0.09613943530041483,
+   "upper_leg_contact_ratio": 0.015301752977385251,
+   "torso_and_upper_contact_ratio": 0.0028770239528970966,
+   "mean_abs_torque": 96.69853899019188,
+   "torque_limit_frac": 0.04192003730543677,
+   "power": 1406.2808441533289,
+   "joint_limit_occupancy": [
+    0.222,
+    0.623,
+    0.101,
+    0.551,
+    0.234,
+    0.416,
+    0.301,
+    0.647
+   ],
+   "joint_range_deg": [
+    63.739,
+    42.132,
+    64.078,
+    43.862,
+    65.451,
+    46.508,
+    63.16,
+    46.698
+   ],
+   "foot_air_ratio": [
+    0.857,
+    0.871,
+    0.909,
+    0.854
+   ],
+   "touchdowns_per_s": [
+    2.527,
+    2.284,
+    1.65,
+    2.468
+   ],
+   "joint_zone20_occupancy": [
+    0.34,
+    0.701,
+    0.189,
+    0.644,
+    0.362,
+    0.513,
+    0.451,
+    0.724
+   ],
+   "joint_rom_p5_p95_deg": [
+    43.211,
+    26.557,
+    47.832,
+    26.098,
+    48.186,
+    33.412,
+    39.591,
+    30.878
+   ],
+   "feet_down_hist": [
+    0.59,
+    0.317,
+    0.085,
+    0.007,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Bb": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.8875,
+   "track_rate": 0.46875,
+   "speed_3_15": 0.34607451839322706,
+   "speed_3_50": 0.3788255383922181,
+   "outcomes": {
+    "sustained_locomotion": 0.8875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.1125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.983918120300215,
+   "trunk_height_std": 0.02852953950355729,
+   "all_feet_air_ratio": 0.30876994680851066,
+   "action_saturation": 0.11577958776595745,
+   "diag_in_phase": 0.13328488113288223,
+   "pair_alternation": 0.0997652898839381,
+   "torso_vz2": 0.18447316519069426,
+   "trunk_height_mean": 0.5387241728763348,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 18.747590466672115,
+   "torque_limit_frac": 0.0,
+   "power": 132.0355016368575,
+   "joint_limit_occupancy": [
+    0.0,
+    0.131,
+    0.051,
+    0.004,
+    0.004,
+    0.0,
+    0.141,
+    0.012
+   ],
+   "joint_range_deg": [
+    38.022,
+    22.845,
+    33.248,
+    19.194,
+    39.412,
+    21.779,
+    33.136,
+    26.648
+   ],
+   "foot_air_ratio": [
+    0.828,
+    0.636,
+    0.794,
+    0.68
+   ],
+   "touchdowns_per_s": [
+    2.568,
+    3.897,
+    2.9,
+    3.582
+   ],
+   "joint_zone20_occupancy": [
+    0.002,
+    0.267,
+    0.287,
+    0.045,
+    0.069,
+    0.0,
+    0.279,
+    0.067
+   ],
+   "joint_rom_p5_p95_deg": [
+    24.906,
+    15.529,
+    22.612,
+    12.187,
+    25.809,
+    14.524,
+    21.842,
+    19.174
+   ],
+   "feet_down_hist": [
+    0.309,
+    0.371,
+    0.269,
+    0.05,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.9875,
+   "track_rate": 0.425,
+   "speed_3_15": 0.2881581199415633,
+   "speed_3_50": 0.3090722489724015,
+   "outcomes": {
+    "sustained_locomotion": 0.9875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.0553069962887007,
+   "trunk_height_std": 0.027383670563710223,
+   "all_feet_air_ratio": 0.33148936170212767,
+   "action_saturation": 0.15602144281914893,
+   "diag_in_phase": 0.13116210664939926,
+   "pair_alternation": 0.11479698366049948,
+   "torso_vz2": 0.15401265615600762,
+   "trunk_height_mean": 0.5385420688598224,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 22.255585506748904,
+   "torque_limit_frac": 0.0,
+   "power": 157.8323706005508,
+   "joint_limit_occupancy": [
+    0.0,
+    0.11,
+    0.019,
+    0.004,
+    0.002,
+    0.0,
+    0.071,
+    0.009
+   ],
+   "joint_range_deg": [
+    41.607,
+    23.319,
+    40.312,
+    21.976,
+    42.193,
+    24.096,
+    38.769,
+    29.265
+   ],
+   "foot_air_ratio": [
+    0.826,
+    0.671,
+    0.814,
+    0.696
+   ],
+   "touchdowns_per_s": [
+    2.569,
+    4.044,
+    2.693,
+    3.725
+   ],
+   "joint_zone20_occupancy": [
+    0.003,
+    0.214,
+    0.125,
+    0.033,
+    0.033,
+    0.0,
+    0.186,
+    0.05
+   ],
+   "joint_rom_p5_p95_deg": [
+    26.147,
+    15.078,
+    27.162,
+    13.244,
+    27.411,
+    15.409,
+    25.375,
+    20.174
+   ],
+   "feet_down_hist": [
+    0.331,
+    0.378,
+    0.256,
+    0.034,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8B_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -5.189350153924548e-10,
+   "speed_3_50": -1.3250075201289433e-10,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 5.775273074764791e-07,
+   "trunk_height_std": 3.506805866350825e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 7.430871322495669e-13,
+   "trunk_height_mean": 0.530623090874309,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.3486259008043996,
+   "torque_limit_frac": 0.0,
+   "power": 1.3304551932281318e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.001,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -0.0003229414466821703,
+   "speed_3_50": 0.0001924394943306324,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9311057467643982,
+   "trunk_height_std": 0.01600810578638575,
+   "all_feet_air_ratio": 0.25299202127659576,
+   "action_saturation": 0.008058510638297873,
+   "diag_in_phase": 0.25750614549249407,
+   "pair_alternation": 0.2844607712207948,
+   "torso_vz2": 0.05230848968335002,
+   "trunk_height_mean": 0.5412339304750876,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.048069598107276,
+   "torque_limit_frac": 0.0,
+   "power": 136.1392375577011,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.444,
+    24.122,
+    37.244,
+    24.404,
+    38.682,
+    24.503,
+    38.916,
+    26.054
+   ],
+   "foot_air_ratio": [
+    0.71,
+    0.714,
+    0.713,
+    0.714
+   ],
+   "touchdowns_per_s": [
+    3.867,
+    3.817,
+    3.828,
+    3.792
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.327,
+    14.413,
+    22.163,
+    14.617,
+    23.012,
+    15.018,
+    23.246,
+    14.821
+   ],
+   "feet_down_hist": [
+    0.253,
+    0.395,
+    0.304,
+    0.045,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Bb_s1": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.7625,
+   "track_rate": 0.06875,
+   "speed_3_15": 0.14799663107771255,
+   "speed_3_50": 0.14182151786979127,
+   "outcomes": {
+    "sustained_locomotion": 0.7625,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.2375,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.8082181511263761,
+   "trunk_height_std": 0.011080766622792603,
+   "all_feet_air_ratio": 0.2596675531914894,
+   "action_saturation": 0.08517204122340426,
+   "diag_in_phase": 0.13354376044319907,
+   "pair_alternation": 0.13366539978804914,
+   "torso_vz2": 0.04687880380555032,
+   "trunk_height_mean": 0.5435981799067587,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 25.832523923208818,
+   "torque_limit_frac": 0.0,
+   "power": 133.11662406505204,
+   "joint_limit_occupancy": [
+    0.003,
+    0.039,
+    0.0,
+    0.04,
+    0.0,
+    0.0,
+    0.002,
+    0.053
+   ],
+   "joint_range_deg": [
+    24.87,
+    15.853,
+    30.839,
+    17.788,
+    20.026,
+    13.422,
+    28.986,
+    18.926
+   ],
+   "foot_air_ratio": [
+    0.693,
+    0.743,
+    0.643,
+    0.749
+   ],
+   "touchdowns_per_s": [
+    4.411,
+    2.784,
+    4.848,
+    3.185
+   ],
+   "joint_zone20_occupancy": [
+    0.071,
+    0.127,
+    0.027,
+    0.146,
+    0.0,
+    0.0,
+    0.084,
+    0.146
+   ],
+   "joint_rom_p5_p95_deg": [
+    14.658,
+    9.47,
+    18.008,
+    11.142,
+    10.311,
+    7.329,
+    18.414,
+    11.763
+   ],
+   "feet_down_hist": [
+    0.26,
+    0.35,
+    0.348,
+    0.042,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.81875,
+   "track_rate": 0.0,
+   "speed_3_15": 0.12467193267886256,
+   "speed_3_50": 0.12103575060522442,
+   "outcomes": {
+    "sustained_locomotion": 0.81875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.18125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9532047585971398,
+   "trunk_height_std": 0.012801352977798436,
+   "all_feet_air_ratio": 0.29487367021276595,
+   "action_saturation": 0.13108128324468088,
+   "diag_in_phase": 0.15815970538292304,
+   "pair_alternation": 0.13455573720343939,
+   "torso_vz2": 0.05660068635038955,
+   "trunk_height_mean": 0.5416472245799516,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 28.29846290740724,
+   "torque_limit_frac": 0.0,
+   "power": 165.53335915943828,
+   "joint_limit_occupancy": [
+    0.001,
+    0.012,
+    0.0,
+    0.016,
+    0.0,
+    0.0,
+    0.0,
+    0.015
+   ],
+   "joint_range_deg": [
+    32.414,
+    19.123,
+    36.215,
+    22.08,
+    23.57,
+    17.955,
+    35.084,
+    22.752
+   ],
+   "foot_air_ratio": [
+    0.726,
+    0.738,
+    0.693,
+    0.759
+   ],
+   "touchdowns_per_s": [
+    4.27,
+    3.37,
+    4.45,
+    3.396
+   ],
+   "joint_zone20_occupancy": [
+    0.033,
+    0.055,
+    0.011,
+    0.068,
+    0.0,
+    0.0,
+    0.016,
+    0.055
+   ],
+   "joint_rom_p5_p95_deg": [
+    18.966,
+    10.823,
+    20.84,
+    13.284,
+    12.354,
+    9.737,
+    20.839,
+    13.768
+   ],
+   "feet_down_hist": [
+    0.295,
+    0.366,
+    0.3,
+    0.038,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8B_s1_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -1.5719708131788507e-08,
+   "speed_3_50": -4.013520692188692e-09,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 7.414228291713047e-07,
+   "trunk_height_std": 3.639548927437293e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 7.89456898726845e-13,
+   "trunk_height_mean": 0.5309312794698183,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.34840658040037314,
+   "torque_limit_frac": 0.0,
+   "power": 1.3413326192200207e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.001,
+    0.0,
+    0.002,
+    0.0,
+    0.0,
+    0.0,
+    0.002,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0008406329577251945,
+   "speed_3_50": -0.0007097269228230159,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9310850456266113,
+   "trunk_height_std": 0.01600811842277145,
+   "all_feet_air_ratio": 0.251063829787234,
+   "action_saturation": 0.008041057180851064,
+   "diag_in_phase": 0.25632676436926183,
+   "pair_alternation": 0.28599822164641386,
+   "torso_vz2": 0.05210940836893267,
+   "trunk_height_mean": 0.5411909895832515,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.04955894473118,
+   "torque_limit_frac": 0.0,
+   "power": 136.14106113118928,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.502,
+    24.14,
+    37.216,
+    24.399,
+    38.643,
+    24.521,
+    38.902,
+    26.098
+   ],
+   "foot_air_ratio": [
+    0.711,
+    0.711,
+    0.714,
+    0.712
+   ],
+   "touchdowns_per_s": [
+    3.851,
+    3.803,
+    3.842,
+    3.818
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.376,
+    14.407,
+    22.128,
+    14.615,
+    23.002,
+    15.021,
+    23.204,
+    14.845
+   ],
+   "feet_down_hist": [
+    0.251,
+    0.397,
+    0.304,
+    0.046,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Bb_s2": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 1.0,
+   "track_rate": 0.025,
+   "speed_3_15": 0.17242840334170215,
+   "speed_3_50": 0.1607350519048985,
+   "outcomes": {
+    "sustained_locomotion": 1.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.8837065583945811,
+   "trunk_height_std": 0.014705880746761124,
+   "all_feet_air_ratio": 0.258218085106383,
+   "action_saturation": 0.06667386968085107,
+   "diag_in_phase": 0.1423451713938535,
+   "pair_alternation": 0.1717832256412406,
+   "torso_vz2": 0.05505536243251037,
+   "trunk_height_mean": 0.5253606083786051,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 26.722612444574082,
+   "torque_limit_frac": 0.0,
+   "power": 146.03688390654665,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.055,
+    0.009,
+    0.001,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    17.565,
+    15.146,
+    28.825,
+    21.765,
+    28.871,
+    21.503,
+    26.768,
+    14.986
+   ],
+   "foot_air_ratio": [
+    0.677,
+    0.699,
+    0.716,
+    0.756
+   ],
+   "touchdowns_per_s": [
+    4.931,
+    3.685,
+    4.154,
+    2.991
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.01,
+    0.145,
+    0.065,
+    0.015,
+    0.0,
+    0.021
+   ],
+   "joint_rom_p5_p95_deg": [
+    9.689,
+    8.708,
+    16.383,
+    12.936,
+    16.716,
+    12.236,
+    13.962,
+    8.586
+   ],
+   "feet_down_hist": [
+    0.258,
+    0.373,
+    0.328,
+    0.039,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.99375,
+   "track_rate": 0.0,
+   "speed_3_15": 0.14097544764888512,
+   "speed_3_50": 0.13657158966154165,
+   "outcomes": {
+    "sustained_locomotion": 0.99375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.00625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9812858772063795,
+   "trunk_height_std": 0.018074246383274477,
+   "all_feet_air_ratio": 0.2878789893617021,
+   "action_saturation": 0.11562084441489362,
+   "diag_in_phase": 0.15184725558859385,
+   "pair_alternation": 0.15601355491234542,
+   "torso_vz2": 0.06603164198527744,
+   "trunk_height_mean": 0.5265850649909863,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 27.98325321895036,
+   "torque_limit_frac": 0.0,
+   "power": 167.7919433199259,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.038,
+    0.005,
+    0.005,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    23.601,
+    19.253,
+    34.403,
+    25.386,
+    35.883,
+    25.294,
+    33.733,
+    20.002
+   ],
+   "foot_air_ratio": [
+    0.698,
+    0.724,
+    0.726,
+    0.769
+   ],
+   "touchdowns_per_s": [
+    4.619,
+    3.688,
+    3.928,
+    3.15
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.011,
+    0.112,
+    0.04,
+    0.034,
+    0.0,
+    0.004
+   ],
+   "joint_rom_p5_p95_deg": [
+    12.344,
+    10.678,
+    20.092,
+    15.48,
+    21.216,
+    15.238,
+    18.405,
+    11.261
+   ],
+   "feet_down_hist": [
+    0.288,
+    0.38,
+    0.294,
+    0.037,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8B_s2_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 1.1107081059020757e-08,
+   "speed_3_50": 2.8357101106190746e-09,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 7.658844820492258e-07,
+   "trunk_height_std": 3.9944397978079223e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 1.0675600813520219e-12,
+   "trunk_height_mean": 0.5310264906060361,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.34817031797678577,
+   "torque_limit_frac": 0.0,
+   "power": 1.8815617108919398e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.0,
+    0.0,
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.001,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0003478727355586514,
+   "speed_3_50": 3.1418012294578404e-05,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9311054410952613,
+   "trunk_height_std": 0.016029928074151163,
+   "all_feet_air_ratio": 0.2532779255319149,
+   "action_saturation": 0.00803690159574468,
+   "diag_in_phase": 0.2593321753720585,
+   "pair_alternation": 0.28333468033228093,
+   "torso_vz2": 0.05209786475628823,
+   "trunk_height_mean": 0.5412351136118619,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.046744482868526,
+   "torque_limit_frac": 0.0,
+   "power": 136.1382565176602,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.491,
+    24.125,
+    37.245,
+    24.396,
+    38.613,
+    24.505,
+    38.934,
+    26.101
+   ],
+   "foot_air_ratio": [
+    0.709,
+    0.714,
+    0.714,
+    0.714
+   ],
+   "touchdowns_per_s": [
+    3.866,
+    3.834,
+    3.826,
+    3.798
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.371,
+    14.408,
+    22.169,
+    14.607,
+    22.977,
+    15.002,
+    23.244,
+    14.87
+   ],
+   "feet_down_hist": [
+    0.253,
+    0.395,
+    0.303,
+    0.046,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Db": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.75,
+   "track_rate": 0.0,
+   "speed_3_15": 0.10492701853394606,
+   "speed_3_50": 0.09606078163378089,
+   "outcomes": {
+    "sustained_locomotion": 0.75,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.25,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.696438965725199,
+   "trunk_height_std": 0.013076178955512644,
+   "all_feet_air_ratio": 0.14301861702127658,
+   "action_saturation": 0.050731382978723406,
+   "diag_in_phase": 0.11140163671709366,
+   "pair_alternation": 0.19445153183372413,
+   "torso_vz2": 0.030551875441577357,
+   "trunk_height_mean": 0.5397194239751105,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 20.290308678583905,
+   "torque_limit_frac": 0.0,
+   "power": 98.15443325646089,
+   "joint_limit_occupancy": [
+    0.005,
+    0.134,
+    0.017,
+    0.001,
+    0.0,
+    0.0,
+    0.042,
+    0.031
+   ],
+   "joint_range_deg": [
+    26.14,
+    18.301,
+    27.19,
+    17.141,
+    32.219,
+    16.589,
+    28.53,
+    21.4
+   ],
+   "foot_air_ratio": [
+    0.786,
+    0.506,
+    0.83,
+    0.459
+   ],
+   "touchdowns_per_s": [
+    2.868,
+    4.743,
+    2.65,
+    4.202
+   ],
+   "joint_zone20_occupancy": [
+    0.142,
+    0.203,
+    0.337,
+    0.003,
+    0.005,
+    0.0,
+    0.196,
+    0.116
+   ],
+   "joint_rom_p5_p95_deg": [
+    16.219,
+    11.612,
+    18.991,
+    9.409,
+    19.04,
+    9.276,
+    19.744,
+    13.1
+   ],
+   "feet_down_hist": [
+    0.143,
+    0.371,
+    0.411,
+    0.073,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.84375,
+   "track_rate": 0.0,
+   "speed_3_15": 0.09554232231470425,
+   "speed_3_50": 0.08861860716064839,
+   "outcomes": {
+    "sustained_locomotion": 0.84375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.15625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.8506327818296784,
+   "trunk_height_std": 0.015080127144675631,
+   "all_feet_air_ratio": 0.19823803191489361,
+   "action_saturation": 0.10514710771276596,
+   "diag_in_phase": 0.11600161949311857,
+   "pair_alternation": 0.1890869526027258,
+   "torso_vz2": 0.046780394245896556,
+   "trunk_height_mean": 0.5381086561913533,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 24.001042594757234,
+   "torque_limit_frac": 0.0,
+   "power": 134.7211712181635,
+   "joint_limit_occupancy": [
+    0.008,
+    0.107,
+    0.009,
+    0.0,
+    0.0,
+    0.0,
+    0.012,
+    0.007
+   ],
+   "joint_range_deg": [
+    31.476,
+    21.738,
+    33.087,
+    20.272,
+    37.854,
+    19.876,
+    33.039,
+    25.553
+   ],
+   "foot_air_ratio": [
+    0.828,
+    0.541,
+    0.855,
+    0.521
+   ],
+   "touchdowns_per_s": [
+    2.553,
+    4.805,
+    2.406,
+    4.495
+   ],
+   "joint_zone20_occupancy": [
+    0.091,
+    0.181,
+    0.162,
+    0.001,
+    0.001,
+    0.001,
+    0.107,
+    0.041
+   ],
+   "joint_rom_p5_p95_deg": [
+    18.482,
+    13.067,
+    21.662,
+    11.09,
+    21.992,
+    11.014,
+    21.113,
+    15.002
+   ],
+   "feet_down_hist": [
+    0.198,
+    0.395,
+    0.361,
+    0.044,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8D_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -5.189350153924548e-10,
+   "speed_3_50": -1.3250075201289433e-10,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 5.775273074764791e-07,
+   "trunk_height_std": 3.506805866350825e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 7.430871322495669e-13,
+   "trunk_height_mean": 0.530623090874309,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.3486259008043996,
+   "torque_limit_frac": 0.0,
+   "power": 1.3304551932281318e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.001,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -0.0003229414466821703,
+   "speed_3_50": 0.0001924394943306324,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9311057467643982,
+   "trunk_height_std": 0.01600810578638575,
+   "all_feet_air_ratio": 0.25299202127659576,
+   "action_saturation": 0.008058510638297873,
+   "diag_in_phase": 0.25750614549249407,
+   "pair_alternation": 0.2844607712207948,
+   "torso_vz2": 0.05230848968335002,
+   "trunk_height_mean": 0.5412339304750876,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.048069598107276,
+   "torque_limit_frac": 0.0,
+   "power": 136.1392375577011,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.444,
+    24.122,
+    37.244,
+    24.404,
+    38.682,
+    24.503,
+    38.916,
+    26.054
+   ],
+   "foot_air_ratio": [
+    0.71,
+    0.714,
+    0.713,
+    0.714
+   ],
+   "touchdowns_per_s": [
+    3.867,
+    3.817,
+    3.828,
+    3.792
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.327,
+    14.413,
+    22.163,
+    14.617,
+    23.012,
+    15.018,
+    23.246,
+    14.821
+   ],
+   "feet_down_hist": [
+    0.253,
+    0.395,
+    0.304,
+    0.045,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Db_s1": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 1.0,
+   "track_rate": 0.00625,
+   "speed_3_15": 0.2154997850686568,
+   "speed_3_50": 0.18100254750679395,
+   "outcomes": {
+    "sustained_locomotion": 1.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.996725755475903,
+   "trunk_height_std": 0.011200811988396852,
+   "all_feet_air_ratio": 0.33619015957446813,
+   "action_saturation": 0.11428440824468086,
+   "diag_in_phase": 0.19879835151953737,
+   "pair_alternation": 0.08331826656747068,
+   "torso_vz2": 0.06668413138444709,
+   "trunk_height_mean": 0.5534792907875639,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 28.74877819539675,
+   "torque_limit_frac": 0.0,
+   "power": 172.7450812744899,
+   "joint_limit_occupancy": [
+    0.0,
+    0.002,
+    0.0,
+    0.025,
+    0.0,
+    0.0,
+    0.007,
+    0.002
+   ],
+   "joint_range_deg": [
+    30.669,
+    20.1,
+    31.595,
+    24.972,
+    33.828,
+    18.493,
+    32.756,
+    21.429
+   ],
+   "foot_air_ratio": [
+    0.753,
+    0.71,
+    0.781,
+    0.734
+   ],
+   "touchdowns_per_s": [
+    3.66,
+    3.671,
+    3.295,
+    3.712
+   ],
+   "joint_zone20_occupancy": [
+    0.001,
+    0.008,
+    0.0,
+    0.097,
+    0.004,
+    0.023,
+    0.084,
+    0.011
+   ],
+   "joint_rom_p5_p95_deg": [
+    17.633,
+    11.062,
+    18.141,
+    15.859,
+    20.662,
+    10.266,
+    19.283,
+    12.807
+   ],
+   "feet_down_hist": [
+    0.336,
+    0.358,
+    0.256,
+    0.046,
+    0.003
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 1.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.18480409245646406,
+   "speed_3_50": 0.1623451838351228,
+   "outcomes": {
+    "sustained_locomotion": 1.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.0705083482884536,
+   "trunk_height_std": 0.013051055832083634,
+   "all_feet_air_ratio": 0.3495744680851064,
+   "action_saturation": 0.16007646276595744,
+   "diag_in_phase": 0.211097397585068,
+   "pair_alternation": 0.10973923976545348,
+   "torso_vz2": 0.07324320263520528,
+   "trunk_height_mean": 0.5524775013436936,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 30.07519411873662,
+   "torque_limit_frac": 0.0,
+   "power": 188.39324094359552,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.012,
+    0.0,
+    0.0,
+    0.003,
+    0.002
+   ],
+   "joint_range_deg": [
+    35.262,
+    22.076,
+    35.012,
+    26.328,
+    37.018,
+    21.874,
+    35.229,
+    23.996
+   ],
+   "foot_air_ratio": [
+    0.75,
+    0.74,
+    0.77,
+    0.756
+   ],
+   "touchdowns_per_s": [
+    3.72,
+    3.546,
+    3.483,
+    3.563
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.003,
+    0.0,
+    0.054,
+    0.002,
+    0.011,
+    0.045,
+    0.009
+   ],
+   "joint_rom_p5_p95_deg": [
+    19.77,
+    12.075,
+    20.246,
+    16.54,
+    21.827,
+    12.503,
+    20.455,
+    14.212
+   ],
+   "feet_down_hist": [
+    0.35,
+    0.363,
+    0.244,
+    0.041,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8D_s1_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -1.5719708131788507e-08,
+   "speed_3_50": -4.013520692188692e-09,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 7.414228291713047e-07,
+   "trunk_height_std": 3.639548927437293e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 7.89456898726845e-13,
+   "trunk_height_mean": 0.5309312794698183,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.34840658040037314,
+   "torque_limit_frac": 0.0,
+   "power": 1.3413326192200207e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.001,
+    0.0,
+    0.002,
+    0.0,
+    0.0,
+    0.0,
+    0.002,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0008406329577251945,
+   "speed_3_50": -0.0007097269228230159,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9310850456266113,
+   "trunk_height_std": 0.01600811842277145,
+   "all_feet_air_ratio": 0.251063829787234,
+   "action_saturation": 0.008041057180851064,
+   "diag_in_phase": 0.25632676436926183,
+   "pair_alternation": 0.28599822164641386,
+   "torso_vz2": 0.05210940836893267,
+   "trunk_height_mean": 0.5411909895832515,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.04955894473118,
+   "torque_limit_frac": 0.0,
+   "power": 136.14106113118928,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.502,
+    24.14,
+    37.216,
+    24.399,
+    38.643,
+    24.521,
+    38.902,
+    26.098
+   ],
+   "foot_air_ratio": [
+    0.711,
+    0.711,
+    0.714,
+    0.712
+   ],
+   "touchdowns_per_s": [
+    3.851,
+    3.803,
+    3.842,
+    3.818
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.376,
+    14.407,
+    22.128,
+    14.615,
+    23.002,
+    15.021,
+    23.204,
+    14.845
+   ],
+   "feet_down_hist": [
+    0.251,
+    0.397,
+    0.304,
+    0.046,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Db_s2": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.5,
+   "track_rate": 0.0,
+   "speed_3_15": 0.06760220576055462,
+   "speed_3_50": 0.04427922753632211,
+   "outcomes": {
+    "sustained_locomotion": 0.5,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.5,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.7331064239801199,
+   "trunk_height_std": 0.015812281001478582,
+   "all_feet_air_ratio": 0.19329122340425534,
+   "action_saturation": 0.055820312500000004,
+   "diag_in_phase": 0.11116054101656574,
+   "pair_alternation": 0.14037048247753417,
+   "torso_vz2": 0.03488521337794068,
+   "trunk_height_mean": 0.5263606669867412,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.5509215594197,
+   "torque_limit_frac": 0.0,
+   "power": 114.76214881140213,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.055,
+    0.106,
+    0.004,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    23.096,
+    16.608,
+    28.938,
+    18.961,
+    26.376,
+    19.74,
+    23.99,
+    16.79
+   ],
+   "foot_air_ratio": [
+    0.723,
+    0.558,
+    0.788,
+    0.637
+   ],
+   "touchdowns_per_s": [
+    3.938,
+    4.908,
+    2.342,
+    4.418
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.001,
+    0.066,
+    0.159,
+    0.393,
+    0.034,
+    0.052,
+    0.002
+   ],
+   "joint_rom_p5_p95_deg": [
+    12.141,
+    9.746,
+    18.22,
+    12.113,
+    17.903,
+    12.609,
+    14.524,
+    10.236
+   ],
+   "feet_down_hist": [
+    0.193,
+    0.377,
+    0.374,
+    0.055,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.51875,
+   "track_rate": 0.0,
+   "speed_3_15": 0.06915580685184157,
+   "speed_3_50": 0.05175730092598131,
+   "outcomes": {
+    "sustained_locomotion": 0.51875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.48125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.8918276147540517,
+   "trunk_height_std": 0.017378741279932188,
+   "all_feet_air_ratio": 0.24353723404255317,
+   "action_saturation": 0.10677027925531915,
+   "diag_in_phase": 0.14795516016289498,
+   "pair_alternation": 0.15389916735351306,
+   "torso_vz2": 0.04855911070073725,
+   "trunk_height_mean": 0.5316914825810162,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 26.46861281263141,
+   "torque_limit_frac": 0.0,
+   "power": 148.9073079988744,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.001,
+    0.017,
+    0.03,
+    0.003,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    27.46,
+    20.839,
+    35.71,
+    23.07,
+    33.174,
+    22.939,
+    30.522,
+    19.547
+   ],
+   "foot_air_ratio": [
+    0.761,
+    0.608,
+    0.799,
+    0.658
+   ],
+   "touchdowns_per_s": [
+    3.588,
+    4.762,
+    2.653,
+    4.654
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.001,
+    0.038,
+    0.064,
+    0.196,
+    0.029,
+    0.008,
+    0.002
+   ],
+   "joint_rom_p5_p95_deg": [
+    14.456,
+    11.897,
+    22.41,
+    13.961,
+    21.414,
+    13.819,
+    17.378,
+    11.335
+   ],
+   "feet_down_hist": [
+    0.244,
+    0.386,
+    0.325,
+    0.045,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8D_s2_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 1.1107081059020757e-08,
+   "speed_3_50": 2.8357101106190746e-09,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 7.658844820492258e-07,
+   "trunk_height_std": 3.9944397978079223e-07,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": null,
+   "pair_alternation": null,
+   "torso_vz2": 1.0675600813520219e-12,
+   "trunk_height_mean": 0.5310264906060361,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.34817031797678577,
+   "torque_limit_frac": 0.0,
+   "power": 1.8815617108919398e-06,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    0.0,
+    0.0,
+    0.001,
+    0.0,
+    0.0,
+    0.0,
+    0.001,
+    0.0
+   ],
+   "foot_air_ratio": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "touchdowns_per_s": [
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0003478727355586514,
+   "speed_3_50": 3.1418012294578404e-05,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9311054410952613,
+   "trunk_height_std": 0.016029928074151163,
+   "all_feet_air_ratio": 0.2532779255319149,
+   "action_saturation": 0.00803690159574468,
+   "diag_in_phase": 0.2593321753720585,
+   "pair_alternation": 0.28333468033228093,
+   "torso_vz2": 0.05209786475628823,
+   "trunk_height_mean": 0.5412351136118619,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 23.046744482868526,
+   "torque_limit_frac": 0.0,
+   "power": 136.1382565176602,
+   "joint_limit_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_range_deg": [
+    38.491,
+    24.125,
+    37.245,
+    24.396,
+    38.613,
+    24.505,
+    38.934,
+    26.101
+   ],
+   "foot_air_ratio": [
+    0.709,
+    0.714,
+    0.714,
+    0.714
+   ],
+   "touchdowns_per_s": [
+    3.866,
+    3.834,
+    3.826,
+    3.798
+   ],
+   "joint_zone20_occupancy": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.371,
+    14.408,
+    22.169,
+    14.607,
+    22.977,
+    15.002,
+    23.244,
+    14.87
+   ],
+   "feet_down_hist": [
+    0.253,
+    0.395,
+    0.303,
+    0.046,
+    0.002
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Eb": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.7875,
+   "track_rate": 0.0,
+   "speed_3_15": 0.1521070255342363,
+   "speed_3_50": 0.15872659547365556,
+   "outcomes": {
+    "sustained_locomotion": 0.7875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.2125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.2342652359363089,
+   "trunk_height_std": 0.021236852637525058,
+   "all_feet_air_ratio": 0.35648271276595744,
+   "action_saturation": 0.01672706117021277,
+   "diag_in_phase": 0.095602943575776,
+   "pair_alternation": 0.006783514236808197,
+   "torso_vz2": 0.08148489807191815,
+   "trunk_height_mean": 0.5402238289079765,
+   "torso_contact_ratio": 0.010305851063829788,
+   "upper_leg_contact_ratio": 0.0011236702127659574,
+   "torso_and_upper_contact_ratio": 0.0002526595744680851,
+   "mean_abs_torque": 88.65027840240667,
+   "torque_limit_frac": 0.016727892287234043,
+   "power": 628.7304986350283,
+   "joint_limit_occupancy": [
+    0.01,
+    0.763,
+    0.049,
+    0.669,
+    0.736,
+    0.97,
+    0.603,
+    0.749
+   ],
+   "joint_range_deg": [
+    45.926,
+    18.62,
+    45.676,
+    24.741,
+    32.358,
+    12.657,
+    32.523,
+    24.489
+   ],
+   "foot_air_ratio": [
+    0.747,
+    0.935,
+    0.587,
+    0.764
+   ],
+   "touchdowns_per_s": [
+    3.588,
+    1.229,
+    4.577,
+    3.701
+   ],
+   "joint_zone20_occupancy": [
+    0.035,
+    0.837,
+    0.137,
+    0.773,
+    0.855,
+    0.983,
+    0.749,
+    0.795
+   ],
+   "joint_rom_p5_p95_deg": [
+    25.67,
+    10.542,
+    26.354,
+    11.933,
+    14.692,
+    8.094,
+    17.7,
+    16.764
+   ],
+   "feet_down_hist": [
+    0.356,
+    0.357,
+    0.252,
+    0.033,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.78125,
+   "track_rate": 0.24375,
+   "speed_3_15": 0.224235778998262,
+   "speed_3_50": 0.232379533973626,
+   "outcomes": {
+    "sustained_locomotion": 0.78125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.1875,
+    "fell": 0.03125
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.956177711427663,
+   "trunk_height_std": 0.05371916800347852,
+   "all_feet_air_ratio": 0.5404723315312123,
+   "action_saturation": 0.04761990367021052,
+   "diag_in_phase": 0.08099703422604142,
+   "pair_alternation": -0.03753044229180422,
+   "torso_vz2": 0.21711732408226897,
+   "trunk_height_mean": 0.5576861003759526,
+   "torso_contact_ratio": 0.038809840425531913,
+   "upper_leg_contact_ratio": 0.006030585106382979,
+   "torso_and_upper_contact_ratio": 0.0010039893617021275,
+   "mean_abs_torque": 97.09724529216733,
+   "torque_limit_frac": 0.04761990367021052,
+   "power": 1226.7098949986935,
+   "joint_limit_occupancy": [
+    0.079,
+    0.539,
+    0.082,
+    0.377,
+    0.523,
+    0.83,
+    0.481,
+    0.663
+   ],
+   "joint_range_deg": [
+    65.456,
+    43.302,
+    64.091,
+    45.705,
+    58.804,
+    36.547,
+    56.635,
+    40.743
+   ],
+   "foot_air_ratio": [
+    0.869,
+    0.924,
+    0.768,
+    0.824
+   ],
+   "touchdowns_per_s": [
+    2.259,
+    1.45,
+    3.587,
+    2.916
+   ],
+   "joint_zone20_occupancy": [
+    0.158,
+    0.628,
+    0.164,
+    0.477,
+    0.664,
+    0.873,
+    0.631,
+    0.73
+   ],
+   "joint_rom_p5_p95_deg": [
+    49.413,
+    26.316,
+    43.265,
+    32.283,
+    31.439,
+    22.216,
+    32.249,
+    26.741
+   ],
+   "feet_down_hist": [
+    0.54,
+    0.32,
+    0.125,
+    0.014,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8E_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0005612080920416004,
+   "speed_3_50": 1.7242473933276489e-06,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.10625,
+    "permanent_freeze": 0.03125,
+    "initial_freeze": 0.20625,
+    "stalled": 0.65625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.34375,
+   "permanent_freeze_onset_s_median": 7.0,
+   "joint_velocity": 0.003923373929740101,
+   "trunk_height_std": 0.020159184725064106,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.49622051152124014,
+   "pair_alternation": -0.03245333633971339,
+   "torso_vz2": 7.562487421072667e-05,
+   "trunk_height_mean": 0.38968126440745243,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.4958502612299876,
+   "torque_limit_frac": 0.0,
+   "power": 0.00921790017959795,
+   "joint_limit_occupancy": [
+    0.345,
+    0.972,
+    0.951,
+    0.957,
+    0.661,
+    0.934,
+    1.0,
+    0.991
+   ],
+   "joint_range_deg": [
+    7.575,
+    7.731,
+    9.744,
+    11.897,
+    12.823,
+    18.96,
+    0.037,
+    2.662
+   ],
+   "foot_air_ratio": [
+    0.024,
+    0.018,
+    0.014,
+    0.061
+   ],
+   "touchdowns_per_s": [
+    0.138,
+    0.148,
+    0.064,
+    0.033
+   ],
+   "joint_zone20_occupancy": [
+    0.503,
+    0.974,
+    0.958,
+    0.963,
+    0.739,
+    0.939,
+    1.0,
+    0.994
+   ],
+   "joint_rom_p5_p95_deg": [
+    5.619,
+    3.724,
+    5.711,
+    5.029,
+    8.651,
+    11.263,
+    0.0,
+    0.177
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.022,
+    0.072,
+    0.906
+   ],
+   "started_still_walking_at_end": 0.9606299212598425,
+   "survival_all": [
+    [
+     0.0,
+     4.3,
+     4.45,
+     4.55,
+     5.0,
+     5.300000000000001,
+     5.5,
+     6.050000000000001,
+     6.15,
+     7.0,
+     8.0,
+     9.450000000000001,
+     10.450000000000001,
+     10.55,
+     11.05,
+     11.100000000000001,
+     11.350000000000001,
+     11.75,
+     11.950000000000001,
+     12.0,
+     12.5,
+     13.05,
+     13.200000000000001,
+     13.450000000000001,
+     14.0,
+     14.3,
+     14.4,
+     14.8,
+     14.850000000000001,
+     14.9,
+     15.5,
+     18.650000000000002,
+     25.85,
+     41.550000000000004,
+     44.1,
+     46.35,
+     47.050000000000004,
+     48.150000000000006,
+     50.0
+    ],
+    [
+     1.0,
+     0.99375,
+     0.9875,
+     0.98125,
+     0.975,
+     0.96875,
+     0.9625,
+     0.95625,
+     0.9500000000000001,
+     0.9437500000000001,
+     0.9375000000000001,
+     0.93125,
+     0.925,
+     0.91875,
+     0.9125,
+     0.90625,
+     0.9,
+     0.89375,
+     0.8875000000000001,
+     0.8812500000000001,
+     0.8750000000000001,
+     0.8687500000000001,
+     0.8625000000000002,
+     0.8562500000000002,
+     0.8437500000000002,
+     0.8375000000000002,
+     0.8312500000000003,
+     0.8250000000000002,
+     0.8187500000000002,
+     0.8125000000000002,
+     0.8062500000000002,
+     0.8000000000000003,
+     0.7937500000000003,
+     0.7875000000000003,
+     0.7812500000000003,
+     0.7750000000000004,
+     0.7687500000000004,
+     0.7625000000000003,
+     0.7625000000000003
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     5.0,
+     5.5,
+     7.0,
+     8.0,
+     14.0,
+     50.0
+    ],
+    [
+     1.0,
+     0.9921259842519685,
+     0.984251968503937,
+     0.9763779527559056,
+     0.9685039370078741,
+     0.9606299212598425,
+     0.9606299212598425
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.00625,
+   "track_rate": 0.0,
+   "speed_3_15": 0.03812260594176252,
+   "speed_3_50": 0.03801556595517117,
+   "outcomes": {
+    "sustained_locomotion": 0.00625,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.04375,
+    "fell": 0.95
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 3.3719581428941603,
+   "trunk_height_std": 0.10450463527463663,
+   "all_feet_air_ratio": 0.7466950576732427,
+   "action_saturation": 0.006476091271393155,
+   "diag_in_phase": 0.03528212045554278,
+   "pair_alternation": -0.0388787018974669,
+   "torso_vz2": 1.4488221283849494,
+   "trunk_height_mean": 0.7131647887194655,
+   "torso_contact_ratio": 0.048347934918648305,
+   "upper_leg_contact_ratio": 0.012052565707133917,
+   "torso_and_upper_contact_ratio": 0.0016645807259073843,
+   "mean_abs_torque": 84.44617225821932,
+   "torque_limit_frac": 0.006476091271393155,
+   "power": 2336.6904721414608,
+   "joint_limit_occupancy": [
+    0.259,
+    0.318,
+    0.239,
+    0.338,
+    0.271,
+    0.323,
+    0.283,
+    0.319
+   ],
+   "joint_range_deg": [
+    60.3,
+    42.336,
+    61.568,
+    40.496,
+    60.095,
+    42.664,
+    58.682,
+    41.722
+   ],
+   "foot_air_ratio": [
+    0.945,
+    0.931,
+    0.913,
+    0.922
+   ],
+   "touchdowns_per_s": [
+    0.964,
+    1.128,
+    1.342,
+    1.231
+   ],
+   "joint_zone20_occupancy": [
+    0.483,
+    0.516,
+    0.488,
+    0.566,
+    0.493,
+    0.486,
+    0.486,
+    0.512
+   ],
+   "joint_rom_p5_p95_deg": [
+    54.807,
+    38.317,
+    55.624,
+    37.109,
+    55.387,
+    38.764,
+    53.204,
+    37.681
+   ],
+   "feet_down_hist": [
+    0.747,
+    0.22,
+    0.029,
+    0.004,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Eb_s1": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.68125,
+   "track_rate": 0.0,
+   "speed_3_15": 0.08575563035659488,
+   "speed_3_50": 0.08736835361857134,
+   "outcomes": {
+    "sustained_locomotion": 0.68125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.31875,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.1226042419231788,
+   "trunk_height_std": 0.013812068201278588,
+   "all_feet_air_ratio": 0.3948670212765958,
+   "action_saturation": 0.011119514627659576,
+   "diag_in_phase": 0.06602759757114102,
+   "pair_alternation": 0.09065895409580775,
+   "torso_vz2": 0.07171481756346702,
+   "trunk_height_mean": 0.629935570354885,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 97.7555009509644,
+   "torque_limit_frac": 0.011119514627659576,
+   "power": 1168.9792183961695,
+   "joint_limit_occupancy": [
+    0.18,
+    0.923,
+    0.031,
+    0.105,
+    0.036,
+    0.872,
+    0.007,
+    0.154
+   ],
+   "joint_range_deg": [
+    51.625,
+    11.046,
+    56.183,
+    44.606,
+    44.771,
+    18.487,
+    52.255,
+    43.554
+   ],
+   "foot_air_ratio": [
+    0.643,
+    0.95,
+    0.636,
+    0.962
+   ],
+   "touchdowns_per_s": [
+    5.199,
+    0.937,
+    4.903,
+    0.711
+   ],
+   "joint_zone20_occupancy": [
+    0.304,
+    0.969,
+    0.087,
+    0.168,
+    0.087,
+    0.925,
+    0.027,
+    0.236
+   ],
+   "joint_rom_p5_p95_deg": [
+    33.453,
+    2.787,
+    33.477,
+    33.622,
+    24.746,
+    4.747,
+    25.324,
+    28.318
+   ],
+   "feet_down_hist": [
+    0.395,
+    0.408,
+    0.191,
+    0.006,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.73125,
+   "track_rate": 0.0,
+   "speed_3_15": 0.08477432016668988,
+   "speed_3_50": 0.07984563325150877,
+   "outcomes": {
+    "sustained_locomotion": 0.73125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.2625,
+    "fell": 0.00625
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.4753797170845346,
+   "trunk_height_std": 0.03424633185674108,
+   "all_feet_air_ratio": 0.5547645039584365,
+   "action_saturation": 0.052455124512926776,
+   "diag_in_phase": 0.06650014395585604,
+   "pair_alternation": 0.03652876427948347,
+   "torso_vz2": 0.17056987214046132,
+   "trunk_height_mean": 0.6317056545700689,
+   "torso_contact_ratio": 0.016841755319148936,
+   "upper_leg_contact_ratio": 0.002526595744680851,
+   "torso_and_upper_contact_ratio": 0.0005452127659574468,
+   "mean_abs_torque": 99.6935254356986,
+   "torque_limit_frac": 0.052455124512926776,
+   "power": 1565.5226658820654,
+   "joint_limit_occupancy": [
+    0.19,
+    0.729,
+    0.077,
+    0.188,
+    0.068,
+    0.719,
+    0.041,
+    0.224
+   ],
+   "joint_range_deg": [
+    65.416,
+    31.895,
+    64.829,
+    47.173,
+    63.117,
+    33.516,
+    62.97,
+    46.702
+   ],
+   "foot_air_ratio": [
+    0.767,
+    0.949,
+    0.773,
+    0.943
+   ],
+   "touchdowns_per_s": [
+    3.828,
+    0.974,
+    3.712,
+    1.091
+   ],
+   "joint_zone20_occupancy": [
+    0.305,
+    0.807,
+    0.154,
+    0.276,
+    0.142,
+    0.797,
+    0.102,
+    0.314
+   ],
+   "joint_rom_p5_p95_deg": [
+    51.593,
+    13.573,
+    46.775,
+    40.087,
+    43.246,
+    13.393,
+    39.097,
+    35.507
+   ],
+   "feet_down_hist": [
+    0.555,
+    0.328,
+    0.112,
+    0.006,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8E_s1_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0008189983034617276,
+   "speed_3_50": -9.157310207963183e-05,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.04375,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.95625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.04375,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.010552172436598329,
+   "trunk_height_std": 0.026660971923072173,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.3158690359162652,
+   "pair_alternation": -0.02749045421408318,
+   "torso_vz2": 5.204492346188594e-05,
+   "trunk_height_mean": 0.4218413454745895,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.3561750499956507,
+   "torque_limit_frac": 0.0,
+   "power": 0.03202072741295615,
+   "joint_limit_occupancy": [
+    0.378,
+    0.962,
+    0.344,
+    0.663,
+    0.401,
+    0.729,
+    0.602,
+    0.948
+   ],
+   "joint_range_deg": [
+    24.678,
+    3.2,
+    32.875,
+    23.763,
+    34.542,
+    11.45,
+    19.217,
+    7.745
+   ],
+   "foot_air_ratio": [
+    0.058,
+    0.004,
+    0.06,
+    0.03
+   ],
+   "touchdowns_per_s": [
+    0.244,
+    0.054,
+    0.148,
+    0.107
+   ],
+   "joint_zone20_occupancy": [
+    0.515,
+    0.968,
+    0.453,
+    0.692,
+    0.498,
+    0.749,
+    0.677,
+    0.966
+   ],
+   "joint_rom_p5_p95_deg": [
+    21.044,
+    1.409,
+    28.168,
+    16.944,
+    29.694,
+    9.257,
+    14.061,
+    3.669
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.02,
+    0.112,
+    0.868
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -0.003513715878825817,
+   "speed_3_50": -0.0040921628567410495,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.075,
+    "fell": 0.925
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 3.3396513358575257,
+   "trunk_height_std": 0.10138077967666399,
+   "all_feet_air_ratio": 0.7482007306124709,
+   "action_saturation": 0.00624302321143729,
+   "diag_in_phase": 0.013821507184833142,
+   "pair_alternation": -0.05821500678146052,
+   "torso_vz2": 1.26630752332152,
+   "trunk_height_mean": 0.6897783783199534,
+   "torso_contact_ratio": 0.07845096004151532,
+   "upper_leg_contact_ratio": 0.016683964711987548,
+   "torso_and_upper_contact_ratio": 0.0025428126621691747,
+   "mean_abs_torque": 83.36357164703948,
+   "torque_limit_frac": 0.00624302321143729,
+   "power": 2299.7580267493154,
+   "joint_limit_occupancy": [
+    0.248,
+    0.298,
+    0.245,
+    0.341,
+    0.3,
+    0.359,
+    0.269,
+    0.346
+   ],
+   "joint_range_deg": [
+    63.782,
+    43.658,
+    63.775,
+    43.175,
+    62.401,
+    43.179,
+    61.477,
+    43.791
+   ],
+   "foot_air_ratio": [
+    0.926,
+    0.928,
+    0.931,
+    0.927
+   ],
+   "touchdowns_per_s": [
+    1.082,
+    1.121,
+    1.086,
+    1.22
+   ],
+   "joint_zone20_occupancy": [
+    0.508,
+    0.495,
+    0.47,
+    0.542,
+    0.503,
+    0.522,
+    0.483,
+    0.545
+   ],
+   "joint_rom_p5_p95_deg": [
+    58.002,
+    39.396,
+    58.243,
+    39.317,
+    57.055,
+    39.048,
+    55.358,
+    39.348
+   ],
+   "feet_down_hist": [
+    0.748,
+    0.22,
+    0.028,
+    0.003,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Eb_s2": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.6875,
+   "track_rate": 0.0,
+   "speed_3_15": 0.08341031908749279,
+   "speed_3_50": 0.08904865035781297,
+   "outcomes": {
+    "sustained_locomotion": 0.6875,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.3125,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.6365301612602707,
+   "trunk_height_std": 0.01309923565685717,
+   "all_feet_air_ratio": 0.44248005319148936,
+   "action_saturation": 0.013853889627659575,
+   "diag_in_phase": 0.0010953942619690653,
+   "pair_alternation": -0.024284471327202378,
+   "torso_vz2": 0.06900154419475964,
+   "trunk_height_mean": 0.6340721077929562,
+   "torso_contact_ratio": 0.004740691489361702,
+   "upper_leg_contact_ratio": 0.0006914893617021277,
+   "torso_and_upper_contact_ratio": 0.00010638297872340425,
+   "mean_abs_torque": 90.08612762143176,
+   "torque_limit_frac": 0.013853889627659575,
+   "power": 918.7604238975875,
+   "joint_limit_occupancy": [
+    0.405,
+    0.748,
+    0.203,
+    0.605,
+    0.204,
+    0.761,
+    0.391,
+    0.852
+   ],
+   "joint_range_deg": [
+    53.664,
+    30.27,
+    58.436,
+    33.435,
+    51.609,
+    25.271,
+    35.663,
+    17.748
+   ],
+   "foot_air_ratio": [
+    0.822,
+    0.845,
+    0.762,
+    0.814
+   ],
+   "touchdowns_per_s": [
+    2.978,
+    2.675,
+    4.329,
+    3.105
+   ],
+   "joint_zone20_occupancy": [
+    0.572,
+    0.828,
+    0.342,
+    0.688,
+    0.356,
+    0.839,
+    0.593,
+    0.903
+   ],
+   "joint_rom_p5_p95_deg": [
+    34.479,
+    11.377,
+    36.58,
+    18.647,
+    30.801,
+    10.336,
+    21.586,
+    6.517
+   ],
+   "feet_down_hist": [
+    0.442,
+    0.378,
+    0.16,
+    0.018,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.7125,
+   "track_rate": 0.0,
+   "speed_3_15": 0.11670514728706168,
+   "speed_3_50": 0.12293805878567945,
+   "outcomes": {
+    "sustained_locomotion": 0.7125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.2125,
+    "fell": 0.075
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 2.224611949971265,
+   "trunk_height_std": 0.04628587711550287,
+   "all_feet_air_ratio": 0.5873212751301978,
+   "action_saturation": 0.04069998349727114,
+   "diag_in_phase": 0.03184700103897588,
+   "pair_alternation": -0.01690155073338927,
+   "torso_vz2": 0.17427101587483104,
+   "trunk_height_mean": 0.619711526453691,
+   "torso_contact_ratio": 0.04904322226682724,
+   "upper_leg_contact_ratio": 0.007547169811320755,
+   "torso_and_upper_contact_ratio": 0.0013113876622507694,
+   "mean_abs_torque": 95.34626091420448,
+   "torque_limit_frac": 0.04069998349727114,
+   "power": 1429.5135946859116,
+   "joint_limit_occupancy": [
+    0.271,
+    0.504,
+    0.251,
+    0.466,
+    0.267,
+    0.532,
+    0.319,
+    0.584
+   ],
+   "joint_range_deg": [
+    65.919,
+    46.259,
+    64.273,
+    46.281,
+    63.372,
+    43.3,
+    61.096,
+    41.414
+   ],
+   "foot_air_ratio": [
+    0.887,
+    0.891,
+    0.841,
+    0.864
+   ],
+   "touchdowns_per_s": [
+    2.036,
+    1.96,
+    2.955,
+    2.425
+   ],
+   "joint_zone20_occupancy": [
+    0.402,
+    0.612,
+    0.39,
+    0.559,
+    0.412,
+    0.624,
+    0.465,
+    0.67
+   ],
+   "joint_rom_p5_p95_deg": [
+    57.273,
+    25.069,
+    44.307,
+    33.017,
+    41.857,
+    25.357,
+    37.544,
+    23.13
+   ],
+   "feet_down_hist": [
+    0.587,
+    0.317,
+    0.087,
+    0.008,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8E_s2_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0012001910948454624,
+   "speed_3_50": 0.0003113216164384881,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.08125,
+    "permanent_freeze": 0.29375,
+    "initial_freeze": 0.2625,
+    "stalled": 0.3625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.6375,
+   "permanent_freeze_onset_s_median": 17.150000000000002,
+   "joint_velocity": 0.006814261458607243,
+   "trunk_height_std": 0.025128447320749092,
+   "all_feet_air_ratio": 6.648936170212766e-06,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.4138900646719953,
+   "pair_alternation": -0.03595479453009485,
+   "torso_vz2": 6.119365927730454e-05,
+   "trunk_height_mean": 0.4020932652058556,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.42970056554773245,
+   "torque_limit_frac": 0.0,
+   "power": 0.02569167140331078,
+   "joint_limit_occupancy": [
+    0.898,
+    0.807,
+    0.604,
+    0.91,
+    0.778,
+    0.97,
+    0.763,
+    0.945
+   ],
+   "joint_range_deg": [
+    21.041,
+    26.037,
+    13.522,
+    12.563,
+    21.446,
+    2.687,
+    18.351,
+    3.389
+   ],
+   "foot_air_ratio": [
+    0.002,
+    0.086,
+    0.005,
+    0.069
+   ],
+   "touchdowns_per_s": [
+    0.019,
+    0.159,
+    0.042,
+    0.247
+   ],
+   "joint_zone20_occupancy": [
+    0.924,
+    0.831,
+    0.742,
+    0.916,
+    0.817,
+    0.976,
+    0.79,
+    0.955
+   ],
+   "joint_rom_p5_p95_deg": [
+    7.972,
+    17.883,
+    7.465,
+    6.855,
+    13.504,
+    1.433,
+    10.367,
+    2.019
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.025,
+    0.109,
+    0.865
+   ],
+   "started_still_walking_at_end": 0.6016949152542377,
+   "survival_all": [
+    [
+     0.0,
+     4.05,
+     4.4,
+     4.95,
+     6.1000000000000005,
+     6.15,
+     6.25,
+     6.45,
+     7.15,
+     7.2,
+     8.450000000000001,
+     9.35,
+     9.55,
+     9.600000000000001,
+     9.75,
+     10.200000000000001,
+     10.25,
+     10.950000000000001,
+     11.3,
+     11.9,
+     12.200000000000001,
+     12.3,
+     12.950000000000001,
+     13.200000000000001,
+     13.25,
+     13.3,
+     13.5,
+     13.850000000000001,
+     14.350000000000001,
+     14.600000000000001,
+     15.15,
+     15.9,
+     16.1,
+     16.150000000000002,
+     16.45,
+     16.85,
+     17.1,
+     17.150000000000002,
+     17.8,
+     18.150000000000002,
+     18.95,
+     19.1,
+     19.6,
+     20.450000000000003,
+     20.55,
+     21.6,
+     22.05,
+     22.35,
+     22.55,
+     23.950000000000003,
+     24.200000000000003,
+     26.8,
+     29.05,
+     29.150000000000002,
+     29.3,
+     29.650000000000002,
+     30.150000000000002,
+     31.85,
+     32.2,
+     32.35,
+     32.550000000000004,
+     33.6,
+     34.1,
+     34.35,
+     34.4,
+     34.75,
+     34.95,
+     35.800000000000004,
+     35.9,
+     37.6,
+     37.9,
+     38.2,
+     38.5,
+     38.650000000000006,
+     39.150000000000006,
+     39.5,
+     40.800000000000004,
+     41.2,
+     42.6,
+     43.300000000000004,
+     43.95,
+     44.150000000000006,
+     46.0,
+     47.35,
+     49.1,
+     50.0
+    ],
+    [
+     1.0,
+     0.9875,
+     0.9750000000000001,
+     0.9687500000000001,
+     0.9625000000000001,
+     0.9562500000000002,
+     0.9437500000000002,
+     0.9375000000000002,
+     0.9312500000000001,
+     0.9250000000000002,
+     0.9125000000000002,
+     0.9062500000000002,
+     0.9000000000000002,
+     0.8937500000000003,
+     0.8875000000000003,
+     0.8812500000000003,
+     0.8750000000000003,
+     0.8687500000000004,
+     0.8625000000000004,
+     0.8562500000000004,
+     0.8500000000000004,
+     0.8437500000000004,
+     0.8375000000000005,
+     0.8312500000000005,
+     0.8250000000000004,
+     0.8187500000000004,
+     0.8125000000000004,
+     0.8062500000000005,
+     0.8000000000000005,
+     0.7937500000000005,
+     0.7875000000000005,
+     0.7812500000000006,
+     0.7750000000000006,
+     0.7687500000000006,
+     0.7625000000000005,
+     0.7562500000000005,
+     0.7500000000000006,
+     0.7437500000000006,
+     0.7375000000000006,
+     0.7312500000000006,
+     0.7250000000000006,
+     0.7187500000000007,
+     0.7125000000000007,
+     0.7062500000000007,
+     0.7000000000000007,
+     0.6937500000000008,
+     0.6875000000000008,
+     0.6812500000000008,
+     0.6750000000000008,
+     0.6687500000000007,
+     0.6625000000000008,
+     0.6500000000000007,
+     0.6437500000000007,
+     0.6375000000000007,
+     0.6312500000000008,
+     0.6250000000000008,
+     0.6187500000000008,
+     0.6125000000000008,
+     0.6062500000000008,
+     0.6000000000000009,
+     0.5937500000000009,
+     0.5875000000000009,
+     0.5812500000000009,
+     0.575000000000001,
+     0.5687500000000009,
+     0.5625000000000009,
+     0.5562500000000009,
+     0.5500000000000009,
+     0.543750000000001,
+     0.537500000000001,
+     0.531250000000001,
+     0.525000000000001,
+     0.518750000000001,
+     0.5125000000000011,
+     0.5062500000000011,
+     0.500000000000001,
+     0.493750000000001,
+     0.48750000000000104,
+     0.48125000000000107,
+     0.47500000000000103,
+     0.468750000000001,
+     0.462500000000001,
+     0.45625000000000104,
+     0.450000000000001,
+     0.44375000000000103,
+     0.44375000000000103
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     4.05,
+     4.4,
+     6.1000000000000005,
+     6.25,
+     6.45,
+     7.15,
+     7.2,
+     9.35,
+     9.75,
+     10.200000000000001,
+     10.25,
+     10.950000000000001,
+     11.3,
+     11.9,
+     12.950000000000001,
+     13.25,
+     14.350000000000001,
+     14.600000000000001,
+     16.1,
+     16.45,
+     16.85,
+     17.150000000000002,
+     17.8,
+     18.150000000000002,
+     18.95,
+     19.1,
+     19.6,
+     20.55,
+     22.55,
+     24.200000000000003,
+     26.8,
+     30.150000000000002,
+     31.85,
+     32.2,
+     34.35,
+     34.4,
+     34.95,
+     38.2,
+     38.5,
+     39.5,
+     41.2,
+     42.6,
+     43.95,
+     46.0,
+     49.1,
+     50.0
+    ],
+    [
+     1.0,
+     0.9830508474576272,
+     0.9661016949152542,
+     0.9576271186440678,
+     0.9491525423728814,
+     0.940677966101695,
+     0.9322033898305085,
+     0.9237288135593221,
+     0.9152542372881357,
+     0.9067796610169492,
+     0.8983050847457628,
+     0.8898305084745763,
+     0.8813559322033899,
+     0.8728813559322035,
+     0.8644067796610171,
+     0.8559322033898307,
+     0.8474576271186443,
+     0.8389830508474578,
+     0.8305084745762714,
+     0.822033898305085,
+     0.8135593220338986,
+     0.8050847457627122,
+     0.7966101694915257,
+     0.7881355932203393,
+     0.7796610169491529,
+     0.7711864406779664,
+     0.76271186440678,
+     0.7542372881355935,
+     0.7457627118644071,
+     0.7372881355932207,
+     0.7288135593220343,
+     0.7203389830508479,
+     0.7118644067796615,
+     0.703389830508475,
+     0.6949152542372886,
+     0.6864406779661022,
+     0.6779661016949157,
+     0.6694915254237293,
+     0.6610169491525428,
+     0.6525423728813564,
+     0.64406779661017,
+     0.6355932203389835,
+     0.627118644067797,
+     0.6186440677966106,
+     0.6101694915254241,
+     0.6016949152542377,
+     0.6016949152542377
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": -0.0344034018822263,
+   "speed_3_50": -0.03243800039256837,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0625,
+    "fell": 0.9375
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 3.358538107052614,
+   "trunk_height_std": 0.10173389246413131,
+   "all_feet_air_ratio": 0.7392904775571871,
+   "action_saturation": 0.00621601599855183,
+   "diag_in_phase": 0.015872690117251873,
+   "pair_alternation": -0.07882965916745124,
+   "torso_vz2": 1.3509967064272566,
+   "trunk_height_mean": 0.7128481305315473,
+   "torso_contact_ratio": 0.07106095457159287,
+   "upper_leg_contact_ratio": 0.01696377228292122,
+   "torso_and_upper_contact_ratio": 0.0025589419206440483,
+   "mean_abs_torque": 84.82873237085863,
+   "torque_limit_frac": 0.00621601599855183,
+   "power": 2377.492564273704,
+   "joint_limit_occupancy": [
+    0.254,
+    0.343,
+    0.253,
+    0.336,
+    0.293,
+    0.31,
+    0.264,
+    0.342
+   ],
+   "joint_range_deg": [
+    61.812,
+    42.862,
+    63.196,
+    42.612,
+    61.329,
+    42.698,
+    58.244,
+    42.046
+   ],
+   "foot_air_ratio": [
+    0.926,
+    0.927,
+    0.922,
+    0.925
+   ],
+   "touchdowns_per_s": [
+    1.185,
+    1.142,
+    1.071,
+    1.008
+   ],
+   "joint_zone20_occupancy": [
+    0.481,
+    0.528,
+    0.507,
+    0.533,
+    0.506,
+    0.493,
+    0.501,
+    0.551
+   ],
+   "joint_rom_p5_p95_deg": [
+    55.784,
+    38.417,
+    57.832,
+    38.709,
+    56.1,
+    38.28,
+    52.709,
+    37.626
+   ],
+   "feet_down_hist": [
+    0.739,
+    0.227,
+    0.03,
+    0.005,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Cb": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.98125,
+   "track_rate": 0.08125,
+   "speed_3_15": 0.16852884423507697,
+   "speed_3_50": 0.16880379733453255,
+   "outcomes": {
+    "sustained_locomotion": 0.98125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.01875,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.8941685085928567,
+   "trunk_height_std": 0.02412587794198732,
+   "all_feet_air_ratio": 0.2703324468085106,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.09607572542037693,
+   "pair_alternation": 0.15541194501550765,
+   "torso_vz2": 0.12371717988216349,
+   "trunk_height_mean": 0.5790186756065367,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 22.155374004561413,
+   "torque_limit_frac": 0.0,
+   "power": 158.3243776980407,
+   "joint_limit_occupancy": [
+    0.238,
+    0.247,
+    0.373,
+    0.187,
+    0.037,
+    0.152,
+    0.022,
+    0.083
+   ],
+   "joint_range_deg": [
+    32.025,
+    30.473,
+    31.509,
+    33.083,
+    37.894,
+    37.929,
+    29.445,
+    37.593
+   ],
+   "foot_air_ratio": [
+    0.866,
+    0.565,
+    0.896,
+    0.6
+   ],
+   "touchdowns_per_s": [
+    2.001,
+    4.335,
+    1.632,
+    4.632
+   ],
+   "joint_zone20_occupancy": [
+    0.37,
+    0.354,
+    0.519,
+    0.278,
+    0.096,
+    0.231,
+    0.06,
+    0.143
+   ],
+   "joint_rom_p5_p95_deg": [
+    18.29,
+    17.107,
+    18.663,
+    19.552,
+    22.251,
+    24.677,
+    15.202,
+    22.202
+   ],
+   "feet_down_hist": [
+    0.27,
+    0.413,
+    0.29,
+    0.026,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.99375,
+   "track_rate": 0.075,
+   "speed_3_15": 0.159343521598666,
+   "speed_3_50": 0.16240118551611915,
+   "outcomes": {
+    "sustained_locomotion": 0.99375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.00625
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.0528103594729354,
+   "trunk_height_std": 0.032054779549928934,
+   "all_feet_air_ratio": 0.353561742580734,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.11849840757051584,
+   "pair_alternation": 0.10364341065337435,
+   "torso_vz2": 0.1892033626590069,
+   "trunk_height_mean": 0.578933574333804,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 25.822473551201973,
+   "torque_limit_frac": 0.0,
+   "power": 213.75523741306205,
+   "joint_limit_occupancy": [
+    0.216,
+    0.27,
+    0.337,
+    0.163,
+    0.036,
+    0.166,
+    0.024,
+    0.11
+   ],
+   "joint_range_deg": [
+    38.923,
+    34.586,
+    37.496,
+    38.352,
+    45.401,
+    40.477,
+    37.676,
+    40.983
+   ],
+   "foot_air_ratio": [
+    0.867,
+    0.645,
+    0.896,
+    0.664
+   ],
+   "touchdowns_per_s": [
+    2.058,
+    4.213,
+    1.641,
+    4.307
+   ],
+   "joint_zone20_occupancy": [
+    0.353,
+    0.376,
+    0.488,
+    0.243,
+    0.097,
+    0.25,
+    0.063,
+    0.177
+   ],
+   "joint_rom_p5_p95_deg": [
+    22.416,
+    19.985,
+    22.468,
+    23.392,
+    27.757,
+    27.291,
+    20.082,
+    26.949
+   ],
+   "feet_down_hist": [
+    0.354,
+    0.389,
+    0.234,
+    0.023,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8C_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0005612080920416004,
+   "speed_3_50": 1.7242473933276489e-06,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.10625,
+    "permanent_freeze": 0.03125,
+    "initial_freeze": 0.20625,
+    "stalled": 0.65625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.34375,
+   "permanent_freeze_onset_s_median": 7.0,
+   "joint_velocity": 0.003923373929740101,
+   "trunk_height_std": 0.020159184725064106,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.49622051152124014,
+   "pair_alternation": -0.03245333633971339,
+   "torso_vz2": 7.562487421072667e-05,
+   "trunk_height_mean": 0.38968126440745243,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.4958502612299876,
+   "torque_limit_frac": 0.0,
+   "power": 0.00921790017959795,
+   "joint_limit_occupancy": [
+    0.345,
+    0.972,
+    0.951,
+    0.957,
+    0.661,
+    0.934,
+    1.0,
+    0.991
+   ],
+   "joint_range_deg": [
+    7.575,
+    7.731,
+    9.744,
+    11.897,
+    12.823,
+    18.96,
+    0.037,
+    2.662
+   ],
+   "foot_air_ratio": [
+    0.024,
+    0.018,
+    0.014,
+    0.061
+   ],
+   "touchdowns_per_s": [
+    0.138,
+    0.148,
+    0.064,
+    0.033
+   ],
+   "joint_zone20_occupancy": [
+    0.503,
+    0.974,
+    0.958,
+    0.963,
+    0.739,
+    0.939,
+    1.0,
+    0.994
+   ],
+   "joint_rom_p5_p95_deg": [
+    5.619,
+    3.724,
+    5.711,
+    5.029,
+    8.651,
+    11.263,
+    0.0,
+    0.177
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.022,
+    0.072,
+    0.906
+   ],
+   "started_still_walking_at_end": 0.9606299212598425,
+   "survival_all": [
+    [
+     0.0,
+     4.3,
+     4.45,
+     4.55,
+     5.0,
+     5.300000000000001,
+     5.5,
+     6.050000000000001,
+     6.15,
+     7.0,
+     8.0,
+     9.450000000000001,
+     10.450000000000001,
+     10.55,
+     11.05,
+     11.100000000000001,
+     11.350000000000001,
+     11.75,
+     11.950000000000001,
+     12.0,
+     12.5,
+     13.05,
+     13.200000000000001,
+     13.450000000000001,
+     14.0,
+     14.3,
+     14.4,
+     14.8,
+     14.850000000000001,
+     14.9,
+     15.5,
+     18.650000000000002,
+     25.85,
+     41.550000000000004,
+     44.1,
+     46.35,
+     47.050000000000004,
+     48.150000000000006,
+     50.0
+    ],
+    [
+     1.0,
+     0.99375,
+     0.9875,
+     0.98125,
+     0.975,
+     0.96875,
+     0.9625,
+     0.95625,
+     0.9500000000000001,
+     0.9437500000000001,
+     0.9375000000000001,
+     0.93125,
+     0.925,
+     0.91875,
+     0.9125,
+     0.90625,
+     0.9,
+     0.89375,
+     0.8875000000000001,
+     0.8812500000000001,
+     0.8750000000000001,
+     0.8687500000000001,
+     0.8625000000000002,
+     0.8562500000000002,
+     0.8437500000000002,
+     0.8375000000000002,
+     0.8312500000000003,
+     0.8250000000000002,
+     0.8187500000000002,
+     0.8125000000000002,
+     0.8062500000000002,
+     0.8000000000000003,
+     0.7937500000000003,
+     0.7875000000000003,
+     0.7812500000000003,
+     0.7750000000000004,
+     0.7687500000000004,
+     0.7625000000000003,
+     0.7625000000000003
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     5.0,
+     5.5,
+     7.0,
+     8.0,
+     14.0,
+     50.0
+    ],
+    [
+     1.0,
+     0.9921259842519685,
+     0.984251968503937,
+     0.9763779527559056,
+     0.9685039370078741,
+     0.9606299212598425,
+     0.9606299212598425
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.001480264811900479,
+   "speed_3_50": 0.0010672286124669512,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9169247673663767,
+   "trunk_height_std": 0.047669630787620675,
+   "all_feet_air_ratio": 0.24180186170212767,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.21732372962616328,
+   "pair_alternation": 0.3063738493681455,
+   "torso_vz2": 0.08125818845171413,
+   "trunk_height_mean": 0.5438547973720379,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 11.925170940082928,
+   "torque_limit_frac": 0.0,
+   "power": 91.36061304695556,
+   "joint_limit_occupancy": [
+    0.245,
+    0.319,
+    0.244,
+    0.31,
+    0.25,
+    0.329,
+    0.28,
+    0.335
+   ],
+   "joint_range_deg": [
+    63.267,
+    42.967,
+    63.196,
+    43.051,
+    63.588,
+    42.896,
+    63.427,
+    43.14
+   ],
+   "foot_air_ratio": [
+    0.712,
+    0.719,
+    0.708,
+    0.715
+   ],
+   "touchdowns_per_s": [
+    3.161,
+    3.178,
+    3.207,
+    3.135
+   ],
+   "joint_zone20_occupancy": [
+    0.396,
+    0.419,
+    0.381,
+    0.415,
+    0.401,
+    0.432,
+    0.44,
+    0.44
+   ],
+   "joint_rom_p5_p95_deg": [
+    60.016,
+    40.176,
+    60.013,
+    40.134,
+    60.006,
+    40.196,
+    60.118,
+    40.201
+   ],
+   "feet_down_hist": [
+    0.242,
+    0.41,
+    0.309,
+    0.039,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Cb_s1": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.99375,
+   "track_rate": 0.4875,
+   "speed_3_15": 0.38485040094704187,
+   "speed_3_50": 0.3785383854816157,
+   "outcomes": {
+    "sustained_locomotion": 0.99375,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.00625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.1554846891675115,
+   "trunk_height_std": 0.028503535612253727,
+   "all_feet_air_ratio": 0.3611037234042553,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.21518340971585054,
+   "pair_alternation": 0.15077157658039828,
+   "torso_vz2": 0.1970457282917832,
+   "trunk_height_mean": 0.5809568146570865,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 21.718529978525435,
+   "torque_limit_frac": 0.0,
+   "power": 197.76936129297474,
+   "joint_limit_occupancy": [
+    0.015,
+    0.187,
+    0.062,
+    0.042,
+    0.14,
+    0.237,
+    0.011,
+    0.161
+   ],
+   "joint_range_deg": [
+    39.402,
+    33.478,
+    36.157,
+    33.028,
+    40.552,
+    32.792,
+    37.104,
+    42.549
+   ],
+   "foot_air_ratio": [
+    0.704,
+    0.805,
+    0.609,
+    0.923
+   ],
+   "touchdowns_per_s": [
+    3.61,
+    3.246,
+    4.16,
+    1.29
+   ],
+   "joint_zone20_occupancy": [
+    0.04,
+    0.275,
+    0.136,
+    0.077,
+    0.219,
+    0.307,
+    0.05,
+    0.232
+   ],
+   "joint_rom_p5_p95_deg": [
+    23.639,
+    22.941,
+    21.483,
+    19.508,
+    24.328,
+    23.311,
+    23.263,
+    32.748
+   ],
+   "feet_down_hist": [
+    0.361,
+    0.346,
+    0.265,
+    0.027,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 1.0,
+   "track_rate": 0.48125,
+   "speed_3_15": 0.3589925503787623,
+   "speed_3_50": 0.36854817885649177,
+   "outcomes": {
+    "sustained_locomotion": 1.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.3020461240956807,
+   "trunk_height_std": 0.03217776911163432,
+   "all_feet_air_ratio": 0.4074999999999999,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.19655451996793466,
+   "pair_alternation": 0.12011854203827003,
+   "torso_vz2": 0.21434948096864553,
+   "trunk_height_mean": 0.5815084581208273,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 25.49104180078235,
+   "torque_limit_frac": 0.0,
+   "power": 258.43124828279394,
+   "joint_limit_occupancy": [
+    0.022,
+    0.175,
+    0.066,
+    0.059,
+    0.111,
+    0.224,
+    0.021,
+    0.172
+   ],
+   "joint_range_deg": [
+    45.841,
+    37.363,
+    43.652,
+    35.728,
+    47.446,
+    36.855,
+    43.433,
+    44.345
+   ],
+   "foot_air_ratio": [
+    0.74,
+    0.818,
+    0.664,
+    0.921
+   ],
+   "touchdowns_per_s": [
+    3.441,
+    3.085,
+    4.058,
+    1.322
+   ],
+   "joint_zone20_occupancy": [
+    0.055,
+    0.256,
+    0.141,
+    0.102,
+    0.196,
+    0.297,
+    0.069,
+    0.25
+   ],
+   "joint_rom_p5_p95_deg": [
+    27.498,
+    26.239,
+    25.954,
+    21.505,
+    30.319,
+    25.944,
+    27.063,
+    35.932
+   ],
+   "feet_down_hist": [
+    0.408,
+    0.35,
+    0.22,
+    0.021,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8C_s1_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0008189983034617276,
+   "speed_3_50": -9.157310207963183e-05,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.04375,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.95625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.04375,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.010552172436598329,
+   "trunk_height_std": 0.026660971923072173,
+   "all_feet_air_ratio": 0.0,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.3158690359162652,
+   "pair_alternation": -0.02749045421408318,
+   "torso_vz2": 5.204492346188594e-05,
+   "trunk_height_mean": 0.4218413454745895,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.3561750499956507,
+   "torque_limit_frac": 0.0,
+   "power": 0.03202072741295615,
+   "joint_limit_occupancy": [
+    0.378,
+    0.962,
+    0.344,
+    0.663,
+    0.401,
+    0.729,
+    0.602,
+    0.948
+   ],
+   "joint_range_deg": [
+    24.678,
+    3.2,
+    32.875,
+    23.763,
+    34.542,
+    11.45,
+    19.217,
+    7.745
+   ],
+   "foot_air_ratio": [
+    0.058,
+    0.004,
+    0.06,
+    0.03
+   ],
+   "touchdowns_per_s": [
+    0.244,
+    0.054,
+    0.148,
+    0.107
+   ],
+   "joint_zone20_occupancy": [
+    0.515,
+    0.968,
+    0.453,
+    0.692,
+    0.498,
+    0.749,
+    0.677,
+    0.966
+   ],
+   "joint_rom_p5_p95_deg": [
+    21.044,
+    1.409,
+    28.168,
+    16.944,
+    29.694,
+    9.257,
+    14.061,
+    3.669
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.02,
+    0.112,
+    0.868
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.00048732605771578707,
+   "speed_3_50": -0.00011440431286471471,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9165551426986817,
+   "trunk_height_std": 0.04739148147731957,
+   "all_feet_air_ratio": 0.23941489361702128,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.21829234412336854,
+   "pair_alternation": 0.3112198931999028,
+   "torso_vz2": 0.08030399813898012,
+   "trunk_height_mean": 0.5430322422576216,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 11.926952583439165,
+   "torque_limit_frac": 0.0,
+   "power": 91.32497316068297,
+   "joint_limit_occupancy": [
+    0.248,
+    0.319,
+    0.244,
+    0.307,
+    0.251,
+    0.331,
+    0.27,
+    0.339
+   ],
+   "joint_range_deg": [
+    63.366,
+    43.002,
+    63.034,
+    43.039,
+    63.396,
+    43.095,
+    63.314,
+    43.212
+   ],
+   "foot_air_ratio": [
+    0.719,
+    0.701,
+    0.726,
+    0.703
+   ],
+   "touchdowns_per_s": [
+    3.1,
+    3.273,
+    3.046,
+    3.238
+   ],
+   "joint_zone20_occupancy": [
+    0.398,
+    0.425,
+    0.381,
+    0.409,
+    0.4,
+    0.432,
+    0.424,
+    0.442
+   ],
+   "joint_rom_p5_p95_deg": [
+    60.02,
+    40.138,
+    59.965,
+    40.122,
+    60.028,
+    40.201,
+    60.102,
+    40.223
+   ],
+   "feet_down_hist": [
+    0.239,
+    0.41,
+    0.312,
+    0.038,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8Cb_s2": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.90625,
+   "track_rate": 0.39375,
+   "speed_3_15": 0.30390735059285834,
+   "speed_3_50": 0.32536481596318667,
+   "outcomes": {
+    "sustained_locomotion": 0.90625,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.09375,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.1218579487002225,
+   "trunk_height_std": 0.029244267706418192,
+   "all_feet_air_ratio": 0.31758643617021276,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.10303162213874831,
+   "pair_alternation": 0.12696407022201978,
+   "torso_vz2": 0.15167637550110288,
+   "trunk_height_mean": 0.5686010236355721,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 22.24308229417384,
+   "torque_limit_frac": 0.0,
+   "power": 203.90609821212993,
+   "joint_limit_occupancy": [
+    0.018,
+    0.188,
+    0.07,
+    0.168,
+    0.061,
+    0.126,
+    0.034,
+    0.095
+   ],
+   "joint_range_deg": [
+    38.4,
+    36.904,
+    33.253,
+    38.607,
+    43.69,
+    35.316,
+    34.321,
+    18.864
+   ],
+   "foot_air_ratio": [
+    0.943,
+    0.655,
+    0.818,
+    0.595
+   ],
+   "touchdowns_per_s": [
+    0.835,
+    3.976,
+    3.343,
+    4.68
+   ],
+   "joint_zone20_occupancy": [
+    0.046,
+    0.275,
+    0.174,
+    0.248,
+    0.148,
+    0.209,
+    0.098,
+    0.194
+   ],
+   "joint_rom_p5_p95_deg": [
+    24.094,
+    27.169,
+    19.468,
+    29.396,
+    26.859,
+    26.496,
+    21.382,
+    9.943
+   ],
+   "feet_down_hist": [
+    0.318,
+    0.403,
+    0.251,
+    0.028,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.9125,
+   "track_rate": 0.4,
+   "speed_3_15": 0.28566098333036977,
+   "speed_3_50": 0.30005919909766077,
+   "outcomes": {
+    "sustained_locomotion": 0.9125,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 0.0875,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 1.2893111679041087,
+   "trunk_height_std": 0.03453314264825232,
+   "all_feet_air_ratio": 0.3825531914893617,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.12741050060027165,
+   "pair_alternation": 0.10313425979307884,
+   "torso_vz2": 0.1914270488005177,
+   "trunk_height_mean": 0.5722907638557301,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 26.175580791973555,
+   "torque_limit_frac": 0.0,
+   "power": 267.42706869853635,
+   "joint_limit_occupancy": [
+    0.024,
+    0.211,
+    0.048,
+    0.202,
+    0.068,
+    0.14,
+    0.045,
+    0.132
+   ],
+   "joint_range_deg": [
+    48.425,
+    40.335,
+    44.624,
+    42.655,
+    51.414,
+    39.544,
+    40.294,
+    23.783
+   ],
+   "foot_air_ratio": [
+    0.94,
+    0.702,
+    0.846,
+    0.647
+   ],
+   "touchdowns_per_s": [
+    0.896,
+    3.852,
+    2.794,
+    4.535
+   ],
+   "joint_zone20_occupancy": [
+    0.06,
+    0.303,
+    0.118,
+    0.291,
+    0.158,
+    0.217,
+    0.117,
+    0.241
+   ],
+   "joint_rom_p5_p95_deg": [
+    29.559,
+    30.523,
+    26.468,
+    33.407,
+    33.327,
+    30.278,
+    24.946,
+    12.729
+   ],
+   "feet_down_hist": [
+    0.383,
+    0.39,
+    0.207,
+    0.02,
+    0.0
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ },
+ "main_v8C_s2_init": {
+  "deterministic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0012001910948454624,
+   "speed_3_50": 0.0003113216164384881,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.08125,
+    "permanent_freeze": 0.29375,
+    "initial_freeze": 0.2625,
+    "stalled": 0.3625,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.6375,
+   "permanent_freeze_onset_s_median": 17.150000000000002,
+   "joint_velocity": 0.006814261458607243,
+   "trunk_height_std": 0.025128447320749092,
+   "all_feet_air_ratio": 6.648936170212766e-06,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.4138900646719953,
+   "pair_alternation": -0.03595479453009485,
+   "torso_vz2": 6.119365927730454e-05,
+   "trunk_height_mean": 0.4020932652058556,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 0.42970056554773245,
+   "torque_limit_frac": 0.0,
+   "power": 0.02569167140331078,
+   "joint_limit_occupancy": [
+    0.898,
+    0.807,
+    0.604,
+    0.91,
+    0.778,
+    0.97,
+    0.763,
+    0.945
+   ],
+   "joint_range_deg": [
+    21.041,
+    26.037,
+    13.522,
+    12.563,
+    21.446,
+    2.687,
+    18.351,
+    3.389
+   ],
+   "foot_air_ratio": [
+    0.002,
+    0.086,
+    0.005,
+    0.069
+   ],
+   "touchdowns_per_s": [
+    0.019,
+    0.159,
+    0.042,
+    0.247
+   ],
+   "joint_zone20_occupancy": [
+    0.924,
+    0.831,
+    0.742,
+    0.916,
+    0.817,
+    0.976,
+    0.79,
+    0.955
+   ],
+   "joint_rom_p5_p95_deg": [
+    7.972,
+    17.883,
+    7.465,
+    6.855,
+    13.504,
+    1.433,
+    10.367,
+    2.019
+   ],
+   "feet_down_hist": [
+    0.0,
+    0.0,
+    0.025,
+    0.109,
+    0.865
+   ],
+   "started_still_walking_at_end": 0.6016949152542377,
+   "survival_all": [
+    [
+     0.0,
+     4.05,
+     4.4,
+     4.95,
+     6.1000000000000005,
+     6.15,
+     6.25,
+     6.45,
+     7.15,
+     7.2,
+     8.450000000000001,
+     9.35,
+     9.55,
+     9.600000000000001,
+     9.75,
+     10.200000000000001,
+     10.25,
+     10.950000000000001,
+     11.3,
+     11.9,
+     12.200000000000001,
+     12.3,
+     12.950000000000001,
+     13.200000000000001,
+     13.25,
+     13.3,
+     13.5,
+     13.850000000000001,
+     14.350000000000001,
+     14.600000000000001,
+     15.15,
+     15.9,
+     16.1,
+     16.150000000000002,
+     16.45,
+     16.85,
+     17.1,
+     17.150000000000002,
+     17.8,
+     18.150000000000002,
+     18.95,
+     19.1,
+     19.6,
+     20.450000000000003,
+     20.55,
+     21.6,
+     22.05,
+     22.35,
+     22.55,
+     23.950000000000003,
+     24.200000000000003,
+     26.8,
+     29.05,
+     29.150000000000002,
+     29.3,
+     29.650000000000002,
+     30.150000000000002,
+     31.85,
+     32.2,
+     32.35,
+     32.550000000000004,
+     33.6,
+     34.1,
+     34.35,
+     34.4,
+     34.75,
+     34.95,
+     35.800000000000004,
+     35.9,
+     37.6,
+     37.9,
+     38.2,
+     38.5,
+     38.650000000000006,
+     39.150000000000006,
+     39.5,
+     40.800000000000004,
+     41.2,
+     42.6,
+     43.300000000000004,
+     43.95,
+     44.150000000000006,
+     46.0,
+     47.35,
+     49.1,
+     50.0
+    ],
+    [
+     1.0,
+     0.9875,
+     0.9750000000000001,
+     0.9687500000000001,
+     0.9625000000000001,
+     0.9562500000000002,
+     0.9437500000000002,
+     0.9375000000000002,
+     0.9312500000000001,
+     0.9250000000000002,
+     0.9125000000000002,
+     0.9062500000000002,
+     0.9000000000000002,
+     0.8937500000000003,
+     0.8875000000000003,
+     0.8812500000000003,
+     0.8750000000000003,
+     0.8687500000000004,
+     0.8625000000000004,
+     0.8562500000000004,
+     0.8500000000000004,
+     0.8437500000000004,
+     0.8375000000000005,
+     0.8312500000000005,
+     0.8250000000000004,
+     0.8187500000000004,
+     0.8125000000000004,
+     0.8062500000000005,
+     0.8000000000000005,
+     0.7937500000000005,
+     0.7875000000000005,
+     0.7812500000000006,
+     0.7750000000000006,
+     0.7687500000000006,
+     0.7625000000000005,
+     0.7562500000000005,
+     0.7500000000000006,
+     0.7437500000000006,
+     0.7375000000000006,
+     0.7312500000000006,
+     0.7250000000000006,
+     0.7187500000000007,
+     0.7125000000000007,
+     0.7062500000000007,
+     0.7000000000000007,
+     0.6937500000000008,
+     0.6875000000000008,
+     0.6812500000000008,
+     0.6750000000000008,
+     0.6687500000000007,
+     0.6625000000000008,
+     0.6500000000000007,
+     0.6437500000000007,
+     0.6375000000000007,
+     0.6312500000000008,
+     0.6250000000000008,
+     0.6187500000000008,
+     0.6125000000000008,
+     0.6062500000000008,
+     0.6000000000000009,
+     0.5937500000000009,
+     0.5875000000000009,
+     0.5812500000000009,
+     0.575000000000001,
+     0.5687500000000009,
+     0.5625000000000009,
+     0.5562500000000009,
+     0.5500000000000009,
+     0.543750000000001,
+     0.537500000000001,
+     0.531250000000001,
+     0.525000000000001,
+     0.518750000000001,
+     0.5125000000000011,
+     0.5062500000000011,
+     0.500000000000001,
+     0.493750000000001,
+     0.48750000000000104,
+     0.48125000000000107,
+     0.47500000000000103,
+     0.468750000000001,
+     0.462500000000001,
+     0.45625000000000104,
+     0.450000000000001,
+     0.44375000000000103,
+     0.44375000000000103
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     4.05,
+     4.4,
+     6.1000000000000005,
+     6.25,
+     6.45,
+     7.15,
+     7.2,
+     9.35,
+     9.75,
+     10.200000000000001,
+     10.25,
+     10.950000000000001,
+     11.3,
+     11.9,
+     12.950000000000001,
+     13.25,
+     14.350000000000001,
+     14.600000000000001,
+     16.1,
+     16.45,
+     16.85,
+     17.150000000000002,
+     17.8,
+     18.150000000000002,
+     18.95,
+     19.1,
+     19.6,
+     20.55,
+     22.55,
+     24.200000000000003,
+     26.8,
+     30.150000000000002,
+     31.85,
+     32.2,
+     34.35,
+     34.4,
+     34.95,
+     38.2,
+     38.5,
+     39.5,
+     41.2,
+     42.6,
+     43.95,
+     46.0,
+     49.1,
+     50.0
+    ],
+    [
+     1.0,
+     0.9830508474576272,
+     0.9661016949152542,
+     0.9576271186440678,
+     0.9491525423728814,
+     0.940677966101695,
+     0.9322033898305085,
+     0.9237288135593221,
+     0.9152542372881357,
+     0.9067796610169492,
+     0.8983050847457628,
+     0.8898305084745763,
+     0.8813559322033899,
+     0.8728813559322035,
+     0.8644067796610171,
+     0.8559322033898307,
+     0.8474576271186443,
+     0.8389830508474578,
+     0.8305084745762714,
+     0.822033898305085,
+     0.8135593220338986,
+     0.8050847457627122,
+     0.7966101694915257,
+     0.7881355932203393,
+     0.7796610169491529,
+     0.7711864406779664,
+     0.76271186440678,
+     0.7542372881355935,
+     0.7457627118644071,
+     0.7372881355932207,
+     0.7288135593220343,
+     0.7203389830508479,
+     0.7118644067796615,
+     0.703389830508475,
+     0.6949152542372886,
+     0.6864406779661022,
+     0.6779661016949157,
+     0.6694915254237293,
+     0.6610169491525428,
+     0.6525423728813564,
+     0.64406779661017,
+     0.6355932203389835,
+     0.627118644067797,
+     0.6186440677966106,
+     0.6101694915254241,
+     0.6016949152542377,
+     0.6016949152542377
+    ]
+   ]
+  },
+  "stochastic": {
+   "n": 160,
+   "move_rate": 0.0,
+   "track_rate": 0.0,
+   "speed_3_15": 0.0002608805493828165,
+   "speed_3_50": 0.0009958063947774509,
+   "outcomes": {
+    "sustained_locomotion": 0.0,
+    "temporary_freeze": 0.0,
+    "permanent_freeze": 0.0,
+    "initial_freeze": 0.0,
+    "stalled": 1.0,
+    "fell": 0.0
+   },
+   "freeze_rate": 0.0,
+   "permanent_freeze_onset_s_median": null,
+   "joint_velocity": 0.9154916914869894,
+   "trunk_height_std": 0.04735587270310843,
+   "all_feet_air_ratio": 0.24084441489361702,
+   "action_saturation": 0.0,
+   "diag_in_phase": 0.22195288326910761,
+   "pair_alternation": 0.31061100685473103,
+   "torso_vz2": 0.08002504371644648,
+   "trunk_height_mean": 0.5438933887321988,
+   "torso_contact_ratio": 0.0,
+   "upper_leg_contact_ratio": 0.0,
+   "torso_and_upper_contact_ratio": 0.0,
+   "mean_abs_torque": 11.926818152062827,
+   "torque_limit_frac": 0.0,
+   "power": 91.17600511432349,
+   "joint_limit_occupancy": [
+    0.256,
+    0.319,
+    0.244,
+    0.306,
+    0.246,
+    0.326,
+    0.281,
+    0.348
+   ],
+   "joint_range_deg": [
+    63.403,
+    42.986,
+    63.145,
+    43.076,
+    63.299,
+    42.988,
+    63.335,
+    43.244
+   ],
+   "foot_air_ratio": [
+    0.71,
+    0.716,
+    0.71,
+    0.715
+   ],
+   "touchdowns_per_s": [
+    3.16,
+    3.148,
+    3.179,
+    3.128
+   ],
+   "joint_zone20_occupancy": [
+    0.407,
+    0.421,
+    0.38,
+    0.41,
+    0.396,
+    0.427,
+    0.434,
+    0.453
+   ],
+   "joint_rom_p5_p95_deg": [
+    60.073,
+    40.18,
+    60.018,
+    40.141,
+    59.972,
+    40.186,
+    60.126,
+    40.223
+   ],
+   "feet_down_hist": [
+    0.241,
+    0.41,
+    0.31,
+    0.039,
+    0.001
+   ],
+   "started_still_walking_at_end": 1.0,
+   "survival_all": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "survival_started": [
+    [
+     0.0,
+     50.0
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ]
+  }
+ }
+}

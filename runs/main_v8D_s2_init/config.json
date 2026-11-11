@@ -1,0 +1,21 @@
+{
+  "timesteps": 5000000,
+  "n_envs": 8,
+  "run_name": "main_v8D_s2_init",
+  "seed": 2,
+  "resume": null,
+  "tracking_sigma": 1.0,
+  "tracking_weight": 5.0,
+  "alive_weight": 1.0,
+  "limit_weight": 1.5,
+  "limit_soft": 0.8,
+  "vz_weight": 0.0,
+  "squash": true,
+  "constant_lr": null,
+  "action_mode": "pd",
+  "pd_kp": 120.0,
+  "pd_kd": 21.0,
+  "tracking_kernel": "two_term",
+  "log_std_init": null,
+  "save_init": true
+}
