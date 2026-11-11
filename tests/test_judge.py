@@ -36,3 +36,12 @@ def test_other_names_failed_items():
 def test_off_fall_threshold_is_stricter():
     label, checks = judge(dict(OFF, fell=0.03), ON)
     assert checks["넘어짐"] is False and label.startswith("그 밖")
+
+
+def test_noise_dependence_lists_items_passing_in_one_mode_only():
+    from v8_judge import noise_dependence
+    on = dict(OFF, load_slip=0.6, fell=0.04, speed=0.30)          # 켬 넘어짐 기준은 0.05
+    dep = noise_dependence(OFF, on)
+    assert "미끄러짐" in dep and "속도" in dep
+    assert "넘어짐" not in dep
+    assert noise_dependence(OFF, dict(OFF)) == []

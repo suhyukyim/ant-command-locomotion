@@ -56,6 +56,16 @@ def judge(off: dict, on: dict) -> tuple[str, dict[str, bool]]:
     return "걷는다", checks
 
 
+def noise_dependence(off: dict, on: dict) -> list[str]:
+    """합격선 항목 중 노이즈 끔/켬 한쪽에서만 넘는 것 (설계 10절 "노이즈 의존"). 넘어짐은 켬 기준 0.05로 본다."""
+    out = []
+    for name, k, op, thr in OFF_RULES:
+        thr_on = 0.05 if k == "fell" else thr
+        if _ok(off[k], op, thr) != _ok(on[k], op, thr_on):
+            out.append(name)
+    return out
+
+
 def _mode_metrics(summaries, stance, mode, key):
     m = "deterministic" if mode == "off" else "stochastic"
     agg = [s[m] for s in summaries]
@@ -101,19 +111,23 @@ def main():
             continue
         off, on = _mode_metrics(sums, stance, "off", cfg), _mode_metrics(sums, stance, "on", cfg)
         label, checks = judge(off, on)
-        rows.append((cfg, off, on, label, checks, _per_speed(sums, "off"), _per_speed(sums, "on")))
-    head = "| 항목 | 합격선 | " + " | ".join(LABELS[r[0]] for r in rows) + " |"
-    lines += ["## 노이즈 끔 (판정)", "", head, "|" + " --- |" * (len(rows) + 2)]
+        rows.append((cfg, off, on, label, checks, _per_speed(sums, "off"), _per_speed(sums, "on"), len(sums)))
+    head = "| 항목 | 합격선 | " + " | ".join(f"{LABELS[r[0]]} (seed {r[7]})" for r in rows) + " |"
+    lines += ["## 노이즈 끔 (판정) — 칸: 끔 값 판정 (켬 값)", "", head, "|" + " --- |" * (len(rows) + 2)]
     for name, k, op, thr in OFF_RULES:
         lines.append(f"| {name} | {op} {thr:g} | " + " | ".join(
-            f"{fmt(r[1][k])} {'✅' if r[4][name] else '❌'}" for r in rows) + " |")
+            f"{fmt(r[1][k])} {'✅' if r[4][name] else '❌'} ({fmt(r[2][k])})" for r in rows) + " |")
     lines += ["", "## 노이즈 켬 (보조 기준)", "", head, "|" + " --- |" * (len(rows) + 2)]
     for name, k, op, thr in ON_RULES:
         lines.append(f"| {name} | {op} {thr:g} | " + " | ".join(
             f"{fmt(r[2][k])} {'✅' if r[4][name] else '❌'}" for r in rows) + " |")
     lines.append("| 켬 속도 유지 | ≥ 끔의 70% | " + " | ".join(
         f"{fmt(r[2]['speed'])} {'✅' if r[4]['켬 속도 유지'] else '❌'}" for r in rows) + " |")
-    lines += ["", "## 판정", ""] + [f"- **{LABELS[r[0]]}:** {r[3]}" for r in rows]
+    lines += ["", "## 판정", ""]
+    for r in rows:
+        dep = noise_dependence(r[1], r[2])
+        lines.append(f"- **{LABELS[r[0]]}** (학습 seed {r[7]}개{'' if r[7] == 3 else ', ⚠️ 3개 미만'}): {r[3]}"
+                     + (f" · 노이즈 의존: {', '.join(dep)}" if dep else ""))
     lines += ["", "## 명령 속도별 추종 성공률 / 명령 방향 속도 (끔 · 켬)", "",
               "| 갈래 | 0.5 m/s 끔 | 1.0 m/s 끔 | 0.5 m/s 켬 | 1.0 m/s 켬 |", "| --- | --- | --- | --- | --- |"]
     for r in rows:
