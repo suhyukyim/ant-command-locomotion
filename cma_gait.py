@@ -90,9 +90,9 @@ def evaluate(args):
     return r
 
 
-def run_cma(pool, kp, kd, restart, gens, popsize):
+def run_cma(pool, kp, kd, restart, gens, popsize, seed_offset=0, history=None):
     import cma
-    es = cma.CMAEvolutionStrategy(np.zeros(DIM), 0.8, dict(popsize=popsize, seed=1000 + restart, verbose=-9))
+    es = cma.CMAEvolutionStrategy(np.zeros(DIM), 0.8, dict(popsize=popsize, seed=1000 + seed_offset + restart, verbose=-9))
     best, best_meet, best_meet_x = None, None, None
     for g in range(gens):
         xs = es.ask()
@@ -103,6 +103,9 @@ def run_cma(pool, kp, kd, restart, gens, popsize):
                 best = (np.array(x), r)
             if r.get("meets_stance") and (best_meet is None or r["speed_x"] > best_meet["speed_x"]):
                 best_meet, best_meet_x = r, np.array(x)
+        if history is not None:   # 수렴 기록: 세대별 그 세대 최고 점수, 지금까지 최고 점수, 지금까지 기준 충족 최고 속도
+            history.append(dict(gen=g, gen_best=max(r["score"] for r in rs), best_so_far=best[1]["score"],
+                                best_feasible_so_far=best_meet["speed_x"] if best_meet else None, sigma=float(es.sigma)))
         if g % 10 == 0 or g == gens - 1:
             bm = f"{best_meet['speed_x']:.3f}" if best_meet else "–"
             print(f"  kp {kp:g} restart {restart} gen {g}: best score {best[1]['score']:.3f}, "
@@ -115,15 +118,20 @@ def main():
     p.add_argument("--gens", type=int, default=60)
     p.add_argument("--popsize", type=int, default=32)
     p.add_argument("--restarts", type=int, default=2)
+    p.add_argument("--kps", type=float, nargs="+", default=None, help="일부 후보만 (예: 30 120)")
+    p.add_argument("--seed-offset", type=int, default=0, help="재시작 난수 seed = 1000 + offset + 재시작 번호")
+    p.add_argument("--out-name", default="cma_summary.json")
     a = p.parse_args()
     os.environ.setdefault("OMP_NUM_THREADS", "1")
-    out = dict(criteria=PASS, gens=a.gens, popsize=a.popsize, candidates=[])
+    out = dict(criteria=PASS, gens=a.gens, popsize=a.popsize, seed_offset=a.seed_offset, candidates=[])
+    cands = [c for c in CANDIDATES if a.kps is None or c[0] in a.kps]
     with Pool() as pool:
-        for kp, kd in CANDIDATES:
+        for kp, kd in cands:
             runs = []
             for rs in range(a.restarts):
-                (bx, br), (mx, mr) = run_cma(pool, kp, kd, rs, a.gens, a.popsize)
-                entry = dict(restart=rs, best_score=br, best_score_params=decode(bx))
+                hist = []
+                (bx, br), (mx, mr) = run_cma(pool, kp, kd, rs, a.gens, a.popsize, a.seed_offset, hist)
+                entry = dict(restart=rs, best_score=br, best_score_params=decode(bx), history=hist)
                 if mx is not None:   # 디딤 기준을 채운 최고 속도 패턴을 초기 상태 5개로 다시 잰다
                     check = pool.map(evaluate, [(mx, kp, kd, s) for s in range(5)])
                     entry.update(best_meeting_stance=mr, best_meeting_stance_params=decode(mx),
@@ -135,8 +143,8 @@ def main():
                 runs.append(entry)
             out["candidates"].append(dict(kp=kp, kd=kd, runs=runs))
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "cma_summary.json").write_text(json.dumps(out, indent=1))
-    print("saved →", OUT / "cma_summary.json")
+    (OUT / a.out_name).write_text(json.dumps(out, indent=1))
+    print("saved →", OUT / a.out_name)
     for c in out["candidates"]:
         for r in c["runs"]:
             bm = r.get("best_meeting_stance")
