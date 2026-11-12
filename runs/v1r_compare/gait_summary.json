@@ -1,0 +1,32 @@
+{
+  "main_v1r_12": {
+    "along_cmd_speed": 0.09983392852821658,
+    "joint_range_deg": 57.950077180441795,
+    "period_s": 0.8,
+    "periodicity": 0.02740672342320662,
+    "foot_contact_ratio": [
+      0.06,
+      0.1,
+      0.11,
+      0.1
+    ],
+    "touchdowns_per_s": [
+      1.28,
+      1.7,
+      1.91,
+      1.49
+    ],
+    "feet_on_ground_mean": 0.3617021276595745,
+    "upper_leg_contact": 0.0,
+    "torso_contact": 0.0,
+    "torso_height_mean": 0.6738629009389172,
+    "torso_height_min": 0.5117972462514371,
+    "run": "runs/main_v1r",
+    "cmd": [
+      1.0,
+      0.0
+    ],
+    "fell": true,
+    "eval_along_cmd_speed": NaN
+  }
+}

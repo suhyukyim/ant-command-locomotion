@@ -116,6 +116,9 @@ def main():
                    help="하중 발 미끄러짐 속도² 페널티 가중치 (v9). 0이면 기존 보상")
     p.add_argument("--log-std-init", type=float, default=None,
                    help="정책 탐색 노이즈 초기 log σ (기본: SB3 기본 0 = σ 1.0, v8C: ln 0.1)")
+    p.add_argument("--ppo-preset", choices=["v2", "v1"], default="v2",
+                   help="PPO 업데이트 설정. v2(기본) = 미니배치 4 × 5에폭, target_kl 0.02, 학습률 선형 감소. "
+                        "v1 = 재현용: 배치 256 × 10에폭(환경당 1536스텝 → 미니배치 48개, 추정), target_kl 없음, 학습률 3e-4 고정")
     p.add_argument("--save-init", action="store_true",
                    help="학습 전 정책을 runs/<run-name>_init/ 에 저장 (학습 전 측정용)")
     args = p.parse_args()
@@ -147,19 +150,28 @@ def main():
             model._setup_lr_schedule()
     else:
         venv = VecNormalize(venv, norm_obs=True, norm_reward=True, clip_obs=10.0)
-        n_steps = 1024             # 환경당 수집 스텝 → 한 번에 1024 * n_envs
+        if args.ppo_preset == "v1":
+            # v1 재현: batch 256 × 미니배치 48개 × 10에폭 = 480번 갱신, target_kl 없음, 학습률 고정.
+            # v1의 환경당 수집 스텝은 기록이 없어, 미니배치 48개(= 12288 / 256)가 되도록 1536으로 추정했다.
+            n_steps = 1536
+            ppo_update = dict(batch_size=256, n_epochs=10, target_kl=None,
+                              learning_rate=args.constant_lr if args.constant_lr is not None else 3e-4)
+        else:
+            n_steps = 1024         # 환경당 수집 스텝 → 한 번에 1024 * n_envs
+            # v1에서는 batch 256이라 업데이트 한 번에 미니배치가 48개 × 10에폭 = 480번 갱신
+            # → 정책이 너무 크게 바뀌어 approx_kl 4.1, clip_fraction 0.87로 붕괴했다.
+            # 미니배치 4개 × 5에폭 = 20번 갱신으로 줄인다 (legged_gym 설정과 비슷).
+            ppo_update = dict(
+                batch_size=n_steps * args.n_envs // 4,
+                n_epochs=5,
+                target_kl=0.02,    # KL이 커지면 그 업데이트의 남은 에폭을 건너뛴다
+                learning_rate=(args.constant_lr if args.constant_lr is not None
+                               else lambda progress: 3e-4 * progress))  # 기본: 3e-4 → 0 선형 감소
         model = PPO(
             SquashedGaussianPolicy if args.squash else "MlpPolicy",
             venv,
             n_steps=n_steps,
-            # v1에서는 batch 256이라 업데이트 한 번에 미니배치가 48개 × 10에폭 = 480번 갱신
-            # → 정책이 너무 크게 바뀌어 approx_kl 4.1, clip_fraction 0.87로 붕괴했다.
-            # 미니배치 4개 × 5에폭 = 20번 갱신으로 줄인다 (legged_gym 설정과 비슷).
-            batch_size=n_steps * args.n_envs // 4,
-            n_epochs=5,
-            target_kl=0.02,        # KL이 커지면 그 업데이트의 남은 에폭을 건너뛴다
-            learning_rate=(args.constant_lr if args.constant_lr is not None
-                           else lambda progress: 3e-4 * progress),  # 기본: 3e-4 → 0 선형 감소
+            **ppo_update,
             gamma=0.99,
             gae_lambda=0.95,
             clip_range=0.2,
